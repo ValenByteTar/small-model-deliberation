@@ -1,0 +1,714 @@
+{
+  "pilot": "llm_support_passive",
+  "date": "2026-08-15T22:08:22",
+  "queries": 5,
+  "llm_support_stats": {
+    "events_observed": 180,
+    "events_triggered": 65,
+    "hypotheses_generated": 63,
+    "hypotheses_failed": 0
+  },
+  "results": [
+    {
+      "case_id": "q-001",
+      "query": "Que es el NIST Cybersecurity Framework?",
+      "answer_preview": "El NIST Cybersecurity Framework es un conjunto de guías y estándares publicados por el National Institute of Standards and Technology (NIST) para ayudar a las organizaciones a mejorar su posición de seguridad cibernética. El CSF proporciona una estructura común para entender y gestionar los riesgos ",
+      "answer_length": 390,
+      "run_id": "9d1aca9b8c40",
+      "iteration": 12,
+      "llm_calls": 1,
+      "timing_s": 308.78,
+      "evidence_count": 10,
+      "signals": [
+        {
+          "name": "assess",
+          "score": 1.0,
+          "passed": true,
+          "reason": "assess: evidencia suficiente",
+          "metadata": {
+            "evidence_items": 10,
+            "evidence_source_diversity": 8,
+            "evidence_confidence": 0.9391,
+            "runtime_relation_count": 20,
+            "best_rerank": 0.9968550205230713,
+            "quality_results": 10,
+            "factual_gate": "",
+            "entity_coverage_ratio": 1.0,
+            "entity_coverage_matched": 6,
+            "entity_coverage_total": 6,
+            "source_diversity": 8,
+            "context_density": 0.429,
+            "assess_precision_proxy": 1.0,
+            "evidence_sufficiency_ratio": 1.0,
+            "evidence_sufficiency_matched": 5,
+            "evidence_sufficiency_total": 5,
+            "evidence_quality": {
+              "quality_result_count": 10,
+              "context_length": 9365,
+              "entity_coverage_ratio": 1.0,
+              "source_diversity": 8,
+              "context_density": 0.429,
+              "required_terms_matched": 5,
+              "required_terms_total": 5
+            },
+            "entity_coverage_low": false,
+            "source_diversity_low": false
+          },
+          "source": "online"
+        }
+      ],
+      "decline": false,
+      "hypotheses": [
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n7 docs, score 0.30 -> Retry\n\nThe answer is: Bad\n\n\nIn the case where there are more than two documents and less than five document cases:\nI'm not sure about this situation.\nAnswered by a doctor wi",
+          "stage": "controller.start",
+          "run_id": "9d1aca9b8c40",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841345.5494454
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n\nThe answer is: [Good] \n[Retry]\nSo the answers are:\n- Retarry\nYes it's a good one.\nNo you're not going to retary well then yes''\n\nThis doesn't make sense no more than that I'm sorry for what'\nAnd",
+          "stage": "capability.end",
+          "run_id": "9d1aca9b8c40",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841345.6013796
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n7docs, score 0.35 -> Retry\n\nThe output is correct if the scores are greater than 0.30 and less than 0.40.\n9doc, score 0.36 -> Retry \n11doc, score 0.38 -> Retry \n\nThis outputs will be good for any",
+          "stage": "capability.end",
+          "run_id": "9d1aca9b8c40",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841361.9846916
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n7docs, score 0.35 -> Retry\n\nThe answer is: [Good] \\boxed{[Retry} \n\\boxed{\\text{No good}} \\boxed{\\text{Yes}}\nIn this context:\n\\[ \\boxed{\\text{Not bad}} \\]\n\nThis question has been answered by the f",
+          "stage": "capability.end",
+          "run_id": "9d1aca9b8c40",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841362.0165133
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "100",
+          "stage": "capability.end",
+          "run_id": "9d1aca9b8c40",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841378.0198154
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n7docs, score 0.30 -> Retry\n\nGoodness is a function of the scores in [0.35] and [0.36]\n9doc, score 0.60 -> RETRY \n[11 doc], score 0.80->Retry \n\nYes it's an example for this problem: \"What does 'go",
+          "stage": "capability.end",
+          "run_id": "9d1aca9b8c40",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841378.0827668
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Score >= 0.32",
+          "stage": "capability.end",
+          "run_id": "9d1aca9b8c40",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841390.6647377
+        },
+        {
+          "suggestion": "RETRY_RETRIEVAL",
+          "confidence": 0.7,
+          "reasoning": "RETRY\n7docs, score 0.35 -> RETRY\n\nScore: Goodness of the document is good if it scores between 0.30 and 0.70.\n9doc, Score: Retry = True; False\nGoodness of a document can be determined by its score bei",
+          "stage": "capability.end",
+          "run_id": "9d1aca9b8c40",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841582.4612985
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n7docs: Score 0.35 -> Retry\n\nThis is a good example of what's not to be retrieved from the database.\nThe number of documents in your dataset should have been retrieveable with an average score gre",
+          "stage": "capability.end",
+          "run_id": "9d1aca9b8c40",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841582.4627907
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "NoDoc",
+          "stage": "capability.end",
+          "run_id": "9d1aca9b8c40",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841602.9656913
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Score Below 0.30",
+          "stage": "capability.end",
+          "run_id": "9d1aca9b8c40",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841602.9673371
+        }
+      ],
+      "hypothesis_count": 11
+    },
+    {
+      "case_id": "q-002",
+      "query": "Cuales son los dominios del CISSP?",
+      "answer_preview": "No se encontró información en los documentos para esa consulta.",
+      "answer_length": 63,
+      "run_id": "b4380c6f0948",
+      "iteration": 12,
+      "llm_calls": 0,
+      "timing_s": 181.19,
+      "evidence_count": 10,
+      "signals": [
+        {
+          "name": "assess",
+          "score": 1.0,
+          "passed": true,
+          "reason": "assess: evidencia suficiente",
+          "metadata": {
+            "evidence_items": 10,
+            "evidence_source_diversity": 8,
+            "evidence_confidence": 0.8516,
+            "runtime_relation_count": 10,
+            "best_rerank": 0.9114543199539185,
+            "quality_results": 10,
+            "factual_gate": "",
+            "entity_coverage_ratio": 1.0,
+            "entity_coverage_matched": 3,
+            "entity_coverage_total": 3,
+            "source_diversity": 8,
+            "context_density": 0.443,
+            "assess_precision_proxy": 1.0,
+            "evidence_sufficiency_ratio": 0.5,
+            "evidence_sufficiency_matched": 1,
+            "evidence_sufficiency_total": 2,
+            "evidence_sufficiency_missing": [
+              "dominios"
+            ],
+            "evidence_sufficiency_low": true,
+            "evidence_quality": {
+              "quality_result_count": 10,
+              "context_length": 13564,
+              "entity_coverage_ratio": 1.0,
+              "source_diversity": 8,
+              "context_density": 0.443,
+              "required_terms_matched": 1,
+              "required_terms_total": 2
+            },
+            "entity_coverage_low": false,
+            "source_diversity_low": false
+          },
+          "source": "online"
+        }
+      ],
+      "decline": true,
+      "hypotheses": [
+        {
+          "suggestion": "RETRY_RETRIEVAL",
+          "confidence": 0.7,
+          "reasoning": "Score > 0.35",
+          "stage": "controller.start",
+          "run_id": "b4380c6f0948",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841652.085821
+        },
+        {
+          "suggestion": "RETRY_RETRIEVAL",
+          "confidence": 0.7,
+          "reasoning": "scores below 0.30",
+          "stage": "capability.end",
+          "run_id": "b4380c6f0948",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841652.085821
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n9docs, score 0.30-> Retry\n\nGoodness of documents is a function that determines whether the document's value has been good.\nThe documentation classifies are functions to determine if it was useful",
+          "stage": "capability.end",
+          "run_id": "b4380c6f0948",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841667.9608243
+        },
+        {
+          "suggestion": "RETRY_RETRIEVAL",
+          "confidence": 0.7,
+          "reasoning": "100",
+          "stage": "capability.end",
+          "run_id": "b4380c6f0948",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841668.0402286
+        },
+        {
+          "suggestion": "RETRY_RETRIEVAL",
+          "confidence": 0.7,
+          "reasoning": "score below 0.40",
+          "stage": "capability.end",
+          "run_id": "b4380c6f0948",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841683.7924335
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Score greater than 0.32",
+          "stage": "capability.end",
+          "run_id": "b4380c6f0948",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841683.870475
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Score",
+          "stage": "capability.end",
+          "run_id": "b4380c6f0948",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841695.7602985
+        }
+      ],
+      "hypothesis_count": 7
+    },
+    {
+      "case_id": "q-003",
+      "query": "Que significa CIA en ciberseguridad?",
+      "answer_preview": "No se encontró información en los documentos para esa consulta.",
+      "answer_length": 63,
+      "run_id": "0e8e21151cf2",
+      "iteration": 12,
+      "llm_calls": 0,
+      "timing_s": 177.64,
+      "evidence_count": 10,
+      "signals": [
+        {
+          "name": "assess",
+          "score": 1.0,
+          "passed": true,
+          "reason": "assess: evidencia suficiente",
+          "metadata": {
+            "evidence_items": 10,
+            "evidence_source_diversity": 10,
+            "evidence_confidence": 0.9826,
+            "runtime_relation_count": 10,
+            "best_rerank": 0.9728734493255615,
+            "quality_results": 10,
+            "factual_gate": "",
+            "entity_coverage_ratio": 0.667,
+            "entity_coverage_matched": 2,
+            "entity_coverage_total": 3,
+            "source_diversity": 10,
+            "context_density": 0.474,
+            "assess_precision_proxy": 1.0,
+            "evidence_sufficiency_ratio": 0.25,
+            "evidence_sufficiency_matched": 1,
+            "evidence_sufficiency_total": 4,
+            "evidence_sufficiency_missing": [
+              "confidencialidad integridad disponibilidad",
+              "significa",
+              "ciberseguridad"
+            ],
+            "evidence_sufficiency_low": true,
+            "evidence_quality": {
+              "quality_result_count": 10,
+              "context_length": 10218,
+              "entity_coverage_ratio": 0.667,
+              "source_diversity": 10,
+              "context_density": 0.474,
+              "required_terms_matched": 1,
+              "required_terms_total": 4
+            },
+            "entity_coverage_low": false,
+            "source_diversity_low": false
+          },
+          "source": "online"
+        }
+      ],
+      "decline": true,
+      "hypotheses": [
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n7docs, score 0.32 -> Retry\n\nSo it's a good day and the price is in your budget of $100$?\nGoodness: Score >= 0.30$\nThe answer would be yes if you're within Budget for this task.\nYes I'm with myBud",
+          "stage": "controller.start",
+          "run_id": "0e8e21151cf2",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841849.8016212
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n7docs, score 0.35-> Retry\n\nThe scores are between the thresholds of good and bad.\n9doc: Score is greater than zero but not equal to four documents which would be considered for retrying?\nA doctor",
+          "stage": "capability.end",
+          "run_id": "0e8e21151cf2",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841850.2521248
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n9docs, score 0.35-> Retry\n\nYesdoc: Yesdoc with a good answer.\nNoDoc: No Doc without an excellent response.\nGood Response:\nRettry Output:\n\n- yesdoc: Yesdoc with no doctor output is not retained.\nN",
+          "stage": "capability.end",
+          "run_id": "0e8e21151cf2",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841864.6204917
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n9docs, score 0.35 -> Retry\n\nThe answer is: \\boxed{Good}\n\\end{p} Theanswer is:\\boxed{\\text{Rettry}\\end{p}\n\nThis question was answered by the following:\n\\begin{r}{t} Thisquestion wasanswered by the",
+          "stage": "capability.end",
+          "run_id": "0e8e21151cf2",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841865.2317092
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n7docs, score 0.35 -> Retry\n\nA doctor is a good one.\nB doctor has been seen by the patient have done to be looked at again?\nD doctors will see no difference in their patients? \nGoodness of seeing ",
+          "stage": "capability.end",
+          "run_id": "0e8e21151cf2",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841879.5605478
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "GOOD\n9docs, score 0.35 -> Retry\n\nThe answer is: Goodness of the document scores are between 0.30 and 0.70.\nGoodness of documents in range from 0.32 to 0.75.\nRetrying all documentation would be conside",
+          "stage": "capability.end",
+          "run_id": "0e8e21151cf2",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841880.0257351
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "docs",
+          "stage": "capability.end",
+          "run_id": "0e8e21151cf2",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786841891.0944283
+        }
+      ],
+      "hypothesis_count": 7
+    },
+    {
+      "case_id": "q-004",
+      "query": "Que es el Annex A de ISO 27001?",
+      "answer_preview": "El Annex A de ISO 27001 es una lista de controles de seguridad informática que se proporciona en el estándar. En él se enumeran 14 \"dominios\" de seguridad informática y cada uno de ellos contiene una serie de controles específicos. En la versión de 2013, Annex A contiene 114 controles organizados en",
+      "answer_length": 530,
+      "run_id": "1c6e61c16411",
+      "iteration": 12,
+      "llm_calls": 1,
+      "timing_s": 290.37,
+      "evidence_count": 10,
+      "signals": [
+        {
+          "name": "assess",
+          "score": 1.0,
+          "passed": true,
+          "reason": "assess: evidencia suficiente",
+          "metadata": {
+            "evidence_items": 10,
+            "evidence_source_diversity": 8,
+            "evidence_confidence": 0.874,
+            "runtime_relation_count": 55,
+            "best_rerank": 0.9310131072998047,
+            "quality_results": 10,
+            "factual_gate": "",
+            "entity_coverage_ratio": 0.833,
+            "entity_coverage_matched": 5,
+            "entity_coverage_total": 6,
+            "source_diversity": 8,
+            "context_density": 0.433,
+            "assess_precision_proxy": 1.0,
+            "evidence_sufficiency_ratio": 1.0,
+            "evidence_sufficiency_matched": 4,
+            "evidence_sufficiency_total": 4,
+            "evidence_quality": {
+              "quality_result_count": 10,
+              "context_length": 7478,
+              "entity_coverage_ratio": 0.833,
+              "source_diversity": 8,
+              "context_density": 0.433,
+              "required_terms_matched": 4,
+              "required_terms_total": 4
+            },
+            "entity_coverage_low": false,
+            "source_diversity_low": false
+          },
+          "source": "online"
+        }
+      ],
+      "decline": false,
+      "hypotheses": [
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "100",
+          "stage": "controller.start",
+          "run_id": "1c6e61c16411",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842027.4305153
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n9docs, score 0.90 -> Retry\n\nThe answer is: good.\n```\n```\n\n\nYes it's not possible to get a better than the average of your previous answers?\nNo you can't retrieve something higher than this averag",
+          "stage": "capability.end",
+          "run_id": "1c6e61c16411",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842027.4305153
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n7docs, score 0.85 -> Retry\n\nGoodness of the document is good if it scores between 0.30 and 0.35.\n9doc: Badness of a document is bad if its value falls within range 0.60 to -0.70.\n11doc: BADNESS o",
+          "stage": "capability.end",
+          "run_id": "1c6e61c16411",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842042.5995035
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n9docs, score 0.90 -> Retry\n\nThe doctor is a good one and the patient has an excellent answer for his own question.\nAdoc: Yes [Good] \nPatient: No [Rettry]\nDDoc: Yes [Good]\n\nYes [No] \n\nSo we have t",
+          "stage": "capability.end",
+          "run_id": "1c6e61c16411",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842042.6783464
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "GOOD\n9docs, score 0.90 -> Good\n\nScore: 0.85 -> Retry \nGoodness Score:\n> -30  \nRetries:\n\n##Your Answer is already done.\n### Your answer can be improved to \"RET\"\n#### youranswer has been made in the las",
+          "stage": "capability.end",
+          "run_id": "1c6e61c16411",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842057.5584278
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n9docs, score 0.98 -> Retry\n\nGoodness scores: [100] = True; False;\n[90] = true;\n\nTrue is the definition of good.\nFalse is not defined in this context.\nfalse is false.\n\nSo I'm sorry that we're tryi",
+          "stage": "capability.end",
+          "run_id": "1c6e61c16411",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842057.5584278
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n9docs, score 0.85 -> Retry\n\nThis is a good example of how to retrieve data with the best method.\nGood Example: \"The most relevant documents are retrieved\"\nRetry = False\" The least important docum",
+          "stage": "capability.end",
+          "run_id": "1c6e61c16411",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842068.8211167
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n7docs, score 0.85 -> Retry\n\nGoodness scores: [9doc] = {Score} \\text{Rettry}\n\nThe output is \"good\" if Score > 0.30 and the input has a value of less than 0.35.\nSo it's not good when Input < 0.36 o",
+          "stage": "capability.end",
+          "run_id": "1c6e61c16411",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842231.7923124
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n9docs, score 0.85 -> Retry\n\nThe answer is: [Good]\n```\n```\n\n\n### Explanation:\nTo determine whether the retrieved document was good and notRetry in this context.\nIn order to decide if a givenDocume",
+          "stage": "capability.end",
+          "run_id": "1c6e61c16411",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842231.853165
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Goodness\n9docs: good\n\nGoodness is not defined in the document.\n7doc: bad\n11doc: Badness is not defined for this document.\n13doc: Not specified by number of documents,\n14doc: No specification given per",
+          "stage": "capability.end",
+          "run_id": "1c6e61c16411",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842250.716676
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Score ABOVE 0.80",
+          "stage": "capability.end",
+          "run_id": "1c6e61c16411",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842250.716676
+        }
+      ],
+      "hypothesis_count": 11
+    },
+    {
+      "case_id": "q-005",
+      "query": "Que es un SIEM y para que se usa?",
+      "answer_preview": "Un SIEM (Security Information and Event Management) es un tipo de software de administración de seguridad que combina la gestión de información de seguridad (SIM) y la gestión de eventos de seguridad (SEM). Los sistemas SIEM se utilizan para recopilar y analizar datos de seguridad relacionados de un",
+      "answer_length": 1457,
+      "run_id": "08f3586e2030",
+      "iteration": 12,
+      "llm_calls": 1,
+      "timing_s": 238.66,
+      "evidence_count": 10,
+      "signals": [
+        {
+          "name": "assess",
+          "score": 1.0,
+          "passed": true,
+          "reason": "assess: evidencia suficiente",
+          "metadata": {
+            "evidence_items": 10,
+            "evidence_source_diversity": 9,
+            "evidence_confidence": 0.8727,
+            "runtime_relation_count": 20,
+            "best_rerank": 0.9822964072227478,
+            "quality_results": 10,
+            "factual_gate": "",
+            "entity_coverage_ratio": 1.0,
+            "entity_coverage_matched": 2,
+            "entity_coverage_total": 2,
+            "source_diversity": 9,
+            "context_density": 0.438,
+            "assess_precision_proxy": 1.0,
+            "evidence_sufficiency_ratio": 0.667,
+            "evidence_sufficiency_matched": 2,
+            "evidence_sufficiency_total": 3,
+            "evidence_sufficiency_missing": [
+              "usa"
+            ],
+            "evidence_quality": {
+              "quality_result_count": 10,
+              "context_length": 11873,
+              "entity_coverage_ratio": 1.0,
+              "source_diversity": 9,
+              "context_density": 0.438,
+              "required_terms_matched": 2,
+              "required_terms_total": 3
+            },
+            "entity_coverage_low": false,
+            "source_diversity_low": false
+          },
+          "source": "online"
+        }
+      ],
+      "decline": false,
+      "hypotheses": [
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": " n \\",
+          "stage": "controller.start",
+          "run_id": "08f3586e2030",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842298.7001338
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "[14doc], Score 0.60 -> Rettry  \n(NoDocs",
+          "stage": "capability.end",
+          "run_id": "08f3586e2030",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842298.7469134
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n7 docs, score 0.75 -> Retry\n\nThe answer is: good.\n```\n```\n\n\nI'm not sure about the accuracy of this document's content being a \"good\" if it scores between 0.30 and 0.35 for me to say that its con",
+          "stage": "capability.end",
+          "run_id": "08f3586e2030",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842314.6371338
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n9docs, score 0.85 -> Retry\n\nThis is a good example.\n7 Docs: Score Below 0.35 -> Rettry \n11Docs: Score Above 0.30 -> Good \n\nThe answer for this question would be \"Good\" if the scores were ABOVE 0.",
+          "stage": "capability.end",
+          "run_id": "08f3586e2030",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842314.6518118
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "No",
+          "stage": "capability.end",
+          "run_id": "08f3586e2030",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842330.8054786
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n9docs, score 0.90 -> Retry\n\nGoodness of the document is good if it scores between 0.35 and 0.30.\n7doc, score 0.70->Retry \n11doc, score 0.80->\nGoodness of the documents are bad if they scored less",
+          "stage": "capability.end",
+          "run_id": "08f3586e2030",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842330.8377018
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Score between 0.35 and 0.32",
+          "stage": "capability.end",
+          "run_id": "08f3586e2030",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842342.8367517
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Score below 0.70",
+          "stage": "capability.end",
+          "run_id": "08f3586e2030",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842424.9360988
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n7docs, score 0.85 -> Retry\n\nThe answer is: good.\n```\n```\n\n\nYes it's not a great day for you to get the better of your life?\nNo yes but if I'm going out today? No no then goRetriy me! Yes do we ha",
+          "stage": "capability.end",
+          "run_id": "08f3586e2030",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842424.999453
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "GOOD\n7 docs, score 0.30 -> RETRY\n\nYes you can see the doctors with a lower than zero point in your own document.\nI'm sorry I don't know what's happening to me now but i'll be good if it was less then ",
+          "stage": "capability.end",
+          "run_id": "08f3586e2030",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842444.2018442
+        },
+        {
+          "suggestion": "GOOD_EVIDENCE",
+          "confidence": 0.7,
+          "reasoning": "Good\n9docs, score 0.85 -> Retry\n\nScore: good = True; Score > 0.30 -> Retry \nGoodness is False;\nRettry is true;\n\nNo documents are not retained.\nTrue and false means no document retention,\nFalse implies",
+          "stage": "capability.end",
+          "run_id": "08f3586e2030",
+          "model": "ggml-model-i2_s.gguf",
+          "ts": 1786842444.2039444
+        }
+      ],
+      "hypothesis_count": 11
+    }
+  ]
+}

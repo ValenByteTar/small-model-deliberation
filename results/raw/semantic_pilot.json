@@ -1,0 +1,456 @@
+{
+  "pilot": "semantic_capability_provider",
+  "date": "2026-08-15T23:25:13",
+  "dataset_size": 12,
+  "dimensions": {
+    "semantic_accuracy": 0.3333333333333333,
+    "protocol_adherence": 1.0,
+    "decision_quality": "adapted_to_evaluation_signal",
+    "end_to_end_avg_time_s": 11.48,
+    "end_to_end_total_time_s": 137.72
+  },
+  "by_relation": {
+    "SUPPORTS": {
+      "total": 3,
+      "correct": 1,
+      "accuracy": 0.3333333333333333
+    },
+    "CONTRADICTS": {
+      "total": 4,
+      "correct": 1,
+      "accuracy": 0.25
+    },
+    "UNRELATED": {
+      "total": 3,
+      "correct": 1,
+      "accuracy": 0.3333333333333333
+    },
+    "PARTIAL": {
+      "total": 2,
+      "correct": 1,
+      "accuracy": 0.5
+    }
+  },
+  "results": [
+    {
+      "id": "s-001",
+      "claim": "The NIST CSF has five core functions",
+      "evidence": "The Framework Core consists of five concurrent and continuous Functions: Identify, Detect, Protect, Respond, and Recover.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "Claimed: This framework will be used by an entity with entities like this domain. Relation: There exists no relationship between these domains or components; There exist relationships among them; They",
+        "claim": "The NIST CSF has five core functions",
+        "evidence_id": "s-001",
+        "evidence_preview": "The Framework Core consists of five concurrent and continuous Functions: Identify, Detect, Protect, Respond, and Recover.",
+        "run_id": "semantic-pilot",
+        "model": "ggml-model-i2_s.gguf",
+        "ts": 1786846988.0119555
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "Claimed: This framework will be used by an entity with entities like this domain. Relation: There exists no relationship between these domains or components; There exist relationships among them; They",
+          "evidence_id": "s-001",
+          "claim": "The NIST CSF has five core functions",
+          "model": "ggml-model-i2_s.gguf"
+        },
+        "source": "online"
+      },
+      "timing_s": 11.88
+    },
+    {
+      "id": "s-002",
+      "claim": "ISO 27001 is an information security standard",
+      "evidence": "ISO/IEC 27001 is an international standard for information security management systems (ISMS).",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "CLAIM: A new version of this framework will be required by some other versions or updates from previous frameworks? Relation: This statement indicates no need as it has been updated through various it",
+        "claim": "ISO 27001 is an information security standard",
+        "evidence_id": "s-002",
+        "evidence_preview": "ISO/IEC 27001 is an international standard for information security management systems (ISMS).",
+        "run_id": "semantic-pilot",
+        "model": "ggml-model-i2_s.gguf",
+        "ts": 1786846998.1139777
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "CLAIM: A new version of this framework will be required by some other versions or updates from previous frameworks? Relation: This statement indicates no need as it has been updated through various it",
+          "evidence_id": "s-002",
+          "claim": "ISO 27001 is an information security standard",
+          "model": "ggml-model-i2_s.gguf"
+        },
+        "source": "online"
+      },
+      "timing_s": 10.1
+    },
+    {
+      "id": "s-003",
+      "claim": "SOAR tools help automate security operations",
+      "evidence": "Security Orchestration, Automation and Response (SOAR) platforms enable security teams to automate incident response workflows and integrate disparate security tools.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "The framework contains sets of cyber threat management capabilities; it doesn't require an specific methodology. Relation: RACI: CLAIM: A cloud has been used by this system; Evidence: This platform us",
+        "claim": "SOAR tools help automate security operations",
+        "evidence_id": "s-003",
+        "evidence_preview": "Security Orchestration, Automation and Response (SOAR) platforms enable security teams to automate incident response workflows and integrate disparate security tools.",
+        "run_id": "semantic-pilot",
+        "model": "ggml-model-i2_s.gguf",
+        "ts": 1786847008.4477515
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "The framework contains sets of cyber threat management capabilities; it doesn't require an specific methodology. Relation: RACI: CLAIM: A cloud has been used by this system; Evidence: This platform us",
+          "evidence_id": "s-003",
+          "claim": "SOAR tools help automate security operations",
+          "model": "ggml-model-i2_s.gguf"
+        },
+        "source": "online"
+      },
+      "timing_s": 10.33
+    },
+    {
+      "id": "c-001",
+      "claim": "Python 4.0 was released in 2023",
+      "evidence": "Python 3.12 was released on October 2, 2023. There is no Python 4.0 release.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "UNRELATED",
+        "confidence": 0.5,
+        "reasoning": "CLAIM: This framework applies an application or evaluation function, EVIDENCE: A system contains multiple functionality as per definition from another domain. RELATION: Falsehoods, Claimed: If you hav",
+        "claim": "Python 4.0 was released in 2023",
+        "evidence_id": "c-001",
+        "evidence_preview": "Python 3.12 was released on October 2, 2023. There is no Python 4.0 release.",
+        "run_id": "semantic-pilot",
+        "model": "ggml-model-i2_s.gguf",
+        "ts": 1786847028.771473
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": null,
+        "reason": "semantic:unrelated (conf=0.50)",
+        "metadata": {
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reasoning": "CLAIM: This framework applies an application or evaluation function, EVIDENCE: A system contains multiple functionality as per definition from another domain. RELATION: Falsehoods, Claimed: If you hav",
+          "evidence_id": "c-001",
+          "claim": "Python 4.0 was released in 2023",
+          "model": "ggml-model-i2_s.gguf"
+        },
+        "source": "online"
+      },
+      "timing_s": 20.32
+    },
+    {
+      "id": "c-002",
+      "claim": "The NIST CSF has three core functions",
+      "evidence": "The Framework Core consists of five concurrent and continuous Functions: Identify, Detect, Protect, Respond, and Recover.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "CLAIM: This framework applies an algorithmic approach EVIDENCE: A system uses algorithms with no specific function or method as its own implementation will be applied by others; it's self defined meth",
+        "claim": "The NIST CSF has three core functions",
+        "evidence_id": "c-002",
+        "evidence_preview": "The Framework Core consists of five concurrent and continuous Functions: Identify, Detect, Protect, Respond, and Recover.",
+        "run_id": "semantic-pilot",
+        "model": "ggml-model-i2_s.gguf",
+        "ts": 1786847040.2006943
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "CLAIM: This framework applies an algorithmic approach EVIDENCE: A system uses algorithms with no specific function or method as its own implementation will be applied by others; it's self defined meth",
+          "evidence_id": "c-002",
+          "claim": "The NIST CSF has three core functions",
+          "model": "ggml-model-i2_s.gguf"
+        },
+        "source": "online"
+      },
+      "timing_s": 11.43
+    },
+    {
+      "id": "c-003",
+      "claim": "AES-256 is considered weak encryption",
+      "evidence": "AES-256 is widely regarded as one of the strongest encryption algorithms available and is approved by NSA for top secret data.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "UNRELATED",
+        "confidence": 0.3,
+        "reasoning": "framework applies an algorithmic approach. Claimed relationship between A claim and Evidences text: Relationships: CLAIM: You have three fundamental operations (Identify), detect, detect): identify wh",
+        "claim": "AES-256 is considered weak encryption",
+        "evidence_id": "c-003",
+        "evidence_preview": "AES-256 is widely regarded as one of the strongest encryption algorithms available and is approved by NSA for top secret data.",
+        "run_id": "semantic-pilot",
+        "model": "ggml-model-i2_s.gguf",
+        "ts": 1786847050.7488687
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": null,
+        "reason": "semantic:unrelated (conf=0.30)",
+        "metadata": {
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reasoning": "framework applies an algorithmic approach. Claimed relationship between A claim and Evidences text: Relationships: CLAIM: You have three fundamental operations (Identify), detect, detect): identify wh",
+          "evidence_id": "c-003",
+          "claim": "AES-256 is considered weak encryption",
+          "model": "ggml-model-i2_s.gguf"
+        },
+        "source": "online"
+      },
+      "timing_s": 10.55
+    },
+    {
+      "id": "u-001",
+      "claim": "The sky is blue",
+      "evidence": "The NIST Cybersecurity Framework provides guidance for organizations to manage cybersecurity risk.",
+      "expected": "UNRELATED",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "## REFERENCES: -1: This framework contains information about how companies should handle cyber threats, -5: These frameworks provide guidelines for managing security risks, ### Conclusion: The conclus",
+        "claim": "The sky is blue",
+        "evidence_id": "u-001",
+        "evidence_preview": "The NIST Cybersecurity Framework provides guidance for organizations to manage cybersecurity risk.",
+        "run_id": "semantic-pilot",
+        "model": "ggml-model-i2_s.gguf",
+        "ts": 1786847061.430971
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "## REFERENCES: -1: This framework contains information about how companies should handle cyber threats, -5: These frameworks provide guidelines for managing security risks, ### Conclusion: The conclus",
+          "evidence_id": "u-001",
+          "claim": "The sky is blue",
+          "model": "ggml-model-i2_s.gguf"
+        },
+        "source": "online"
+      },
+      "timing_s": 10.68
+    },
+    {
+      "id": "u-002",
+      "claim": "Water boils at 100 degrees Celsius",
+      "evidence": "ISO 27001 requires organizations to conduct regular risk assessments and implement appropriate security controls.",
+      "expected": "UNRELATED",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "Relation: The relationship between an CLAIM and EVIDENCE text. Claimed: A claim about some people's information or output from this framework? Answering: An example could be used by others' input as w",
+        "claim": "Water boils at 100 degrees Celsius",
+        "evidence_id": "u-002",
+        "evidence_preview": "ISO 27001 requires organizations to conduct regular risk assessments and implement appropriate security controls.",
+        "run_id": "semantic-pilot",
+        "model": "ggml-model-i2_s.gguf",
+        "ts": 1786847071.8544345
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "Relation: The relationship between an CLAIM and EVIDENCE text. Claimed: A claim about some people's information or output from this framework? Answering: An example could be used by others' input as w",
+          "evidence_id": "u-002",
+          "claim": "Water boils at 100 degrees Celsius",
+          "model": "ggml-model-i2_s.gguf"
+        },
+        "source": "online"
+      },
+      "timing_s": 10.42
+    },
+    {
+      "id": "u-003",
+      "claim": "Paris is the capital of France",
+      "evidence": "The CIA triad consists of Confidentiality, Integrity, and Availability, which are the core principles of information security.",
+      "expected": "UNRELATED",
+      "produced": {
+        "relation": "UNRELATED",
+        "confidence": 0.5,
+        "reasoning": "CLAIM: This system can be used by an entity with multiple capabilities EVIDENCE: A framework contains sets or lists as well-known entities such systems have been developed, RELATION: Falsehoods Claime",
+        "claim": "Paris is the capital of France",
+        "evidence_id": "u-003",
+        "evidence_preview": "The CIA triad consists of Confidentiality, Integrity, and Availability, which are the core principles of information security.",
+        "run_id": "semantic-pilot",
+        "model": "ggml-model-i2_s.gguf",
+        "ts": 1786847082.927249
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": null,
+        "reason": "semantic:unrelated (conf=0.50)",
+        "metadata": {
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reasoning": "CLAIM: This system can be used by an entity with multiple capabilities EVIDENCE: A framework contains sets or lists as well-known entities such systems have been developed, RELATION: Falsehoods Claime",
+          "evidence_id": "u-003",
+          "claim": "Paris is the capital of France",
+          "model": "ggml-model-i2_s.gguf"
+        },
+        "source": "online"
+      },
+      "timing_s": 11.07
+    },
+    {
+      "id": "p-001",
+      "claim": "ISO 27001 requires a specific risk assessment methodology",
+      "evidence": "The standard states that the organization shall define and apply a risk assessment process, but does not specify a particular methodology.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "CLAIM: There exists an entity with or activity related entities, EVIDENCE: This framework provided guidelines from various sources, Claimed: There exist relationships between two distinct units: EVIDE",
+        "claim": "ISO 27001 requires a specific risk assessment methodology",
+        "evidence_id": "p-001",
+        "evidence_preview": "The standard states that the organization shall define and apply a risk assessment process, but does not specify a particular methodology.",
+        "run_id": "semantic-pilot",
+        "model": "ggml-model-i2_s.gguf",
+        "ts": 1786847093.6985936
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "CLAIM: There exists an entity with or activity related entities, EVIDENCE: This framework provided guidelines from various sources, Claimed: There exist relationships between two distinct units: EVIDE",
+          "evidence_id": "p-001",
+          "claim": "ISO 27001 requires a specific risk assessment methodology",
+          "model": "ggml-model-i2_s.gguf"
+        },
+        "source": "online"
+      },
+      "timing_s": 10.77
+    },
+    {
+      "id": "p-002",
+      "claim": "The NIST CSF includes 10 functions for cybersecurity",
+      "evidence": "The Framework Core includes five Functions. Some organizations extend the framework with additional custom functions.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "UNRELATED",
+        "confidence": 0.3,
+        "reasoning": "specifies. CLAIM: This function allows no specific data types or application methods, EVIDENCE: They provide guidelines for managing security risks without specifying any unique methodologies. RELATIO",
+        "claim": "The NIST CSF includes 10 functions for cybersecurity",
+        "evidence_id": "p-002",
+        "evidence_preview": "The Framework Core includes five Functions. Some organizations extend the framework with additional custom functions.",
+        "run_id": "semantic-pilot",
+        "model": "ggml-model-i2_s.gguf",
+        "ts": 1786847103.7280824
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": null,
+        "reason": "semantic:unrelated (conf=0.30)",
+        "metadata": {
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reasoning": "specifies. CLAIM: This function allows no specific data types or application methods, EVIDENCE: They provide guidelines for managing security risks without specifying any unique methodologies. RELATIO",
+          "evidence_id": "p-002",
+          "claim": "The NIST CSF includes 10 functions for cybersecurity",
+          "model": "ggml-model-i2_s.gguf"
+        },
+        "source": "online"
+      },
+      "timing_s": 10.03
+    },
+    {
+      "id": "p-003",
+      "claim": "Zero trust means no network security controls are needed",
+      "evidence": "Zero trust is a security model that assumes no implicit trust and requires verification for every access request. It does not eliminate security controls; it changes how they are applied.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "CLAIM: There exists an unprocessed data from this framework; EVIDENCE: This frameworks has been processed through its core functions. Relation: RELationship between claim statement and evidence text: ",
+        "claim": "Zero trust means no network security controls are needed",
+        "evidence_id": "p-003",
+        "evidence_preview": "Zero trust is a security model that assumes no implicit trust and requires verification for every access request. It does not eliminate security controls; it changes how they are applied.",
+        "run_id": "semantic-pilot",
+        "model": "ggml-model-i2_s.gguf",
+        "ts": 1786847113.8580484
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "CLAIM: There exists an unprocessed data from this framework; EVIDENCE: This frameworks has been processed through its core functions. Relation: RELationship between claim statement and evidence text: ",
+          "evidence_id": "p-003",
+          "claim": "Zero trust means no network security controls are needed",
+          "model": "ggml-model-i2_s.gguf"
+        },
+        "source": "online"
+      },
+      "timing_s": 10.13
+    }
+  ]
+}

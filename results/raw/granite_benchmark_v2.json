@@ -1,0 +1,2224 @@
+{
+  "pilot": "granite_benchmark_v2",
+  "date": "2026-08-16T00:28:50",
+  "model": "ibm/granite4.1:3b-q4_K_M",
+  "execution": "CPU-only (num_gpu=0)",
+  "benchmark": "semantic_assessment_benchmark_v2.json",
+  "case_count": 55,
+  "overall": {
+    "accuracy": 0.8,
+    "correct": 44,
+    "protocol_validity": 1.0,
+    "avg_latency_s": 3.54,
+    "total_latency_s": 194.95
+  },
+  "by_category": {
+    "adversarial": {
+      "total": 6,
+      "correct": 5,
+      "accuracy": 0.8333
+    },
+    "direct_evidence": {
+      "total": 6,
+      "correct": 6,
+      "accuracy": 1.0
+    },
+    "explicit_contradiction": {
+      "total": 5,
+      "correct": 5,
+      "accuracy": 1.0
+    },
+    "implicit_contradiction": {
+      "total": 5,
+      "correct": 3,
+      "accuracy": 0.6
+    },
+    "negation": {
+      "total": 6,
+      "correct": 6,
+      "accuracy": 1.0
+    },
+    "over_specificity": {
+      "total": 5,
+      "correct": 3,
+      "accuracy": 0.6
+    },
+    "paraphrase": {
+      "total": 6,
+      "correct": 6,
+      "accuracy": 1.0
+    },
+    "partial_support": {
+      "total": 6,
+      "correct": 3,
+      "accuracy": 0.5
+    },
+    "wrong_context": {
+      "total": 5,
+      "correct": 2,
+      "accuracy": 0.4
+    },
+    "wrong_subject": {
+      "total": 5,
+      "correct": 5,
+      "accuracy": 1.0
+    }
+  },
+  "by_relation": {
+    "CONTRADICTS": {
+      "total": 16,
+      "correct": 14,
+      "accuracy": 0.875
+    },
+    "PARTIAL": {
+      "total": 18,
+      "correct": 11,
+      "accuracy": 0.6111
+    },
+    "SUPPORTS": {
+      "total": 12,
+      "correct": 12,
+      "accuracy": 1.0
+    },
+    "UNRELATED": {
+      "total": 9,
+      "correct": 7,
+      "accuracy": 0.7778
+    }
+  },
+  "confusion_matrix": {
+    "SUPPORTS": {
+      "SUPPORTS": 12
+    },
+    "PARTIAL": {
+      "SUPPORTS": 6,
+      "PARTIAL": 11,
+      "CONTRADICTS": 1
+    },
+    "CONTRADICTS": {
+      "CONTRADICTS": 14,
+      "PARTIAL": 1,
+      "UNRELATED": 1
+    },
+    "UNRELATED": {
+      "UNRELATED": 7,
+      "PARTIAL": 1,
+      "CONTRADICTS": 1
+    }
+  },
+  "errors_by_category": {
+    "partial_support": [
+      {
+        "id": "ps-001",
+        "expected": "PARTIAL",
+        "produced": "SUPPORTS",
+        "claim": "X detects Y and prevents Z"
+      },
+      {
+        "id": "ps-002",
+        "expected": "PARTIAL",
+        "produced": "SUPPORTS",
+        "claim": "The framework includes risk assessment, mitigation, and recovery guidance"
+      },
+      {
+        "id": "ps-006",
+        "expected": "PARTIAL",
+        "produced": "SUPPORTS",
+        "claim": "SIEM provides real-time monitoring, historical analysis, and threat hunting capa"
+      }
+    ],
+    "implicit_contradiction": [
+      {
+        "id": "ic-001",
+        "expected": "CONTRADICTS",
+        "produced": "PARTIAL",
+        "claim": "The protocol guarantees complete data confidentiality"
+      },
+      {
+        "id": "ic-003",
+        "expected": "CONTRADICTS",
+        "produced": "UNRELATED",
+        "claim": "The framework mandates annual audits"
+      }
+    ],
+    "over_specificity": [
+      {
+        "id": "os-002",
+        "expected": "PARTIAL",
+        "produced": "SUPPORTS",
+        "claim": "X detects attacks within 30 seconds"
+      },
+      {
+        "id": "os-004",
+        "expected": "PARTIAL",
+        "produced": "SUPPORTS",
+        "claim": "The tool supports 50+ compliance frameworks"
+      }
+    ],
+    "wrong_context": [
+      {
+        "id": "wc-001",
+        "expected": "UNRELATED",
+        "produced": "PARTIAL",
+        "claim": "Technique X is effective in cloud environments"
+      },
+      {
+        "id": "wc-004",
+        "expected": "UNRELATED",
+        "produced": "CONTRADICTS",
+        "claim": "The vulnerability affects the web application layer"
+      },
+      {
+        "id": "wc-005",
+        "expected": "PARTIAL",
+        "produced": "CONTRADICTS",
+        "claim": "The mitigation is effective in production environments"
+      }
+    ],
+    "adversarial": [
+      {
+        "id": "a-001",
+        "expected": "PARTIAL",
+        "produced": "SUPPORTS",
+        "claim": "X prevents credential theft"
+      }
+    ]
+  },
+  "results": [
+    {
+      "id": "d-001",
+      "category": "direct_evidence",
+      "claim": "The NIST CSF has five core functions",
+      "evidence": "The Framework Core consists of five concurrent and continuous Functions: Identify, Detect, Protect, Respond, and Recover.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The NIST CSF has five core functions",
+        "evidence_id": "d-001",
+        "evidence_preview": "The Framework Core consists of five concurrent and continuous Functions: Identify, Detect, Protect, Respond, and Recover.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850745.613301
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "d-001",
+          "claim": "The NIST CSF has five core functions",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 10.41,
+      "diagnostic_reason": "Baseline: direct lexical and semantic match. Should be trivially SUPPORTS."
+    },
+    {
+      "id": "d-002",
+      "category": "direct_evidence",
+      "claim": "ISO 27001 is an information security standard",
+      "evidence": "ISO/IEC 27001 is an international standard for information security management systems (ISMS).",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "ISO 27001 is an information security standard",
+        "evidence_id": "d-002",
+        "evidence_preview": "ISO/IEC 27001 is an international standard for information security management systems (ISMS).",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850749.1164577
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "d-002",
+          "claim": "ISO 27001 is an information security standard",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.5,
+      "diagnostic_reason": "Baseline: direct definition match."
+    },
+    {
+      "id": "d-003",
+      "category": "direct_evidence",
+      "claim": "SOAR tools help automate security operations",
+      "evidence": "Security Orchestration, Automation and Response (SOAR) platforms enable security teams to automate incident response workflows and integrate disparate security tools.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "SOAR tools help automate security operations",
+        "evidence_id": "d-003",
+        "evidence_preview": "Security Orchestration, Automation and Response (SOAR) platforms enable security teams to automate incident response workflows and integrate disparate security tools.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850753.3245313
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "d-003",
+          "claim": "SOAR tools help automate security operations",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 4.21,
+      "diagnostic_reason": "Baseline: direct semantic match with elaboration."
+    },
+    {
+      "id": "d-004",
+      "category": "direct_evidence",
+      "claim": "The CIA triad has three principles",
+      "evidence": "The CIA triad consists of Confidentiality, Integrity, and Availability, which are the core principles of information security.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The CIA triad has three principles",
+        "evidence_id": "d-004",
+        "evidence_preview": "The CIA triad consists of Confidentiality, Integrity, and Availability, which are the core principles of information security.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850756.9461343
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "d-004",
+          "claim": "The CIA triad has three principles",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.62,
+      "diagnostic_reason": "Baseline: direct enumeration match."
+    },
+    {
+      "id": "d-005",
+      "category": "direct_evidence",
+      "claim": "MITRE ATT&CK is a knowledge base of adversary tactics",
+      "evidence": "MITRE ATT&CK is a globally accessible knowledge base of adversary tactics and techniques based on real-world observations.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "MITRE ATT&CK is a knowledge base of adversary tactics",
+        "evidence_id": "d-005",
+        "evidence_preview": "MITRE ATT&CK is a globally accessible knowledge base of adversary tactics and techniques based on real-world observations.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850760.6414113
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "d-005",
+          "claim": "MITRE ATT&CK is a knowledge base of adversary tactics",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.7,
+      "diagnostic_reason": "Baseline: direct definition match."
+    },
+    {
+      "id": "d-006",
+      "category": "direct_evidence",
+      "claim": "Zero trust assumes no implicit trust",
+      "evidence": "Zero trust is a security model that assumes no implicit trust and requires verification for every access request.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "Zero trust assumes no implicit trust",
+        "evidence_id": "d-006",
+        "evidence_preview": "Zero trust is a security model that assumes no implicit trust and requires verification for every access request.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850764.1179285
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "d-006",
+          "claim": "Zero trust assumes no implicit trust",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.48,
+      "diagnostic_reason": "Baseline: direct semantic match."
+    },
+    {
+      "id": "pp-001",
+      "category": "paraphrase",
+      "claim": "Credential dumping can expose authentication material",
+      "evidence": "Attackers may extract reusable secrets from operating-system credential stores.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "Credential dumping can expose authentication material",
+        "evidence_id": "pp-001",
+        "evidence_preview": "Attackers may extract reusable secrets from operating-system credential stores.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850767.424288
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "pp-001",
+          "claim": "Credential dumping can expose authentication material",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.31,
+      "diagnostic_reason": "No lexical overlap between 'credential dumping'/'authentication material' and 'extract reusable secrets'/'credential stores'. Tests semantic entailment vs keyword matching."
+    },
+    {
+      "id": "pp-002",
+      "category": "paraphrase",
+      "claim": "Phishing can lead to unauthorized access",
+      "evidence": "Deceptive emails may trick users into surrendering login credentials, enabling account compromise.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "Phishing can lead to unauthorized access",
+        "evidence_id": "pp-002",
+        "evidence_preview": "Deceptive emails may trick users into surrendering login credentials, enabling account compromise.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850770.8543372
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "pp-002",
+          "claim": "Phishing can lead to unauthorized access",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.43,
+      "diagnostic_reason": "'Phishing' paraphrased as 'deceptive emails', 'unauthorized access' as 'account compromise'. Tests paraphrase recognition."
+    },
+    {
+      "id": "pp-003",
+      "category": "paraphrase",
+      "claim": "Encryption protects data confidentiality",
+      "evidence": "Cryptographic algorithms render information unreadable to unauthorized parties, preserving secrecy.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "Encryption protects data confidentiality",
+        "evidence_id": "pp-003",
+        "evidence_preview": "Cryptographic algorithms render information unreadable to unauthorized parties, preserving secrecy.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850774.1535974
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "pp-003",
+          "claim": "Encryption protects data confidentiality",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.3,
+      "diagnostic_reason": "'Encryption' -> 'cryptographic algorithms', 'protects confidentiality' -> 'preserving secrecy'. No direct lexical overlap."
+    },
+    {
+      "id": "pp-004",
+      "category": "paraphrase",
+      "claim": "The framework provides guidance for managing cybersecurity risk",
+      "evidence": "The document offers recommendations for organizations to identify, assess, and mitigate digital threats.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The framework provides guidance for managing cybersecurity risk",
+        "evidence_id": "pp-004",
+        "evidence_preview": "The document offers recommendations for organizations to identify, assess, and mitigate digital threats.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850777.5200245
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "pp-004",
+          "claim": "The framework provides guidance for managing cybersecurity risk",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.37,
+      "diagnostic_reason": "'Framework' -> 'document', 'guidance' -> 'recommendations', 'cybersecurity risk' -> 'digital threats'. Full paraphrase."
+    },
+    {
+      "id": "pp-005",
+      "category": "paraphrase",
+      "claim": "Multi-factor authentication adds a layer of security",
+      "evidence": "Requiring additional verification beyond passwords strengthens access controls against credential-based attacks.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "Multi-factor authentication adds a layer of security",
+        "evidence_id": "pp-005",
+        "evidence_preview": "Requiring additional verification beyond passwords strengthens access controls against credential-based attacks.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850780.8829546
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "pp-005",
+          "claim": "Multi-factor authentication adds a layer of security",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.36,
+      "diagnostic_reason": "'Multi-factor authentication' -> 'additional verification beyond passwords'. Tests concept-to-description mapping."
+    },
+    {
+      "id": "pp-006",
+      "category": "paraphrase",
+      "claim": "SIEM aggregates security events from multiple sources",
+      "evidence": "Security information platforms collect and correlate log data across the IT infrastructure for centralized monitoring.",
+      "expected": "SUPPORTS",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "SIEM aggregates security events from multiple sources",
+        "evidence_id": "pp-006",
+        "evidence_preview": "Security information platforms collect and correlate log data across the IT infrastructure for centralized monitoring.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850784.2653143
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "pp-006",
+          "claim": "SIEM aggregates security events from multiple sources",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.38,
+      "diagnostic_reason": "'SIEM' -> 'security information platforms', 'aggregates' -> 'collect and correlate'. Tests acronym expansion and synonymy."
+    },
+    {
+      "id": "ps-001",
+      "category": "partial_support",
+      "claim": "X detects Y and prevents Z",
+      "evidence": "X detects Y.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "X detects Y and prevents Z",
+        "evidence_id": "ps-001",
+        "evidence_preview": "X detects Y.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850787.3029454
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ps-001",
+          "claim": "X detects Y and prevents Z",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.04,
+      "diagnostic_reason": "Evidence covers detection but not prevention. Claim has two parts, only one is supported."
+    },
+    {
+      "id": "ps-002",
+      "category": "partial_support",
+      "claim": "The framework includes risk assessment, mitigation, and recovery guidance",
+      "evidence": "The framework provides risk assessment and mitigation guidance for organizations.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The framework includes risk assessment, mitigation, and recovery guidance",
+        "evidence_id": "ps-002",
+        "evidence_preview": "The framework provides risk assessment and mitigation guidance for organizations.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850790.5792894
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ps-002",
+          "claim": "The framework includes risk assessment, mitigation, and recovery guidance",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.28,
+      "diagnostic_reason": "Evidence covers 2 of 3 components. Missing recovery guidance."
+    },
+    {
+      "id": "ps-003",
+      "category": "partial_support",
+      "claim": "ISO 27001 requires risk assessment, statement of applicability, and continuous improvement",
+      "evidence": "ISO 27001 mandates a risk assessment process and a statement of applicability.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "The evidence supports parts of the claim",
+        "claim": "ISO 27001 requires risk assessment, statement of applicability, and continuous improvement",
+        "evidence_id": "ps-003",
+        "evidence_preview": "ISO 27001 mandates a risk assessment process and a statement of applicability.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850794.5399938
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "The evidence supports parts of the claim",
+          "evidence_id": "ps-003",
+          "claim": "ISO 27001 requires risk assessment, statement of applicability, and continuous improvement",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.96,
+      "diagnostic_reason": "Evidence covers 2 of 3 requirements. Missing continuous improvement."
+    },
+    {
+      "id": "ps-004",
+      "category": "partial_support",
+      "claim": "The tool performs scanning, analysis, and remediation",
+      "evidence": "The tool performs automated scanning and vulnerability analysis.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "The evidence supports the CLAIM that the",
+        "claim": "The tool performs scanning, analysis, and remediation",
+        "evidence_id": "ps-004",
+        "evidence_preview": "The tool performs automated scanning and vulnerability analysis.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850798.2014816
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "The evidence supports the CLAIM that the",
+          "evidence_id": "ps-004",
+          "claim": "The tool performs scanning, analysis, and remediation",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.66,
+      "diagnostic_reason": "Evidence covers 2 of 3 capabilities. Missing remediation."
+    },
+    {
+      "id": "ps-005",
+      "category": "partial_support",
+      "claim": "The policy covers endpoints, networks, and cloud infrastructure",
+      "evidence": "The policy applies to endpoints and network segments within the corporate perimeter.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "The evidence mentions that the policy applies",
+        "claim": "The policy covers endpoints, networks, and cloud infrastructure",
+        "evidence_id": "ps-005",
+        "evidence_preview": "The policy applies to endpoints and network segments within the corporate perimeter.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850801.975317
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "The evidence mentions that the policy applies",
+          "evidence_id": "ps-005",
+          "claim": "The policy covers endpoints, networks, and cloud infrastructure",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.77,
+      "diagnostic_reason": "Evidence covers 2 of 3 scopes. Missing cloud infrastructure."
+    },
+    {
+      "id": "ps-006",
+      "category": "partial_support",
+      "claim": "SIEM provides real-time monitoring, historical analysis, and threat hunting capabilities",
+      "evidence": "SIEM collects and analyzes security events in real time.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "SIEM provides real-time monitoring, historical analysis, and threat hunting capabilities",
+        "evidence_id": "ps-006",
+        "evidence_preview": "SIEM collects and analyzes security events in real time.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850805.349519
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ps-006",
+          "claim": "SIEM provides real-time monitoring, historical analysis, and threat hunting capabilities",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.37,
+      "diagnostic_reason": "Evidence covers 1 of 3 capabilities. Missing historical analysis and threat hunting."
+    },
+    {
+      "id": "ec-001",
+      "category": "explicit_contradiction",
+      "claim": "Python 4.0 was released in 2023",
+      "evidence": "Python 3.12 was released on October 2, 2023. There is no Python 4.0 release.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "Python 4.0 was released in 2023",
+        "evidence_id": "ec-001",
+        "evidence_preview": "Python 3.12 was released on October 2, 2023. There is no Python 4.0 release.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850809.2206867
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ec-001",
+          "claim": "Python 4.0 was released in 2023",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.87,
+      "diagnostic_reason": "Direct factual contradiction. Evidence explicitly denies the claim."
+    },
+    {
+      "id": "ec-002",
+      "category": "explicit_contradiction",
+      "claim": "The NIST CSF has three core functions",
+      "evidence": "The Framework Core consists of five concurrent and continuous Functions: Identify, Detect, Protect, Respond, and Recover.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The NIST CSF has three core functions",
+        "evidence_id": "ec-002",
+        "evidence_preview": "The Framework Core consists of five concurrent and continuous Functions: Identify, Detect, Protect, Respond, and Recover.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850812.8730552
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ec-002",
+          "claim": "The NIST CSF has three core functions",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.65,
+      "diagnostic_reason": "Numeric contradiction: three vs five. Tests number comprehension."
+    },
+    {
+      "id": "ec-003",
+      "category": "explicit_contradiction",
+      "claim": "AES-256 is considered weak encryption",
+      "evidence": "AES-256 is widely regarded as one of the strongest encryption algorithms available and is approved by NSA for top secret data.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "AES-256 is considered weak encryption",
+        "evidence_id": "ec-003",
+        "evidence_preview": "AES-256 is widely regarded as one of the strongest encryption algorithms available and is approved by NSA for top secret data.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850816.5946562
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ec-003",
+          "claim": "AES-256 is considered weak encryption",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.72,
+      "diagnostic_reason": "Direct semantic opposite: 'weak' vs 'strongest'. Tests antonym recognition."
+    },
+    {
+      "id": "ec-004",
+      "category": "explicit_contradiction",
+      "claim": "The mechanism requires administrator privileges",
+      "evidence": "The technique can be executed by unprivileged users without elevated permissions.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The mechanism requires administrator privileges",
+        "evidence_id": "ec-004",
+        "evidence_preview": "The technique can be executed by unprivileged users without elevated permissions.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850819.9800806
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ec-004",
+          "claim": "The mechanism requires administrator privileges",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.39,
+      "diagnostic_reason": "'Requires admin' vs 'unprivileged users can execute'. Direct privilege contradiction."
+    },
+    {
+      "id": "ec-005",
+      "category": "explicit_contradiction",
+      "claim": "Zero trust eliminates the need for security controls",
+      "evidence": "Zero trust does not eliminate security controls; it changes how they are applied.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "Zero trust eliminates the need for security controls",
+        "evidence_id": "ec-005",
+        "evidence_preview": "Zero trust does not eliminate security controls; it changes how they are applied.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850823.4145603
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ec-005",
+          "claim": "Zero trust eliminates the need for security controls",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.43,
+      "diagnostic_reason": "Evidence explicitly negates the claim. Tests negation handling."
+    },
+    {
+      "id": "ic-001",
+      "category": "implicit_contradiction",
+      "claim": "The protocol guarantees complete data confidentiality",
+      "evidence": "The protocol uses standard encryption but has known side-channel vulnerabilities that may expose plaintext under certain conditions.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The protocol guarantees complete data confidentiality",
+        "evidence_id": "ic-001",
+        "evidence_preview": "The protocol uses standard encryption but has known side-channel vulnerabilities that may expose plaintext under certain conditions.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850826.743667
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ic-001",
+          "claim": "The protocol guarantees complete data confidentiality",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.33,
+      "diagnostic_reason": "'Guarantees complete confidentiality' contradicted by 'known vulnerabilities that may expose plaintext'. Requires inference, not lexical match."
+    },
+    {
+      "id": "ic-002",
+      "category": "implicit_contradiction",
+      "claim": "The tool is compatible with all operating systems",
+      "evidence": "The tool runs on Windows and Linux platforms; macOS support is not available.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The tool is compatible with all operating systems",
+        "evidence_id": "ic-002",
+        "evidence_preview": "The tool runs on Windows and Linux platforms; macOS support is not available.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850830.192273
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ic-002",
+          "claim": "The tool is compatible with all operating systems",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.45,
+      "diagnostic_reason": "'All operating systems' contradicted by 'macOS not available'. Requires universal vs partial inference."
+    },
+    {
+      "id": "ic-003",
+      "category": "implicit_contradiction",
+      "claim": "The framework mandates annual audits",
+      "evidence": "The framework recommends periodic reviews of security controls at the organization's discretion.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "UNRELATED",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The framework mandates annual audits",
+        "evidence_id": "ic-003",
+        "evidence_preview": "The framework recommends periodic reviews of security controls at the organization's discretion.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850833.2582483
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": null,
+        "reason": "semantic:unrelated (conf=0.50)",
+        "metadata": {
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ic-003",
+          "claim": "The framework mandates annual audits",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.07,
+      "diagnostic_reason": "'Mandates annual' vs 'recommends periodic at discretion'. Strength and frequency both weakened. Tests modality comprehension."
+    },
+    {
+      "id": "ic-004",
+      "category": "implicit_contradiction",
+      "claim": "The attack requires no user interaction",
+      "evidence": "The attack vector relies on social engineering to convince users to open malicious attachments.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The attack requires no user interaction",
+        "evidence_id": "ic-004",
+        "evidence_preview": "The attack vector relies on social engineering to convince users to open malicious attachments.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850836.503604
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ic-004",
+          "claim": "The attack requires no user interaction",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.25,
+      "diagnostic_reason": "'No user interaction' vs 'relies on social engineering to convince users'. Requires understanding that social engineering implies user interaction."
+    },
+    {
+      "id": "ic-005",
+      "category": "implicit_contradiction",
+      "claim": "The encryption is unbreakable",
+      "evidence": "Researchers have published theoretical attacks that could reduce the effective security of the algorithm under specific conditions.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The encryption is unbreakable",
+        "evidence_id": "ic-005",
+        "evidence_preview": "Researchers have published theoretical attacks that could reduce the effective security of the algorithm under specific conditions.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850839.8333457
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ic-005",
+          "claim": "The encryption is unbreakable",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.33,
+      "diagnostic_reason": "'Unbreakable' vs 'theoretical attacks that could reduce security'. Tests absolute vs qualified claims."
+    },
+    {
+      "id": "os-001",
+      "category": "over_specificity",
+      "claim": "Technique X is effective against Windows 11",
+      "evidence": "Technique X was demonstrated against Windows systems in laboratory tests.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "The evidence indicates that Technique X has",
+        "claim": "Technique X is effective against Windows 11",
+        "evidence_id": "os-001",
+        "evidence_preview": "Technique X was demonstrated against Windows systems in laboratory tests.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850843.3943403
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "The evidence indicates that Technique X has",
+          "evidence_id": "os-001",
+          "claim": "Technique X is effective against Windows 11",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.56,
+      "diagnostic_reason": "Claim specifies Windows 11; evidence says 'Windows systems' (broader) and 'laboratory tests' (conditional). Evidence is relevant but does not confirm the specific version."
+    },
+    {
+      "id": "os-002",
+      "category": "over_specificity",
+      "claim": "X detects attacks within 30 seconds",
+      "evidence": "X provides real-time attack detection with minimal latency.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "X detects attacks within 30 seconds",
+        "evidence_id": "os-002",
+        "evidence_preview": "X provides real-time attack detection with minimal latency.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850846.5169413
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "os-002",
+          "claim": "X detects attacks within 30 seconds",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.12,
+      "diagnostic_reason": "Claim specifies '30 seconds'; evidence says 'real-time' and 'minimal latency'. Semantic proximity but no specific time confirmation."
+    },
+    {
+      "id": "os-003",
+      "category": "over_specificity",
+      "claim": "The framework reduces risk by 75%",
+      "evidence": "The framework has been shown to reduce cybersecurity risk in multiple deployments.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "The evidence mentions that the framework has",
+        "claim": "The framework reduces risk by 75%",
+        "evidence_id": "os-003",
+        "evidence_preview": "The framework has been shown to reduce cybersecurity risk in multiple deployments.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850849.9797685
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "The evidence mentions that the framework has",
+          "evidence_id": "os-003",
+          "claim": "The framework reduces risk by 75%",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.46,
+      "diagnostic_reason": "Claim specifies '75%'; evidence confirms reduction but not the percentage. Tests specificity vs generality."
+    },
+    {
+      "id": "os-004",
+      "category": "over_specificity",
+      "claim": "The tool supports 50+ compliance frameworks",
+      "evidence": "The tool supports multiple compliance frameworks including ISO 27001, NIST CSF, and SOC 2.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The tool supports 50+ compliance frameworks",
+        "evidence_id": "os-004",
+        "evidence_preview": "The tool supports multiple compliance frameworks including ISO 27001, NIST CSF, and SOC 2.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850853.2670918
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "os-004",
+          "claim": "The tool supports 50+ compliance frameworks",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.29,
+      "diagnostic_reason": "Claim specifies '50+'; evidence confirms multiple but lists only 3. Cannot confirm the count."
+    },
+    {
+      "id": "os-005",
+      "category": "over_specificity",
+      "claim": "The system processes 10,000 events per second",
+      "evidence": "The system handles high-volume event processing with low latency and scalable architecture.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "The evidence mentions that the system handles",
+        "claim": "The system processes 10,000 events per second",
+        "evidence_id": "os-005",
+        "evidence_preview": "The system handles high-volume event processing with low latency and scalable architecture.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850856.926225
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "The evidence mentions that the system handles",
+          "evidence_id": "os-005",
+          "claim": "The system processes 10,000 events per second",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.66,
+      "diagnostic_reason": "Claim specifies '10,000 EPS'; evidence says 'high-volume' and 'low latency'. No specific throughput confirmation."
+    },
+    {
+      "id": "n-001",
+      "category": "negation",
+      "claim": "Tool X requires PowerShell",
+      "evidence": "Tool X can operate without PowerShell and supports multiple scripting environments.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "Tool X requires PowerShell",
+        "evidence_id": "n-001",
+        "evidence_preview": "Tool X can operate without PowerShell and supports multiple scripting environments.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850860.1692426
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "n-001",
+          "claim": "Tool X requires PowerShell",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.24,
+      "diagnostic_reason": "'Requires' vs 'can operate without'. Direct negation of necessity."
+    },
+    {
+      "id": "n-002",
+      "category": "negation",
+      "claim": "Tool X requires PowerShell",
+      "evidence": "Tool X commonly uses PowerShell for execution but also supports alternative methods.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "Tool X requires PowerShell",
+        "evidence_id": "n-002",
+        "evidence_preview": "Tool X commonly uses PowerShell for execution but also supports alternative methods.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850862.971856
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "n-002",
+          "claim": "Tool X requires PowerShell",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 2.8,
+      "diagnostic_reason": "'Requires' vs 'commonly uses + supports alternatives'. 'Requires' implies necessity; 'commonly uses' implies preference. Not contradiction but not full support."
+    },
+    {
+      "id": "n-003",
+      "category": "negation",
+      "claim": "The framework does not address physical security",
+      "evidence": "The framework includes guidance on physical security controls, access barriers, and environmental safeguards.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The framework does not address physical security",
+        "evidence_id": "n-003",
+        "evidence_preview": "The framework includes guidance on physical security controls, access barriers, and environmental safeguards.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850866.1063645
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "n-003",
+          "claim": "The framework does not address physical security",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.13,
+      "diagnostic_reason": "'Does not address' vs 'includes guidance on'. Negated claim directly contradicted."
+    },
+    {
+      "id": "n-004",
+      "category": "negation",
+      "claim": "The standard does not require continuous monitoring",
+      "evidence": "The standard mandates continuous monitoring of security controls as a core requirement.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The standard does not require continuous monitoring",
+        "evidence_id": "n-004",
+        "evidence_preview": "The standard mandates continuous monitoring of security controls as a core requirement.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850869.2208147
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "n-004",
+          "claim": "The standard does not require continuous monitoring",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.11,
+      "diagnostic_reason": "'Does not require' vs 'mandates as core requirement'. Tests negation + modality."
+    },
+    {
+      "id": "n-005",
+      "category": "negation",
+      "claim": "The tool cannot operate in air-gapped environments",
+      "evidence": "The tool functions normally in network-isolated environments without external connectivity.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The tool cannot operate in air-gapped environments",
+        "evidence_id": "n-005",
+        "evidence_preview": "The tool functions normally in network-isolated environments without external connectivity.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850872.372917
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "n-005",
+          "claim": "The tool cannot operate in air-gapped environments",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.15,
+      "diagnostic_reason": "'Cannot operate in air-gapped' vs 'functions normally in network-isolated'. Air-gapped = network-isolated. Tests synonymy under negation."
+    },
+    {
+      "id": "n-006",
+      "category": "negation",
+      "claim": "The policy does not apply to contractors",
+      "evidence": "The policy extends to all third-party vendors, contractors, and external service providers.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The policy does not apply to contractors",
+        "evidence_id": "n-006",
+        "evidence_preview": "The policy extends to all third-party vendors, contractors, and external service providers.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850875.5762138
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "n-006",
+          "claim": "The policy does not apply to contractors",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.2,
+      "diagnostic_reason": "'Does not apply to contractors' vs 'extends to contractors'. Direct negation contradiction."
+    },
+    {
+      "id": "ws-001",
+      "category": "wrong_subject",
+      "claim": "Product A supports feature X",
+      "evidence": "Product B supports feature X with advanced configuration options.",
+      "expected": "UNRELATED",
+      "produced": {
+        "relation": "UNRELATED",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "Product A supports feature X",
+        "evidence_id": "ws-001",
+        "evidence_preview": "Product B supports feature X with advanced configuration options.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850878.561
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": null,
+        "reason": "semantic:unrelated (conf=0.50)",
+        "metadata": {
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ws-001",
+          "claim": "Product A supports feature X",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 2.98,
+      "diagnostic_reason": "Same feature, different product. High lexical overlap but wrong subject. Tests entity disambiguation."
+    },
+    {
+      "id": "ws-002",
+      "category": "wrong_subject",
+      "claim": "ISO 27001 requires risk assessment",
+      "evidence": "SOC 2 requires organizations to perform periodic risk assessments of their systems.",
+      "expected": "UNRELATED",
+      "produced": {
+        "relation": "UNRELATED",
+        "confidence": 0.5,
+        "reasoning": "Explanation: The evidence about SOC",
+        "claim": "ISO 27001 requires risk assessment",
+        "evidence_id": "ws-002",
+        "evidence_preview": "SOC 2 requires organizations to perform periodic risk assessments of their systems.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850882.111855
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": null,
+        "reason": "semantic:unrelated (conf=0.50)",
+        "metadata": {
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reasoning": "Explanation: The evidence about SOC",
+          "evidence_id": "ws-002",
+          "claim": "ISO 27001 requires risk assessment",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.55,
+      "diagnostic_reason": "Same requirement, different standard. Tests subject identification despite shared vocabulary."
+    },
+    {
+      "id": "ws-003",
+      "category": "wrong_subject",
+      "claim": "NIST CSF includes the Identify function",
+      "evidence": "ISO 27001 includes risk identification processes as part of its ISMS requirements.",
+      "expected": "UNRELATED",
+      "produced": {
+        "relation": "UNRELATED",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "NIST CSF includes the Identify function",
+        "evidence_id": "ws-003",
+        "evidence_preview": "ISO 27001 includes risk identification processes as part of its ISMS requirements.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850885.309589
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": null,
+        "reason": "semantic:unrelated (conf=0.50)",
+        "metadata": {
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ws-003",
+          "claim": "NIST CSF includes the Identify function",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.2,
+      "diagnostic_reason": "'Identify' appears in both but refers to different frameworks. Tests framework disambiguation."
+    },
+    {
+      "id": "ws-004",
+      "category": "wrong_subject",
+      "claim": "MITRE ATT&CK documents credential dumping techniques",
+      "evidence": "The CVE database lists credential-related vulnerabilities affecting authentication systems.",
+      "expected": "UNRELATED",
+      "produced": {
+        "relation": "UNRELATED",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "MITRE ATT&CK documents credential dumping techniques",
+        "evidence_id": "ws-004",
+        "evidence_preview": "The CVE database lists credential-related vulnerabilities affecting authentication systems.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850888.4283216
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": null,
+        "reason": "semantic:unrelated (conf=0.50)",
+        "metadata": {
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "ws-004",
+          "claim": "MITRE ATT&CK documents credential dumping techniques",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.12,
+      "diagnostic_reason": "Both mention credentials but different knowledge bases (ATT&CK vs CVE). Tests source disambiguation."
+    },
+    {
+      "id": "ws-005",
+      "category": "wrong_subject",
+      "claim": "Splunk aggregates security events from multiple sources",
+      "evidence": "Elasticsearch collects and correlates log data across the IT infrastructure for centralized monitoring.",
+      "expected": "UNRELATED",
+      "produced": {
+        "relation": "UNRELATED",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence about Elasticsearch collecting and",
+        "claim": "Splunk aggregates security events from multiple sources",
+        "evidence_id": "ws-005",
+        "evidence_preview": "Elasticsearch collects and correlates log data across the IT infrastructure for centralized monitoring.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850892.0956523
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": null,
+        "reason": "semantic:unrelated (conf=0.50)",
+        "metadata": {
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reasoning": "The provided evidence about Elasticsearch collecting and",
+          "evidence_id": "ws-005",
+          "claim": "Splunk aggregates security events from multiple sources",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.67,
+      "diagnostic_reason": "Same capability description, different product. Tests product disambiguation with near-identical evidence text."
+    },
+    {
+      "id": "wc-001",
+      "category": "wrong_context",
+      "claim": "Technique X is effective in cloud environments",
+      "evidence": "Technique X is effective in traditional Windows domain environments for lateral movement.",
+      "expected": "UNRELATED",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "The evidence mentions that Technique X is",
+        "claim": "Technique X is effective in cloud environments",
+        "evidence_id": "wc-001",
+        "evidence_preview": "Technique X is effective in traditional Windows domain environments for lateral movement.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850895.6277504
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "The evidence mentions that Technique X is",
+          "evidence_id": "wc-001",
+          "claim": "Technique X is effective in cloud environments",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.53,
+      "diagnostic_reason": "Same technique, different environment (cloud vs Windows domain). Tests context disambiguation."
+    },
+    {
+      "id": "wc-002",
+      "category": "wrong_context",
+      "claim": "The framework applies to financial institutions",
+      "evidence": "The framework has been adopted by healthcare organizations for protecting patient data.",
+      "expected": "UNRELATED",
+      "produced": {
+        "relation": "UNRELATED",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The framework applies to financial institutions",
+        "evidence_id": "wc-002",
+        "evidence_preview": "The framework has been adopted by healthcare organizations for protecting patient data.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850898.7810457
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": null,
+        "reason": "semantic:unrelated (conf=0.50)",
+        "metadata": {
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "wc-002",
+          "claim": "The framework applies to financial institutions",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.15,
+      "diagnostic_reason": "Same framework, different sector (financial vs healthcare). Tests sector disambiguation."
+    },
+    {
+      "id": "wc-003",
+      "category": "wrong_context",
+      "claim": "The control is designed for incident response",
+      "evidence": "The control is used during the assessment phase of the security lifecycle to identify gaps.",
+      "expected": "UNRELATED",
+      "produced": {
+        "relation": "UNRELATED",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence about the control being",
+        "claim": "The control is designed for incident response",
+        "evidence_id": "wc-003",
+        "evidence_preview": "The control is used during the assessment phase of the security lifecycle to identify gaps.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850902.5610712
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": null,
+        "reason": "semantic:unrelated (conf=0.50)",
+        "metadata": {
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reasoning": "The provided evidence about the control being",
+          "evidence_id": "wc-003",
+          "claim": "The control is designed for incident response",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.78,
+      "diagnostic_reason": "Same control, different lifecycle phase (response vs assessment). Tests phase disambiguation."
+    },
+    {
+      "id": "wc-004",
+      "category": "wrong_context",
+      "claim": "The vulnerability affects the web application layer",
+      "evidence": "The vulnerability impacts the kernel-level network driver and requires OS-level patching.",
+      "expected": "UNRELATED",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The vulnerability affects the web application layer",
+        "evidence_id": "wc-004",
+        "evidence_preview": "The vulnerability impacts the kernel-level network driver and requires OS-level patching.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850905.9962692
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "wc-004",
+          "claim": "The vulnerability affects the web application layer",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.44,
+      "diagnostic_reason": "Same concept (vulnerability), different layer (web app vs kernel driver). Tests architectural layer disambiguation."
+    },
+    {
+      "id": "wc-005",
+      "category": "wrong_context",
+      "claim": "The mitigation is effective in production environments",
+      "evidence": "The mitigation was validated in laboratory conditions with controlled test parameters.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The mitigation is effective in production environments",
+        "evidence_id": "wc-005",
+        "evidence_preview": "The mitigation was validated in laboratory conditions with controlled test parameters.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850909.3652523
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "wc-005",
+          "claim": "The mitigation is effective in production environments",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.37,
+      "diagnostic_reason": "Same mitigation, different environment (production vs lab). Evidence is relevant but does not confirm production effectiveness. Borderline UNRELATED/PARTIAL — designed to be challenging."
+    },
+    {
+      "id": "a-001",
+      "category": "adversarial",
+      "claim": "X prevents credential theft",
+      "evidence": "X detects credential theft attempts and alerts security teams.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "SUPPORTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "X prevents credential theft",
+        "evidence_id": "a-001",
+        "evidence_preview": "X detects credential theft attempts and alerts security teams.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850912.5023117
+      },
+      "correct": false,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.5,
+        "passed": true,
+        "reason": "semantic:supports (conf=0.50)",
+        "metadata": {
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "a-001",
+          "claim": "X prevents credential theft",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.14,
+      "diagnostic_reason": "Near-miss: 'prevents' vs 'detects'. Detection is related to prevention but is not prevention. Tests action verb disambiguation."
+    },
+    {
+      "id": "a-002",
+      "category": "adversarial",
+      "claim": "The tool automatically remediates vulnerabilities",
+      "evidence": "The tool automatically identifies and categorizes vulnerabilities by severity.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "The evidence states that the tool can",
+        "claim": "The tool automatically remediates vulnerabilities",
+        "evidence_id": "a-002",
+        "evidence_preview": "The tool automatically identifies and categorizes vulnerabilities by severity.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850916.1469538
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "The evidence states that the tool can",
+          "evidence_id": "a-002",
+          "claim": "The tool automatically remediates vulnerabilities",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.64,
+      "diagnostic_reason": "Near-miss: 'remediates' vs 'identifies and categorizes'. Related security workflow but different action."
+    },
+    {
+      "id": "a-003",
+      "category": "adversarial",
+      "claim": "The framework mandates encryption at rest",
+      "evidence": "The framework recommends encryption at rest as a best practice for sensitive data.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The framework mandates encryption at rest",
+        "evidence_id": "a-003",
+        "evidence_preview": "The framework recommends encryption at rest as a best practice for sensitive data.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850919.2677343
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "a-003",
+          "claim": "The framework mandates encryption at rest",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.12,
+      "diagnostic_reason": "Near-miss: 'mandates' vs 'recommends'. Same topic, different modality (obligation vs recommendation)."
+    },
+    {
+      "id": "a-004",
+      "category": "adversarial",
+      "claim": "The system blocks all unauthorized traffic",
+      "evidence": "The system flags suspicious traffic for manual review by the security operations team.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "The evidence indicates that the system has",
+        "claim": "The system blocks all unauthorized traffic",
+        "evidence_id": "a-004",
+        "evidence_preview": "The system flags suspicious traffic for manual review by the security operations team.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850922.9191923
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "The evidence indicates that the system has",
+          "evidence_id": "a-004",
+          "claim": "The system blocks all unauthorized traffic",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.65,
+      "diagnostic_reason": "Near-miss: 'blocks all' vs 'flags for review'. Different action and scope. Tests automated action vs manual review."
+    },
+    {
+      "id": "a-005",
+      "category": "adversarial",
+      "claim": "The technique exploits a zero-day vulnerability",
+      "evidence": "The technique targets a known vulnerability for which patches have been available for six months.",
+      "expected": "CONTRADICTS",
+      "produced": {
+        "relation": "CONTRADICTS",
+        "confidence": 0.5,
+        "reasoning": "",
+        "claim": "The technique exploits a zero-day vulnerability",
+        "evidence_id": "a-005",
+        "evidence_preview": "The technique targets a known vulnerability for which patches have been available for six months.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850926.390979
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.0,
+        "passed": false,
+        "reason": "semantic:contradicts (conf=0.50)",
+        "metadata": {
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reasoning": "",
+          "evidence_id": "a-005",
+          "claim": "The technique exploits a zero-day vulnerability",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.47,
+      "diagnostic_reason": "Near-miss: 'zero-day' vs 'known with patches available'. These are mutually exclusive categories. Tests vulnerability type disambiguation."
+    },
+    {
+      "id": "a-006",
+      "category": "adversarial",
+      "claim": "The solution provides complete protection against ransomware",
+      "evidence": "The solution reduces the risk of ransomware infections through behavioral analysis and early detection.",
+      "expected": "PARTIAL",
+      "produced": {
+        "relation": "PARTIAL",
+        "confidence": 0.5,
+        "reasoning": "The evidence indicates that the solution helps",
+        "claim": "The solution provides complete protection against ransomware",
+        "evidence_id": "a-006",
+        "evidence_preview": "The solution reduces the risk of ransomware infections through behavioral analysis and early detection.",
+        "run_id": "granite-bench-v2",
+        "model": "ibm/granite4.1:3b-q4_K_M",
+        "ts": 1786850930.1527061
+      },
+      "correct": true,
+      "protocol_ok": true,
+      "signal": {
+        "name": "semantic_assess",
+        "score": 0.25,
+        "passed": null,
+        "reason": "semantic:partial (conf=0.50)",
+        "metadata": {
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reasoning": "The evidence indicates that the solution helps",
+          "evidence_id": "a-006",
+          "claim": "The solution provides complete protection against ransomware",
+          "model": "ibm/granite4.1:3b-q4_K_M"
+        },
+        "source": "online"
+      },
+      "timing_s": 3.76,
+      "diagnostic_reason": "Near-miss: 'complete protection' vs 'reduces risk'. Absolute claim vs qualified claim. Tests absoluteness disambiguation."
+    }
+  ]
+}

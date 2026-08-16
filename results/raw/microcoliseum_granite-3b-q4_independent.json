@@ -1,0 +1,2654 @@
+{
+  "experiment": "microcoliseum_deliberation",
+  "timestamp": "2026-08-16T02:53:19",
+  "model": "ibm/granite4.1:3b-q4_K_M",
+  "mode": "independent",
+  "gpu": true,
+  "num_gpu": 99,
+  "num_predict": 60,
+  "temperature": 0.0,
+  "num_thread": 4,
+  "benchmark": "semantic_assessment_benchmark_v2.json",
+  "case_count": 55,
+  "wall_time_s": 738.2,
+  "metrics": {
+    "n": 55,
+    "mode": "independent",
+    "initial_accuracy": 0.6909,
+    "final_accuracy": 0.6909,
+    "accuracy_delta": 0.0,
+    "initial_correct": 38,
+    "final_correct": 38,
+    "corrections": 0,
+    "correction_rate": 0.0,
+    "damage": 0,
+    "damage_rate": 0.0,
+    "stability_rate": 1.0,
+    "debate_trigger_rate": 0.0,
+    "debates_triggered": 0,
+    "revision_rate": 0.0,
+    "total_workers_changed": 0,
+    "by_category": {
+      "adversarial": {
+        "total": 6,
+        "initial_accuracy": 0.5,
+        "final_accuracy": 0.5
+      },
+      "direct_evidence": {
+        "total": 6,
+        "initial_accuracy": 0.8333,
+        "final_accuracy": 0.8333
+      },
+      "explicit_contradiction": {
+        "total": 5,
+        "initial_accuracy": 1.0,
+        "final_accuracy": 1.0
+      },
+      "implicit_contradiction": {
+        "total": 5,
+        "initial_accuracy": 0.6,
+        "final_accuracy": 0.6
+      },
+      "negation": {
+        "total": 6,
+        "initial_accuracy": 0.6667,
+        "final_accuracy": 0.6667
+      },
+      "over_specificity": {
+        "total": 5,
+        "initial_accuracy": 0.6,
+        "final_accuracy": 0.6
+      },
+      "paraphrase": {
+        "total": 6,
+        "initial_accuracy": 0.6667,
+        "final_accuracy": 0.6667
+      },
+      "partial_support": {
+        "total": 6,
+        "initial_accuracy": 0.6667,
+        "final_accuracy": 0.6667
+      },
+      "wrong_context": {
+        "total": 5,
+        "initial_accuracy": 0.6,
+        "final_accuracy": 0.6
+      },
+      "wrong_subject": {
+        "total": 5,
+        "initial_accuracy": 0.8,
+        "final_accuracy": 0.8
+      }
+    },
+    "by_agreement": {
+      "split": {
+        "total": 49,
+        "initial_accuracy": 0.6531,
+        "final_accuracy": 0.6531
+      },
+      "unanimous": {
+        "total": 6,
+        "initial_accuracy": 1.0,
+        "final_accuracy": 1.0
+      }
+    },
+    "transition_matrix": {
+      "CONTRADICTS": {
+        "CONTRADICTS": 13,
+        "PARTIAL": 0,
+        "SUPPORTS": 0,
+        "UNRELATED": 0
+      },
+      "PARTIAL": {
+        "CONTRADICTS": 0,
+        "PARTIAL": 15,
+        "SUPPORTS": 0,
+        "UNRELATED": 0
+      },
+      "SUPPORTS": {
+        "CONTRADICTS": 0,
+        "PARTIAL": 0,
+        "SUPPORTS": 15,
+        "UNRELATED": 0
+      },
+      "UNRELATED": {
+        "CONTRADICTS": 0,
+        "PARTIAL": 0,
+        "SUPPORTS": 0,
+        "UNRELATED": 12
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "d-001",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence directly states that the NIST CSF consists of five core functions named Identify, Detect, Protect, Respond, and Recover, which matches the claim."
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"SUPPORTS\", \"confidence\": 0.9, \"reason\": \"The evidence directly states that the Framework Core consists of five Functions named Identify, Detect, Protect, Respond, and Reco"
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": "The evidence explicitly states that the NIST CSF consists of five core functions: Identify, Detect, Protect, Respond, and Recover, directly supporting the claim."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"The evidence directly states that the Framework Core of NIST CSF consists of the five core functions: Identify, Detect, Protect, R"
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.7391,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.7391304347826086,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 52.17,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 52.17
+    },
+    {
+      "case_id": "d-002",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"SUPPORTS\", \"confidence\": 0.5, \"reason\": \"The evidence states that ISO/IEC 27001 is an international standard for information security management systems (ISMS), which dire"
+        },
+        {
+          "worker": "B",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": "The evidence directly states that ISO/IEC 27001 is an international standard for information security management systems, which confirms it is indeed an information security standard."
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"The evidence directly states that ISO/IEC 27001 is an international standard for information security management systems, which al"
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.75,
+          "reason": "Both CLAIM and EVIDENCE refer to the same subject, ISO 27001, which is correctly identified as an information security standard in the EVIDENCE."
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.7333,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.7333333333333333,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 13.55,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 13.55
+    },
+    {
+      "case_id": "d-003",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reason": "The evidence states that SOAR platforms automate incident response workflows and integrate security tools, which implies they help automate security operations."
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence shows SOAR tools facilitate automation and integration of security workflows, but it does not quantify or prove the ex"
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence directly states that SOAR platforms automate incident response workflows and integrate security tools, which aligns with the claim that SOAR tools help automate security operations."
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reason": "The evidence explains that SOAR platforms automate incident response workflows and integrate security tools, which supports the claim that SOAR tools help automate security operations."
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.8571,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.8571428571428571,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 13.13,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 13.13
+    },
+    {
+      "case_id": "d-004",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reason": "The evidence directly states the three principles that make up the CIA triad, thus supporting the claim."
+        },
+        {
+          "worker": "B",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": "The evidence directly states that the CIA triad consists of three principles: Confidentiality, Integrity, and Availability, which confirms the claim."
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": "The evidence directly states that the CIA triad has three principles, which are Confidentiality, Integrity, and Availability, matching the claim."
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.95,
+          "reason": "Both CLAIM and EVIDENCE refer to the same subject, the CIA triad, and its three core principles in the context of information security."
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 1.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 1.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.59,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.59
+    },
+    {
+      "case_id": "d-005",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"SUPPORTS\", \"confidence\": 0.75, \"reason\": \"The evidence directly states that MITRE ATT&CK is a knowledge base of adversary tactics based on real-world observations, which a"
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"The evidence states MITRE ATT&CK is a knowledge base of adversary tactics and techniques, which aligns with the claim that it is a"
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"The evidence directly states that MITRE ATT&CK is a knowledge base of adversary tactics based on real-world observations, which al"
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.75,
+          "reason": "Both CLAIM and EVIDENCE refer to the same subject, MITRE ATT&CK, as a knowledge base of adversary tactics and techniques with real-world observations."
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.5455,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.5454545454545454,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.98,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.98
+    },
+    {
+      "case_id": "d-006",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reason": "The evidence directly states that zero trust assumes no implicit trust, which aligns with the claim."
+        },
+        {
+          "worker": "B",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": "The evidence directly states that zero trust assumes no implicit trust, which aligns with the claim."
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": "The evidence directly states that zero trust assumes no implicit trust, which aligns with the claim."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"Both CLAIM and EVIDENCE refer to the same subject, which is the Zero Trust security model. They discuss its core principle of assu"
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.8846,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.8846153846153847,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.43,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.43
+    },
+    {
+      "case_id": "pp-001",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reason": "The evidence indicates that attackers can obtain authentication material (reusable secrets) through credential dumping, which directly supports the claim."
+        },
+        {
+          "worker": "B",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence directly indicates that attackers can obtain authentication material (reusable secrets) from credential stores, which aligns with the claim that credential dumping can expose authentication material."
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence describes a specific method (credential dumping) that can indeed expose authentication material, which directly supports the claim."
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.7,
+          "reason": "The evidence explains that credential dumping can indeed expose authentication material, as attackers can extract reusable secrets from operating-system credential stores, which aligns with the claim."
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 1.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 1.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.52,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.52
+    },
+    {
+      "case_id": "pp-002",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reason": "The evidence shows that phishing can result in users revealing login credentials, which can then be used for unauthorized account access."
+        },
+        {
+          "worker": "B",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence shows that phishing can indeed lead to unauthorized access by compromising login credentials, which supports the claim."
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": "The evidence describes a scenario where phishing (deceptive emails) leads to users giving away login credentials, which can result in unauthorized access to accounts."
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence describes how phishing via deceptive emails can result in users giving away login credentials, which directly leads to unauthorized access as stated in the claim."
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 1.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 1.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.53,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.53
+    },
+    {
+      "case_id": "pp-003",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence explains that encryption uses cryptographic algorithms to make data unreadable to unauthorized parties, which directly supports the claim that encryption protects data confidentiality."
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence shows that encryption makes data unreadable to unauthorized parties, supporting the idea of confidentiality, but it do"
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": "The evidence describes how cryptographic algorithms make data unreadable to unauthorized parties, which directly aligns with the claim that encryption protects data confidentiality."
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.95,
+          "reason": "The evidence explains that cryptographic algorithms make information unreadable to unauthorized parties, which directly supports the claim that encryption protects data confidentiality."
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.8983,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.8983050847457628,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.7,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.7
+    },
+    {
+      "case_id": "pp-004",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence mentions recommendations for identifying, assessing, and mitigating digital threats, which implies guidance on managin"
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence mentions recommendations for managing digital threats, which implies some guidance for cybersecurity risk management, "
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The recommendations for identifying, assessing, and mitigating digital threats indicate the framework's purpose is to manage cybersecurity risk."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"The evidence indicates the document provides guidance on managing cybersecurity risk through identifying, assessing, and mitigatin"
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.5294,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.5294117647058824,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.8,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.8
+    },
+    {
+      "case_id": "pp-005",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reason": "The evidence explains that multi-factor authentication adds an extra verification step, which strengthens access controls and thus supports the claim that it adds a layer of security."
+        },
+        {
+          "worker": "B",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence explains that MFA strengthens access controls against credential-based attacks, which supports the claim that it adds a layer of security."
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"The evidence directly states that adding additional verification beyond passwords strengthens access controls against credential-b"
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"SUPPORTS\", \"confidence\": 0.85, \"reason\": \"Both CLAIM and EVIDENCE refer to the same subject of multi-factor authentication as a security measure, and EVIDENCE explains how"
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.6842,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.6842105263157895,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.89,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.89
+    },
+    {
+      "case_id": "pp-006",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"SUPPORTS\", \"confidence\": 0.5, \"reason\": \"The evidence describes that security information platforms collect and correlate log data from various sources, which aligns with "
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"The evidence describes the general function of Security Information and Event Management (SIEM) systems, which is to collect and c"
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence describes the function of Security information and event management (SIEM) systems, which aligns with the claim that SIEM aggregates security events from multiple sources."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"SUPPORTS\", \"confidence\": 0.5, \"reason\": \"Both CLAIM and EVIDENCE refer to the same subject of SIEM (Security Information and Event Management) systems, which are used to a"
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.5294,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.5294117647058824,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.9,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.9
+    },
+    {
+      "case_id": "ps-001",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence shows that X detects Y, but it does not provide information about whether X prevents Z."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence only shows that X detects Y, but there is no information about whether X prevents Z."
+        },
+        {
+          "worker": "C",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence only states that X detects Y, but does not mention prevention of Z, so it partially supports the claim but is not a complete contradiction."
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence confirms that X detects Y, which aligns with the claim that X detects Y and prevents Z, implying the detection capability supports the prevention of Z."
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.6522,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.6521739130434783,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.45,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.45
+    },
+    {
+      "case_id": "ps-002",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence mentions risk assessment and mitigation guidance but does not explicitly state that recovery guidance is included."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.75,
+          "reason": "The evidence mentions risk assessment and mitigation guidance but does not explicitly state that recovery guidance is included."
+        },
+        {
+          "worker": "C",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence mentions risk assessment and mitigation but does not explicitly state that recovery guidance is included, leaving part of the claim unsupported."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"PARTIAL\", \"confidence\": 0.55, \"reason\": \"The CLAIM states the framework includes risk assessment, mitigation, and recovery guidance, while the EVIDENCE only mentions risk "
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.8537,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.853658536585366,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.41,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.41
+    },
+    {
+      "case_id": "ps-003",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.75,
+          "reason": "The evidence states that ISO 27001 mandates a risk assessment process and a statement of applicability, which directly supports the claim that it requires these components."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence mentions risk assessment and statement of applicability but does not explicitly cover continuous improvement, which is part of the CLAIM."
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": "The evidence directly states the requirements mandated by ISO 27001, which align with the claim."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"Both CLAIM and EVIDENCE refer to the same subject, ISO 27001, and describe its requirements related to risk assessment and stateme"
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.6735,
+      "initial_agreement": 0.5,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.6734693877551021,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.71,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.71
+    },
+    {
+      "case_id": "ps-004",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence mentions scanning and analysis, which aligns with parts of the claim, but there is no mention of remediation."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence supports scanning and analysis but does not mention remediation, so the claim is not fully proven."
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence states the tool performs scanning and analysis, which aligns with the claim of performing scanning, analysis, and remediation."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"The EVIDENCE confirms the tool does perform scanning and analysis, which aligns with the CLAIM. However, the EVIDENCE does not men"
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.4762,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.47619047619047616,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.48,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.48
+    },
+    {
+      "case_id": "ps-005",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence states the policy covers endpoints and network segments, but does not explicitly mention cloud infrastructure."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence only mentions endpoints and network segments within the corporate perimeter, but does not explicitly state that the policy also covers cloud infrastructure."
+        },
+        {
+          "worker": "C",
+          "relation": "PARTIAL",
+          "confidence": 0.7,
+          "reason": "The evidence supports that endpoints are covered, but it does not mention cloud infrastructure explicitly."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The claim states the policy covers endpoints, networks, and cloud infrastructure, but the evidence only mentions endpoints and netw"
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.85,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.85,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.4,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.4
+    },
+    {
+      "case_id": "ps-006",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence states SIEM provides real-time monitoring, which supports one component of the claim. However, it does not mention historical analysis or threat hunting capabilities."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence only mentions real-time monitoring, but does not cover historical analysis or threat hunting capabilities."
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": "The evidence states that SIEM collects and analyzes security events in real time, which directly supports the claim that SIEM provides real-time monitoring."
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence describes a key capability of SIEM (real-time monitoring of security events), which aligns with the claim about SIEM's capabilities including real-time monitoring."
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.6296,
+      "initial_agreement": 0.5,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.6296296296296297,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.7,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.7
+    },
+    {
+      "case_id": "ec-001",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.9, \"reason\": \"The evidence states that Python 3.12 was released in 2023 and explicitly mentions there is no Python 4.0 release, directly cont"
+        },
+        {
+          "worker": "B",
+          "relation": "CONTRADICTS",
+          "confidence": 0.9,
+          "reason": "The evidence states that Python 4.0 has not been released, directly contradicting the claim that it was released in 2023."
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.9, \"reason\": \"The claim states Python 4.0 was released in 2023, but the evidence shows only Python 3.12 was released that year, and there"
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.9, \"reason\": \"The claim states Python 4.0 was released in 2023, but the evidence confirms that Python 3.12 was the last released version in"
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.5,
+      "initial_agreement": 0.25,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.5000000000000001,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 13.05,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 13.05
+    },
+    {
+      "case_id": "ec-002",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.7, \"reason\": \"The evidence states there are five core functions (Identify, Detect, Protect, Respond, and Recover), which contradicts the clai"
+        },
+        {
+          "worker": "B",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": "The evidence explicitly states that the Framework Core consists of five Functions, which aligns with the claim of three core functions being a subset of these five."
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.9,
+          "reason": "The claim states there are three core functions, but the evidence clearly lists five: Identify, Detect, Protect, Respond, and Recover."
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.7,
+          "reason": "The claim states the NIST CSF has three core functions, but the evidence clearly lists five: Identify, Detect, Protect, Respond, and Recover."
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.5714,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.5714285714285714,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.96,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.96
+    },
+    {
+      "case_id": "ec-003",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.8, \"reason\": \"The evidence states AES-256 is considered one of the strongest encryption algorithms and NSA-approved for top secret data, dire"
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.8, \"reason\": \"The evidence states AES-256 is considered one of the strongest encryption algorithms and is approved by NSA for top secret data"
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.9,
+          "reason": "The evidence states AES-256 is considered one of the strongest encryption algorithms, directly opposing the claim that it is weak."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.9, \"reason\": \"The claim states AES-256 is weak, while the evidence states it is one of the strongest encryption algorithms and approved by NS"
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.5,
+      "initial_agreement": 0.25,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.5000000000000001,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.87,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.87
+    },
+    {
+      "case_id": "ec-004",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.9,
+          "reason": "The evidence states that unprivileged users can execute the technique without elevated permissions, directly opposing the claim that administrator privileges are required."
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.9, \"reason\": \"The evidence directly contradicts the claim by stating that the technique can be executed by unprivileged users without elevate"
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.9,
+          "reason": "The evidence states that the technique can be executed by unprivileged users without elevated permissions, directly opposing the claim that administrator privileges are required."
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.8,
+          "reason": "The CLAIM states that administrator privileges are required, while the EVIDENCE contradicts this by stating unprivileged users can execute the technique without elevated permissions."
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.8966,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.896551724137931,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.94,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.94
+    },
+    {
+      "case_id": "ec-005",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reason": "The evidence explicitly states that zero trust does not eliminate security controls, directly opposing the claim."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence shows that zero trust modifies the application of security controls rather than eliminating them entirely, so the claim is not fully proven."
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.9,
+          "reason": "The evidence explicitly states that zero trust does not eliminate security controls, directly opposing the claim."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.7, \"reason\": \"The CLAIM states that zero trust eliminates the need for security controls, while the EVIDENCE clarifies that zero trust modifi"
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.6364,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.6363636363636364,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.58,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.58
+    },
+    {
+      "case_id": "ic-001",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The use of standard encryption suggests some level of confidentiality, but the known side-channel vulnerabilities indicate conditions where data may still be exposed, thus not guaranteeing complete confidentiality."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence shows encryption is used, but the presence of side-channel vulnerabilities means complete confidentiality is not guaranteed under all conditions."
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.7,
+          "reason": "The presence of known side-channel vulnerabilities indicates that complete data confidentiality cannot be guaranteed, directly opposing the claim."
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The protocol does use encryption which supports data confidentiality to some extent, but the known side-channel vulnerabilities indicate it may not guarantee complete confidentiality under all conditions."
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.6818,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.6818181818181818,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.7,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.7
+    },
+    {
+      "case_id": "ic-002",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.7,
+          "reason": "The evidence states macOS support is not available, directly opposing the claim that the tool is compatible with all operating systems."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.7,
+          "reason": "The evidence only confirms compatibility with Windows and Linux, not all operating systems as claimed."
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.8, \"reason\": \"The claim states the tool is compatible with all operating systems, but the evidence specifies that macOS support is not availa"
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.7,
+          "reason": "The claim states the tool is compatible with all operating systems, but the evidence specifies it only runs on Windows and Linux, explicitly stating macOS support is unavailable."
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.5833,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.5833333333333334,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.62,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.62
+    },
+    {
+      "case_id": "ic-003",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reason": "The evidence speaks about recommendations for periodic reviews at the organization's discretion, not about a mandate for annual audits."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence only states a recommendation for periodic reviews, not a mandatory requirement for annual audits as the claim suggests."
+        },
+        {
+          "worker": "C",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence suggests a discretionary nature of audits, implying they may not be mandatory annually as stated in the claim."
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.7,
+          "reason": "The CLAIM states the framework mandates annual audits, while the EVIDENCE mentions only a recommendation for periodic reviews at the organization's discretion, indicating a partial alignment but not full support."
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.7727,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.7727272727272726,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.43,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.43
+    },
+    {
+      "case_id": "ic-004",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.7,
+          "reason": "The evidence states the attack requires user interaction through social engineering to open attachments, which directly opposes the claim that no user interaction is needed."
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence indicates the attack uses social engineering to trick users into opening attachments, suggesting some user interaction"
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.9,
+          "reason": "The evidence states the attack relies on social engineering, implying user interaction, which directly opposes the claim that no user interaction is required."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.7, \"reason\": \"The claim states the attack requires no user interaction, but the evidence indicates the attack vector depends on social engine"
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.7273,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.7272727272727273,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.75,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.75
+    },
+    {
+      "case_id": "ic-005",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reason": "The evidence states that theoretical attacks can reduce security, implying the encryption is not unbreakable."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence shows that there are theoretical attacks under specific conditions, which suggests the encryption may not be universally unbreakable, but it doesn't prove the claim entirely."
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.7,
+          "reason": "The existence of theoretical attacks that could reduce security directly opposes the claim of the encryption being unbreakable."
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.5,
+          "reason": "The evidence states that theoretical attacks can reduce the security, directly opposing the claim of the encryption being unbreakable."
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.7727,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.7727272727272726,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.41,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.41
+    },
+    {
+      "case_id": "os-001",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.3,
+          "reason": "The evidence shows Technique X was effective on Windows systems in general, but does not specify Windows 11 specifically, leaving partial support for the claim."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence only shows Technique X was effective against Windows systems in general, not specifically against Windows 11."
+        },
+        {
+          "worker": "C",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence shows Technique X was effective on Windows systems in general, but does not specify Windows 11 specifically, leaving room for partial support or lack thereof."
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.5,
+          "reason": "The evidence indicates Technique X was tested on Windows systems in general, which includes Windows 11 as part of the Windows ecosystem, thus supporting the claim."
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.7222,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.7222222222222222,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.58,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.58
+    },
+    {
+      "case_id": "os-002",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.7,
+          "reason": "The evidence indicates real-time detection with minimal latency, which implies the system can detect attacks quickly, likely within 30 seconds, but the exact timeframe is not specified."
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"PARTIAL\", \"confidence\": 0.6, \"reason\": \"The evidence mentions 'real-time attack detection with minimal latency,' which suggests detection within a short time frame, but it"
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"The evidence states that X provides real-time attack detection with minimal latency, which implies it can detect attacks within 30"
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"Both CLAIM and EVIDENCE refer to the same subject, X, which is a system providing real-time attack detection with minimal latency "
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.5625,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.5625,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.82,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.82
+    },
+    {
+      "case_id": "os-003",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence indicates a reduction in cybersecurity risk but does not specify the magnitude (75%) or provide direct quantitative support for the exact percentage reduction claimed."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence mentions a reduction in cybersecurity risk but does not specify the percentage (75%), so the quantitative claim is not fully supported."
+        },
+        {
+          "worker": "C",
+          "relation": "PARTIAL",
+          "confidence": 0.7,
+          "reason": "The evidence indicates a reduction in cybersecurity risk, but does not specify the percentage (75%) mentioned in the claim."
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "Both CLAIM and EVIDENCE refer to the same framework and its capability to reduce risk (specifically cybersecurity risk), indicating support for the claim."
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.68,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.6799999999999999,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.56,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.56
+    },
+    {
+      "case_id": "os-004",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence mentions specific frameworks (ISO 27001, NIST CSF, SOC 2) but does not quantify the total number of frameworks supported (50+)."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence mentions specific frameworks (ISO 27001, NIST CSF, SOC 2) but does not quantify how many frameworks (50+) are supported."
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence states the tool supports multiple compliance frameworks, which implies it supports at least 50+ as claimed."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"SUPPORTS\", \"confidence\": 0.8, \"reason\": \"Both CLAIM and EVIDENCE refer to the same subject of the tool supporting compliance frameworks, though the CLAIM is broader (50+) "
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.4762,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.47619047619047616,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.81,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.81
+    },
+    {
+      "case_id": "os-005",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"PARTIAL\", \"confidence\": 0.3, \"reason\": \"The evidence mentions high-volume event processing and scalability, which implies the system can handle a large number of events, b"
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"PARTIAL\", \"confidence\": 0.3, \"reason\": \"The evidence mentions high-volume event processing and low latency with a scalable architecture, but it does not specify the exact "
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.7,
+          "reason": "The evidence mentions high-volume event processing, which implies the system can process a large number of events, supporting the claim of 10,000 events per second."
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.7,
+          "reason": "The EVIDENCE indicates the system is designed for high-volume event processing, implying it can handle 10,000 events per second as stated in the CLAIM."
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.7,
+      "initial_agreement": 0.5,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.7,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.99,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.99
+    },
+    {
+      "case_id": "n-001",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.75,
+          "reason": "The evidence states that Tool X can operate without PowerShell and supports multiple scripting environments, directly opposing the claim that it requires PowerShell."
+        },
+        {
+          "worker": "B",
+          "relation": "CONTRADICTS",
+          "confidence": 0.8,
+          "reason": "The evidence states Tool X can operate without PowerShell and supports multiple scripting environments, directly opposing the claim that it requires PowerShell."
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.8,
+          "reason": "The evidence states that Tool X can operate without PowerShell and supports multiple scripting environments, directly opposing the claim that it requires PowerShell."
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.7,
+          "reason": "The claim states Tool X requires PowerShell, while the evidence indicates it can operate without PowerShell and supports multiple scripting environments, directly contradicting the claim."
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 1.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 1.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.79,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.79
+    },
+    {
+      "case_id": "n-002",
+      "category": "negation",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence indicates that while PowerShell is commonly used by Tool X, it also supports alternative methods, so it partially supp"
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence indicates that while PowerShell is commonly used, Tool X also supports alternative methods, so the claim is not fully proven."
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"While PowerShell is a common method for Tool X, the statement that it 'also supports alternative methods' introduces the possibilit"
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.75,
+          "reason": "The evidence supports the claim that Tool X uses PowerShell for execution, even though it also mentions alternative methods."
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.4054,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.4054054054054054,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.76,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.76
+    },
+    {
+      "case_id": "n-003",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.75,
+          "reason": "The evidence states the framework includes guidance on physical security controls, which directly opposes the claim that it does not address physical security."
+        },
+        {
+          "worker": "B",
+          "relation": "CONTRADICTS",
+          "confidence": 0.2,
+          "reason": "The evidence directly contradicts the claim by stating the framework includes guidance on physical security controls, access barriers, and environmental safeguards."
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.8,
+          "reason": "The evidence states the framework includes guidance on physical security controls, which directly opposes the claim that it does not address physical security."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.8, \"reason\": \"The CLAIM states the framework does not address physical security, but the EVIDENCE directly contradicts this by mentioning the"
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.8537,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.853658536585366,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.62,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.62
+    },
+    {
+      "case_id": "n-004",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.75,
+          "reason": "The evidence directly states the standard requires continuous monitoring, which directly opposes the claim that the standard does not require continuous monitoring."
+        },
+        {
+          "worker": "B",
+          "relation": "CONTRADICTS",
+          "confidence": 0.9,
+          "reason": "The evidence directly states that continuous monitoring is required, which directly opposes the claim that it does not require continuous monitoring."
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.9,
+          "reason": "The evidence explicitly states that the standard requires continuous monitoring, which directly opposes the claim that it does not require continuous monitoring."
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.9,
+          "reason": "The CLAIM states the standard does not require continuous monitoring, while the EVIDENCE asserts that the standard actually mandates continuous monitoring of security controls as a core requirement, directly opposing each other."
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 1.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 1.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.6,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.6
+    },
+    {
+      "case_id": "n-005",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.7, \"reason\": \"The evidence states the tool functions normally in air-gapped (network-isolated) environments, which directly opposes the claim"
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"PARTIAL\", \"confidence\": 0.3, \"reason\": \"The evidence shows the tool functions normally in network-isolated (air-gapped) environments, but it does not prove that the tool c"
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.8, \"reason\": \"The evidence states the tool functions normally in air-gapped (network-isolated) environments, which directly opposes the claim"
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.7,
+          "reason": "The CLAIM states the tool cannot operate in air-gapped environments, while the EVIDENCE shows the tool functions normally in such environments, indicating a contradiction."
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.5625,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.5625,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.86,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.86
+    },
+    {
+      "case_id": "n-006",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.7,
+          "reason": "The evidence states the policy applies to contractors, directly opposing the claim that it does not."
+        },
+        {
+          "worker": "B",
+          "relation": "CONTRADICTS",
+          "confidence": 0.7,
+          "reason": "The evidence states the policy applies to contractors, directly opposing the claim that it does not."
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.9,
+          "reason": "The evidence states the policy applies to contractors, which directly opposes the claim that it does not apply to contractors."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.7, \"reason\": \"The CLAIM states the policy does not apply to contractors, but the EVIDENCE explicitly says the policy extends to contractors a"
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.8846,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.8846153846153847,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.41,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.41
+    },
+    {
+      "case_id": "ws-001",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": "The evidence refers to Product B, not Product A, so it does not support the claim about Product A supporting feature X."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence only shows that Product B supports feature X, not necessarily that Product A does as well. There is no direct link or proof connecting Product A to feature X."
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "The evidence about Product B supporting feature X with advanced configuration options does not directly relate to or support or contradict Product A's claimed support for feature X."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": "The claim refers to Product A, while the evidence refers to Product B, indicating a different subject."
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.625,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.625,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.51,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.51
+    },
+    {
+      "case_id": "ws-002",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reason": "The evidence about SOC 2's requirement for risk assessments does not directly entail or support the claim about ISO 27001's requirements."
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence shows that SOC 2 mandates periodic risk assessments, but it does not directly state that ISO 27001 also requires this."
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "SOC 2, a compliance framework similar to ISO 27001, explicitly requires periodic risk assessments, suggesting that ISO 27001 likely does as well."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"UNRELATED\", \"confidence\": 0.0, \"reason\": \"The CLAIM states that ISO 27001 requires risk assessment, while the EVIDENCE refers to SOC 2, a different certification standard,"
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.5789,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.5789473684210527,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.67,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.67
+    },
+    {
+      "case_id": "ws-003",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence shows that ISO 27001 includes risk identification processes, which is conceptually similar to the 'Identify' function "
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence shows that ISO 27001 includes risk identification processes, which is conceptually similar to the Identify function in"
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.6,
+          "reason": "Both NIST CSF and ISO 27001 mention identification processes, suggesting the NIST CSF's Identify function likely encompasses similar activities."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"relation\": \"SUPPORTS\", \"confidence\": 0.0, \"reason\": \"Both CLAIM and EVIDENCE refer to the same subject of risk identification processes, which is a component of the Identify function as defined in t"
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.6,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.6,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.76,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.76
+    },
+    {
+      "case_id": "ws-004",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"PARTIAL\", \"confidence\": 0.3, \"reason\": \"The evidence mentions credential-related vulnerabilities in the CVE database, which suggests involvement of authentication systems."
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence mentions credential-related vulnerabilities in the CVE database, which may relate to authentication systems, but it do"
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The CVE database's listing of credential-related vulnerabilities indicates systems that could be exploited through techniques similar to those documented in MITRE ATT&CK for credential dumping."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"relation\": \"SUPPORTS\", \"confidence\": 0.2, \"reason\": \"The CLAIM states MITRE ATT&CK documents cover credential dumping techniques, which are related to security vulnerabilities. The EVIDENCE mentions"
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.5294,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.5294117647058824,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.87,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.87
+    },
+    {
+      "case_id": "ws-005",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence mentions Elasticsearch collects log data for centralized monitoring, which is similar to how Splunk aggregates data, but it does not directly state Splunk's functionality."
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence mentions Elasticsearch, which is a component of the Splunk platform used for collecting and correlating log data. Howe"
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"UNRELATED\", \"confidence\": 0.5, \"reason\": \"While both Splunk and Elasticsearch are used for log management and analysis, the evidence provided describes a function of Elast"
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"UNRELATED\", \"confidence\": 0.0, \"reason\": \"The CLAIM states that Splunk aggregates security events from multiple sources, while the EVIDENCE describes Elasticsearch's capab"
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.6429,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.6428571428571428,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.76,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.76
+    },
+    {
+      "case_id": "wc-001",
+      "category": "wrong_context",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence shows effectiveness in traditional Windows domain environments, but does not specify if cloud environments are included or if the mechanisms differ."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence only specifies effectiveness in traditional Windows domain environments for lateral movement, not in cloud environments where the technique might behave differently."
+        },
+        {
+          "worker": "C",
+          "relation": "PARTIAL",
+          "confidence": 0.4,
+          "reason": "The evidence shows effectiveness in traditional Windows domains, but does not specify cloud environments, leaving the claim partially supported or unsupported due to potential differences in security models and infrastructure."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"UNRELATED\", \"confidence\": 0.0, \"reason\": \"The CLAIM states Technique X is effective in cloud environments, while the EVIDENCE provides no information about cloud environme"
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.8235,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.8235294117647058,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.64,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.64
+    },
+    {
+      "case_id": "wc-002",
+      "category": "wrong_context",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": "The evidence describes adoption by healthcare organizations for patient data protection, which is unrelated to financial institutions."
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": "The evidence describes adoption by healthcare organizations for patient data protection, which is unrelated to financial institutions."
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.5,
+          "reason": "The evidence mentions adoption by healthcare organizations for patient data protection, which is unrelated to financial institutions."
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.7,
+          "reason": "The claim states the framework applies to financial institutions, but the evidence shows it has been adopted by healthcare organizations, indicating a different subject or context."
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.5833,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.5833333333333334,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.05,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.05
+    },
+    {
+      "case_id": "wc-003",
+      "category": "wrong_context",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence shows the control is used for identifying gaps, which is relevant to incident response as it helps in assessing and ad"
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"B\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence shows the control's use during the assessment phase, which is part of incident response activities, but it does not ex"
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"PARTIAL\", \"confidence\": 0.6, \"reason\": \"The evidence indicates the control's purpose is for identifying gaps during the assessment phase, which is related to incident resp"
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.6,
+          "reason": "The evidence indicates the control is used in the assessment phase, which is part of the security lifecycle, implying its design includes incident response considerations."
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.6,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.6,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.85,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.85
+    },
+    {
+      "case_id": "wc-004",
+      "category": "wrong_context",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": "The evidence describes a kernel-level network driver issue requiring OS-level patching, which is unrelated to the web application layer vulnerability."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence specifies that the vulnerability affects the kernel-level network driver and necessitates OS-level patching, which suggests a deeper system issue than just the web application layer."
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.9, \"reason\": \"The claim states the vulnerability affects the web application layer, but the evidence indicates it impacts the kernel-level ne"
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.7, \"reason\": \"The CLAIM states the vulnerability affects the web application layer, while the EVIDENCE specifies it impacts the kernel-level "
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.5455,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.5454545454545454,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.89,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.89
+    },
+    {
+      "case_id": "wc-005",
+      "category": "wrong_context",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"PARTIAL\", \"confidence\": 0.4, \"reason\": \"The evidence shows the mitigation worked in a controlled lab setting, which is a positive indication but does not directly confirm "
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.7,
+          "reason": "The evidence shows the mitigation was effective in a controlled laboratory setting, but it does not specify that it has been tested or proven effective in actual production environments."
+        },
+        {
+          "worker": "C",
+          "relation": "PARTIAL",
+          "confidence": 0.7,
+          "reason": "The evidence shows the mitigation worked in a controlled lab setting, but effectiveness in real-world production environments with varied conditions is not established."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"PARTIAL\", \"confidence\": 0.7, \"reason\": \"The evidence shows the mitigation was tested in a controlled laboratory setting, which is a specific environment. The claim suggest"
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.7,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.7,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.68,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.68
+    },
+    {
+      "case_id": "a-001",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence states that X detects credential theft attempts and alerts security teams, which implies that X can prevent credential theft by providing early warning and enabling response."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.8,
+          "reason": "The evidence shows X can detect and alert on credential theft attempts, but it does not prove that X completely prevents credential theft."
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.7,
+          "reason": "The claim states X prevents credential theft, but the evidence indicates X only detects and alerts about credential theft attempts, implying it does not fully prevent the theft."
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"SUPPORTS\", \"confidence\": 0.85, \"reason\": \"The evidence indicates that X not only detects credential theft attempts but also alerts security teams, which aligns with the cl"
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.3077,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.3076923076923077,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.82,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.82
+    },
+    {
+      "case_id": "a-002",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence states the tool identifies and categorizes vulnerabilities, which implies it can detect them, but it does not explicit"
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence shows the tool can identify and categorize vulnerabilities, but it does not explicitly state that the tool also automatically remediates them."
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The evidence states the tool identifies and categorizes vulnerabilities, which implies it can detect them, but it does not explicit"
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence shows the tool can identify and categorize vulnerabilities, which implies it can automatically remediate them as it processes the identified issues."
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.4211,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.4210526315789474,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.78,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.78
+    },
+    {
+      "case_id": "a-003",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.3,
+          "reason": "The evidence states the framework recommends encryption at rest as a best practice, which suggests support for the idea but does not strictly mandate it."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence states the framework recommends encryption at rest as a best practice, but does not explicitly state it mandates encryption at rest."
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The claim states the framework mandates encryption at rest, implying a requirement. The evidence only says it recommends encryption"
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"PARTIAL\", \"confidence\": 0.5, \"reason\": \"The CLAIM states the framework mandates encryption at rest, while the EVIDENCE says it only recommends it as a best practice. This "
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.5714,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.5714285714285715,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.67,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.67
+    },
+    {
+      "case_id": "a-004",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence shows the system identifies suspicious traffic, which may include unauthorized traffic, but it does not explicitly state that all unauthorized traffic is blocked."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence shows that suspicious traffic is flagged for review, but it does not confirm that all unauthorized traffic is blocked automatically."
+        },
+        {
+          "worker": "C",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The system does not completely block all unauthorized traffic; it only flags suspicious traffic for review, implying some unauthorized traffic might proceed undetected."
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": "The evidence indicates that the system identifies and flags suspicious (potentially unauthorized) traffic, which aligns with the claim that it blocks unauthorized traffic."
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.6522,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.6521739130434783,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.63,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.63
+    },
+    {
+      "case_id": "a-005",
+      "category": "adversarial",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"A\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.75, \"reason\": \"The evidence states the vulnerability has had patches for six months, implying it is not a zero-day (unpatched) vulnerability,"
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.8,
+          "reason": "The evidence indicates the vulnerability is known and patches exist, suggesting it may not be a true zero-day (unpatched) vulnerability."
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"C\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.9, \"reason\": \"A zero-day vulnerability is defined as an unknown (and thus unpatched) vulnerability. Since patches have been available for six"
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.3,
+          "reason": "[fallback parse] {\"worker\": \"D\", \"relation\": \"CONTRADICTS\", \"confidence\": 0.7, \"reason\": \"The CLAIM states the technique exploits a zero-day vulnerability (implying it is unknown and unpatched), while the EVIDENCE spe"
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.5294,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.5294117647058824,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.76,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.76
+    },
+    {
+      "case_id": "a-006",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence indicates the solution lowers the risk of ransomware by detecting infections early, but it does not claim to provide complete protection against all forms of ransomware."
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence indicates the solution reduces risk and uses detection methods, but it does not claim complete protection against all ransomware variants."
+        },
+        {
+          "worker": "C",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence states the solution reduces risk and detects infections early, but does not claim it provides complete protection against all ransomware variants."
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.5,
+          "reason": "The evidence suggests the solution mitigates ransomware risks but does not claim it provides complete protection."
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 1.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 1.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.41,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.41
+    }
+  ]
+}
