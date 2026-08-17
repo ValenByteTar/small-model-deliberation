@@ -1,0 +1,1982 @@
+{
+  "fase1": [
+    {
+      "regime": "NLI 4-way",
+      "greedy_accuracy": 0.2727,
+      "greedy_correct": 6,
+      "argmax_accuracy": 0.2727,
+      "argmax_correct": 6,
+      "by_category": {
+        "full_support": {
+          "total": 3,
+          "correct": 3,
+          "accuracy": 1.0,
+          "predictions": {
+            "SUPPORTS": 3
+          }
+        },
+        "partial_support": {
+          "total": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "SUPPORTS": 6
+          }
+        },
+        "minimal_difference": {
+          "total": 3,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "SUPPORTS": 3
+          }
+        },
+        "single_dimension_missing": {
+          "total": 3,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "SUPPORTS": 3
+          }
+        },
+        "atomic_true": {
+          "total": 3,
+          "correct": 3,
+          "accuracy": 1.0,
+          "predictions": {
+            "SUPPORTS": 3
+          }
+        },
+        "atomic_false": {
+          "total": 2,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "SUPPORTS": 2
+          }
+        },
+        "atomic_not_mentioned": {
+          "total": 2,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "SUPPORTS": 2
+          }
+        }
+      },
+      "cases": [
+        {
+          "id": "fs-001",
+          "category": "full_support",
+          "expected": "SUPPORTS",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": true,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.11037209631469369,
+            "CONTRADICTS": -3.708378314971924
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "fs-002",
+          "category": "full_support",
+          "expected": "SUPPORTS",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": true,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.21646720966666755,
+            "CONTRADICTS": -3.2361419200897217
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "fs-003",
+          "category": "full_support",
+          "expected": "SUPPORTS",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": true,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.24594857482619203,
+            "CONTRADICTS": -3.0449161529541016
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "ps-001",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.10510734094293162,
+            "CONTRADICTS": -3.9887871742248535
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "ps-002",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.22771215049641558,
+            "CONTRADICTS": -3.036142377481193
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "ps-003",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.31957396072991606,
+            "CONTRADICTS": -2.6587457629124738
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "ps-004",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.15336968075080104,
+            "CONTRADICTS": -3.9558088779449463
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "ps-005",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.19653734190112748,
+            "CONTRADICTS": -3.279236078262329
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "ps-006",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.2812880154705458,
+            "CONTRADICTS": -3.0958046913146973
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "md-001",
+          "category": "minimal_difference",
+          "expected": "PARTIAL",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.10972552001329106,
+            "CONTRADICTS": -3.543538509450173
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "md-002",
+          "category": "minimal_difference",
+          "expected": "PARTIAL",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.2520533961444251,
+            "CONTRADICTS": -3.235382318496704
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "md-003",
+          "category": "minimal_difference",
+          "expected": "PARTIAL",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.26162123835346485,
+            "CONTRADICTS": -3.080406427383423
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "sd-001",
+          "category": "single_dimension_missing",
+          "expected": "PARTIAL",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.1427217841173425,
+            "CONTRADICTS": -3.603393793106079
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "sd-002",
+          "category": "single_dimension_missing",
+          "expected": "PARTIAL",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.27921461127057257,
+            "CONTRADICTS": -2.908089279688031
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "sd-003",
+          "category": "single_dimension_missing",
+          "expected": "PARTIAL",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.20104428619470072,
+            "CONTRADICTS": -3.59555983543396
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "at-001",
+          "category": "atomic_true",
+          "expected": "SUPPORTS",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": true,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.21542645176986774,
+            "CONTRADICTS": -3.821683168411255
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "at-002",
+          "category": "atomic_true",
+          "expected": "SUPPORTS",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": true,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.177406180847533,
+            "CONTRADICTS": -3.7839722633361816
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "at-003",
+          "category": "atomic_true",
+          "expected": "SUPPORTS",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": true,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.19939037502206292,
+            "CONTRADICTS": -3.868363857269287
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "af-001",
+          "category": "atomic_false",
+          "expected": "CONTRADICTS",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.19973694937715974,
+            "CONTRADICTS": -3.7975516319274902
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "af-002",
+          "category": "atomic_false",
+          "expected": "CONTRADICTS",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.14018221679759957,
+            "CONTRADICTS": -3.880420684814453
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "an-001",
+          "category": "atomic_not_mentioned",
+          "expected": "UNRELATED",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.17669044006777868,
+            "CONTRADICTS": -3.808602809906006
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "an-002",
+          "category": "atomic_not_mentioned",
+          "expected": "UNRELATED",
+          "predicted": "SUPPORTS",
+          "raw": "Yes",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -0.26681625603225123,
+            "CONTRADICTS": -3.1060092449188232
+          },
+          "argmax": "SUPPORTS"
+        }
+      ]
+    },
+    {
+      "regime": "NLI Cascading",
+      "greedy_accuracy": 0.5455,
+      "greedy_correct": 12,
+      "argmax_accuracy": 0.5455,
+      "argmax_correct": 12,
+      "by_category": {
+        "full_support": {
+          "total": 3,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "PARTIAL": 3
+          }
+        },
+        "partial_support": {
+          "total": 6,
+          "correct": 6,
+          "accuracy": 1.0,
+          "predictions": {
+            "PARTIAL": 6
+          }
+        },
+        "minimal_difference": {
+          "total": 3,
+          "correct": 3,
+          "accuracy": 1.0,
+          "predictions": {
+            "PARTIAL": 3
+          }
+        },
+        "single_dimension_missing": {
+          "total": 3,
+          "correct": 3,
+          "accuracy": 1.0,
+          "predictions": {
+            "PARTIAL": 3
+          }
+        },
+        "atomic_true": {
+          "total": 3,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "PARTIAL": 3
+          }
+        },
+        "atomic_false": {
+          "total": 2,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "PARTIAL": 2
+          }
+        },
+        "atomic_not_mentioned": {
+          "total": 2,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "PARTIAL": 2
+          }
+        }
+      },
+      "cases": [
+        {
+          "id": "fs-001",
+          "category": "full_support",
+          "expected": "SUPPORTS",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": false,
+          "logprobs_by_label": {
+            "TRUE": -0.5413140372046483,
+            "FALSE": -1.6596154991955263
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "fs-002",
+          "category": "full_support",
+          "expected": "SUPPORTS",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": false,
+          "logprobs_by_label": {
+            "TRUE": -0.6136075729259267,
+            "FALSE": -1.3819420932810944
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "fs-003",
+          "category": "full_support",
+          "expected": "SUPPORTS",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": false,
+          "logprobs_by_label": {
+            "TRUE": -0.7250937806754462,
+            "FALSE": -1.1062194107872645
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "ps-001",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": true,
+          "logprobs_by_label": {
+            "TRUE": -0.5426277129266889,
+            "FALSE": -1.5783151025216111
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "ps-002",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": true,
+          "logprobs_by_label": {
+            "TRUE": -0.6377361641519181,
+            "FALSE": -1.148467906446
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "ps-003",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": true,
+          "logprobs_by_label": {
+            "TRUE": -0.6234863835595504,
+            "FALSE": -1.2116405732150106
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "ps-004",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": true,
+          "logprobs_by_label": {
+            "TRUE": -0.5683384066020931,
+            "FALSE": -1.3025768378224427
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "ps-005",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": true,
+          "logprobs_by_label": {
+            "TRUE": -0.6442150287766245,
+            "FALSE": -1.1739644088330774
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "ps-006",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": true,
+          "logprobs_by_label": {
+            "TRUE": -0.6915596595072344,
+            "FALSE": -1.0654552900246608
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "md-001",
+          "category": "minimal_difference",
+          "expected": "PARTIAL",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": true,
+          "logprobs_by_label": {
+            "TRUE": -0.5510709102208551,
+            "FALSE": -1.553954437276194
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "md-002",
+          "category": "minimal_difference",
+          "expected": "PARTIAL",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": true,
+          "logprobs_by_label": {
+            "TRUE": -0.608573897500504,
+            "FALSE": -1.3899175092211418
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "md-003",
+          "category": "minimal_difference",
+          "expected": "PARTIAL",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": true,
+          "logprobs_by_label": {
+            "TRUE": -0.9364420223675364,
+            "FALSE": -1.1255513742477905
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "sd-001",
+          "category": "single_dimension_missing",
+          "expected": "PARTIAL",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": true,
+          "logprobs_by_label": {
+            "TRUE": -0.6464655219960146,
+            "FALSE": -1.5022503492211658
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "sd-002",
+          "category": "single_dimension_missing",
+          "expected": "PARTIAL",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": true,
+          "logprobs_by_label": {
+            "TRUE": -0.6727429844866535,
+            "FALSE": -1.1075504606708415
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "sd-003",
+          "category": "single_dimension_missing",
+          "expected": "PARTIAL",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": true,
+          "logprobs_by_label": {
+            "TRUE": -0.5560627393225661,
+            "FALSE": -1.3077066457242184
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "at-001",
+          "category": "atomic_true",
+          "expected": "SUPPORTS",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": false,
+          "logprobs_by_label": {
+            "TRUE": -0.705216104076436,
+            "FALSE": -1.1195512772058112
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "at-002",
+          "category": "atomic_true",
+          "expected": "SUPPORTS",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": false,
+          "logprobs_by_label": {
+            "TRUE": -0.6707833364379557,
+            "FALSE": -1.1332610107036185
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "at-003",
+          "category": "atomic_true",
+          "expected": "SUPPORTS",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": false,
+          "logprobs_by_label": {
+            "TRUE": -0.66709762533686,
+            "FALSE": -1.1610064440032901
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "af-001",
+          "category": "atomic_false",
+          "expected": "CONTRADICTS",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": false,
+          "logprobs_by_label": {
+            "TRUE": -0.5842916262648535,
+            "FALSE": -1.183748203255302
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "af-002",
+          "category": "atomic_false",
+          "expected": "CONTRADICTS",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": false,
+          "logprobs_by_label": {
+            "TRUE": -0.41607312536962326,
+            "FALSE": -1.5346103177622168
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "an-001",
+          "category": "atomic_not_mentioned",
+          "expected": "UNRELATED",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": false,
+          "logprobs_by_label": {
+            "TRUE": -0.7194115810951258,
+            "FALSE": -1.1548841318260268
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "an-002",
+          "category": "atomic_not_mentioned",
+          "expected": "UNRELATED",
+          "predicted": "PARTIAL",
+          "raw": "True -> Partial",
+          "correct": false,
+          "logprobs_by_label": {
+            "TRUE": -0.6456994288462758,
+            "FALSE": -1.426265209578048
+          },
+          "argmax": "PARTIAL"
+        }
+      ]
+    },
+    {
+      "regime": "Direct FULL/PARTIAL",
+      "greedy_accuracy": 0.0909,
+      "greedy_correct": 2,
+      "argmax_accuracy": 0.3182,
+      "argmax_correct": 7,
+      "by_category": {
+        "full_support": {
+          "total": 3,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "CONTRADICTS": 3
+          }
+        },
+        "partial_support": {
+          "total": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "CONTRADICTS": 6
+          }
+        },
+        "minimal_difference": {
+          "total": 3,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "CONTRADICTS": 2,
+            "UNRELATED": 1
+          }
+        },
+        "single_dimension_missing": {
+          "total": 3,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "CONTRADICTS": 3
+          }
+        },
+        "atomic_true": {
+          "total": 3,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "CONTRADICTS": 3
+          }
+        },
+        "atomic_false": {
+          "total": 2,
+          "correct": 2,
+          "accuracy": 1.0,
+          "predictions": {
+            "CONTRADICTS": 2
+          }
+        },
+        "atomic_not_mentioned": {
+          "total": 2,
+          "correct": 0,
+          "accuracy": 0.0,
+          "predictions": {
+            "CONTRADICTS": 2
+          }
+        }
+      },
+      "cases": [
+        {
+          "id": "fs-001",
+          "category": "full_support",
+          "expected": "SUPPORTS",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -2.3008322064218336
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "fs-002",
+          "category": "full_support",
+          "expected": "SUPPORTS",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.6997132301330566
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "fs-003",
+          "category": "full_support",
+          "expected": "SUPPORTS",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.5571253299713135
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "ps-001",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.2838354110717773
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "ps-002",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -4.301955223083496
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "ps-003",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -4.0076446533203125
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "ps-004",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.51289701461792
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "ps-005",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -4.3006110191345215
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "ps-006",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.680384397506714
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "md-001",
+          "category": "minimal_difference",
+          "expected": "PARTIAL",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -1.6617458908996534
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "md-002",
+          "category": "minimal_difference",
+          "expected": "PARTIAL",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.678311824798584
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "md-003",
+          "category": "minimal_difference",
+          "expected": "PARTIAL",
+          "predicted": "UNRELATED",
+          "raw": "UNRELATED",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.6140682697296143
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "sd-001",
+          "category": "single_dimension_missing",
+          "expected": "PARTIAL",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.4263558387756348
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "sd-002",
+          "category": "single_dimension_missing",
+          "expected": "PARTIAL",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.3498473167419434
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "sd-003",
+          "category": "single_dimension_missing",
+          "expected": "PARTIAL",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "PARTIAL": -3.9964993000030518
+          },
+          "argmax": "PARTIAL"
+        },
+        {
+          "id": "at-001",
+          "category": "atomic_true",
+          "expected": "SUPPORTS",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -2.556616645777172
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "at-002",
+          "category": "atomic_true",
+          "expected": "SUPPORTS",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.1431632041931152
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "at-003",
+          "category": "atomic_true",
+          "expected": "SUPPORTS",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.4190330505371094
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "af-001",
+          "category": "atomic_false",
+          "expected": "CONTRADICTS",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": true,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.767624855041504
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "af-002",
+          "category": "atomic_false",
+          "expected": "CONTRADICTS",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": true,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.967813014984131
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "an-001",
+          "category": "atomic_not_mentioned",
+          "expected": "UNRELATED",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.063014507293701
+          },
+          "argmax": "SUPPORTS"
+        },
+        {
+          "id": "an-002",
+          "category": "atomic_not_mentioned",
+          "expected": "UNRELATED",
+          "predicted": "CONTRADICTS",
+          "raw": "CONTRADICTS",
+          "correct": false,
+          "logprobs_by_label": {
+            "SUPPORTS": -3.542442798614502
+          },
+          "argmax": "SUPPORTS"
+        }
+      ]
+    }
+  ],
+  "fase2": {
+    "regime": "Atomic Decomposition",
+    "decomposable_cases": 15,
+    "greedy_accuracy": 0.3333,
+    "greedy_correct": 5,
+    "argmax_accuracy": 0.3333,
+    "argmax_correct": 5,
+    "atomic_true_accuracy": 0.7778,
+    "atomic_true_correct": 35,
+    "atomic_true_total": 45,
+    "atomic_false_accuracy": 0.0,
+    "atomic_false_correct": 0,
+    "atomic_false_total": 0,
+    "by_category": {
+      "full_support": {
+        "total": 3,
+        "correct": 2,
+        "accuracy": 0.6667,
+        "predictions": {
+          "SUPPORTS": 2,
+          "CONTRADICTS": 1
+        }
+      },
+      "partial_support": {
+        "total": 6,
+        "correct": 1,
+        "accuracy": 0.1667,
+        "predictions": {
+          "PARTIAL": 1,
+          "SUPPORTS": 5
+        }
+      },
+      "minimal_difference": {
+        "total": 3,
+        "correct": 1,
+        "accuracy": 0.3333,
+        "predictions": {
+          "SUPPORTS": 1,
+          "PARTIAL": 1,
+          "CONTRADICTS": 1
+        }
+      },
+      "single_dimension_missing": {
+        "total": 3,
+        "correct": 1,
+        "accuracy": 0.3333,
+        "predictions": {
+          "PARTIAL": 1,
+          "SUPPORTS": 2
+        }
+      }
+    },
+    "cases": [
+      {
+        "id": "fs-001",
+        "category": "full_support",
+        "expected": "SUPPORTS",
+        "claim": "The system supports encryption at rest, encryption in transit, and access logging.",
+        "evidence": "The system supports encryption at rest, encryption in transit, and access logging.",
+        "atoms": [
+          "The system supports encryption at rest",
+          "The system supports encryption in transit",
+          "The system supports access logging"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The system supports encryption at rest",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.8097837906937628,
+              "FALSE": -0.9497290746335195
+            }
+          },
+          {
+            "atom": "The system supports encryption in transit",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.8293378695905356,
+              "FALSE": -0.9783808039388885
+            }
+          },
+          {
+            "atom": "The system supports access logging",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.8170417618527337,
+              "FALSE": -0.9624772171526874
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE (argmax)",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "final_greedy": "SUPPORTS",
+        "final_argmax": "SUPPORTS",
+        "correct_greedy": true,
+        "correct_argmax": true
+      },
+      {
+        "id": "fs-002",
+        "category": "full_support",
+        "expected": "SUPPORTS",
+        "claim": "The protocol provides authentication, authorization, and auditing.",
+        "evidence": "The protocol provides authentication, authorization, and auditing.",
+        "atoms": [
+          "The protocol provides authentication",
+          "The protocol provides authorization",
+          "The protocol provides auditing"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The protocol provides authentication",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.7263838837346704,
+              "FALSE": -0.8628835273672764
+            }
+          },
+          {
+            "atom": "The protocol provides authorization",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.7774263770954196,
+              "FALSE": -0.8217254188740897
+            }
+          },
+          {
+            "atom": "The protocol provides auditing",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.7516042373738119,
+              "FALSE": -0.8486834741748466
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE (argmax)",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "final_greedy": "SUPPORTS",
+        "final_argmax": "SUPPORTS",
+        "correct_greedy": true,
+        "correct_argmax": true
+      },
+      {
+        "id": "fs-003",
+        "category": "full_support",
+        "expected": "SUPPORTS",
+        "claim": "The tool performs scanning, analysis, and remediation.",
+        "evidence": "The tool performs scanning, analysis, and remediation.",
+        "atoms": [
+          "The tool performs scanning",
+          "The tool performs analysis",
+          "The tool performs remediation"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The tool performs scanning",
+            "greedy": "FALSE",
+            "argmax": "FALSE",
+            "logprobs": {
+              "FALSE": -0.8232521748191894,
+              "TRUE": -0.9155115897869525
+            }
+          },
+          {
+            "atom": "The tool performs analysis",
+            "greedy": "FALSE",
+            "argmax": "FALSE",
+            "logprobs": {
+              "FALSE": -0.8069947984751396,
+              "TRUE": -0.9579036698470642
+            }
+          },
+          {
+            "atom": "The tool performs remediation",
+            "greedy": "FALSE",
+            "argmax": "FALSE",
+            "logprobs": {
+              "FALSE": -0.7437042980850761,
+              "TRUE": -1.061637734926645
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "CONTRADICTS",
+          "reason": "0/3 TRUE",
+          "true_count": 0,
+          "false_count": 3,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "CONTRADICTS",
+          "reason": "0/3 TRUE (argmax)",
+          "true_count": 0,
+          "false_count": 3,
+          "total": 3
+        },
+        "final_greedy": "CONTRADICTS",
+        "final_argmax": "CONTRADICTS",
+        "correct_greedy": false,
+        "correct_argmax": false
+      },
+      {
+        "id": "ps-001",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "claim": "The system supports encryption at rest, encryption in transit, and access logging.",
+        "evidence": "The system supports encryption at rest and encryption in transit.",
+        "atoms": [
+          "The system supports encryption at rest",
+          "The system supports encryption in transit",
+          "The system supports access logging"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The system supports encryption at rest",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.8027827717362279,
+              "FALSE": -0.8891149666181718
+            }
+          },
+          {
+            "atom": "The system supports encryption in transit",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.7837385271600023,
+              "FALSE": -0.9319580406054183
+            }
+          },
+          {
+            "atom": "The system supports access logging",
+            "greedy": "FALSE",
+            "argmax": "FALSE",
+            "logprobs": {
+              "FALSE": -0.7285526453538724,
+              "TRUE": -1.0046723113211
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "PARTIAL",
+          "reason": "2/3 TRUE",
+          "true_count": 2,
+          "false_count": 1,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "PARTIAL",
+          "reason": "2/3 TRUE (argmax)",
+          "true_count": 2,
+          "false_count": 1,
+          "total": 3
+        },
+        "final_greedy": "PARTIAL",
+        "final_argmax": "PARTIAL",
+        "correct_greedy": true,
+        "correct_argmax": true
+      },
+      {
+        "id": "ps-002",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "claim": "The protocol provides authentication, authorization, and auditing.",
+        "evidence": "The protocol provides authentication and authorization.",
+        "atoms": [
+          "The protocol provides authentication",
+          "The protocol provides authorization",
+          "The protocol provides auditing"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The protocol provides authentication",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.4231048428727678,
+              "FALSE": -1.2677496655230973
+            }
+          },
+          {
+            "atom": "The protocol provides authorization",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.45106784895041835,
+              "FALSE": -1.2139492690961968
+            }
+          },
+          {
+            "atom": "The protocol provides auditing",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.4430992499936284,
+              "FALSE": -1.212084417240563
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE (argmax)",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "final_greedy": "SUPPORTS",
+        "final_argmax": "SUPPORTS",
+        "correct_greedy": false,
+        "correct_argmax": false
+      },
+      {
+        "id": "ps-003",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "claim": "The tool performs scanning, analysis, and remediation.",
+        "evidence": "The tool performs scanning and analysis.",
+        "atoms": [
+          "The tool performs scanning",
+          "The tool performs analysis",
+          "The tool performs remediation"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The tool performs scanning",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.5144748859246804,
+              "FALSE": -1.186667488182132
+            }
+          },
+          {
+            "atom": "The tool performs analysis",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.5721337320395756,
+              "FALSE": -1.055836997707052
+            }
+          },
+          {
+            "atom": "The tool performs remediation",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.6470588552562198,
+              "FALSE": -1.0212562144895496
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE (argmax)",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "final_greedy": "SUPPORTS",
+        "final_argmax": "SUPPORTS",
+        "correct_greedy": false,
+        "correct_argmax": false
+      },
+      {
+        "id": "ps-004",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "claim": "The system supports encryption at rest, encryption in transit, and access logging.",
+        "evidence": "The system supports encryption at rest.",
+        "atoms": [
+          "The system supports encryption at rest",
+          "The system supports encryption in transit",
+          "The system supports access logging"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The system supports encryption at rest",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.5926278411463667,
+              "FALSE": -1.1090123462276305
+            }
+          },
+          {
+            "atom": "The system supports encryption in transit",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.5489982120871523,
+              "FALSE": -1.1615832441923093
+            }
+          },
+          {
+            "atom": "The system supports access logging",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.5874111210719389,
+              "FALSE": -1.0920990010705578
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE (argmax)",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "final_greedy": "SUPPORTS",
+        "final_argmax": "SUPPORTS",
+        "correct_greedy": false,
+        "correct_argmax": false
+      },
+      {
+        "id": "ps-005",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "claim": "The protocol provides authentication, authorization, and auditing.",
+        "evidence": "The protocol provides authentication.",
+        "atoms": [
+          "The protocol provides authentication",
+          "The protocol provides authorization",
+          "The protocol provides auditing"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The protocol provides authentication",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.5219987608473736,
+              "FALSE": -1.108865606476488
+            }
+          },
+          {
+            "atom": "The protocol provides authorization",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.5399676040801175,
+              "FALSE": -1.0412310388841104
+            }
+          },
+          {
+            "atom": "The protocol provides auditing",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.5348799711621772,
+              "FALSE": -1.0562692470691242
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE (argmax)",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "final_greedy": "SUPPORTS",
+        "final_argmax": "SUPPORTS",
+        "correct_greedy": false,
+        "correct_argmax": false
+      },
+      {
+        "id": "ps-006",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "claim": "The tool performs scanning, analysis, and remediation.",
+        "evidence": "The tool performs scanning.",
+        "atoms": [
+          "The tool performs scanning",
+          "The tool performs analysis",
+          "The tool performs remediation"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The tool performs scanning",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.4791576436735259,
+              "FALSE": -1.2183889087354407
+            }
+          },
+          {
+            "atom": "The tool performs analysis",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.6182486293977844,
+              "FALSE": -1.0240336886153845
+            }
+          },
+          {
+            "atom": "The tool performs remediation",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.5690642879368673,
+              "FALSE": -1.0727695611850838
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE (argmax)",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "final_greedy": "SUPPORTS",
+        "final_argmax": "SUPPORTS",
+        "correct_greedy": false,
+        "correct_argmax": false
+      },
+      {
+        "id": "md-001",
+        "category": "minimal_difference",
+        "expected": "PARTIAL",
+        "claim": "The system supports encryption at rest, encryption in transit, and access logging.",
+        "evidence": "The system supports encryption at rest, encryption in transit, and audit logging.",
+        "atoms": [
+          "The system supports encryption at rest",
+          "The system supports encryption in transit",
+          "The system supports access logging"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The system supports encryption at rest",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.7783328324569669,
+              "FALSE": -0.9323334362509236
+            }
+          },
+          {
+            "atom": "The system supports encryption in transit",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.764474196236331,
+              "FALSE": -0.9594518665311521
+            }
+          },
+          {
+            "atom": "The system supports access logging",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.7763753396531358,
+              "FALSE": -0.9268731357248117
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE (argmax)",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "final_greedy": "SUPPORTS",
+        "final_argmax": "SUPPORTS",
+        "correct_greedy": false,
+        "correct_argmax": false
+      },
+      {
+        "id": "md-002",
+        "category": "minimal_difference",
+        "expected": "PARTIAL",
+        "claim": "The protocol provides authentication, authorization, and auditing.",
+        "evidence": "The protocol provides authentication, authorization, and logging.",
+        "atoms": [
+          "The protocol provides authentication",
+          "The protocol provides authorization",
+          "The protocol provides auditing"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The protocol provides authentication",
+            "greedy": "FALSE",
+            "argmax": "FALSE",
+            "logprobs": {
+              "FALSE": -0.814822611297132,
+              "TRUE": -0.8311131260239668
+            }
+          },
+          {
+            "atom": "The protocol provides authorization",
+            "greedy": "FALSE",
+            "argmax": "FALSE",
+            "logprobs": {
+              "FALSE": -0.7970914121530903,
+              "TRUE": -0.8141154860046168
+            }
+          },
+          {
+            "atom": "The protocol provides auditing",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.7686998419324955,
+              "FALSE": -0.8403541033929682
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "PARTIAL",
+          "reason": "1/3 TRUE",
+          "true_count": 1,
+          "false_count": 2,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "PARTIAL",
+          "reason": "1/3 TRUE (argmax)",
+          "true_count": 1,
+          "false_count": 2,
+          "total": 3
+        },
+        "final_greedy": "PARTIAL",
+        "final_argmax": "PARTIAL",
+        "correct_greedy": true,
+        "correct_argmax": true
+      },
+      {
+        "id": "md-003",
+        "category": "minimal_difference",
+        "expected": "PARTIAL",
+        "claim": "The tool performs scanning, analysis, and remediation.",
+        "evidence": "The tool performs scanning, analysis, and fixing.",
+        "atoms": [
+          "The tool performs scanning",
+          "The tool performs analysis",
+          "The tool performs remediation"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The tool performs scanning",
+            "greedy": "FALSE",
+            "argmax": "FALSE",
+            "logprobs": {
+              "FALSE": -0.8449585905960464,
+              "TRUE": -0.9943817647390583
+            }
+          },
+          {
+            "atom": "The tool performs analysis",
+            "greedy": "FALSE",
+            "argmax": "FALSE",
+            "logprobs": {
+              "FALSE": -0.8481967063458071,
+              "TRUE": -1.01874788330945
+            }
+          },
+          {
+            "atom": "The tool performs remediation",
+            "greedy": "FALSE",
+            "argmax": "FALSE",
+            "logprobs": {
+              "FALSE": -0.7689473240472515,
+              "TRUE": -1.206178183054881
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "CONTRADICTS",
+          "reason": "0/3 TRUE",
+          "true_count": 0,
+          "false_count": 3,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "CONTRADICTS",
+          "reason": "0/3 TRUE (argmax)",
+          "true_count": 0,
+          "false_count": 3,
+          "total": 3
+        },
+        "final_greedy": "CONTRADICTS",
+        "final_argmax": "CONTRADICTS",
+        "correct_greedy": false,
+        "correct_argmax": false
+      },
+      {
+        "id": "sd-001",
+        "category": "single_dimension_missing",
+        "expected": "PARTIAL",
+        "claim": "The system encrypts data at rest, in transit, and during processing.",
+        "evidence": "The system encrypts data at rest and in transit.",
+        "atoms": [
+          "The system encrypts data at rest",
+          "The system encrypts in transit",
+          "The system encrypts during processing"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The system encrypts data at rest",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.8064052356994977,
+              "FALSE": -0.8995845910086301
+            }
+          },
+          {
+            "atom": "The system encrypts in transit",
+            "greedy": "TRUE",
+            "argmax": "FALSE",
+            "logprobs": {
+              "TRUE": -0.9061703536467819,
+              "FALSE": -0.8918672985335308
+            }
+          },
+          {
+            "atom": "The system encrypts during processing",
+            "greedy": "FALSE",
+            "argmax": "FALSE",
+            "logprobs": {
+              "FALSE": -0.8377463594312098,
+              "TRUE": -0.9191447197810145
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "PARTIAL",
+          "reason": "2/3 TRUE",
+          "true_count": 2,
+          "false_count": 1,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "PARTIAL",
+          "reason": "1/3 TRUE (argmax)",
+          "true_count": 1,
+          "false_count": 2,
+          "total": 3
+        },
+        "final_greedy": "PARTIAL",
+        "final_argmax": "PARTIAL",
+        "correct_greedy": true,
+        "correct_argmax": true
+      },
+      {
+        "id": "sd-002",
+        "category": "single_dimension_missing",
+        "expected": "PARTIAL",
+        "claim": "The framework covers endpoints, networks, and cloud infrastructure.",
+        "evidence": "The framework covers endpoints and networks.",
+        "atoms": [
+          "The framework covers endpoints",
+          "The framework covers networks",
+          "The framework covers cloud infrastructure"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The framework covers endpoints",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.6993347423615572,
+              "FALSE": -0.9521383376654655
+            }
+          },
+          {
+            "atom": "The framework covers networks",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.6856697630179364,
+              "FALSE": -0.9487972837809524
+            }
+          },
+          {
+            "atom": "The framework covers cloud infrastructure",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.691659434466309,
+              "FALSE": -1.0217350267844927
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE (argmax)",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "final_greedy": "SUPPORTS",
+        "final_argmax": "SUPPORTS",
+        "correct_greedy": false,
+        "correct_argmax": false
+      },
+      {
+        "id": "sd-003",
+        "category": "single_dimension_missing",
+        "expected": "PARTIAL",
+        "claim": "The policy applies to employees, contractors, and vendors.",
+        "evidence": "The policy applies to employees and contractors.",
+        "atoms": [
+          "The policy applies to employees",
+          "The policy applies contractors",
+          "The policy applies vendors"
+        ],
+        "atomic_results": [
+          {
+            "atom": "The policy applies to employees",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.6642687593792678,
+              "FALSE": -0.9570560758706459
+            }
+          },
+          {
+            "atom": "The policy applies contractors",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.5725542943633186,
+              "FALSE": -1.0869209638467627
+            }
+          },
+          {
+            "atom": "The policy applies vendors",
+            "greedy": "TRUE",
+            "argmax": "TRUE",
+            "logprobs": {
+              "TRUE": -0.6206825736554882,
+              "FALSE": -1.0011165113225078
+            }
+          }
+        ],
+        "aggregator_greedy": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "aggregator_argmax": {
+          "final": "SUPPORTS",
+          "reason": "3/3 TRUE (argmax)",
+          "true_count": 3,
+          "false_count": 0,
+          "total": 3
+        },
+        "final_greedy": "SUPPORTS",
+        "final_argmax": "SUPPORTS",
+        "correct_greedy": false,
+        "correct_argmax": false
+      }
+    ]
+  }
+}

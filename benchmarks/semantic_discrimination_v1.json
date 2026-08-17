@@ -1,0 +1,250 @@
+{
+  "description": "EXP-024: Semantic Discrimination x Decoding - pares minimos balanceados",
+  "design": "Mismo evidence, claims que difieren en un elemento semantico. Mide si P(TRUE)/P(FALSE) cambia.",
+  "groups": [
+    {
+      "group_id": "G1-entailment",
+      "description": "Entailment minimal pairs: mismo evidence, claim soportado vs no-soportado",
+      "pairs": [
+        {
+          "pair_id": "G1-P1",
+          "evidence": "The system supports encryption at rest and encryption in transit.",
+          "claim_a": "The system supports encryption at rest.",
+          "claim_a_expected": "SUPPORTS",
+          "claim_b": "The system supports encryption in transit.",
+          "claim_b_expected": "SUPPORTS",
+          "claim_c": "The system supports access logging.",
+          "claim_c_expected": "UNRELATED",
+          "rationale": "A y B estan soportados, C no esta mencionado. Si BitNet discrimina, P(TRUE|A) y P(TRUE|B) > P(TRUE|C)."
+        },
+        {
+          "pair_id": "G1-P2",
+          "evidence": "The framework consists of five functions: Identify, Detect, Protect, Respond, and Recover.",
+          "claim_a": "The framework has five functions.",
+          "claim_a_expected": "SUPPORTS",
+          "claim_b": "The framework has six functions.",
+          "claim_b_expected": "CONTRADICTS",
+          "claim_c": "The framework requires multi-factor authentication.",
+          "claim_c_expected": "UNRELATED",
+          "rationale": "A soportado, B contradice (cinco vs seis), C no mencionado. P(TRUE|A) > P(TRUE|B) y P(TRUE|A) > P(TRUE|C)."
+        },
+        {
+          "pair_id": "G1-P3",
+          "evidence": "The protocol requires authentication for all administrative endpoints.",
+          "claim_a": "The protocol requires authentication for administrative endpoints.",
+          "claim_a_expected": "SUPPORTS",
+          "claim_b": "The protocol requires authentication for all endpoints.",
+          "claim_b_expected": "PARTIAL",
+          "claim_c": "The protocol does not require authentication for administrative endpoints.",
+          "claim_c_expected": "CONTRADICTS",
+          "rationale": "A soportado (paraphrase), B over-specificity (all vs administrative), C contradiccion directa. P(TRUE|A) > P(TRUE|B) > P(TRUE|C)."
+        },
+        {
+          "pair_id": "G1-P4",
+          "evidence": "Product X supports AES-256 encryption for data at rest.",
+          "claim_a": "Product X supports AES-256 encryption for data at rest.",
+          "claim_a_expected": "SUPPORTS",
+          "claim_b": "Product Y supports AES-256 encryption for data at rest.",
+          "claim_b_expected": "UNRELATED",
+          "claim_c": "Product X supports AES-128 encryption for data at rest.",
+          "claim_c_expected": "CONTRADICTS",
+          "rationale": "A soportado, B wrong subject (Product Y), C contradiccion (AES-256 vs AES-128). P(TRUE|A) > P(TRUE|B) y P(TRUE|A) > P(TRUE|C)."
+        },
+        {
+          "pair_id": "G1-P5",
+          "evidence": "The standard recommends regular risk assessments but does not mandate a specific frequency.",
+          "claim_a": "The standard recommends regular risk assessments.",
+          "claim_a_expected": "SUPPORTS",
+          "claim_b": "The standard mandates quarterly risk assessments.",
+          "claim_b_expected": "CONTRADICTS",
+          "claim_c": "The standard requires multi-factor authentication.",
+          "claim_c_expected": "UNRELATED",
+          "rationale": "A soportado, B contradice (recommends vs mandates, specific frequency), C no mencionado."
+        }
+      ]
+    },
+    {
+      "group_id": "G2-contradiction",
+      "description": "Contradiction minimal pairs: negacion explicita vs implicita",
+      "pairs": [
+        {
+          "pair_id": "G2-P1",
+          "evidence": "The system does not support encryption in transit.",
+          "claim_a": "The system supports encryption in transit.",
+          "claim_a_expected": "CONTRADICTS",
+          "claim_b": "The system does not support encryption in transit.",
+          "claim_b_expected": "SUPPORTS",
+          "claim_c": "The system supports encryption at rest.",
+          "claim_c_expected": "UNRELATED",
+          "rationale": "A contradice (negacion en evidence), B coincide con negacion, C no mencionado. P(TRUE|B) > P(TRUE|A)."
+        },
+        {
+          "pair_id": "G2-P2",
+          "evidence": "The protocol does not require authentication for public endpoints.",
+          "claim_a": "The protocol requires authentication for public endpoints.",
+          "claim_a_expected": "CONTRADICTS",
+          "claim_b": "The protocol does not require authentication for public endpoints.",
+          "claim_b_expected": "SUPPORTS",
+          "claim_c": "The protocol requires authentication for all endpoints.",
+          "claim_c_expected": "CONTRADICTS",
+          "rationale": "A contradice, B coincide, C over-generaliza. P(TRUE|B) > P(TRUE|A)."
+        },
+        {
+          "pair_id": "G2-P3",
+          "evidence": "The framework includes five functions, not six.",
+          "claim_a": "The framework includes six functions.",
+          "claim_a_expected": "CONTRADICTS",
+          "claim_b": "The framework includes five functions.",
+          "claim_b_expected": "SUPPORTS",
+          "claim_c": "The framework includes seven functions.",
+          "claim_c_expected": "CONTRADICTS",
+          "rationale": "A y C contradicen, B soportado. P(TRUE|B) > P(TRUE|A) y P(TRUE|B) > P(TRUE|C)."
+        },
+        {
+          "pair_id": "G2-P4",
+          "evidence": "Product X uses AES-256, not AES-128, for encryption at rest.",
+          "claim_a": "Product X uses AES-128 for encryption at rest.",
+          "claim_a_expected": "CONTRADICTS",
+          "claim_b": "Product X uses AES-256 for encryption at rest.",
+          "claim_b_expected": "SUPPORTS",
+          "claim_c": "Product X uses ChaCha20 for encryption at rest.",
+          "claim_c_expected": "CONTRADICTS",
+          "rationale": "A y C contradicen (algoritmo incorrecto), B soportado. P(TRUE|B) > P(TRUE|A)."
+        },
+        {
+          "pair_id": "G2-P5",
+          "evidence": "The standard applies to federal agencies, not to state or local governments.",
+          "claim_a": "The standard applies to state governments.",
+          "claim_a_expected": "CONTRADICTS",
+          "claim_b": "The standard applies to federal agencies.",
+          "claim_b_expected": "SUPPORTS",
+          "claim_c": "The standard applies to all government agencies.",
+          "claim_c_expected": "PARTIAL",
+          "rationale": "A contradice (excluye state), B soportado, C over-generaliza. P(TRUE|B) > P(TRUE|A)."
+        }
+      ]
+    },
+    {
+      "group_id": "G3-absence",
+      "description": "Absence minimal pairs: claim con componente adicional ausente",
+      "pairs": [
+        {
+          "pair_id": "G3-P1",
+          "evidence": "The system supports encryption at rest and encryption in transit.",
+          "claim_a": "The system supports encryption at rest, encryption in transit, and access logging.",
+          "claim_a_expected": "PARTIAL",
+          "claim_b": "The system supports encryption at rest and encryption in transit.",
+          "claim_b_expected": "SUPPORTS",
+          "claim_c": "The system supports encryption at rest, encryption in transit, access logging, and quantum key distribution.",
+          "claim_c_expected": "PARTIAL",
+          "rationale": "B soportado, A y C tienen componente ausente (access logging, QKD). Si BitNet detecta ausencia: P(TRUE|B) > P(TRUE|A) > P(TRUE|C)."
+        },
+        {
+          "pair_id": "G3-P2",
+          "evidence": "The framework provides risk assessment and mitigation guidance.",
+          "claim_a": "The framework provides risk assessment, mitigation, and recovery guidance.",
+          "claim_a_expected": "PARTIAL",
+          "claim_b": "The framework provides risk assessment and mitigation guidance.",
+          "claim_b_expected": "SUPPORTS",
+          "claim_c": "The framework provides risk assessment, mitigation, recovery, and compliance guidance.",
+          "claim_c_expected": "PARTIAL",
+          "rationale": "B soportado, A y C tienen componentes ausentes. P(TRUE|B) > P(TRUE|A)."
+        },
+        {
+          "pair_id": "G3-P3",
+          "evidence": "The protocol supports TLS 1.2 and TLS 1.3.",
+          "claim_a": "The protocol supports TLS 1.2, TLS 1.3, and TLS 1.1.",
+          "claim_a_expected": "PARTIAL",
+          "claim_b": "The protocol supports TLS 1.2 and TLS 1.3.",
+          "claim_b_expected": "SUPPORTS",
+          "claim_c": "The protocol supports TLS 1.2, TLS 1.3, TLS 1.1, and TLS 1.0.",
+          "claim_c_expected": "PARTIAL",
+          "rationale": "B soportado, A y C agregan versiones no mencionadas. P(TRUE|B) > P(TRUE|A)."
+        },
+        {
+          "pair_id": "G3-P4",
+          "evidence": "The system implements role-based access control and audit logging.",
+          "claim_a": "The system implements role-based access control, audit logging, and intrusion detection.",
+          "claim_a_expected": "PARTIAL",
+          "claim_b": "The system implements role-based access control and audit logging.",
+          "claim_b_expected": "SUPPORTS",
+          "claim_c": "The system implements role-based access control.",
+          "claim_c_expected": "SUPPORTS",
+          "rationale": "B y C soportados (C es subset), A tiene componente ausente. P(TRUE|B) >= P(TRUE|C) > P(TRUE|A)."
+        },
+        {
+          "pair_id": "G3-P5",
+          "evidence": "The product is certified for FIPS 140-2 Level 2.",
+          "claim_a": "The product is certified for FIPS 140-2 Level 2 and Level 3.",
+          "claim_a_expected": "PARTIAL",
+          "claim_b": "The product is certified for FIPS 140-2 Level 2.",
+          "claim_b_expected": "SUPPORTS",
+          "claim_c": "The product is certified for FIPS 140-2 Level 2, Level 3, and Level 4.",
+          "claim_c_expected": "PARTIAL",
+          "rationale": "B soportado, A y C agregan niveles no mencionados. P(TRUE|B) > P(TRUE|A)."
+        }
+      ]
+    },
+    {
+      "group_id": "G4-subject",
+      "description": "Subject/context minimal pairs: mismo topico, diferente entidad",
+      "pairs": [
+        {
+          "pair_id": "G4-P1",
+          "evidence": "Product X supports encryption at rest and in transit.",
+          "claim_a": "Product X supports encryption at rest.",
+          "claim_a_expected": "SUPPORTS",
+          "claim_b": "Product Y supports encryption at rest.",
+          "claim_b_expected": "UNRELATED",
+          "claim_c": "Product Z supports encryption at rest.",
+          "claim_c_expected": "UNRELATED",
+          "rationale": "A soportado, B y C son wrong subject. Si BitNet discrimina subject: P(TRUE|A) > P(TRUE|B) y P(TRUE|A) > P(TRUE|C)."
+        },
+        {
+          "pair_id": "G4-P2",
+          "evidence": "The NIST Cybersecurity Framework provides guidance for managing cybersecurity risk.",
+          "claim_a": "The NIST Cybersecurity Framework provides guidance for managing cybersecurity risk.",
+          "claim_a_expected": "SUPPORTS",
+          "claim_b": "The ISO 27001 standard provides guidance for managing cybersecurity risk.",
+          "claim_b_expected": "UNRELATED",
+          "claim_c": "The CIS Controls provide guidance for managing cybersecurity risk.",
+          "claim_c_expected": "UNRELATED",
+          "rationale": "A soportado, B y C son wrong subject (ISO/CIS vs NIST). P(TRUE|A) > P(TRUE|B)."
+        },
+        {
+          "pair_id": "G4-P3",
+          "evidence": "The TLS 1.3 protocol supports forward secrecy by default.",
+          "claim_a": "The TLS 1.3 protocol supports forward secrecy by default.",
+          "claim_a_expected": "SUPPORTS",
+          "claim_b": "The TLS 1.2 protocol supports forward secrecy by default.",
+          "claim_b_expected": "UNRELATED",
+          "claim_c": "The SSL 3.0 protocol supports forward secrecy by default.",
+          "claim_c_expected": "UNRELATED",
+          "rationale": "A soportado, B y C son wrong subject (TLS 1.2/SSL 3.0 vs TLS 1.3). P(TRUE|A) > P(TRUE|B)."
+        },
+        {
+          "pair_id": "G4-P4",
+          "evidence": "AWS S3 provides server-side encryption with S3-managed keys.",
+          "claim_a": "AWS S3 provides server-side encryption with S3-managed keys.",
+          "claim_a_expected": "SUPPORTS",
+          "claim_b": "Azure Blob Storage provides server-side encryption with S3-managed keys.",
+          "claim_b_expected": "UNRELATED",
+          "claim_c": "Google Cloud Storage provides server-side encryption with S3-managed keys.",
+          "claim_c_expected": "UNRELATED",
+          "rationale": "A soportado, B y C son wrong subject (Azure/GCS vs AWS S3). P(TRUE|A) > P(TRUE|B)."
+        },
+        {
+          "pair_id": "G4-P5",
+          "evidence": "The federal standard requires annual security assessments for classified systems.",
+          "claim_a": "The federal standard requires annual security assessments for classified systems.",
+          "claim_a_expected": "SUPPORTS",
+          "claim_b": "The federal standard requires annual security assessments for unclassified systems.",
+          "claim_b_expected": "UNRELATED",
+          "claim_c": "The state standard requires annual security assessments for classified systems.",
+          "claim_c_expected": "UNRELATED",
+          "rationale": "A soportado, B wrong context (unclassified vs classified), C wrong subject (state vs federal). P(TRUE|A) > P(TRUE|B) y P(TRUE|A) > P(TRUE|C)."
+        }
+      ]
+    }
+  ]
+}

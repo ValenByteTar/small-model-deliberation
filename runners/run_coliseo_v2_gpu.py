@@ -14,7 +14,7 @@ Todo corre en GPU (num_gpu=99) para maximizar throughput.
 Si se necesita comparar latencia CPU, se hace despues con el modelo ganador.
 
 Uso:
-    python scripts/run_coliseo_v2_gpu.py
+    python runners/run_coliseo_v2_gpu.py
 """
 
 from __future__ import annotations
@@ -33,12 +33,12 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 
-def unload_models(model_names):
+def unload_models(model_names, base_url="http://localhost:11434"):
     """Descarga los modelos de Ollama (keep_alive=0) para liberar RAM."""
     for name in model_names:
         try:
             requests.post(
-                "http://localhost:11434/api/generate",
+                f"{base_url}/api/generate",
                 json={"model": name, "keep_alive": 0},
                 timeout=10,
             )
@@ -56,8 +56,36 @@ from hybrid_rag.kernel.semantic_ensemble import (
 from hybrid_rag.kernel.state import SEMANTIC_RELATIONS
 from hybrid_rag.providers.ollama_provider import OllamaModelProvider
 
-BENCHMARK = ROOT / "tests" / "eval" / "canonical" / "semantic_assessment_benchmark_v2.json"
-OUTPUT = ROOT / "tests" / "eval" / "canonical" / "reports" / "coliseo_v2_gpu.json"
+
+class NoThinkOllamaModelProvider(OllamaModelProvider):
+    def generate(
+        self,
+        prompt: str,
+        *,
+        options: Optional[Dict[str, Any]] = None,
+        timeout: Optional[float] = None,
+    ) -> str:
+        opts = {"num_gpu": self.num_gpu, **self.default_options}
+        if options:
+            opts.update(options)
+        response = requests.post(
+            f"{self.base_url}/api/generate",
+            json={
+                "model": self.model,
+                "prompt": prompt,
+                "stream": False,
+                "think": False,
+                "options": opts,
+                "keep_alive": "10m",
+            },
+            timeout=timeout or 120,
+        )
+        response.raise_for_status()
+        return (response.json().get("response") or "").strip()
+
+
+BENCHMARK = ROOT / "benchmarks" / "semantic_assessment_v2.json"
+OUTPUT = ROOT / "results" / "raw" / "coliseo_v2_gpu.json"
 
 MODELS = [
     {"name": "gemma3:4b-it-q4_K_M",                     "label": "gemma3-4b-q4",      "params": "4B"},
@@ -73,19 +101,25 @@ CONFIGS = [
 ]
 
 
-def make_provider(model_name: str) -> OllamaModelProvider:
-    return OllamaModelProvider(
+def make_provider(model_name: str, base_url: str = "http://localhost:11434") -> OllamaModelProvider:
+    reasoning_models = ("nemotron", "ministral", "qwen3.5")
+    provider_cls = (
+        NoThinkOllamaModelProvider
+        if any(name in model_name.lower() for name in reasoning_models)
+        else OllamaModelProvider
+    )
+    return provider_cls(
         model=model_name,
-        base_url="http://localhost:11434",
+        base_url=base_url,
         num_gpu=99,  # GPU forzado
         default_options={"num_predict": 10, "temperature": 0.0, "num_thread": 4},
     )
 
 
-def make_workers(model_name: str, roles: List[str]) -> List[SemanticWorker]:
+def make_workers(model_name: str, roles: List[str], base_url: str = "http://localhost:11434") -> List[SemanticWorker]:
     workers = []
     for i, role in enumerate(roles):
-        provider = make_provider(model_name)
+        provider = make_provider(model_name, base_url=base_url)
         w = SemanticWorker(
             worker_id=f"w-{role[0]}",
             role=role,
@@ -96,8 +130,8 @@ def make_workers(model_name: str, roles: List[str]) -> List[SemanticWorker]:
     return workers
 
 
-def run_config(model_name: str, roles: List[str], cases: List[dict]) -> Tuple[List[dict], float]:
-    workers = make_workers(model_name, roles)
+def run_config(model_name: str, roles: List[str], cases: List[dict], base_url: str = "http://localhost:11434") -> Tuple[List[dict], float]:
+    workers = make_workers(model_name, roles, base_url=base_url)
     total_time = 0.0
     results = []
 
@@ -177,9 +211,17 @@ def compute_metrics(results: List[dict]) -> dict:
 
 
 def main() -> int:
+    import argparse
+    parser = argparse.ArgumentParser(description="Coliseo v2 GPU")
+    parser.add_argument("--port", type=int, default=11434,
+                        help="Ollama instance port (default: 11434)")
+    args = parser.parse_args()
+    base_url = f"http://localhost:{args.port}"
+
     print("=" * 70, flush=True)
     print("COLOSEO v2: 4 modelos vs SemanticAssessment Benchmark v2", flush=True)
     print("GPU (num_gpu=99) | 55 casos | 10 categorias diagnosticas", flush=True)
+    print(f"Ollama: {base_url}", flush=True)
     print("=" * 70, flush=True)
 
     with BENCHMARK.open("r", encoding="utf-8") as f:
@@ -195,9 +237,9 @@ def main() -> int:
 
     # Verificar modelos disponibles
     for m in MODELS:
-        p = make_provider(m["name"])
+        p = make_provider(m["name"], base_url=base_url)
         if not p.is_available():
-            print(f"SKIP: {m['name']} no disponible", flush=True)
+            print(f"SKIP: {m['name']} no disponible en {base_url}", flush=True)
             return 1
         print(f"  OK: {m['label']} ({m['name']})", flush=True)
     print(flush=True)
@@ -219,7 +261,7 @@ def main() -> int:
             print(f"\n  Config {ci+1}/{len(CONFIGS)}: {clabel} (roles={roles})", flush=True)
 
             t0 = time.time()
-            results, total_time = run_config(mname, roles, cases)
+            results, total_time = run_config(mname, roles, cases, base_url=base_url)
             wall_time = time.time() - t0
             metrics = compute_metrics(results)
 
@@ -369,7 +411,7 @@ def main() -> int:
     # Cleanup: descargar modelos de Ollama para liberar RAM
     print(flush=True)
     print("Descargando modelos de Ollama...", flush=True)
-    unload_models([m["name"] for m in MODELS])
+    unload_models([m["name"] for m in MODELS], base_url=base_url)
 
     return 0
 

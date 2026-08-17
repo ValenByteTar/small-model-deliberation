@@ -1,0 +1,543 @@
+{
+  "model": "BitNet-b1.58-2B-4T",
+  "regime": "Minimal Cognitive Overhead (GBNF 1-token constraint, Few-Shot minimal, repeat_penalty=1.0)",
+  "benchmark": "semantic_assessment_v2.json",
+  "total_cases": 55,
+  "overall_accuracy": 0.2182,
+  "correct_count": 12,
+  "wall_time_s": 30.2,
+  "by_category": {
+    "direct_evidence": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "CONTRADICTS": 1,
+        "UNRELATED": 4,
+        "PARTIAL": 1
+      }
+    },
+    "paraphrase": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 6
+      }
+    },
+    "partial_support": {
+      "total": 6,
+      "correct": 1,
+      "accuracy": 0.1667,
+      "predictions": {
+        "UNRELATED": 4,
+        "PARTIAL": 1,
+        "CONTRADICTS": 1
+      }
+    },
+    "explicit_contradiction": {
+      "total": 5,
+      "correct": 2,
+      "accuracy": 0.4,
+      "predictions": {
+        "CONTRADICTS": 2,
+        "UNRELATED": 2,
+        "PARTIAL": 1
+      }
+    },
+    "implicit_contradiction": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 5
+      }
+    },
+    "over_specificity": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 4,
+        "CONTRADICTS": 1
+      }
+    },
+    "negation": {
+      "total": 6,
+      "correct": 1,
+      "accuracy": 0.1667,
+      "predictions": {
+        "UNRELATED": 5,
+        "PARTIAL": 1
+      }
+    },
+    "wrong_subject": {
+      "total": 5,
+      "correct": 4,
+      "accuracy": 0.8,
+      "predictions": {
+        "CONTRADICTS": 1,
+        "UNRELATED": 4
+      }
+    },
+    "wrong_context": {
+      "total": 5,
+      "correct": 4,
+      "accuracy": 0.8,
+      "predictions": {
+        "UNRELATED": 3,
+        "PARTIAL": 2
+      }
+    },
+    "adversarial": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 6
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "d-001",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "CONTRADICTS",
+      "correct": false,
+      "latency_s": 2.59
+    },
+    {
+      "id": "d-002",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.58
+    },
+    {
+      "id": "d-003",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "PARTIAL",
+      "correct": false,
+      "latency_s": 0.62
+    },
+    {
+      "id": "d-004",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.57
+    },
+    {
+      "id": "d-005",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.61
+    },
+    {
+      "id": "d-006",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.49
+    },
+    {
+      "id": "pp-001",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.45
+    },
+    {
+      "id": "pp-002",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.55
+    },
+    {
+      "id": "pp-003",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.51
+    },
+    {
+      "id": "pp-004",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.54
+    },
+    {
+      "id": "pp-005",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.52
+    },
+    {
+      "id": "pp-006",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.47
+    },
+    {
+      "id": "ps-001",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.33
+    },
+    {
+      "id": "ps-002",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.47
+    },
+    {
+      "id": "ps-003",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "PARTIAL",
+      "correct": true,
+      "latency_s": 0.58
+    },
+    {
+      "id": "ps-004",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "correct": false,
+      "latency_s": 0.63
+    },
+    {
+      "id": "ps-005",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.49
+    },
+    {
+      "id": "ps-006",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.54
+    },
+    {
+      "id": "ec-001",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "correct": true,
+      "latency_s": 0.83
+    },
+    {
+      "id": "ec-002",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "correct": true,
+      "latency_s": 0.7
+    },
+    {
+      "id": "ec-003",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.58
+    },
+    {
+      "id": "ec-004",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.47
+    },
+    {
+      "id": "ec-005",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "PARTIAL",
+      "correct": false,
+      "latency_s": 0.5
+    },
+    {
+      "id": "ic-001",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.52
+    },
+    {
+      "id": "ic-002",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.47
+    },
+    {
+      "id": "ic-003",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.46
+    },
+    {
+      "id": "ic-004",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.44
+    },
+    {
+      "id": "ic-005",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.5
+    },
+    {
+      "id": "os-001",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.45
+    },
+    {
+      "id": "os-002",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "correct": false,
+      "latency_s": 0.64
+    },
+    {
+      "id": "os-003",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.46
+    },
+    {
+      "id": "os-004",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.62
+    },
+    {
+      "id": "os-005",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.51
+    },
+    {
+      "id": "n-001",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.39
+    },
+    {
+      "id": "n-002",
+      "category": "negation",
+      "expected": "PARTIAL",
+      "predicted": "PARTIAL",
+      "correct": true,
+      "latency_s": 0.29
+    },
+    {
+      "id": "n-003",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.5
+    },
+    {
+      "id": "n-004",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.5
+    },
+    {
+      "id": "n-005",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.53
+    },
+    {
+      "id": "n-006",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.49
+    },
+    {
+      "id": "ws-001",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "CONTRADICTS",
+      "correct": false,
+      "latency_s": 0.64
+    },
+    {
+      "id": "ws-002",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "UNRELATED",
+      "correct": true,
+      "latency_s": 0.46
+    },
+    {
+      "id": "ws-003",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "UNRELATED",
+      "correct": true,
+      "latency_s": 0.51
+    },
+    {
+      "id": "ws-004",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "UNRELATED",
+      "correct": true,
+      "latency_s": 0.48
+    },
+    {
+      "id": "ws-005",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "UNRELATED",
+      "correct": true,
+      "latency_s": 0.43
+    },
+    {
+      "id": "wc-001",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "predicted": "UNRELATED",
+      "correct": true,
+      "latency_s": 0.47
+    },
+    {
+      "id": "wc-002",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "predicted": "PARTIAL",
+      "correct": false,
+      "latency_s": 0.5
+    },
+    {
+      "id": "wc-003",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "predicted": "UNRELATED",
+      "correct": true,
+      "latency_s": 0.5
+    },
+    {
+      "id": "wc-004",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "predicted": "UNRELATED",
+      "correct": true,
+      "latency_s": 0.53
+    },
+    {
+      "id": "wc-005",
+      "category": "wrong_context",
+      "expected": "PARTIAL",
+      "predicted": "PARTIAL",
+      "correct": true,
+      "latency_s": 0.47
+    },
+    {
+      "id": "a-001",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.4
+    },
+    {
+      "id": "a-002",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.45
+    },
+    {
+      "id": "a-003",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.45
+    },
+    {
+      "id": "a-004",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.45
+    },
+    {
+      "id": "a-005",
+      "category": "adversarial",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.53
+    },
+    {
+      "id": "a-006",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "correct": false,
+      "latency_s": 0.49
+    }
+  ]
+}

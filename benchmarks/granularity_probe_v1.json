@@ -1,0 +1,47 @@
+{
+  "benchmark_id": "granularity_probe_v1",
+  "version": "1.0",
+  "description": "Minimal controlled granularity probe. Eliminates relevance, entities, adversarial framing, and complex vocabulary. Tests whether BitNet can distinguish full support from partial support at the compositional level. Cases are intentionally simple to isolate the granularity assessment capability.",
+  "evaluation_contract": "granularity-probe-v1",
+  "ground_truth_source": "human_designed",
+  "case_count": 24,
+  "categories": [
+    "full_support",
+    "partial_support",
+    "minimal_difference",
+    "single_dimension_missing",
+    "atomic_true",
+    "atomic_false",
+    "atomic_not_mentioned"
+  ],
+  "cases": [
+    {"id": "fs-001", "category": "full_support", "claim": "The system supports encryption at rest, encryption in transit, and access logging.", "evidence": "The system supports encryption at rest, encryption in transit, and access logging.", "expected": "SUPPORTS", "diagnostic_reason": "Identical claim and evidence. Trivially full support."},
+    {"id": "fs-002", "category": "full_support", "claim": "The protocol provides authentication, authorization, and auditing.", "evidence": "The protocol provides authentication, authorization, and auditing.", "expected": "SUPPORTS", "diagnostic_reason": "Identical. Full support baseline."},
+    {"id": "fs-003", "category": "full_support", "claim": "The tool performs scanning, analysis, and remediation.", "evidence": "The tool performs scanning, analysis, and remediation.", "expected": "SUPPORTS", "diagnostic_reason": "Identical. Full support baseline."},
+
+    {"id": "ps-001", "category": "partial_support", "claim": "The system supports encryption at rest, encryption in transit, and access logging.", "evidence": "The system supports encryption at rest and encryption in transit.", "expected": "PARTIAL", "diagnostic_reason": "Evidence covers 2 of 3 components. Missing access logging. Minimal partial support case."},
+    {"id": "ps-002", "category": "partial_support", "claim": "The protocol provides authentication, authorization, and auditing.", "evidence": "The protocol provides authentication and authorization.", "expected": "PARTIAL", "diagnostic_reason": "Evidence covers 2 of 3. Missing auditing."},
+    {"id": "ps-003", "category": "partial_support", "claim": "The tool performs scanning, analysis, and remediation.", "evidence": "The tool performs scanning and analysis.", "expected": "PARTIAL", "diagnostic_reason": "Evidence covers 2 of 3. Missing remediation."},
+    {"id": "ps-004", "category": "partial_support", "claim": "The system supports encryption at rest, encryption in transit, and access logging.", "evidence": "The system supports encryption at rest.", "expected": "PARTIAL", "diagnostic_reason": "Evidence covers 1 of 3. Only encryption at rest."},
+    {"id": "ps-005", "category": "partial_support", "claim": "The protocol provides authentication, authorization, and auditing.", "evidence": "The protocol provides authentication.", "expected": "PARTIAL", "diagnostic_reason": "Evidence covers 1 of 3. Only authentication."},
+    {"id": "ps-006", "category": "partial_support", "claim": "The tool performs scanning, analysis, and remediation.", "evidence": "The tool performs scanning.", "expected": "PARTIAL", "diagnostic_reason": "Evidence covers 1 of 3. Only scanning."},
+
+    {"id": "md-001", "category": "minimal_difference", "claim": "The system supports encryption at rest, encryption in transit, and access logging.", "evidence": "The system supports encryption at rest, encryption in transit, and audit logging.", "expected": "PARTIAL", "diagnostic_reason": "Access logging vs audit logging. Near-synonym but not identical. Tests minimal compositional difference."},
+    {"id": "md-002", "category": "minimal_difference", "claim": "The protocol provides authentication, authorization, and auditing.", "evidence": "The protocol provides authentication, authorization, and logging.", "expected": "PARTIAL", "diagnostic_reason": "Auditing vs logging. Near-synonym. Tests minimal difference detection."},
+    {"id": "md-003", "category": "minimal_difference", "claim": "The tool performs scanning, analysis, and remediation.", "evidence": "The tool performs scanning, analysis, and fixing.", "expected": "PARTIAL", "diagnostic_reason": "Remediation vs fixing. Near-synonym. Tests minimal difference."},
+
+    {"id": "sd-001", "category": "single_dimension_missing", "claim": "The system encrypts data at rest, in transit, and during processing.", "evidence": "The system encrypts data at rest and in transit.", "expected": "PARTIAL", "diagnostic_reason": "Single dimension (during processing) missing. Tests granularity in a single domain."},
+    {"id": "sd-002", "category": "single_dimension_missing", "claim": "The framework covers endpoints, networks, and cloud infrastructure.", "evidence": "The framework covers endpoints and networks.", "expected": "PARTIAL", "diagnostic_reason": "Cloud infrastructure missing."},
+    {"id": "sd-003", "category": "single_dimension_missing", "claim": "The policy applies to employees, contractors, and vendors.", "evidence": "The policy applies to employees and contractors.", "expected": "PARTIAL", "diagnostic_reason": "Vendors missing."},
+
+    {"id": "at-001", "category": "atomic_true", "claim": "The system supports encryption at rest.", "evidence": "The system supports encryption at rest, encryption in transit, and access logging.", "expected": "SUPPORTS", "diagnostic_reason": "Atomic proposition extracted from a larger evidence. Should be trivially TRUE."},
+    {"id": "at-002", "category": "atomic_true", "claim": "The system supports encryption in transit.", "evidence": "The system supports encryption at rest, encryption in transit, and access logging.", "expected": "SUPPORTS", "diagnostic_reason": "Atomic proposition. Present in evidence."},
+    {"id": "at-003", "category": "atomic_true", "claim": "The system supports access logging.", "evidence": "The system supports encryption at rest, encryption in transit, and access logging.", "expected": "SUPPORTS", "diagnostic_reason": "Atomic proposition. Present in evidence."},
+
+    {"id": "af-001", "category": "atomic_false", "claim": "The system supports access logging.", "evidence": "The system supports encryption at rest and encryption in transit.", "expected": "CONTRADICTS", "diagnostic_reason": "Atomic proposition NOT present in evidence. The evidence explicitly lists what the system supports, and access logging is not there. Tests whether BitNet can detect absence in an enumerated list."},
+    {"id": "af-002", "category": "atomic_false", "claim": "The system supports encryption in transit.", "evidence": "The system supports encryption at rest.", "expected": "CONTRADICTS", "diagnostic_reason": "Atomic proposition NOT present. Evidence only mentions at rest."},
+
+    {"id": "an-001", "category": "atomic_not_mentioned", "claim": "The system supports quantum encryption.", "evidence": "The system supports encryption at rest, encryption in transit, and access logging.", "expected": "UNRELATED", "diagnostic_reason": "Atomic proposition about a completely different capability. Tests atomic-level relevance."},
+    {"id": "an-002", "category": "atomic_not_mentioned", "claim": "The protocol performs load balancing.", "evidence": "The protocol provides authentication, authorization, and auditing.", "expected": "UNRELATED", "diagnostic_reason": "Completely different capability. Atomic-level relevance test."}
+  ]
+}

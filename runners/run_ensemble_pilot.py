@@ -106,7 +106,7 @@ DATASET = [
      "expected": "CONTRADICTS"},
 ]
 
-BITNET_ROOT = "C:/Users/Valen/Desktop/Proyectos/BitNet"
+BITNET_ROOT = os.environ.get("BITNET_ROOT", os.path.expanduser("~/BitNet"))
 MODEL_PATH = "models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf"
 SERVER_PATH = "build/bin/Release/llama-server.exe"
 BASE_PORT = 8081

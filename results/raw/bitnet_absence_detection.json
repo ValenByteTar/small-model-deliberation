@@ -1,0 +1,915 @@
+{
+  "cases": [
+    {
+      "id": "ia-001",
+      "condition": "implicit_absence",
+      "expected": "FALSE",
+      "claim": "The system supports encryption at rest, encryption in transit, and access logging.",
+      "evidence": "The system supports encryption at rest and encryption in transit.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.2683614815479438,
+      "logprob_false": -1.9212523118990816,
+      "margin": 1.6528908303511378,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -0.831691324710846
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.1588664054870605
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.554713726043701
+        },
+        {
+          "token": " False",
+          "logprob": -2.67787504196167
+        },
+        {
+          "token": " The",
+          "logprob": -3.322803020477295
+        },
+        {
+          "token": " true",
+          "logprob": -4.601715564727783
+        },
+        {
+          "token": "TRUE",
+          "logprob": -5.213504314422607
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.233144283294678
+        }
+      ],
+      "correct": false
+    },
+    {
+      "id": "ia-002",
+      "condition": "implicit_absence",
+      "expected": "FALSE",
+      "claim": "The protocol provides authentication, authorization, and auditing.",
+      "evidence": "The protocol provides authentication and authorization.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.6353242533259753,
+      "logprob_false": -1.0007918069931239,
+      "margin": 0.36546755366714856,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -1.1713422536849976
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.5795663595199585
+        },
+        {
+          "token": " False",
+          "logprob": -1.6484254598617554
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.8069452047348022
+        },
+        {
+          "token": " The",
+          "logprob": -3.333571672439575
+        },
+        {
+          "token": " true",
+          "logprob": -4.2868170738220215
+        },
+        {
+          "token": " false",
+          "logprob": -4.502532482147217
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.2997050285339355
+        }
+      ],
+      "correct": false
+    },
+    {
+      "id": "ia-003",
+      "condition": "implicit_absence",
+      "expected": "FALSE",
+      "claim": "The tool performs scanning, analysis, and remediation.",
+      "evidence": "The tool performs scanning and analysis.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.5591025580842695,
+      "logprob_false": -1.117493762317233,
+      "margin": 0.5583912042329635,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -1.0737109184265137
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.5280165672302246
+        },
+        {
+          "token": " False",
+          "logprob": -1.7104088068008423
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.9827208518981934
+        },
+        {
+          "token": " The",
+          "logprob": -3.418200969696045
+        },
+        {
+          "token": " true",
+          "logprob": -4.341395854949951
+        },
+        {
+          "token": " false",
+          "logprob": -4.754528522491455
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.464714527130127
+        }
+      ],
+      "correct": false
+    },
+    {
+      "id": "ia-004",
+      "condition": "implicit_absence",
+      "expected": "FALSE",
+      "claim": "The framework covers endpoints, networks, and cloud infrastructure.",
+      "evidence": "The framework covers endpoints and networks.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.6070673771247588,
+      "logprob_false": -1.0497589419819573,
+      "margin": 0.4426915648571985,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -1.0505183935165405
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.7252944707870483
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.7474769353866577
+        },
+        {
+          "token": " False",
+          "logprob": -1.797827124595642
+        },
+        {
+          "token": " The",
+          "logprob": -3.411409616470337
+        },
+        {
+          "token": " true",
+          "logprob": -4.0704522132873535
+        },
+        {
+          "token": " false",
+          "logprob": -4.590210437774658
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.35366678237915
+        }
+      ],
+      "correct": false
+    },
+    {
+      "id": "ia-005",
+      "condition": "implicit_absence",
+      "expected": "FALSE",
+      "claim": "The policy applies to employees, contractors, and vendors.",
+      "evidence": "The policy applies to employees and contractors.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.4697697793821256,
+      "logprob_false": -1.291867518524496,
+      "margin": 0.8220977391423705,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -1.0463740825653076
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.3573672771453857
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.9968308210372925
+        },
+        {
+          "token": " False",
+          "logprob": -2.0173346996307373
+        },
+        {
+          "token": " The",
+          "logprob": -3.523981809616089
+        },
+        {
+          "token": " true",
+          "logprob": -4.098359107971191
+        },
+        {
+          "token": " false",
+          "logprob": -5.118863105773926
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.341032981872559
+        }
+      ],
+      "correct": false
+    },
+    {
+      "id": "ia-006",
+      "condition": "implicit_absence",
+      "expected": "FALSE",
+      "claim": "The system encrypts data at rest, in transit, and during processing.",
+      "evidence": "The system encrypts data at rest and in transit.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.3476068411211949,
+      "logprob_false": -1.6594254934801667,
+      "margin": 1.3118186523589719,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -0.8702359795570374
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.3113656044006348
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.341383695602417
+        },
+        {
+          "token": " False",
+          "logprob": -2.3638882637023926
+        },
+        {
+          "token": " The",
+          "logprob": -3.2126643657684326
+        },
+        {
+          "token": " true",
+          "logprob": -4.296968936920166
+        },
+        {
+          "token": "TRUE",
+          "logprob": -5.4121012687683105
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.437017917633057
+        }
+      ],
+      "correct": false
+    },
+    {
+      "id": "en-001",
+      "condition": "explicit_negation",
+      "expected": "TRUE",
+      "claim": "The system supports encryption at rest, encryption in transit, and does not support access logging.",
+      "evidence": "The system supports encryption at rest and encryption in transit.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.40759733752695126,
+      "logprob_false": -1.4732026942671097,
+      "margin": 1.0656053567401584,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -0.9046576023101807
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.3914052248001099
+        },
+        {
+          "token": " False",
+          "logprob": -2.130739450454712
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.240785837173462
+        },
+        {
+          "token": " The",
+          "logprob": -3.133758783340454
+        },
+        {
+          "token": " true",
+          "logprob": -4.4362101554870605
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.15106201171875
+        },
+        {
+          "token": " false",
+          "logprob": -5.505107402801514
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "en-002",
+      "condition": "explicit_negation",
+      "expected": "TRUE",
+      "claim": "The protocol provides authentication, authorization, and does not provide auditing.",
+      "evidence": "The protocol provides authentication and authorization.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.7041843358435863,
+      "logprob_false": -0.9212058951032471,
+      "margin": 0.21702155925966082,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -1.321346640586853
+        },
+        {
+          "token": " False",
+          "logprob": -1.4531195163726807
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.5344318151474
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.8813421726226807
+        },
+        {
+          "token": " The",
+          "logprob": -3.34303879737854
+        },
+        {
+          "token": " true",
+          "logprob": -4.409783363342285
+        },
+        {
+          "token": " false",
+          "logprob": -4.438500881195068
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.323074817657471
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "en-003",
+      "condition": "explicit_negation",
+      "expected": "TRUE",
+      "claim": "The tool performs scanning, analysis, and does not perform remediation.",
+      "evidence": "The tool performs scanning and analysis.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.7843241038012563,
+      "logprob_false": -0.8449518268439862,
+      "margin": 0.0606277230427299,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -1.2969788312911987
+        },
+        {
+          "token": " False",
+          "logprob": -1.3190772533416748
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.7551430463790894
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.8895996809005737
+        },
+        {
+          "token": " The",
+          "logprob": -3.331547737121582
+        },
+        {
+          "token": " false",
+          "logprob": -4.504073143005371
+        },
+        {
+          "token": " true",
+          "logprob": -4.586428642272949
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.40598201751709
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "en-004",
+      "condition": "explicit_negation",
+      "expected": "TRUE",
+      "claim": "The framework covers endpoints, networks, and does not cover cloud infrastructure.",
+      "evidence": "The framework covers endpoints and networks.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.7211159103114038,
+      "logprob_false": -0.9505269755443417,
+      "margin": 0.22941106523293797,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -1.1643937826156616
+        },
+        {
+          "token": " False",
+          "logprob": -1.5337823629379272
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.8375314474105835
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.8470948934555054
+        },
+        {
+          "token": " The",
+          "logprob": -3.2756359577178955
+        },
+        {
+          "token": " true",
+          "logprob": -4.110293865203857
+        },
+        {
+          "token": " false",
+          "logprob": -4.4559645652771
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.283414363861084
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "en-005",
+      "condition": "explicit_negation",
+      "expected": "TRUE",
+      "claim": "The policy applies to employees, contractors, and does not apply to vendors.",
+      "evidence": "The policy applies to employees and contractors.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.5979850561515292,
+      "logprob_false": -1.0868813961955213,
+      "margin": 0.4888963400439921,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -1.1644349098205566
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.5024189949035645
+        },
+        {
+          "token": " False",
+          "logprob": -1.7889161109924316
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.816784381866455
+        },
+        {
+          "token": " The",
+          "logprob": -3.349976062774658
+        },
+        {
+          "token": " true",
+          "logprob": -4.184584140777588
+        },
+        {
+          "token": " false",
+          "logprob": -4.8825297355651855
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.386951923370361
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "en-006",
+      "condition": "explicit_negation",
+      "expected": "TRUE",
+      "claim": "The system encrypts data at rest, in transit, and does not encrypt data during processing.",
+      "evidence": "The system encrypts data at rest and in transit.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.46016726240704975,
+      "logprob_false": -1.3453601444617809,
+      "margin": 0.8851928820547311,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -0.9196144938468933
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.5249820947647095
+        },
+        {
+          "token": " False",
+          "logprob": -1.9892975091934204
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.132711172103882
+        },
+        {
+          "token": " The",
+          "logprob": -3.207862615585327
+        },
+        {
+          "token": " true",
+          "logprob": -4.207709789276123
+        },
+        {
+          "token": " false",
+          "logprob": -5.270923137664795
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.351504802703857
+        }
+      ],
+      "correct": true
+    },
+    {
+      "id": "ta-001",
+      "condition": "total_absence",
+      "expected": "FALSE",
+      "claim": "The system supports access logging.",
+      "evidence": "The system supports encryption at rest and encryption in transit.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.5036919725414083,
+      "logprob_false": -1.1898925005146463,
+      "margin": 0.686200527973238,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -1.040557622909546
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.4359930753707886
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.9043844938278198
+        },
+        {
+          "token": " False",
+          "logprob": -1.906803011894226
+        },
+        {
+          "token": " The",
+          "logprob": -3.4192826747894287
+        },
+        {
+          "token": " true",
+          "logprob": -4.330661773681641
+        },
+        {
+          "token": " false",
+          "logprob": -4.993020057678223
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.461371421813965
+        }
+      ],
+      "correct": false
+    },
+    {
+      "id": "ta-002",
+      "condition": "total_absence",
+      "expected": "FALSE",
+      "claim": "The protocol provides auditing.",
+      "evidence": "The protocol provides authentication and authorization.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.49727866588643316,
+      "logprob_false": -1.2742435359947872,
+      "margin": 0.776964870108354,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -0.9605702757835388
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.5795658826828003
+        },
+        {
+          "token": " False",
+          "logprob": -1.8485288619995117
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.1829593181610107
+        },
+        {
+          "token": " The",
+          "logprob": -3.163956642150879
+        },
+        {
+          "token": " true",
+          "logprob": -3.9401986598968506
+        },
+        {
+          "token": " false",
+          "logprob": -4.660019874572754
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.40268611907959
+        }
+      ],
+      "correct": false
+    },
+    {
+      "id": "ta-003",
+      "condition": "total_absence",
+      "expected": "FALSE",
+      "claim": "The tool performs remediation.",
+      "evidence": "The tool performs scanning and analysis.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.49941849332822313,
+      "logprob_false": -1.2996443547299408,
+      "margin": 0.8002258614017177,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -0.9077439308166504
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.6772923469543457
+        },
+        {
+          "token": " False",
+          "logprob": -1.7687592506408691
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.362518787384033
+        },
+        {
+          "token": " The",
+          "logprob": -3.316620349884033
+        },
+        {
+          "token": " true",
+          "logprob": -4.100113391876221
+        },
+        {
+          "token": " false",
+          "logprob": -4.84069299697876
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.422891139984131
+        }
+      ],
+      "correct": false
+    },
+    {
+      "id": "ta-004",
+      "condition": "total_absence",
+      "expected": "FALSE",
+      "claim": "The framework covers cloud infrastructure.",
+      "evidence": "The framework covers endpoints and networks.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.5626456892519238,
+      "logprob_false": -1.1910837793002211,
+      "margin": 0.6284380900482973,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -0.9083124399185181
+        },
+        {
+          "token": " False",
+          "logprob": -1.800285816192627
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.934277057647705
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.054996967315674
+        },
+        {
+          "token": " The",
+          "logprob": -3.2531933784484863
+        },
+        {
+          "token": " true",
+          "logprob": -3.8182129859924316
+        },
+        {
+          "token": " false",
+          "logprob": -4.551927089691162
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.2951130867004395
+        }
+      ],
+      "correct": false
+    },
+    {
+      "id": "ta-005",
+      "condition": "total_absence",
+      "expected": "FALSE",
+      "claim": "The policy applies to vendors.",
+      "evidence": "The policy applies to employees and contractors.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.5547086736019424,
+      "logprob_false": -1.1653296128179473,
+      "margin": 0.6106209392160049,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -1.0812010765075684
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.524350643157959
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.8497405052185059
+        },
+        {
+          "token": " False",
+          "logprob": -1.9234061241149902
+        },
+        {
+          "token": " The",
+          "logprob": -3.2511305809020996
+        },
+        {
+          "token": " true",
+          "logprob": -4.057672023773193
+        },
+        {
+          "token": " false",
+          "logprob": -4.775550365447998
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.535487651824951
+        }
+      ],
+      "correct": false
+    },
+    {
+      "id": "ta-006",
+      "condition": "total_absence",
+      "expected": "FALSE",
+      "claim": "The system encrypts data during processing.",
+      "evidence": "The system encrypts data at rest and in transit.",
+      "greedy": "TRUE",
+      "argmax": "TRUE",
+      "logprob_true": -0.540086354162295,
+      "logprob_false": -1.1963003095717102,
+      "margin": 0.6562139554094152,
+      "raw": "True",
+      "raw_logprobs": [
+        {
+          "token": " True",
+          "logprob": -1.0521621704101562
+        },
+        {
+          "token": " TRUE",
+          "logprob": -1.517435073852539
+        },
+        {
+          "token": " False",
+          "logprob": -1.842803955078125
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.9853324890136719
+        },
+        {
+          "token": " The",
+          "logprob": -3.0661869049072266
+        },
+        {
+          "token": " true",
+          "logprob": -4.251531600952148
+        },
+        {
+          "token": " false",
+          "logprob": -5.020242691040039
+        },
+        {
+          "token": " Yes",
+          "logprob": -5.587160110473633
+        }
+      ],
+      "correct": false
+    }
+  ],
+  "summary": {
+    "total": 18,
+    "correct": 6,
+    "accuracy": 0.3333,
+    "false_expected": 12,
+    "false_correct": 0,
+    "false_accuracy": 0.0,
+    "true_expected": 6,
+    "true_correct": 6,
+    "true_accuracy": 1.0,
+    "false_margins_mean": 0.776,
+    "false_margins_min": 0.3655,
+    "false_margins_max": 1.6529,
+    "false_positive_margins": 12
+  },
+  "by_condition": {
+    "implicit_absence": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "true_preds": 6,
+      "false_preds": 0,
+      "mean_margin": 0.8589,
+      "mean_lp_true": -0.4812,
+      "mean_lp_false": -1.3401
+    },
+    "explicit_negation": {
+      "total": 6,
+      "correct": 6,
+      "accuracy": 1.0,
+      "true_preds": 6,
+      "false_preds": 0,
+      "mean_margin": 0.4911,
+      "mean_lp_true": -0.6126,
+      "mean_lp_false": -1.1037
+    },
+    "total_absence": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "true_preds": 6,
+      "false_preds": 0,
+      "mean_margin": 0.6931,
+      "mean_lp_true": -0.5263,
+      "mean_lp_false": -1.2194
+    }
+  }
+}

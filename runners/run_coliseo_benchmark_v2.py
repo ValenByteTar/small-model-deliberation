@@ -63,19 +63,19 @@ CONFIGS = [
 ]
 
 
-def make_provider(model_name: str) -> OllamaModelProvider:
+def make_provider(model_name: str, base_url: str = "http://localhost:11434") -> OllamaModelProvider:
     return OllamaModelProvider(
         model=model_name,
-        base_url="http://localhost:11434",
+        base_url=base_url,
         num_gpu=0,  # CPU forzado
         default_options={"num_predict": 10, "temperature": 0.0, "num_thread": 4},
     )
 
 
-def make_workers(model_name: str, roles: List[str]) -> List[SemanticWorker]:
+def make_workers(model_name: str, roles: List[str], base_url: str = "http://localhost:11434") -> List[SemanticWorker]:
     workers = []
     for i, role in enumerate(roles):
-        provider = make_provider(model_name)
+        provider = make_provider(model_name, base_url=base_url)
         w = SemanticWorker(
             worker_id=f"w-{role[0]}",
             role=role,
@@ -86,9 +86,9 @@ def make_workers(model_name: str, roles: List[str]) -> List[SemanticWorker]:
     return workers
 
 
-def run_config(model_name: str, roles: List[str], cases: List[dict]) -> Tuple[List[dict], float]:
+def run_config(model_name: str, roles: List[str], cases: List[dict], base_url: str = "http://localhost:11434") -> Tuple[List[dict], float]:
     """Corre una configuracion (single o ensemble) sobre todos los casos."""
-    workers = make_workers(model_name, roles)
+    workers = make_workers(model_name, roles, base_url=base_url)
     total_time = 0.0
     results = []
 
@@ -170,9 +170,17 @@ def compute_metrics(results: List[dict]) -> dict:
 
 
 def main() -> int:
+    import argparse
+    parser = argparse.ArgumentParser(description="Coliseo benchmark v2 (CPU)")
+    parser.add_argument("--port", type=int, default=11434,
+                        help="Ollama instance port (default: 11434)")
+    args = parser.parse_args()
+    base_url = f"http://localhost:{args.port}"
+
     print("=" * 70, flush=True)
     print("COLOSEO: 4 modelos vs SemanticAssessment Benchmark v2", flush=True)
     print("CPU-only (num_gpu=0) | 55 casos | 10 categorias diagnosticas", flush=True)
+    print(f"Ollama: {base_url}", flush=True)
     print("=" * 70, flush=True)
 
     with BENCHMARK.open("r", encoding="utf-8") as f:
@@ -187,9 +195,9 @@ def main() -> int:
 
     # Verificar modelos disponibles
     for m in MODELS:
-        p = make_provider(m["name"])
+        p = make_provider(m["name"], base_url=base_url)
         if not p.is_available():
-            print(f"SKIP: {m['name']} no disponible", flush=True)
+            print(f"SKIP: {m['name']} no disponible en {base_url}", flush=True)
             return 1
         print(f"  OK: {m['label']} ({m['name']})", flush=True)
     print(flush=True)
@@ -211,7 +219,7 @@ def main() -> int:
             print(f"\n  Config {ci+1}/{len(CONFIGS)}: {clabel} (roles={roles})", flush=True)
 
             t0 = time.time()
-            results, total_time = run_config(mname, roles, cases)
+            results, total_time = run_config(mname, roles, cases, base_url=base_url)
             wall_time = time.time() - t0
             metrics = compute_metrics(results)
 

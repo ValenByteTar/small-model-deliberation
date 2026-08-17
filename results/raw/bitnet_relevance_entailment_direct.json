@@ -1,0 +1,5182 @@
+{
+  "model": "BitNet-b1.58-2B-4T",
+  "experiment": "EXP-019: Relevance x Entailment Decomposition",
+  "mode": "direct",
+  "benchmark": "semantic_assessment_v2.json",
+  "total_cases": 55,
+  "stage1": {
+    "ground_truth_relevant": 46,
+    "ground_truth_irrelevant": 9,
+    "greedy": {
+      "relevant_correct": 3,
+      "irrelevant_correct": 9,
+      "accuracy": 0.2182,
+      "irrelevant_detection_rate": 1.0
+    },
+    "argmax": {
+      "relevant_correct": 5,
+      "irrelevant_correct": 9,
+      "accuracy": 0.2545,
+      "irrelevant_detection_rate": 1.0
+    }
+  },
+  "stage2": {
+    "cases_where_relevant": 3,
+    "accuracy_on_relevant": 0.6667,
+    "cases_where_correctly_relevant": 3,
+    "accuracy_on_correctly_relevant": 0.6667
+  },
+  "combined": {
+    "greedy_accuracy": 0.2,
+    "greedy_correct": 11,
+    "argmax_accuracy": 0.2,
+    "argmax_correct": 11
+  },
+  "by_category": {
+    "direct_evidence": {
+      "total": 6,
+      "correct": 2,
+      "accuracy": 0.3333,
+      "predictions": {
+        "SUPPORTS": 2,
+        "UNRELATED": 4
+      }
+    },
+    "paraphrase": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 6
+      }
+    },
+    "partial_support": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 6
+      }
+    },
+    "explicit_contradiction": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 4,
+        "SUPPORTS": 1
+      }
+    },
+    "implicit_contradiction": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 5
+      }
+    },
+    "over_specificity": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 5
+      }
+    },
+    "negation": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 6
+      }
+    },
+    "wrong_subject": {
+      "total": 5,
+      "correct": 5,
+      "accuracy": 1.0,
+      "predictions": {
+        "UNRELATED": 5
+      }
+    },
+    "wrong_context": {
+      "total": 5,
+      "correct": 4,
+      "accuracy": 0.8,
+      "predictions": {
+        "UNRELATED": 5
+      }
+    },
+    "adversarial": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 6
+      }
+    }
+  },
+  "wall_time_s": 68.8,
+  "cases": [
+    {
+      "id": "d-001",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "relevant",
+      "stage1_argmax": "relevant",
+      "stage1_raw": "YES",
+      "stage1_logprobs": {
+        "relevant": -0.4761163325208162,
+        "irrelevant": -1.096109506745663
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " YES",
+          "logprob": -0.9647594094276428
+        },
+        {
+          "token": " NO",
+          "logprob": -1.1477293968200684
+        },
+        {
+          "token": " Yes",
+          "logprob": -1.564660668373108
+        },
+        {
+          "token": " yes",
+          "logprob": -4.0157904624938965
+        },
+        {
+          "token": " No",
+          "logprob": -4.085656642913818
+        },
+        {
+          "token": "YES",
+          "logprob": -4.348308086395264
+        },
+        {
+          "token": " Y",
+          "logprob": -5.179803371429443
+        },
+        {
+          "token": " \n\n",
+          "logprob": -6.25247049331665
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.922674924467036,
+        "SUPPORTS": -2.536011314454242
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.397925853729248
+        },
+        {
+          "token": " The",
+          "logprob": -1.4595866203308105
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.1207518577575684
+        },
+        {
+          "token": " Part",
+          "logprob": -2.611781597137451
+        },
+        {
+          "token": " True",
+          "logprob": -2.7928080558776855
+        },
+        {
+          "token": " false",
+          "logprob": -3.4931788444519043
+        },
+        {
+          "token": " TRUE",
+          "logprob": -4.021133899688721
+        },
+        {
+          "token": " N",
+          "logprob": -4.120254993438721
+        }
+      ],
+      "final": "SUPPORTS",
+      "final_argmax": "CONTRADICTS",
+      "correct": true,
+      "correct_argmax": false
+    },
+    {
+      "id": "d-002",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "relevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.8586807715845703,
+        "relevant": -0.6316881352143046
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.9259377717971802
+        },
+        {
+          "token": " YES",
+          "logprob": -1.21044921875
+        },
+        {
+          "token": " Yes",
+          "logprob": -1.6304417848587036
+        },
+        {
+          "token": " yes",
+          "logprob": -3.607257843017578
+        },
+        {
+          "token": " No",
+          "logprob": -3.679576873779297
+        },
+        {
+          "token": "YES",
+          "logprob": -4.541167259216309
+        },
+        {
+          "token": " Y",
+          "logprob": -5.202134132385254
+        },
+        {
+          "token": "NO",
+          "logprob": -6.063041687011719
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.8515291227507618,
+        "SUPPORTS": -2.330760291516118
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.356153130531311
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.2478747367858887
+        },
+        {
+          "token": " The",
+          "logprob": -2.4010255336761475
+        },
+        {
+          "token": " True",
+          "logprob": -2.6917147636413574
+        },
+        {
+          "token": " false",
+          "logprob": -2.7568984031677246
+        },
+        {
+          "token": " Part",
+          "logprob": -2.7574098110198975
+        },
+        {
+          "token": " ISO",
+          "logprob": -2.875230550765991
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.524818181991577
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "CONTRADICTS",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "d-003",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.4317354870841388,
+        "relevant": -1.1583425007730959
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.47898367047309875
+        },
+        {
+          "token": " YES",
+          "logprob": -1.5983798503875732
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.362316846847534
+        },
+        {
+          "token": " No",
+          "logprob": -3.62153697013855
+        },
+        {
+          "token": " yes",
+          "logprob": -4.527997016906738
+        },
+        {
+          "token": "YES",
+          "logprob": -4.994026184082031
+        },
+        {
+          "token": " Y",
+          "logprob": -5.593382835388184
+        },
+        {
+          "token": "NO",
+          "logprob": -5.736208438873291
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.9631903915174351,
+        "SUPPORTS": -2.198523598886992
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.2356449365615845
+        },
+        {
+          "token": " True",
+          "logprob": -2.31795072555542
+        },
+        {
+          "token": " The",
+          "logprob": -2.4733405113220215
+        },
+        {
+          "token": " Part",
+          "logprob": -2.6052756309509277
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.9000773429870605
+        },
+        {
+          "token": " false",
+          "logprob": -3.3240408897399902
+        },
+        {
+          "token": " SO",
+          "logprob": -4.15852689743042
+        },
+        {
+          "token": " TRUE",
+          "logprob": -4.382691860198975
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "d-004",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "relevant",
+      "stage1_argmax": "relevant",
+      "stage1_raw": "YES",
+      "stage1_logprobs": {
+        "relevant": -0.37450558371946485,
+        "irrelevant": -1.3167474127358572
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " YES",
+          "logprob": -0.9740502238273621
+        },
+        {
+          "token": " Yes",
+          "logprob": -1.3161197900772095
+        },
+        {
+          "token": " NO",
+          "logprob": -1.3815799951553345
+        },
+        {
+          "token": " yes",
+          "logprob": -3.5750997066497803
+        },
+        {
+          "token": " No",
+          "logprob": -4.194100856781006
+        },
+        {
+          "token": "YES",
+          "logprob": -4.276448726654053
+        },
+        {
+          "token": " Y",
+          "logprob": -5.065730571746826
+        },
+        {
+          "token": "NO",
+          "logprob": -6.3539137840271
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.2643881634623215,
+        "SUPPORTS": -2.6954583241073533
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " The",
+          "logprob": -1.1394412517547607
+        },
+        {
+          "token": " False",
+          "logprob": -1.6515586376190186
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.686650037765503
+        },
+        {
+          "token": " Part",
+          "logprob": -2.8237292766571045
+        },
+        {
+          "token": " True",
+          "logprob": -2.919100522994995
+        },
+        {
+          "token": " false",
+          "logprob": -3.7919089794158936
+        },
+        {
+          "token": " the",
+          "logprob": -4.198437690734863
+        },
+        {
+          "token": " TRUE",
+          "logprob": -4.30290412902832
+        }
+      ],
+      "final": "SUPPORTS",
+      "final_argmax": "CONTRADICTS",
+      "correct": true,
+      "correct_argmax": false
+    },
+    {
+      "id": "d-005",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.6691210316201474,
+        "relevant": -0.7965700650140497
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.7178558111190796
+        },
+        {
+          "token": " YES",
+          "logprob": -1.221493124961853
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.035667896270752
+        },
+        {
+          "token": " No",
+          "logprob": -3.7968297004699707
+        },
+        {
+          "token": " yes",
+          "logprob": -4.090001583099365
+        },
+        {
+          "token": "YES",
+          "logprob": -4.738626003265381
+        },
+        {
+          "token": " Y",
+          "logprob": -5.318627834320068
+        },
+        {
+          "token": "NO",
+          "logprob": -6.25559663772583
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.4995450165432012,
+        "SUPPORTS": -2.6734169475186076
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " The",
+          "logprob": -2.0945611000061035
+        },
+        {
+          "token": " MIT",
+          "logprob": -2.234823703765869
+        },
+        {
+          "token": " False",
+          "logprob": -2.3400826454162598
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.4185681343078613
+        },
+        {
+          "token": " Part",
+          "logprob": -2.500950336456299
+        },
+        {
+          "token": " True",
+          "logprob": -2.9868359565734863
+        },
+        {
+          "token": " false",
+          "logprob": -3.2737810611724854
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.98625111579895
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "d-006",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.3035625225792472,
+        "relevant": -1.4949536780780392
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.35973837971687317
+        },
+        {
+          "token": " YES",
+          "logprob": -2.0593748092651367
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.45432186126709
+        },
+        {
+          "token": " No",
+          "logprob": -3.280919075012207
+        },
+        {
+          "token": " yes",
+          "logprob": -4.818889617919922
+        },
+        {
+          "token": " Y",
+          "logprob": -5.813039779663086
+        },
+        {
+          "token": "NO",
+          "logprob": -5.9030256271362305
+        },
+        {
+          "token": "YES",
+          "logprob": -5.904141426086426
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.7045467608302894,
+        "SUPPORTS": -2.048158171850776
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.1761219501495361
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.9526112079620361
+        },
+        {
+          "token": " True",
+          "logprob": -2.3588974475860596
+        },
+        {
+          "token": " The",
+          "logprob": -2.6585209369659424
+        },
+        {
+          "token": " Part",
+          "logprob": -2.8607609272003174
+        },
+        {
+          "token": " false",
+          "logprob": -3.124547243118286
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.754899263381958
+        },
+        {
+          "token": " true",
+          "logprob": -4.505774021148682
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "pp-001",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.17480290704930757,
+        "relevant": -2.046536885502854
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.23166994750499725
+        },
+        {
+          "token": " YES",
+          "logprob": -2.6057982444763184
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.029977321624756
+        },
+        {
+          "token": " No",
+          "logprob": -3.233834743499756
+        },
+        {
+          "token": "NO",
+          "logprob": -5.327589511871338
+        },
+        {
+          "token": " yes",
+          "logprob": -5.401917934417725
+        },
+        {
+          "token": "YES",
+          "logprob": -5.986408710479736
+        },
+        {
+          "token": " no",
+          "logprob": -6.1410088539123535
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.0444439441861468,
+        "SUPPORTS": -2.5678510665893555
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.301810383796692
+        },
+        {
+          "token": " The",
+          "logprob": -2.3700780868530273
+        },
+        {
+          "token": " Part",
+          "logprob": -2.5599377155303955
+        },
+        {
+          "token": " True",
+          "logprob": -2.5678510665893555
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.923935890197754
+        },
+        {
+          "token": " false",
+          "logprob": -3.6447954177856445
+        },
+        {
+          "token": " There",
+          "logprob": -4.443943023681641
+        },
+        {
+          "token": " In",
+          "logprob": -4.642556190490723
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "pp-002",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.2522421874218995,
+        "relevant": -1.6683349392979472
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.29959404468536377
+        },
+        {
+          "token": " YES",
+          "logprob": -2.2299985885620117
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.6298513412475586
+        },
+        {
+          "token": " No",
+          "logprob": -3.4155683517456055
+        },
+        {
+          "token": " yes",
+          "logprob": -5.159946441650391
+        },
+        {
+          "token": "YES",
+          "logprob": -5.744291305541992
+        },
+        {
+          "token": "NO",
+          "logprob": -5.782898902893066
+        },
+        {
+          "token": " Y",
+          "logprob": -5.809788703918457
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.5396500614024428,
+        "SUPPORTS": -2.4874589263169766
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.0248093605041504
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.6556611061096191
+        },
+        {
+          "token": " The",
+          "logprob": -2.6428627967834473
+        },
+        {
+          "token": " True",
+          "logprob": -2.691847324371338
+        },
+        {
+          "token": " Part",
+          "logprob": -3.0893731117248535
+        },
+        {
+          "token": " false",
+          "logprob": -3.4075703620910645
+        },
+        {
+          "token": " TRUE",
+          "logprob": -4.1756463050842285
+        },
+        {
+          "token": " Ph",
+          "logprob": -4.96641206741333
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "pp-003",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.22727302645213263,
+        "relevant": -1.7587573260601912
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.276716023683548
+        },
+        {
+          "token": " YES",
+          "logprob": -2.2734944820404053
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.8082406520843506
+        },
+        {
+          "token": " No",
+          "logprob": -3.3370206356048584
+        },
+        {
+          "token": " yes",
+          "logprob": -5.058588981628418
+        },
+        {
+          "token": "NO",
+          "logprob": -5.846242904663086
+        },
+        {
+          "token": "YES",
+          "logprob": -5.9364166259765625
+        },
+        {
+          "token": " Y",
+          "logprob": -5.992525100708008
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.076737820383394,
+        "SUPPORTS": -1.9853433807378877
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.5503133535385132
+        },
+        {
+          "token": " True",
+          "logprob": -2.1385512351989746
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.24297833442688
+        },
+        {
+          "token": " The",
+          "logprob": -2.3397879600524902
+        },
+        {
+          "token": " Part",
+          "logprob": -2.7027716636657715
+        },
+        {
+          "token": " false",
+          "logprob": -3.7995083332061768
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.936929225921631
+        },
+        {
+          "token": " Encryption",
+          "logprob": -4.124642848968506
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "pp-004",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.3077866329583492,
+        "relevant": -1.4732864055894228
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.3570592403411865
+        },
+        {
+          "token": " YES",
+          "logprob": -1.9701287746429443
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.5420587062835693
+        },
+        {
+          "token": " No",
+          "logprob": -3.438781499862671
+        },
+        {
+          "token": " yes",
+          "logprob": -4.946038246154785
+        },
+        {
+          "token": "YES",
+          "logprob": -5.54256534576416
+        },
+        {
+          "token": "NO",
+          "logprob": -5.733010292053223
+        },
+        {
+          "token": " Y",
+          "logprob": -5.790058135986328
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.8833658398184272,
+        "SUPPORTS": -1.7699192741921104
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.5999282598495483
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.6837371587753296
+        },
+        {
+          "token": " Part",
+          "logprob": -2.1867756843566895
+        },
+        {
+          "token": " The",
+          "logprob": -2.189333438873291
+        },
+        {
+          "token": " True",
+          "logprob": -2.210392475128174
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.004639148712158
+        },
+        {
+          "token": " false",
+          "logprob": -3.6574041843414307
+        },
+        {
+          "token": " true",
+          "logprob": -4.4978861808776855
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "pp-005",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.165591022496548,
+        "relevant": -2.1756016287435638
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.22846418619155884
+        },
+        {
+          "token": " YES",
+          "logprob": -2.7668707370758057
+        },
+        {
+          "token": " No",
+          "logprob": -3.041400909423828
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.056560754776001
+        },
+        {
+          "token": "NO",
+          "logprob": -5.554498672485352
+        },
+        {
+          "token": " yes",
+          "logprob": -5.617918014526367
+        },
+        {
+          "token": " \n\n",
+          "logprob": -6.120368003845215
+        },
+        {
+          "token": " Y",
+          "logprob": -6.127532958984375
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.5789825332839644,
+        "SUPPORTS": -2.5081826361623554
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -0.8778434991836548
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.3061747550964355
+        },
+        {
+          "token": " True",
+          "logprob": -2.6519505977630615
+        },
+        {
+          "token": " The",
+          "logprob": -2.861549139022827
+        },
+        {
+          "token": " false",
+          "logprob": -3.0978026390075684
+        },
+        {
+          "token": " Part",
+          "logprob": -3.553363561630249
+        },
+        {
+          "token": " TRUE",
+          "logprob": -4.5187602043151855
+        },
+        {
+          "token": " It",
+          "logprob": -4.872707843780518
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "pp-006",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.2010228027871382,
+        "relevant": -1.905296376315213
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.2514002323150635
+        },
+        {
+          "token": " YES",
+          "logprob": -2.4593985080718994
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.8848936557769775
+        },
+        {
+          "token": " No",
+          "logprob": -3.2986814975738525
+        },
+        {
+          "token": " yes",
+          "logprob": -5.285027027130127
+        },
+        {
+          "token": "NO",
+          "logprob": -5.728821277618408
+        },
+        {
+          "token": "YES",
+          "logprob": -6.0471625328063965
+        },
+        {
+          "token": " Y",
+          "logprob": -6.129567623138428
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.0174490336301305,
+        "SUPPORTS": -2.419188061529983
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.3254770040512085
+        },
+        {
+          "token": " SI",
+          "logprob": -2.0680785179138184
+        },
+        {
+          "token": " The",
+          "logprob": -2.3468756675720215
+        },
+        {
+          "token": " True",
+          "logprob": -2.6636669635772705
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.774972438812256
+        },
+        {
+          "token": " false",
+          "logprob": -3.3965506553649902
+        },
+        {
+          "token": " Part",
+          "logprob": -3.694119691848755
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.9475646018981934
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ps-001",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.16275126640187804,
+        "relevant": -2.2237374695871805
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.2251182496547699
+        },
+        {
+          "token": " YES",
+          "logprob": -2.749122142791748
+        },
+        {
+          "token": " No",
+          "logprob": -3.1065707206726074
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.2084860801696777
+        },
+        {
+          "token": " Y",
+          "logprob": -5.208362102508545
+        },
+        {
+          "token": " yes",
+          "logprob": -5.572180271148682
+        },
+        {
+          "token": "NO",
+          "logprob": -5.586177349090576
+        },
+        {
+          "token": " no",
+          "logprob": -5.850924968719482
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.3482072802311182,
+        "SUPPORTS": -2.4959153714027575
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " Y",
+          "logprob": -1.5486351251602173
+        },
+        {
+          "token": " False",
+          "logprob": -1.7734638452529907
+        },
+        {
+          "token": " X",
+          "logprob": -2.104356527328491
+        },
+        {
+          "token": " Part",
+          "logprob": -2.2149386405944824
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.6966512203216553
+        },
+        {
+          "token": " True",
+          "logprob": -2.8364694118499756
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.738546133041382
+        },
+        {
+          "token": " false",
+          "logprob": -3.79288649559021
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ps-002",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.22448058724602354,
+        "relevant": -1.763977010656244
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.27564316987991333
+        },
+        {
+          "token": " YES",
+          "logprob": -2.2752349376678467
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.796574354171753
+        },
+        {
+          "token": " No",
+          "logprob": -3.3005568981170654
+        },
+        {
+          "token": " yes",
+          "logprob": -5.281832695007324
+        },
+        {
+          "token": "NO",
+          "logprob": -5.814253807067871
+        },
+        {
+          "token": "YES",
+          "logprob": -5.996518135070801
+        },
+        {
+          "token": " \n\n",
+          "logprob": -6.117400169372559
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.8444737068798958,
+        "SUPPORTS": -1.6653707565879052
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.5957348346710205
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.5960131883621216
+        },
+        {
+          "token": " Part",
+          "logprob": -1.9658080339431763
+        },
+        {
+          "token": " True",
+          "logprob": -2.057072877883911
+        },
+        {
+          "token": " TRUE",
+          "logprob": -2.792090654373169
+        },
+        {
+          "token": " The",
+          "logprob": -2.8406670093536377
+        },
+        {
+          "token": " false",
+          "logprob": -3.716416597366333
+        },
+        {
+          "token": " PART",
+          "logprob": -4.168222427368164
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ps-003",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.6487825037617196,
+        "relevant": -0.8424607379187152
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.7195689678192139
+        },
+        {
+          "token": " YES",
+          "logprob": -1.4261882305145264
+        },
+        {
+          "token": " Yes",
+          "logprob": -1.8121039867401123
+        },
+        {
+          "token": " No",
+          "logprob": -3.4035632610321045
+        },
+        {
+          "token": " yes",
+          "logprob": -3.9055087566375732
+        },
+        {
+          "token": "YES",
+          "logprob": -4.96388053894043
+        },
+        {
+          "token": " Y",
+          "logprob": -5.485764980316162
+        },
+        {
+          "token": " no",
+          "logprob": -6.00553035736084
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.9230652078863382,
+        "SUPPORTS": -2.03945138733471
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.332645058631897
+        },
+        {
+          "token": " True",
+          "logprob": -2.4458253383636475
+        },
+        {
+          "token": " Part",
+          "logprob": -2.454334020614624
+        },
+        {
+          "token": " The",
+          "logprob": -2.493640661239624
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.682391881942749
+        },
+        {
+          "token": " false",
+          "logprob": -2.7315022945404053
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.7411611080169678
+        },
+        {
+          "token": " true",
+          "logprob": -3.926175594329834
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ps-004",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.17914264476810232,
+        "relevant": -1.9830516613122557
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.22480401396751404
+        },
+        {
+          "token": " YES",
+          "logprob": -2.4116175174713135
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.172708511352539
+        },
+        {
+          "token": " No",
+          "logprob": -3.3725035190582275
+        },
+        {
+          "token": " yes",
+          "logprob": -5.6503143310546875
+        },
+        {
+          "token": "NO",
+          "logprob": -5.805728912353516
+        },
+        {
+          "token": "YES",
+          "logprob": -5.963068008422852
+        },
+        {
+          "token": " Y",
+          "logprob": -6.284290313720703
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.0389970122915448,
+        "SUPPORTS": -1.2566500447671074
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.6544297933578491
+        },
+        {
+          "token": " True",
+          "logprob": -1.6583093404769897
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.9410470724105835
+        },
+        {
+          "token": " Part",
+          "logprob": -2.169368028640747
+        },
+        {
+          "token": " TRUE",
+          "logprob": -2.5357508659362793
+        },
+        {
+          "token": " The",
+          "logprob": -2.7518115043640137
+        },
+        {
+          "token": " false",
+          "logprob": -3.9604382514953613
+        },
+        {
+          "token": " true",
+          "logprob": -4.203518390655518
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ps-005",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.2451047657963833,
+        "relevant": -1.6791173232689058
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.2900002896785736
+        },
+        {
+          "token": " YES",
+          "logprob": -2.1596195697784424
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.7775185108184814
+        },
+        {
+          "token": " No",
+          "logprob": -3.453526735305786
+        },
+        {
+          "token": " yes",
+          "logprob": -5.127866268157959
+        },
+        {
+          "token": "YES",
+          "logprob": -5.793365001678467
+        },
+        {
+          "token": " Y",
+          "logprob": -5.8857340812683105
+        },
+        {
+          "token": "NO",
+          "logprob": -5.905170917510986
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.8508804680877707,
+        "SUPPORTS": -1.727119648825447
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.3813751935958862
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.9145286083221436
+        },
+        {
+          "token": " True",
+          "logprob": -2.053206205368042
+        },
+        {
+          "token": " The",
+          "logprob": -2.246464490890503
+        },
+        {
+          "token": " Part",
+          "logprob": -2.5413177013397217
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.3013312816619873
+        },
+        {
+          "token": " false",
+          "logprob": -3.5615546703338623
+        },
+        {
+          "token": " true",
+          "logprob": -4.370977878570557
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ps-006",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.44333642065981804,
+        "relevant": -1.1508491116027764
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.5096091032028198
+        },
+        {
+          "token": " YES",
+          "logprob": -1.7821520566940308
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.035747528076172
+        },
+        {
+          "token": " No",
+          "logprob": -3.258829116821289
+        },
+        {
+          "token": " yes",
+          "logprob": -4.360712051391602
+        },
+        {
+          "token": "YES",
+          "logprob": -5.351658821105957
+        },
+        {
+          "token": " Y",
+          "logprob": -5.71980094909668
+        },
+        {
+          "token": "NO",
+          "logprob": -5.90437126159668
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.6760576203901023,
+        "SUPPORTS": -2.022633169718379
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " SI",
+          "logprob": -1.031230092048645
+        },
+        {
+          "token": " False",
+          "logprob": -2.1820461750030518
+        },
+        {
+          "token": " True",
+          "logprob": -2.459774971008301
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.8955488204956055
+        },
+        {
+          "token": " Part",
+          "logprob": -3.0332937240600586
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.0607521533966064
+        },
+        {
+          "token": " The",
+          "logprob": -3.0674867630004883
+        },
+        {
+          "token": " false",
+          "logprob": -3.961684226989746
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ec-001",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.6742821738858661,
+        "relevant": -0.8224042036723492
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.7579981684684753
+        },
+        {
+          "token": " YES",
+          "logprob": -1.4544531106948853
+        },
+        {
+          "token": " Yes",
+          "logprob": -1.6979014873504639
+        },
+        {
+          "token": " No",
+          "logprob": -3.247462034225464
+        },
+        {
+          "token": " yes",
+          "logprob": -4.12907075881958
+        },
+        {
+          "token": "YES",
+          "logprob": -5.0085062980651855
+        },
+        {
+          "token": " Y",
+          "logprob": -5.074093341827393
+        },
+        {
+          "token": " no",
+          "logprob": -6.1919941902160645
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.7353117181573983,
+        "SUPPORTS": -2.149606290807239
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.2173205614089966
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.8192987442016602
+        },
+        {
+          "token": " Part",
+          "logprob": -2.216324806213379
+        },
+        {
+          "token": " True",
+          "logprob": -2.397782325744629
+        },
+        {
+          "token": " The",
+          "logprob": -2.7390928268432617
+        },
+        {
+          "token": " Python",
+          "logprob": -3.3076696395874023
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.6647462844848633
+        },
+        {
+          "token": " false",
+          "logprob": -3.8540220260620117
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ec-002",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "relevant",
+      "stage1_argmax": "relevant",
+      "stage1_raw": "YES",
+      "stage1_logprobs": {
+        "relevant": -0.5244042533987763,
+        "irrelevant": -1.0190001006216944
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " YES",
+          "logprob": -1.0466063022613525
+        },
+        {
+          "token": " NO",
+          "logprob": -1.0746309757232666
+        },
+        {
+          "token": " Yes",
+          "logprob": -1.555156946182251
+        },
+        {
+          "token": " No",
+          "logprob": -3.9357035160064697
+        },
+        {
+          "token": " yes",
+          "logprob": -4.080731391906738
+        },
+        {
+          "token": "YES",
+          "logprob": -4.363857269287109
+        },
+        {
+          "token": " Y",
+          "logprob": -5.173679828643799
+        },
+        {
+          "token": " \n\n",
+          "logprob": -6.120445251464844
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.951905172041243,
+        "SUPPORTS": -2.523388583687762
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.37765634059906
+        },
+        {
+          "token": " The",
+          "logprob": -1.4736016988754272
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.2359402179718018
+        },
+        {
+          "token": " Part",
+          "logprob": -2.478147029876709
+        },
+        {
+          "token": " True",
+          "logprob": -2.7464325428009033
+        },
+        {
+          "token": " false",
+          "logprob": -3.6139769554138184
+        },
+        {
+          "token": " TRUE",
+          "logprob": -4.133224964141846
+        },
+        {
+          "token": " Python",
+          "logprob": -4.30839204788208
+        }
+      ],
+      "final": "SUPPORTS",
+      "final_argmax": "CONTRADICTS",
+      "correct": false,
+      "correct_argmax": true
+    },
+    {
+      "id": "ec-003",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "relevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.9215724900189474,
+        "relevant": -0.5725339504855124
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.9760263562202454
+        },
+        {
+          "token": " YES",
+          "logprob": -1.0225579738616943
+        },
+        {
+          "token": " Yes",
+          "logprob": -1.7685582637786865
+        },
+        {
+          "token": " yes",
+          "logprob": -3.7622487545013428
+        },
+        {
+          "token": " No",
+          "logprob": -3.954580068588257
+        },
+        {
+          "token": "YES",
+          "logprob": -4.545927047729492
+        },
+        {
+          "token": " Y",
+          "logprob": -5.308444976806641
+        },
+        {
+          "token": "NO",
+          "logprob": -6.255048751831055
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.7697373484992651,
+        "SUPPORTS": -3.1101019382476807
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.2639752626419067
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.9587727785110474
+        },
+        {
+          "token": " The",
+          "logprob": -2.093977212905884
+        },
+        {
+          "token": " AES",
+          "logprob": -2.985456705093384
+        },
+        {
+          "token": " True",
+          "logprob": -3.1101019382476807
+        },
+        {
+          "token": " false",
+          "logprob": -3.229566812515259
+        },
+        {
+          "token": " Part",
+          "logprob": -4.22849178314209
+        },
+        {
+          "token": " There",
+          "logprob": -4.354488372802734
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "CONTRADICTS",
+      "correct": false,
+      "correct_argmax": true
+    },
+    {
+      "id": "ec-004",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.1276684790376379,
+        "relevant": -2.378526643254567
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.18623925745487213
+        },
+        {
+          "token": " YES",
+          "logprob": -2.9273033142089844
+        },
+        {
+          "token": " No",
+          "logprob": -3.131288528442383
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.3251075744628906
+        },
+        {
+          "token": "NO",
+          "logprob": -5.450530052185059
+        },
+        {
+          "token": " yes",
+          "logprob": -5.751767158508301
+        },
+        {
+          "token": " no",
+          "logprob": -6.158881187438965
+        },
+        {
+          "token": " UN",
+          "logprob": -6.217087745666504
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.7460017779757653,
+        "SUPPORTS": -1.7322476363750237
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.2926342487335205
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.7516263723373413
+        },
+        {
+          "token": " True",
+          "logprob": -1.9894918203353882
+        },
+        {
+          "token": " The",
+          "logprob": -2.4861252307891846
+        },
+        {
+          "token": " Part",
+          "logprob": -3.181666612625122
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.558708429336548
+        },
+        {
+          "token": " false",
+          "logprob": -3.641202211380005
+        },
+        {
+          "token": " true",
+          "logprob": -4.45280122756958
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ec-005",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.2570444428594789,
+        "relevant": -1.7364997527281232
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.3276709020137787
+        },
+        {
+          "token": " YES",
+          "logprob": -2.378791570663452
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.6038129329681396
+        },
+        {
+          "token": " No",
+          "logprob": -3.094886541366577
+        },
+        {
+          "token": " yes",
+          "logprob": -4.658313751220703
+        },
+        {
+          "token": " no",
+          "logprob": -5.59138298034668
+        },
+        {
+          "token": "NO",
+          "logprob": -5.5930376052856445
+        },
+        {
+          "token": " Y",
+          "logprob": -5.641382217407227
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.593363518347702,
+        "SUPPORTS": -1.8951703161083158
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.0661780834197998
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.8780620098114014
+        },
+        {
+          "token": " True",
+          "logprob": -2.244602918624878
+        },
+        {
+          "token": " false",
+          "logprob": -2.895745038986206
+        },
+        {
+          "token": " The",
+          "logprob": -3.070103406906128
+        },
+        {
+          "token": " Part",
+          "logprob": -3.2052619457244873
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.4489219188690186
+        },
+        {
+          "token": " true",
+          "logprob": -4.378572940826416
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ic-001",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.4276715790826724,
+        "relevant": -1.168635776500019
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.4763296842575073
+        },
+        {
+          "token": " YES",
+          "logprob": -1.6838301420211792
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.218118667602539
+        },
+        {
+          "token": " No",
+          "logprob": -3.5893115997314453
+        },
+        {
+          "token": " yes",
+          "logprob": -4.576458930969238
+        },
+        {
+          "token": "YES",
+          "logprob": -5.111965179443359
+        },
+        {
+          "token": " Y",
+          "logprob": -5.600921630859375
+        },
+        {
+          "token": "NO",
+          "logprob": -5.698947906494141
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.0129632494692715,
+        "SUPPORTS": -1.7323546056182002
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.6468368768692017
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.9230228662490845
+        },
+        {
+          "token": " The",
+          "logprob": -1.9306942224502563
+        },
+        {
+          "token": " True",
+          "logprob": -2.127916097640991
+        },
+        {
+          "token": " Part",
+          "logprob": -2.6066031455993652
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.1431307792663574
+        },
+        {
+          "token": " false",
+          "logprob": -3.716517925262451
+        },
+        {
+          "token": " true",
+          "logprob": -4.224355220794678
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ic-002",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.15581002705172328,
+        "relevant": -2.209534377242568
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.21945136785507202
+        },
+        {
+          "token": " YES",
+          "logprob": -2.750762462615967
+        },
+        {
+          "token": " No",
+          "logprob": -3.0512843132019043
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.1711344718933105
+        },
+        {
+          "token": " yes",
+          "logprob": -5.5425238609313965
+        },
+        {
+          "token": "NO",
+          "logprob": -5.666793346405029
+        },
+        {
+          "token": " Y",
+          "logprob": -6.058340549468994
+        },
+        {
+          "token": " no",
+          "logprob": -6.21188497543335
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.8266770341227618,
+        "SUPPORTS": -1.7306688544434068
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.431679129600525
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.7902700901031494
+        },
+        {
+          "token": " True",
+          "logprob": -2.062662363052368
+        },
+        {
+          "token": " The",
+          "logprob": -2.092836618423462
+        },
+        {
+          "token": " Part",
+          "logprob": -2.8018381595611572
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.224100351333618
+        },
+        {
+          "token": " false",
+          "logprob": -3.452127695083618
+        },
+        {
+          "token": " true",
+          "logprob": -4.579578876495361
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ic-003",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.12917463679879465,
+        "relevant": -2.371599519578581
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.18587182462215424
+        },
+        {
+          "token": " YES",
+          "logprob": -2.930493116378784
+        },
+        {
+          "token": " No",
+          "logprob": -3.1496856212615967
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.3103511333465576
+        },
+        {
+          "token": " yes",
+          "logprob": -5.667280673980713
+        },
+        {
+          "token": "NO",
+          "logprob": -5.726362705230713
+        },
+        {
+          "token": " no",
+          "logprob": -6.06793737411499
+        },
+        {
+          "token": " UN",
+          "logprob": -6.455568790435791
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.7730537846716977,
+        "SUPPORTS": -1.6811093960696621
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.4764505624771118
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.5850149393081665
+        },
+        {
+          "token": " True",
+          "logprob": -2.2028987407684326
+        },
+        {
+          "token": " The",
+          "logprob": -2.5110576152801514
+        },
+        {
+          "token": " Part",
+          "logprob": -2.560570240020752
+        },
+        {
+          "token": " TRUE",
+          "logprob": -2.726179599761963
+        },
+        {
+          "token": " false",
+          "logprob": -3.568098545074463
+        },
+        {
+          "token": " true",
+          "logprob": -4.583803653717041
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ic-004",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.10111923190812697,
+        "relevant": -2.659622475670226
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.14789868891239166
+        },
+        {
+          "token": " YES",
+          "logprob": -3.145033836364746
+        },
+        {
+          "token": " No",
+          "logprob": -3.330399513244629
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.694178581237793
+        },
+        {
+          "token": "NO",
+          "logprob": -5.5877180099487305
+        },
+        {
+          "token": " \n\n",
+          "logprob": -6.191074371337891
+        },
+        {
+          "token": " yes",
+          "logprob": -6.194170951843262
+        },
+        {
+          "token": " no",
+          "logprob": -6.328673362731934
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.9993826787088842,
+        "SUPPORTS": -2.3616354777282385
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.4791104793548584
+        },
+        {
+          "token": " The",
+          "logprob": -1.9236446619033813
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.1461942195892334
+        },
+        {
+          "token": " Part",
+          "logprob": -2.575578451156616
+        },
+        {
+          "token": " True",
+          "logprob": -2.583829641342163
+        },
+        {
+          "token": " false",
+          "logprob": -3.7576711177825928
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.9748799800872803
+        },
+        {
+          "token": " No",
+          "logprob": -4.690515995025635
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ic-005",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.33664764348198245,
+        "relevant": -1.403750202058022
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.3815052807331085
+        },
+        {
+          "token": " YES",
+          "logprob": -1.885005235671997
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.4981930255889893
+        },
+        {
+          "token": " No",
+          "logprob": -3.582045793533325
+        },
+        {
+          "token": " yes",
+          "logprob": -4.9588847160339355
+        },
+        {
+          "token": "YES",
+          "logprob": -5.38356351852417
+        },
+        {
+          "token": "NO",
+          "logprob": -5.652445316314697
+        },
+        {
+          "token": " Y",
+          "logprob": -5.776628017425537
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.8978943001658166,
+        "SUPPORTS": -2.508348989972306
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.545297622680664
+        },
+        {
+          "token": " The",
+          "logprob": -1.6944618225097656
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.8930398225784302
+        },
+        {
+          "token": " True",
+          "logprob": -2.759767532348633
+        },
+        {
+          "token": " Part",
+          "logprob": -2.967531204223633
+        },
+        {
+          "token": " false",
+          "logprob": -3.1335010528564453
+        },
+        {
+          "token": " TRUE",
+          "logprob": -4.012062072753906
+        },
+        {
+          "token": " the",
+          "logprob": -4.389789581298828
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "os-001",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.1404796271080441,
+        "relevant": -2.216417569377101
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.18023313581943512
+        },
+        {
+          "token": " YES",
+          "logprob": -2.6579360961914062
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.38344407081604
+        },
+        {
+          "token": " No",
+          "logprob": -3.481487512588501
+        },
+        {
+          "token": "NO",
+          "logprob": -5.774984359741211
+        },
+        {
+          "token": " yes",
+          "logprob": -5.8297119140625
+        },
+        {
+          "token": "YES",
+          "logprob": -6.196357727050781
+        },
+        {
+          "token": " Y",
+          "logprob": -6.46278190612793
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.2315560320654368,
+        "SUPPORTS": -2.0620013202752334
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.80767822265625
+        },
+        {
+          "token": " Part",
+          "logprob": -2.100553512573242
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.189624786376953
+        },
+        {
+          "token": " True",
+          "logprob": -2.4554405212402344
+        },
+        {
+          "token": " The",
+          "logprob": -2.567770004272461
+        },
+        {
+          "token": " Technique",
+          "logprob": -3.129894256591797
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.185108184814453
+        },
+        {
+          "token": " false",
+          "logprob": -4.1449127197265625
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "os-002",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.15974669354813592,
+        "relevant": -2.115012753444698
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.20600265264511108
+        },
+        {
+          "token": " YES",
+          "logprob": -2.6025614738464355
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.197741985321045
+        },
+        {
+          "token": " No",
+          "logprob": -3.3364098072052
+        },
+        {
+          "token": " yes",
+          "logprob": -5.603122234344482
+        },
+        {
+          "token": "NO",
+          "logprob": -5.82110071182251
+        },
+        {
+          "token": " Y",
+          "logprob": -6.053847789764404
+        },
+        {
+          "token": "YES",
+          "logprob": -6.2108683586120605
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.0436854076048947,
+        "SUPPORTS": -2.017907013657802
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.5885826349258423
+        },
+        {
+          "token": " X",
+          "logprob": -2.090858221054077
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.171363353729248
+        },
+        {
+          "token": " True",
+          "logprob": -2.363196849822998
+        },
+        {
+          "token": " Part",
+          "logprob": -2.581655263900757
+        },
+        {
+          "token": " The",
+          "logprob": -2.988309383392334
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.248960256576538
+        },
+        {
+          "token": " false",
+          "logprob": -3.3838229179382324
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "os-003",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.18150822189591864,
+        "relevant": -2.0098970106599916
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.234950989484787
+        },
+        {
+          "token": " YES",
+          "logprob": -2.4741649627685547
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.1337718963623047
+        },
+        {
+          "token": " No",
+          "logprob": -3.227283477783203
+        },
+        {
+          "token": " yes",
+          "logprob": -5.538532257080078
+        },
+        {
+          "token": "NO",
+          "logprob": -5.589555740356445
+        },
+        {
+          "token": "YES",
+          "logprob": -6.08197021484375
+        },
+        {
+          "token": " Y",
+          "logprob": -6.2096357345581055
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.8803087672772424,
+        "SUPPORTS": -1.6916874774141688
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.4631552696228027
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.8502097129821777
+        },
+        {
+          "token": " True",
+          "logprob": -2.074889659881592
+        },
+        {
+          "token": " The",
+          "logprob": -2.179542064666748
+        },
+        {
+          "token": " Part",
+          "logprob": -2.539384365081787
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.0190844535827637
+        },
+        {
+          "token": " false",
+          "logprob": -3.651737689971924
+        },
+        {
+          "token": " true",
+          "logprob": -4.6261677742004395
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "os-004",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.5455269245683156,
+        "relevant": -0.9660627101234094
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.5925437211990356
+        },
+        {
+          "token": " YES",
+          "logprob": -1.4481536149978638
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.0615053176879883
+        },
+        {
+          "token": " No",
+          "logprob": -3.726088523864746
+        },
+        {
+          "token": " yes",
+          "logprob": -4.5384979248046875
+        },
+        {
+          "token": "YES",
+          "logprob": -4.876580238342285
+        },
+        {
+          "token": " Y",
+          "logprob": -5.5337324142456055
+        },
+        {
+          "token": "NO",
+          "logprob": -5.979361534118652
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.9005379857433107,
+        "SUPPORTS": -2.006082604828939
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.3584909439086914
+        },
+        {
+          "token": " The",
+          "logprob": -1.7843332290649414
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.288691520690918
+        },
+        {
+          "token": " True",
+          "logprob": -2.316136360168457
+        },
+        {
+          "token": " Part",
+          "logprob": -2.6894121170043945
+        },
+        {
+          "token": " false",
+          "logprob": -3.0385656356811523
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.6902694702148438
+        },
+        {
+          "token": " true",
+          "logprob": -4.519423484802246
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "os-005",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.22646792681316968,
+        "relevant": -1.7615577924773151
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.2725878357887268
+        },
+        {
+          "token": " YES",
+          "logprob": -2.2162294387817383
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.909195899963379
+        },
+        {
+          "token": " No",
+          "logprob": -3.4093828201293945
+        },
+        {
+          "token": " yes",
+          "logprob": -5.220213890075684
+        },
+        {
+          "token": "NO",
+          "logprob": -5.85108757019043
+        },
+        {
+          "token": "YES",
+          "logprob": -5.866793632507324
+        },
+        {
+          "token": " Y",
+          "logprob": -5.903486251831055
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.9071238512774973,
+        "SUPPORTS": -1.7418054954431856
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.371665596961975
+        },
+        {
+          "token": " The",
+          "logprob": -2.0051188468933105
+        },
+        {
+          "token": " True",
+          "logprob": -2.089820623397827
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.154041051864624
+        },
+        {
+          "token": " Part",
+          "logprob": -3.184680461883545
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.359504461288452
+        },
+        {
+          "token": " false",
+          "logprob": -3.381831645965576
+        },
+        {
+          "token": " true",
+          "logprob": -4.0898356437683105
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "n-001",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.1177439189129527,
+        "relevant": -2.419395169257596
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.1771107316017151
+        },
+        {
+          "token": " YES",
+          "logprob": -2.943502426147461
+        },
+        {
+          "token": " No",
+          "logprob": -3.1108741760253906
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.4485950469970703
+        },
+        {
+          "token": "NO",
+          "logprob": -5.3315887451171875
+        },
+        {
+          "token": " yes",
+          "logprob": -5.867591857910156
+        },
+        {
+          "token": " no",
+          "logprob": -6.298927307128906
+        },
+        {
+          "token": "YES",
+          "logprob": -6.3921966552734375
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.9701823539355237,
+        "SUPPORTS": -1.6900263639454074
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.280098557472229
+        },
+        {
+          "token": " True",
+          "logprob": -1.8183237314224243
+        },
+        {
+          "token": " Part",
+          "logprob": -2.6682076454162598
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.682783842086792
+        },
+        {
+          "token": " The",
+          "logprob": -2.8297410011291504
+        },
+        {
+          "token": " false",
+          "logprob": -3.422478199005127
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.806893825531006
+        },
+        {
+          "token": " PowerShell",
+          "logprob": -4.201685428619385
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "n-002",
+      "category": "negation",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.13310890594769006,
+        "relevant": -2.2796395773712783
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.18529430031776428
+        },
+        {
+          "token": " YES",
+          "logprob": -2.7371723651885986
+        },
+        {
+          "token": " No",
+          "logprob": -3.2550041675567627
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.4192421436309814
+        },
+        {
+          "token": "NO",
+          "logprob": -5.46958589553833
+        },
+        {
+          "token": " yes",
+          "logprob": -5.800051689147949
+        },
+        {
+          "token": "YES",
+          "logprob": -6.318160057067871
+        },
+        {
+          "token": " no",
+          "logprob": -6.367530822753906
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.0399381623137303,
+        "SUPPORTS": -2.024113838292123
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.409604787826538
+        },
+        {
+          "token": " Part",
+          "logprob": -1.9821851253509521
+        },
+        {
+          "token": " True",
+          "logprob": -2.2071187496185303
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.5257012844085693
+        },
+        {
+          "token": " The",
+          "logprob": -2.8134477138519287
+        },
+        {
+          "token": " false",
+          "logprob": -3.5324037075042725
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.8124635219573975
+        },
+        {
+          "token": " PowerShell",
+          "logprob": -4.422056198120117
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "n-003",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.22805904562052304,
+        "relevant": -1.7689074949931387
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.2730230987071991
+        },
+        {
+          "token": " YES",
+          "logprob": -2.253718852996826
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.862290859222412
+        },
+        {
+          "token": " No",
+          "logprob": -3.4574408531188965
+        },
+        {
+          "token": " yes",
+          "logprob": -5.209371089935303
+        },
+        {
+          "token": "NO",
+          "logprob": -5.657352924346924
+        },
+        {
+          "token": "YES",
+          "logprob": -5.840163707733154
+        },
+        {
+          "token": " Y",
+          "logprob": -5.902561664581299
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.8616217245196923,
+        "SUPPORTS": -2.2912543332923376
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.4700956344604492
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.8092679977416992
+        },
+        {
+          "token": " The",
+          "logprob": -1.9846811294555664
+        },
+        {
+          "token": " Part",
+          "logprob": -2.0546579360961914
+        },
+        {
+          "token": " True",
+          "logprob": -2.5791311264038086
+        },
+        {
+          "token": " false",
+          "logprob": -3.547417640686035
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.67696475982666
+        },
+        {
+          "token": " PART",
+          "logprob": -4.734837532043457
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "n-004",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.10246656314205785,
+        "relevant": -2.6518928352420614
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.15972398221492767
+        },
+        {
+          "token": " No",
+          "logprob": -3.0983684062957764
+        },
+        {
+          "token": " YES",
+          "logprob": -3.1633918285369873
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.6468894481658936
+        },
+        {
+          "token": "NO",
+          "logprob": -5.76323938369751
+        },
+        {
+          "token": " yes",
+          "logprob": -6.136063575744629
+        },
+        {
+          "token": " no",
+          "logprob": -6.231949329376221
+        },
+        {
+          "token": " UN",
+          "logprob": -6.299715518951416
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.5607933392428629,
+        "SUPPORTS": -2.052177308133995
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.1693458557128906
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.507476806640625
+        },
+        {
+          "token": " True",
+          "logprob": -2.5614452362060547
+        },
+        {
+          "token": " Part",
+          "logprob": -2.649953842163086
+        },
+        {
+          "token": " The",
+          "logprob": -2.8318614959716797
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.1475563049316406
+        },
+        {
+          "token": " false",
+          "logprob": -3.2514514923095703
+        },
+        {
+          "token": " true",
+          "logprob": -4.790916442871094
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "n-005",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.16950189398960167,
+        "relevant": -2.0684642504006425
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.21692492067813873
+        },
+        {
+          "token": " YES",
+          "logprob": -2.549185037612915
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.1802561283111572
+        },
+        {
+          "token": " No",
+          "logprob": -3.34114670753479
+        },
+        {
+          "token": " yes",
+          "logprob": -5.490640163421631
+        },
+        {
+          "token": "NO",
+          "logprob": -5.599853515625
+        },
+        {
+          "token": "YES",
+          "logprob": -5.977882385253906
+        },
+        {
+          "token": " Y",
+          "logprob": -6.249950408935547
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.799482368481316,
+        "SUPPORTS": -2.151253990775467
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.3089699745178223
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.9030365943908691
+        },
+        {
+          "token": " The",
+          "logprob": -2.008882999420166
+        },
+        {
+          "token": " True",
+          "logprob": -2.368917942047119
+        },
+        {
+          "token": " Part",
+          "logprob": -2.829115390777588
+        },
+        {
+          "token": " false",
+          "logprob": -3.4950127601623535
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.7829155921936035
+        },
+        {
+          "token": " the",
+          "logprob": -4.801681995391846
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "n-006",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.2454024097935229,
+        "relevant": -1.7061359686168025
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.2972332835197449
+        },
+        {
+          "token": " YES",
+          "logprob": -2.2365663051605225
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.727830648422241
+        },
+        {
+          "token": " No",
+          "logprob": -3.3214356899261475
+        },
+        {
+          "token": " yes",
+          "logprob": -5.046905994415283
+        },
+        {
+          "token": "NO",
+          "logprob": -5.678706645965576
+        },
+        {
+          "token": "YES",
+          "logprob": -5.825538158416748
+        },
+        {
+          "token": " Y",
+          "logprob": -5.836677074432373
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.674532000046762,
+        "SUPPORTS": -2.3400064056115064
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.2732807397842407
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.5902992486953735
+        },
+        {
+          "token": " The",
+          "logprob": -2.1458280086517334
+        },
+        {
+          "token": " True",
+          "logprob": -2.643216848373413
+        },
+        {
+          "token": " Part",
+          "logprob": -2.9950520992279053
+        },
+        {
+          "token": " false",
+          "logprob": -3.664445638656616
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.681112051010132
+        },
+        {
+          "token": " the",
+          "logprob": -4.905656337738037
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "ws-001",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "gt_relevance": "irrelevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.09250539956957929,
+        "relevant": -2.6852373331214654
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.1342664659023285
+        },
+        {
+          "token": " YES",
+          "logprob": -3.0594239234924316
+        },
+        {
+          "token": " No",
+          "logprob": -3.4227089881896973
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.9377427101135254
+        },
+        {
+          "token": "NO",
+          "logprob": -5.807358264923096
+        },
+        {
+          "token": " yes",
+          "logprob": -6.321010112762451
+        },
+        {
+          "token": " no",
+          "logprob": -6.402176380157471
+        },
+        {
+          "token": " UN",
+          "logprob": -6.682170391082764
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.2506259358746026,
+        "SUPPORTS": -1.913137597197001
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.670796513557434
+        },
+        {
+          "token": " True",
+          "logprob": -2.2061684131622314
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.320460557937622
+        },
+        {
+          "token": " Product",
+          "logprob": -2.5850613117218018
+        },
+        {
+          "token": " Part",
+          "logprob": -2.6254265308380127
+        },
+        {
+          "token": " The",
+          "logprob": -2.735316514968872
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.283555269241333
+        },
+        {
+          "token": " X",
+          "logprob": -3.7131855487823486
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": true,
+      "correct_argmax": true
+    },
+    {
+      "id": "ws-002",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "gt_relevance": "irrelevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.09922892795155058,
+        "relevant": -2.6402169151527817
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.15485256910324097
+        },
+        {
+          "token": " No",
+          "logprob": -3.121624708175659
+        },
+        {
+          "token": " YES",
+          "logprob": -3.170170545578003
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.610689878463745
+        },
+        {
+          "token": "NO",
+          "logprob": -5.765867710113525
+        },
+        {
+          "token": " yes",
+          "logprob": -6.06784200668335
+        },
+        {
+          "token": " no",
+          "logprob": -6.333519458770752
+        },
+        {
+          "token": " \n\n",
+          "logprob": -6.357203006744385
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.7760449468282022,
+        "SUPPORTS": -1.7027221765930796
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.3122389316558838
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.077192544937134
+        },
+        {
+          "token": " True",
+          "logprob": -2.186424493789673
+        },
+        {
+          "token": " false",
+          "logprob": -2.722282648086548
+        },
+        {
+          "token": " Part",
+          "logprob": -2.736582040786743
+        },
+        {
+          "token": " The",
+          "logprob": -2.9716227054595947
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.0794832706451416
+        },
+        {
+          "token": " true",
+          "logprob": -3.7344515323638916
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": true,
+      "correct_argmax": true
+    },
+    {
+      "id": "ws-003",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "gt_relevance": "irrelevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.3988364612127393,
+        "relevant": -1.2510450042363612
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.45125988125801086
+        },
+        {
+          "token": " YES",
+          "logprob": -1.7718050479888916
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.2995970249176025
+        },
+        {
+          "token": " No",
+          "logprob": -3.4799845218658447
+        },
+        {
+          "token": " yes",
+          "logprob": -4.553073883056641
+        },
+        {
+          "token": "YES",
+          "logprob": -5.23145866394043
+        },
+        {
+          "token": " Y",
+          "logprob": -5.660362243652344
+        },
+        {
+          "token": "NO",
+          "logprob": -5.664398193359375
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.0995542709403114,
+        "SUPPORTS": -2.028294771649031
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.514134407043457
+        },
+        {
+          "token": " True",
+          "logprob": -2.2522592544555664
+        },
+        {
+          "token": " The",
+          "logprob": -2.2743444442749023
+        },
+        {
+          "token": " Part",
+          "logprob": -2.4615259170532227
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.8030824661254883
+        },
+        {
+          "token": " false",
+          "logprob": -2.948885917663574
+        },
+        {
+          "token": " N",
+          "logprob": -2.9903345108032227
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.634455680847168
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": true,
+      "correct_argmax": true
+    },
+    {
+      "id": "ws-004",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "gt_relevance": "irrelevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.16281154312681093,
+        "relevant": -2.099192445409586
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.209288090467453
+        },
+        {
+          "token": " YES",
+          "logprob": -2.5793099403381348
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.2128872871398926
+        },
+        {
+          "token": " No",
+          "logprob": -3.3657937049865723
+        },
+        {
+          "token": " yes",
+          "logprob": -5.492797374725342
+        },
+        {
+          "token": "NO",
+          "logprob": -5.507753849029541
+        },
+        {
+          "token": "YES",
+          "logprob": -6.043821811676025
+        },
+        {
+          "token": " Y",
+          "logprob": -6.229395389556885
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.0354234353928264,
+        "SUPPORTS": -1.8895978539381402
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.7433452606201172
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.9790725708007812
+        },
+        {
+          "token": " True",
+          "logprob": -2.3447303771972656
+        },
+        {
+          "token": " Part",
+          "logprob": -2.4737586975097656
+        },
+        {
+          "token": " The",
+          "logprob": -2.511638641357422
+        },
+        {
+          "token": " false",
+          "logprob": -3.1714096069335938
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.289257049560547
+        },
+        {
+          "token": " true",
+          "logprob": -4.018607139587402
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": true,
+      "correct_argmax": true
+    },
+    {
+      "id": "ws-005",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "gt_relevance": "irrelevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.15855287138929866,
+        "relevant": -2.121549447936368
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.2059677243232727
+        },
+        {
+          "token": " YES",
+          "logprob": -2.639397382736206
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.1718356609344482
+        },
+        {
+          "token": " No",
+          "logprob": -3.333895444869995
+        },
+        {
+          "token": " yes",
+          "logprob": -5.437081336975098
+        },
+        {
+          "token": "NO",
+          "logprob": -5.555909156799316
+        },
+        {
+          "token": "YES",
+          "logprob": -6.136364459991455
+        },
+        {
+          "token": " Y",
+          "logprob": -6.264891624450684
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.203425567504305,
+        "SUPPORTS": -1.8647505580304453
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.4443169832229614
+        },
+        {
+          "token": " True",
+          "logprob": -2.0921897888183594
+        },
+        {
+          "token": " The",
+          "logprob": -2.15572190284729
+        },
+        {
+          "token": " Part",
+          "logprob": -3.139995813369751
+        },
+        {
+          "token": " FALSE",
+          "logprob": -3.2319281101226807
+        },
+        {
+          "token": " false",
+          "logprob": -3.6978893280029297
+        },
+        {
+          "token": " TRUE",
+          "logprob": -4.1077561378479
+        },
+        {
+          "token": " true",
+          "logprob": -4.194808006286621
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": true,
+      "correct_argmax": true
+    },
+    {
+      "id": "wc-001",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "gt_relevance": "irrelevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.08449088886624173,
+        "relevant": -2.784598627167808
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.13322938978672028
+        },
+        {
+          "token": " YES",
+          "logprob": -3.1872780323028564
+        },
+        {
+          "token": " No",
+          "logprob": -3.2546303272247314
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.9614152908325195
+        },
+        {
+          "token": "NO",
+          "logprob": -5.632390022277832
+        },
+        {
+          "token": " no",
+          "logprob": -6.475556373596191
+        },
+        {
+          "token": " yes",
+          "logprob": -6.547549247741699
+        },
+        {
+          "token": " \n\n",
+          "logprob": -6.652194976806641
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.244521947898354,
+        "SUPPORTS": -2.227854952051252
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.8006329536437988
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.2698941230773926
+        },
+        {
+          "token": " Technique",
+          "logprob": -2.5337891578674316
+        },
+        {
+          "token": " True",
+          "logprob": -2.565765857696533
+        },
+        {
+          "token": " Part",
+          "logprob": -2.5942041873931885
+        },
+        {
+          "token": " The",
+          "logprob": -2.6701436042785645
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.4770302772521973
+        },
+        {
+          "token": " false",
+          "logprob": -3.934208393096924
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": true,
+      "correct_argmax": true
+    },
+    {
+      "id": "wc-002",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "gt_relevance": "irrelevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.1415637510135857,
+        "relevant": -2.227704016976726
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.19413001835346222
+        },
+        {
+          "token": " YES",
+          "logprob": -2.7441635131835938
+        },
+        {
+          "token": " No",
+          "logprob": -3.2506542205810547
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.2744407653808594
+        },
+        {
+          "token": "NO",
+          "logprob": -5.610054016113281
+        },
+        {
+          "token": " yes",
+          "logprob": -5.656925201416016
+        },
+        {
+          "token": "YES",
+          "logprob": -6.145891189575195
+        },
+        {
+          "token": " no",
+          "logprob": -6.195150375366211
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.9087261494625473,
+        "SUPPORTS": -1.8827123783922053
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.5218383073806763
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.8197623491287231
+        },
+        {
+          "token": " Part",
+          "logprob": -2.14572811126709
+        },
+        {
+          "token": " The",
+          "logprob": -2.1999406814575195
+        },
+        {
+          "token": " True",
+          "logprob": -2.268712282180786
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.021430015563965
+        },
+        {
+          "token": " false",
+          "logprob": -3.7870283126831055
+        },
+        {
+          "token": " PART",
+          "logprob": -4.604605674743652
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": true,
+      "correct_argmax": true
+    },
+    {
+      "id": "wc-003",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "gt_relevance": "irrelevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.23308711757312353,
+        "relevant": -1.7279322928820515
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.27450743317604065
+        },
+        {
+          "token": " YES",
+          "logprob": -2.222646474838257
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.807819366455078
+        },
+        {
+          "token": " No",
+          "logprob": -3.529182195663452
+        },
+        {
+          "token": " yes",
+          "logprob": -5.050192832946777
+        },
+        {
+          "token": "NO",
+          "logprob": -5.874813079833984
+        },
+        {
+          "token": "YES",
+          "logprob": -5.958112716674805
+        },
+        {
+          "token": " Y",
+          "logprob": -6.062920570373535
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.8997884256531102,
+        "SUPPORTS": -1.9545556533046236
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.4564176797866821
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.924696445465088
+        },
+        {
+          "token": " Part",
+          "logprob": -2.216862440109253
+        },
+        {
+          "token": " The",
+          "logprob": -2.226921796798706
+        },
+        {
+          "token": " True",
+          "logprob": -2.341688632965088
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.090872287750244
+        },
+        {
+          "token": " false",
+          "logprob": -3.5875535011291504
+        },
+        {
+          "token": " PART",
+          "logprob": -4.360866069793701
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": true,
+      "correct_argmax": true
+    },
+    {
+      "id": "wc-004",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "gt_relevance": "irrelevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.11351235013006866,
+        "relevant": -2.495067542162767
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.16246862709522247
+        },
+        {
+          "token": " YES",
+          "logprob": -2.9771506786346436
+        },
+        {
+          "token": " No",
+          "logprob": -3.2831790447235107
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.54266619682312
+        },
+        {
+          "token": "NO",
+          "logprob": -5.694569110870361
+        },
+        {
+          "token": " yes",
+          "logprob": -5.945711612701416
+        },
+        {
+          "token": " no",
+          "logprob": -6.332602500915527
+        },
+        {
+          "token": " \n\n",
+          "logprob": -6.4509711265563965
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.761608199496492,
+        "SUPPORTS": -2.0883126484525967
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.1543430089950562
+        },
+        {
+          "token": " The",
+          "logprob": -2.0097031593322754
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.105919361114502
+        },
+        {
+          "token": " True",
+          "logprob": -2.395386219024658
+        },
+        {
+          "token": " Part",
+          "logprob": -2.85709810256958
+        },
+        {
+          "token": " false",
+          "logprob": -3.509340763092041
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.7258200645446777
+        },
+        {
+          "token": " true",
+          "logprob": -4.748439311981201
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": true,
+      "correct_argmax": true
+    },
+    {
+      "id": "wc-005",
+      "category": "wrong_context",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.1616420885940869,
+        "relevant": -2.0926940929970406
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.20908214151859283
+        },
+        {
+          "token": " YES",
+          "logprob": -2.559401035308838
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.215364933013916
+        },
+        {
+          "token": " No",
+          "logprob": -3.376396656036377
+        },
+        {
+          "token": " yes",
+          "logprob": -5.626274585723877
+        },
+        {
+          "token": "NO",
+          "logprob": -5.671299457550049
+        },
+        {
+          "token": "YES",
+          "logprob": -6.092102527618408
+        },
+        {
+          "token": " no",
+          "logprob": -6.318134784698486
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.0797853031963571,
+        "SUPPORTS": -1.7391813509606289
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.6849727630615234
+        },
+        {
+          "token": " The",
+          "logprob": -2.002490997314453
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.0390625
+        },
+        {
+          "token": " True",
+          "logprob": -2.2617149353027344
+        },
+        {
+          "token": " Part",
+          "logprob": -2.312908172607422
+        },
+        {
+          "token": " TRUE",
+          "logprob": -2.8146133422851562
+        },
+        {
+          "token": " false",
+          "logprob": -3.7268600463867188
+        },
+        {
+          "token": " true",
+          "logprob": -4.459808349609375
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "a-001",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.13354221125353655,
+        "relevant": -2.327448879186061
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.17461933195590973
+        },
+        {
+          "token": " YES",
+          "logprob": -2.737931728363037
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.511136531829834
+        },
+        {
+          "token": " No",
+          "logprob": -3.5233511924743652
+        },
+        {
+          "token": "NO",
+          "logprob": -5.580909252166748
+        },
+        {
+          "token": " yes",
+          "logprob": -5.816742420196533
+        },
+        {
+          "token": " no",
+          "logprob": -6.242825984954834
+        },
+        {
+          "token": " Y",
+          "logprob": -6.291249752044678
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -1.0193300654646051,
+        "SUPPORTS": -2.1585810773326712
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.4652481079101562
+        },
+        {
+          "token": " X",
+          "logprob": -1.8042374849319458
+        },
+        {
+          "token": " Part",
+          "logprob": -2.2881526947021484
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.391275405883789
+        },
+        {
+          "token": " True",
+          "logprob": -2.4139328002929688
+        },
+        {
+          "token": " false",
+          "logprob": -3.262226104736328
+        },
+        {
+          "token": " The",
+          "logprob": -3.4642772674560547
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.6486549377441406
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "a-002",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.26606403360398223,
+        "relevant": -1.6046996350023088
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.3168618083000183
+        },
+        {
+          "token": " YES",
+          "logprob": -2.0740373134613037
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.709794759750366
+        },
+        {
+          "token": " No",
+          "logprob": -3.364227056503296
+        },
+        {
+          "token": " yes",
+          "logprob": -5.2451958656311035
+        },
+        {
+          "token": "YES",
+          "logprob": -5.669585704803467
+        },
+        {
+          "token": "NO",
+          "logprob": -5.692872524261475
+        },
+        {
+          "token": " Y",
+          "logprob": -5.843379497528076
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.9839052716526263,
+        "SUPPORTS": -1.4557837769802051
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.4960191249847412
+        },
+        {
+          "token": " True",
+          "logprob": -1.8206708431243896
+        },
+        {
+          "token": " FALSE",
+          "logprob": -2.0741937160491943
+        },
+        {
+          "token": " Part",
+          "logprob": -2.127794027328491
+        },
+        {
+          "token": " The",
+          "logprob": -2.550962209701538
+        },
+        {
+          "token": " TRUE",
+          "logprob": -2.8571622371673584
+        },
+        {
+          "token": " false",
+          "logprob": -3.7226274013519287
+        },
+        {
+          "token": " true",
+          "logprob": -4.278106212615967
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "a-003",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.1501904553497267,
+        "relevant": -2.205882003090265
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.2067597359418869
+        },
+        {
+          "token": " YES",
+          "logprob": -2.74052357673645
+        },
+        {
+          "token": " No",
+          "logprob": -3.1934025287628174
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.22747540473938
+        },
+        {
+          "token": " yes",
+          "logprob": -5.548409938812256
+        },
+        {
+          "token": "NO",
+          "logprob": -5.571359157562256
+        },
+        {
+          "token": " no",
+          "logprob": -5.994779109954834
+        },
+        {
+          "token": "YES",
+          "logprob": -6.182313442230225
+        }
+      ],
+      "stage2_greedy": "CONTRADICTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "FALSE",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.8210887507882969,
+        "SUPPORTS": -1.7162907973377557
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " FALSE",
+          "logprob": -1.5086315870285034
+        },
+        {
+          "token": " False",
+          "logprob": -1.6161679029464722
+        },
+        {
+          "token": " Part",
+          "logprob": -2.092860221862793
+        },
+        {
+          "token": " True",
+          "logprob": -2.1591978073120117
+        },
+        {
+          "token": " TRUE",
+          "logprob": -2.7439794540405273
+        },
+        {
+          "token": " The",
+          "logprob": -2.755558967590332
+        },
+        {
+          "token": " false",
+          "logprob": -3.90796160697937
+        },
+        {
+          "token": " PART",
+          "logprob": -4.347062110900879
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "a-004",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.11824614691904303,
+        "relevant": -2.4575801254826555
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.16941192746162415
+        },
+        {
+          "token": " YES",
+          "logprob": -2.9265987873077393
+        },
+        {
+          "token": " No",
+          "logprob": -3.2592613697052
+        },
+        {
+          "token": " Yes",
+          "logprob": -3.5273773670196533
+        },
+        {
+          "token": "NO",
+          "logprob": -5.577574253082275
+        },
+        {
+          "token": " yes",
+          "logprob": -5.921525001525879
+        },
+        {
+          "token": " no",
+          "logprob": -6.157405853271484
+        },
+        {
+          "token": " UN",
+          "logprob": -6.383523941040039
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.6869974633991954,
+        "SUPPORTS": -1.8335754362634968
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.359476923942566
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.5579899549484253
+        },
+        {
+          "token": " True",
+          "logprob": -2.286850690841675
+        },
+        {
+          "token": " The",
+          "logprob": -2.5149428844451904
+        },
+        {
+          "token": " Part",
+          "logprob": -2.866938591003418
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.056442975997925
+        },
+        {
+          "token": " false",
+          "logprob": -3.331753730773926
+        },
+        {
+          "token": " true",
+          "logprob": -4.491806983947754
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "a-005",
+      "category": "adversarial",
+      "expected": "CONTRADICTS",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.2800593853104858,
+        "relevant": -1.5713350902653676
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.32790112495422363
+        },
+        {
+          "token": " YES",
+          "logprob": -2.0345165729522705
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.698413133621216
+        },
+        {
+          "token": " No",
+          "logprob": -3.4318039417266846
+        },
+        {
+          "token": " yes",
+          "logprob": -5.0780863761901855
+        },
+        {
+          "token": "YES",
+          "logprob": -5.660760402679443
+        },
+        {
+          "token": " Y",
+          "logprob": -5.756486415863037
+        },
+        {
+          "token": "NO",
+          "logprob": -5.8171610832214355
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.818991844167337,
+        "SUPPORTS": -2.109020437934458
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.2968844175338745
+        },
+        {
+          "token": " The",
+          "logprob": -1.935602068901062
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.980544924736023
+        },
+        {
+          "token": " True",
+          "logprob": -2.3324832916259766
+        },
+        {
+          "token": " Part",
+          "logprob": -2.6542797088623047
+        },
+        {
+          "token": " false",
+          "logprob": -3.523376226425171
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.717182159423828
+        },
+        {
+          "token": " the",
+          "logprob": -4.7344160079956055
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    },
+    {
+      "id": "a-006",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "gt_relevance": "relevant",
+      "stage1_greedy": "irrelevant",
+      "stage1_argmax": "irrelevant",
+      "stage1_raw": "NO",
+      "stage1_logprobs": {
+        "irrelevant": -0.2885787598951823,
+        "relevant": -1.5085578410075742
+      },
+      "stage1_raw_logprobs": [
+        {
+          "token": " NO",
+          "logprob": -0.3289942443370819
+        },
+        {
+          "token": " YES",
+          "logprob": -1.9359983205795288
+        },
+        {
+          "token": " Yes",
+          "logprob": -2.6885886192321777
+        },
+        {
+          "token": " No",
+          "logprob": -3.606250286102295
+        },
+        {
+          "token": " yes",
+          "logprob": -5.141732692718506
+        },
+        {
+          "token": "YES",
+          "logprob": -5.768553256988525
+        },
+        {
+          "token": " Y",
+          "logprob": -5.843835353851318
+        },
+        {
+          "token": "NO",
+          "logprob": -5.980661869049072
+        }
+      ],
+      "stage2_greedy": "SUPPORTS",
+      "stage2_argmax": "CONTRADICTS",
+      "stage2_raw": "False",
+      "stage2_logprobs": {
+        "CONTRADICTS": -0.8839380791445152,
+        "SUPPORTS": -1.9156210720003557
+      },
+      "stage2_raw_logprobs": [
+        {
+          "token": " False",
+          "logprob": -1.4925997257232666
+        },
+        {
+          "token": " The",
+          "logprob": -1.7173426151275635
+        },
+        {
+          "token": " FALSE",
+          "logprob": -1.811504602432251
+        },
+        {
+          "token": " True",
+          "logprob": -2.2993509769439697
+        },
+        {
+          "token": " TRUE",
+          "logprob": -3.2693254947662354
+        },
+        {
+          "token": " Part",
+          "logprob": -3.283489465713501
+        },
+        {
+          "token": " false",
+          "logprob": -3.6905977725982666
+        },
+        {
+          "token": " true",
+          "logprob": -4.722339630126953
+        }
+      ],
+      "final": "UNRELATED",
+      "final_argmax": "UNRELATED",
+      "correct": false,
+      "correct_argmax": false
+    }
+  ]
+}

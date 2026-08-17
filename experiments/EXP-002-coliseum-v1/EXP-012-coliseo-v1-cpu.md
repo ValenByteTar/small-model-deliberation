@@ -3,15 +3,25 @@ id: EXP-012
 title: "Coliseo v1: 3 modelos vs SemanticAssessment Benchmark v2 (CPU)"
 date: 2026-08-16
 status: completed
+status_note: "RESULTADOS DE LLAMA3.2 CONTAMINADOS — ver POST-001. Granite y Qwen3 no afectados."
 category: experiment
 components: [semantic_ensemble, ollama_provider, semantic_adapter]
-tags: [granite, llama, qwen, semantic-evaluation, benchmark-v2, cpu, ensemble, coliseo]
-related: [PM-003, ADR-0031, EXP-010, EXP-011, RES-007]
+tags: [granite, llama, qwen, semantic-evaluation, benchmark-v2, cpu, ensemble, coliseo, protocol-contamination]
+related: [PM-003, ADR-0031, EXP-010, EXP-011, RES-007, POST-001]
 supersedes: EXP-011
 superseded_by: EXP-013
 ---
 
 # EXP-012 - Coliseo v1: 3 modelos vs Benchmark v2 (CPU)
+
+> **ADVERTENCIA (POST-001):** Los resultados de Llama3.2 en este
+> experimento estan **contaminados por defectos de protocolo**
+> (`num_predict=10` + parser leniento que defaultea a `UNRELATED`).
+> El 16.4% reportado es un artefacto, no una medida de capacidad
+> semantica. La repeticion con protocolo corregido da **58.2% single**
+> (ver POST-001). Los resultados de Granite y Qwen3 no estan afectados
+> porque sus modelos no truncaban con `num_predict=10`. La conclusion
+> de "Llama3.2 es semanticamente insuficiente" ha sido **retirada**.
 
 ## Hipotesis
 
@@ -161,11 +171,15 @@ beneficioso — depende del modelo y la categoria.
 ## Decision
 
 - **Hipotesis confirmada**: Qwen3 y Granite superan >60% en v2.
-- **Hipotesis secundaria confirmada**: Llama 3.2 3B no tiene capacidad
-  semantica suficiente (16.4%, peor que azar).
+- ~~**Hipotesis secundaria confirmada**: Llama 3.2 3B no tiene capacidad
+  semantica suficiente (16.4%, peor que azar).~~ **RETIRADA (POST-001)**:
+  El 16.4% era un artefacto del protocolo (`num_predict=10` + parser
+  leniento). La repeticion con protocolo corregido da 58.2% single.
+  Llama3.2 tiene capacidad limitada pero real, no "insuficiente".
 - **Ganador**: Qwen3 4B-RAG ensemble_2 = 83.6%
 - **Accion**: Re-evaluar en GPU para medir speedup (EXP-013).
   Explorar deliberacion entre workers (EXP-014).
+  **Re-evaluar Llama3.2 con protocolo corregido (POST-001).**
 
 ## Hipotesis refutada
 

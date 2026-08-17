@@ -1,0 +1,2656 @@
+{
+  "experiment": "microcoliseum_deliberation",
+  "timestamp": "2026-08-17T00:58:59",
+  "model": "llama3.2:3b",
+  "mode": "independent",
+  "backend": "ollama",
+  "gpu": true,
+  "num_gpu": 99,
+  "num_predict": 64,
+  "temperature": 0.0,
+  "num_thread": 4,
+  "num_ctx": 0,
+  "benchmark": "semantic_assessment_benchmark_v2.json",
+  "case_count": 55,
+  "wall_time_s": 665.3,
+  "metrics": {
+    "n": 55,
+    "mode": "independent",
+    "initial_accuracy": 0.6364,
+    "final_accuracy": 0.6364,
+    "accuracy_delta": 0.0,
+    "initial_correct": 35,
+    "final_correct": 35,
+    "corrections": 0,
+    "correction_rate": 0.0,
+    "damage": 0,
+    "damage_rate": 0.0,
+    "stability_rate": 1.0,
+    "debate_trigger_rate": 0.0,
+    "debates_triggered": 0,
+    "revision_rate": 0.0,
+    "total_workers_changed": 0,
+    "by_category": {
+      "adversarial": {
+        "total": 6,
+        "initial_accuracy": 0.5,
+        "final_accuracy": 0.5
+      },
+      "direct_evidence": {
+        "total": 6,
+        "initial_accuracy": 1.0,
+        "final_accuracy": 1.0
+      },
+      "explicit_contradiction": {
+        "total": 5,
+        "initial_accuracy": 0.8,
+        "final_accuracy": 0.8
+      },
+      "implicit_contradiction": {
+        "total": 5,
+        "initial_accuracy": 0.8,
+        "final_accuracy": 0.8
+      },
+      "negation": {
+        "total": 6,
+        "initial_accuracy": 0.6667,
+        "final_accuracy": 0.6667
+      },
+      "over_specificity": {
+        "total": 5,
+        "initial_accuracy": 0.4,
+        "final_accuracy": 0.4
+      },
+      "paraphrase": {
+        "total": 6,
+        "initial_accuracy": 0.6667,
+        "final_accuracy": 0.6667
+      },
+      "partial_support": {
+        "total": 6,
+        "initial_accuracy": 0.3333,
+        "final_accuracy": 0.3333
+      },
+      "wrong_context": {
+        "total": 5,
+        "initial_accuracy": 0.6,
+        "final_accuracy": 0.6
+      },
+      "wrong_subject": {
+        "total": 5,
+        "initial_accuracy": 0.6,
+        "final_accuracy": 0.6
+      }
+    },
+    "by_agreement": {
+      "split": {
+        "total": 47,
+        "initial_accuracy": 0.5957,
+        "final_accuracy": 0.5957
+      },
+      "unanimous": {
+        "total": 8,
+        "initial_accuracy": 0.875,
+        "final_accuracy": 0.875
+      }
+    },
+    "transition_matrix": {
+      "CONTRADICTS": {
+        "CONTRADICTS": 14,
+        "PARTIAL": 0,
+        "SUPPORTS": 0,
+        "UNRELATED": 0
+      },
+      "PARTIAL": {
+        "CONTRADICTS": 0,
+        "PARTIAL": 10,
+        "SUPPORTS": 0,
+        "UNRELATED": 0
+      },
+      "SUPPORTS": {
+        "CONTRADICTS": 0,
+        "PARTIAL": 0,
+        "SUPPORTS": 16,
+        "UNRELATED": 0
+      },
+      "UNRELATED": {
+        "CONTRADICTS": 0,
+        "PARTIAL": 0,
+        "SUPPORTS": 0,
+        "UNRELATED": 15
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "d-001",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 10.95,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 10.95
+    },
+    {
+      "case_id": "d-002",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 1.0,
+      "initial_agreement": 0.25,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 1.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 10.8,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 10.8
+    },
+    {
+      "case_id": "d-003",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 10.85,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 10.85
+    },
+    {
+      "case_id": "d-004",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 1.0,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 1.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 11.22,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 11.22
+    },
+    {
+      "case_id": "d-005",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 1.0,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 1.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 11.1,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 11.1
+    },
+    {
+      "case_id": "d-006",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 10.92,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 10.92
+    },
+    {
+      "case_id": "pp-001",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 10.89,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 10.89
+    },
+    {
+      "case_id": "pp-002",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 11.04,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 11.04
+    },
+    {
+      "case_id": "pp-003",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 1.0,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 1.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 11.19,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 11.19
+    },
+    {
+      "case_id": "pp-004",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 1.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 1.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 10.88,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 10.88
+    },
+    {
+      "case_id": "pp-005",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 10.92,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 10.92
+    },
+    {
+      "case_id": "pp-006",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 10.94,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 10.94
+    },
+    {
+      "case_id": "ps-001",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.5,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 10.89,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 10.89
+    },
+    {
+      "case_id": "ps-002",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 10.8,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 10.8
+    },
+    {
+      "case_id": "ps-003",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 1.0,
+      "initial_agreement": 0.5,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 1.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 11.21,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 11.21
+    },
+    {
+      "case_id": "ps-004",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.39,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.39
+    },
+    {
+      "case_id": "ps-005",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.45,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.45
+    },
+    {
+      "case_id": "ps-006",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.41,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.41
+    },
+    {
+      "case_id": "ec-001",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.24,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.24
+    },
+    {
+      "case_id": "ec-002",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.48,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.48
+    },
+    {
+      "case_id": "ec-003",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.96,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.96
+    },
+    {
+      "case_id": "ec-004",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.54,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.54
+    },
+    {
+      "case_id": "ec-005",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.47,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.47
+    },
+    {
+      "case_id": "ic-001",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.51,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.51
+    },
+    {
+      "case_id": "ic-002",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.19,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.19
+    },
+    {
+      "case_id": "ic-003",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.43,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.43
+    },
+    {
+      "case_id": "ic-004",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.51,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.51
+    },
+    {
+      "case_id": "ic-005",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.14,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.14
+    },
+    {
+      "case_id": "os-001",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 1.0,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 11.9,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 11.9
+    },
+    {
+      "case_id": "os-002",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.5,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.0,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.0
+    },
+    {
+      "case_id": "os-003",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.19,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.19
+    },
+    {
+      "case_id": "os-004",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.94,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.94
+    },
+    {
+      "case_id": "os-005",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.25,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.58,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.58
+    },
+    {
+      "case_id": "n-001",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.67,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.67
+    },
+    {
+      "case_id": "n-002",
+      "category": "negation",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 1.0,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 1.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.26,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.26
+    },
+    {
+      "case_id": "n-003",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "SUPPORTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "SUPPORTS",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.44,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.44
+    },
+    {
+      "case_id": "n-004",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.17,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.17
+    },
+    {
+      "case_id": "n-005",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.51,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.51
+    },
+    {
+      "case_id": "n-006",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.5,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.5
+    },
+    {
+      "case_id": "ws-001",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "SUPPORTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.55,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.55
+    },
+    {
+      "case_id": "ws-002",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.64,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.64
+    },
+    {
+      "case_id": "ws-003",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.75,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.75
+    },
+    {
+      "case_id": "ws-004",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.77,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.77
+    },
+    {
+      "case_id": "ws-005",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.66,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.66
+    },
+    {
+      "case_id": "wc-001",
+      "category": "wrong_context",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.33,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.33
+    },
+    {
+      "case_id": "wc-002",
+      "category": "wrong_context",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.49,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.49
+    },
+    {
+      "case_id": "wc-003",
+      "category": "wrong_context",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 12.5,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.5
+    },
+    {
+      "case_id": "wc-004",
+      "category": "wrong_context",
+      "ground_truth": "UNRELATED",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.95,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.95
+    },
+    {
+      "case_id": "wc-005",
+      "category": "wrong_context",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 17.06,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 17.06
+    },
+    {
+      "case_id": "a-001",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.5,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 11.69,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 11.69
+    },
+    {
+      "case_id": "a-002",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.25,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 10.9,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 10.9
+    },
+    {
+      "case_id": "a-003",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.5,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 11.26,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 11.26
+    },
+    {
+      "case_id": "a-004",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "UNRELATED",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "UNRELATED",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": false,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.0,
+      "final_correct": false,
+      "judge_reason": "",
+      "phase1_latency_s": 12.93,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 12.93
+    },
+    {
+      "case_id": "a-005",
+      "category": "adversarial",
+      "ground_truth": "CONTRADICTS",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "CONTRADICTS",
+      "initial_confidence": 0.0,
+      "initial_agreement": 1.0,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 13.64,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 13.64
+    },
+    {
+      "case_id": "a-006",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_assessments": [
+        {
+          "worker": "A",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "B",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "C",
+          "relation": "CONTRADICTS",
+          "confidence": 0.0,
+          "reason": ""
+        },
+        {
+          "worker": "D",
+          "relation": "PARTIAL",
+          "confidence": 0.0,
+          "reason": ""
+        }
+      ],
+      "initial_relation": "PARTIAL",
+      "initial_confidence": 0.0,
+      "initial_agreement": 0.75,
+      "initial_correct": true,
+      "debate_triggered": false,
+      "challenge_responses": [],
+      "workers_changed": [],
+      "final_relation": "PARTIAL",
+      "final_confidence": 0.0,
+      "final_correct": true,
+      "judge_reason": "",
+      "phase1_latency_s": 11.66,
+      "phase3_latency_s": 0.0,
+      "phase4_latency_s": 0.0,
+      "total_latency_s": 11.66
+    }
+  ]
+}

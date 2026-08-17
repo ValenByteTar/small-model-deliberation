@@ -1,0 +1,6 @@
+FROM C:/Users/Valen/Desktop/Proyectos/BitNet/models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf
+
+PARAMETER temperature 0.0
+PARAMETER num_predict 64
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|end|>"

@@ -1,0 +1,1942 @@
+[
+  {
+    "regime_name": "Regimen 0: Zero-Shot GBNF (temp=0.0)",
+    "overall_accuracy": 0.2545,
+    "correct_count": 14,
+    "wall_time_s": 29.4,
+    "by_category": {
+      "direct_evidence": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "CONTRADICTS": 6
+        }
+      },
+      "paraphrase": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "UNRELATED": 5,
+          "CONTRADICTS": 1
+        }
+      },
+      "partial_support": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "UNRELATED": 3,
+          "CONTRADICTS": 3
+        }
+      },
+      "explicit_contradiction": {
+        "total": 5,
+        "correct": 4,
+        "accuracy": 0.8,
+        "predictions": {
+          "CONTRADICTS": 4,
+          "UNRELATED": 1
+        }
+      },
+      "implicit_contradiction": {
+        "total": 5,
+        "correct": 4,
+        "accuracy": 0.8,
+        "predictions": {
+          "CONTRADICTS": 4,
+          "UNRELATED": 1
+        }
+      },
+      "over_specificity": {
+        "total": 5,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "UNRELATED": 2,
+          "CONTRADICTS": 3
+        }
+      },
+      "negation": {
+        "total": 6,
+        "correct": 3,
+        "accuracy": 0.5,
+        "predictions": {
+          "UNRELATED": 3,
+          "CONTRADICTS": 3
+        }
+      },
+      "wrong_subject": {
+        "total": 5,
+        "correct": 2,
+        "accuracy": 0.4,
+        "predictions": {
+          "CONTRADICTS": 3,
+          "UNRELATED": 2
+        }
+      },
+      "wrong_context": {
+        "total": 5,
+        "correct": 1,
+        "accuracy": 0.2,
+        "predictions": {
+          "UNRELATED": 1,
+          "CONTRADICTS": 4
+        }
+      },
+      "adversarial": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "CONTRADICTS": 3,
+          "UNRELATED": 3
+        }
+      }
+    },
+    "cases": [
+      {
+        "id": "d-001",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "d-002",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "d-003",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "d-004",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "d-005",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "d-006",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "pp-001",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-002",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-003",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-004",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "pp-005",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-006",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ps-001",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ps-002",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ps-003",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ps-004",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ps-005",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ps-006",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ec-001",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ec-002",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ec-003",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ec-004",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ec-005",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ic-001",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ic-002",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ic-003",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ic-004",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ic-005",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "os-001",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "os-002",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "os-003",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "os-004",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "os-005",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "n-001",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "n-002",
+        "category": "negation",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "n-003",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "n-004",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "n-005",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "n-006",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ws-001",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ws-002",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ws-003",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ws-004",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "UNRELATED",
+        "correct": true
+      },
+      {
+        "id": "ws-005",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "UNRELATED",
+        "correct": true
+      },
+      {
+        "id": "wc-001",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "UNRELATED",
+        "correct": true
+      },
+      {
+        "id": "wc-002",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "wc-003",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "wc-004",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "wc-005",
+        "category": "wrong_context",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "a-001",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "a-002",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "a-003",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "a-004",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "a-005",
+        "category": "adversarial",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "a-006",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "regime_name": "Regimen 0: Zero-Shot GBNF (temp=0.2, top_k=20)",
+    "overall_accuracy": 0.2182,
+    "correct_count": 12,
+    "wall_time_s": 24.9,
+    "by_category": {
+      "direct_evidence": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "CONTRADICTS": 4,
+          "UNRELATED": 2
+        }
+      },
+      "paraphrase": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "UNRELATED": 5,
+          "CONTRADICTS": 1
+        }
+      },
+      "partial_support": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "UNRELATED": 2,
+          "CONTRADICTS": 4
+        }
+      },
+      "explicit_contradiction": {
+        "total": 5,
+        "correct": 3,
+        "accuracy": 0.6,
+        "predictions": {
+          "UNRELATED": 2,
+          "CONTRADICTS": 3
+        }
+      },
+      "implicit_contradiction": {
+        "total": 5,
+        "correct": 3,
+        "accuracy": 0.6,
+        "predictions": {
+          "CONTRADICTS": 3,
+          "UNRELATED": 2
+        }
+      },
+      "over_specificity": {
+        "total": 5,
+        "correct": 1,
+        "accuracy": 0.2,
+        "predictions": {
+          "PARTIAL": 1,
+          "UNRELATED": 2,
+          "CONTRADICTS": 2
+        }
+      },
+      "negation": {
+        "total": 6,
+        "correct": 2,
+        "accuracy": 0.3333,
+        "predictions": {
+          "UNRELATED": 4,
+          "CONTRADICTS": 2
+        }
+      },
+      "wrong_subject": {
+        "total": 5,
+        "correct": 2,
+        "accuracy": 0.4,
+        "predictions": {
+          "CONTRADICTS": 3,
+          "UNRELATED": 2
+        }
+      },
+      "wrong_context": {
+        "total": 5,
+        "correct": 1,
+        "accuracy": 0.2,
+        "predictions": {
+          "SUPPORTS": 1,
+          "CONTRADICTS": 3,
+          "UNRELATED": 1
+        }
+      },
+      "adversarial": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "UNRELATED": 2,
+          "CONTRADICTS": 3,
+          "SUPPORTS": 1
+        }
+      }
+    },
+    "cases": [
+      {
+        "id": "d-001",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "d-002",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "d-003",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "d-004",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "d-005",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "d-006",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-001",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-002",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-003",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-004",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "pp-005",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-006",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ps-001",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ps-002",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ps-003",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ps-004",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ps-005",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ps-006",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ec-001",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ec-002",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ec-003",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ec-004",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ec-005",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ic-001",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ic-002",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ic-003",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ic-004",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ic-005",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "os-001",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "os-002",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "os-003",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "os-004",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "os-005",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "n-001",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "n-002",
+        "category": "negation",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "n-003",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "n-004",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "n-005",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "n-006",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ws-001",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ws-002",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ws-003",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ws-004",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "UNRELATED",
+        "correct": true
+      },
+      {
+        "id": "ws-005",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "UNRELATED",
+        "correct": true
+      },
+      {
+        "id": "wc-001",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "SUPPORTS",
+        "correct": false
+      },
+      {
+        "id": "wc-002",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "wc-003",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "wc-004",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "UNRELATED",
+        "correct": true
+      },
+      {
+        "id": "wc-005",
+        "category": "wrong_context",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "a-001",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "a-002",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "a-003",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "a-004",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "a-005",
+        "category": "adversarial",
+        "expected": "CONTRADICTS",
+        "predicted": "SUPPORTS",
+        "correct": false
+      },
+      {
+        "id": "a-006",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "regime_name": "Regimen 1: Few-Shot GBNF (temp=0.2, top_k=20)",
+    "overall_accuracy": 0.2545,
+    "correct_count": 14,
+    "wall_time_s": 33.5,
+    "by_category": {
+      "direct_evidence": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "CONTRADICTS": 1,
+          "UNRELATED": 5
+        }
+      },
+      "paraphrase": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "UNRELATED": 6
+        }
+      },
+      "partial_support": {
+        "total": 6,
+        "correct": 2,
+        "accuracy": 0.3333,
+        "predictions": {
+          "UNRELATED": 4,
+          "PARTIAL": 2
+        }
+      },
+      "explicit_contradiction": {
+        "total": 5,
+        "correct": 2,
+        "accuracy": 0.4,
+        "predictions": {
+          "CONTRADICTS": 2,
+          "UNRELATED": 3
+        }
+      },
+      "implicit_contradiction": {
+        "total": 5,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "UNRELATED": 5
+        }
+      },
+      "over_specificity": {
+        "total": 5,
+        "correct": 1,
+        "accuracy": 0.2,
+        "predictions": {
+          "PARTIAL": 1,
+          "CONTRADICTS": 1,
+          "UNRELATED": 3
+        }
+      },
+      "negation": {
+        "total": 6,
+        "correct": 2,
+        "accuracy": 0.3333,
+        "predictions": {
+          "UNRELATED": 3,
+          "PARTIAL": 2,
+          "CONTRADICTS": 1
+        }
+      },
+      "wrong_subject": {
+        "total": 5,
+        "correct": 3,
+        "accuracy": 0.6,
+        "predictions": {
+          "CONTRADICTS": 2,
+          "UNRELATED": 3
+        }
+      },
+      "wrong_context": {
+        "total": 5,
+        "correct": 4,
+        "accuracy": 0.8,
+        "predictions": {
+          "UNRELATED": 3,
+          "PARTIAL": 2
+        }
+      },
+      "adversarial": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "UNRELATED": 5,
+          "CONTRADICTS": 1
+        }
+      }
+    },
+    "cases": [
+      {
+        "id": "d-001",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "d-002",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "d-003",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "d-004",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "d-005",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "d-006",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-001",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-002",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-003",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-004",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-005",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "pp-006",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ps-001",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ps-002",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ps-003",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "ps-004",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "ps-005",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ps-006",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ec-001",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ec-002",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ec-003",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ec-004",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ec-005",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ic-001",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ic-002",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ic-003",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ic-004",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ic-005",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "os-001",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "os-002",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "os-003",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "os-004",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "os-005",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "n-001",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "n-002",
+        "category": "negation",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "n-003",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "n-004",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "n-005",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "n-006",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "ws-001",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ws-002",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ws-003",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "UNRELATED",
+        "correct": true
+      },
+      {
+        "id": "ws-004",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "UNRELATED",
+        "correct": true
+      },
+      {
+        "id": "ws-005",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "UNRELATED",
+        "correct": true
+      },
+      {
+        "id": "wc-001",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "UNRELATED",
+        "correct": true
+      },
+      {
+        "id": "wc-002",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "wc-003",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "UNRELATED",
+        "correct": true
+      },
+      {
+        "id": "wc-004",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "UNRELATED",
+        "correct": true
+      },
+      {
+        "id": "wc-005",
+        "category": "wrong_context",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "a-001",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "a-002",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "a-003",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "a-004",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "a-005",
+        "category": "adversarial",
+        "expected": "CONTRADICTS",
+        "predicted": "UNRELATED",
+        "correct": false
+      },
+      {
+        "id": "a-006",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "regime_name": "Regimen 2: Binary Cascading / One-vs-All",
+    "overall_accuracy": 0.2727,
+    "correct_count": 15,
+    "wall_time_s": 62.6,
+    "by_category": {
+      "direct_evidence": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "CONTRADICTS": 2,
+          "PARTIAL": 4
+        }
+      },
+      "paraphrase": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "PARTIAL": 4,
+          "CONTRADICTS": 2
+        }
+      },
+      "partial_support": {
+        "total": 6,
+        "correct": 6,
+        "accuracy": 1.0,
+        "predictions": {
+          "PARTIAL": 6
+        }
+      },
+      "explicit_contradiction": {
+        "total": 5,
+        "correct": 2,
+        "accuracy": 0.4,
+        "predictions": {
+          "PARTIAL": 3,
+          "CONTRADICTS": 2
+        }
+      },
+      "implicit_contradiction": {
+        "total": 5,
+        "correct": 2,
+        "accuracy": 0.4,
+        "predictions": {
+          "PARTIAL": 3,
+          "CONTRADICTS": 2
+        }
+      },
+      "over_specificity": {
+        "total": 5,
+        "correct": 1,
+        "accuracy": 0.2,
+        "predictions": {
+          "PARTIAL": 1,
+          "CONTRADICTS": 4
+        }
+      },
+      "negation": {
+        "total": 6,
+        "correct": 2,
+        "accuracy": 0.3333,
+        "predictions": {
+          "CONTRADICTS": 1,
+          "PARTIAL": 5
+        }
+      },
+      "wrong_subject": {
+        "total": 5,
+        "correct": 0,
+        "accuracy": 0.0,
+        "predictions": {
+          "CONTRADICTS": 2,
+          "PARTIAL": 3
+        }
+      },
+      "wrong_context": {
+        "total": 5,
+        "correct": 1,
+        "accuracy": 0.2,
+        "predictions": {
+          "PARTIAL": 5
+        }
+      },
+      "adversarial": {
+        "total": 6,
+        "correct": 1,
+        "accuracy": 0.1667,
+        "predictions": {
+          "CONTRADICTS": 4,
+          "PARTIAL": 2
+        }
+      }
+    },
+    "cases": [
+      {
+        "id": "d-001",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "d-002",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "d-003",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "d-004",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "d-005",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "d-006",
+        "category": "direct_evidence",
+        "expected": "SUPPORTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "pp-001",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "pp-002",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "pp-003",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "pp-004",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "pp-005",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "pp-006",
+        "category": "paraphrase",
+        "expected": "SUPPORTS",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ps-001",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "ps-002",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "ps-003",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "ps-004",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "ps-005",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "ps-006",
+        "category": "partial_support",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "ec-001",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "ec-002",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "ec-003",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ec-004",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ec-005",
+        "category": "explicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "ic-001",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "ic-002",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "ic-003",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "ic-004",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "ic-005",
+        "category": "implicit_contradiction",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "os-001",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "os-002",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "os-003",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "os-004",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "os-005",
+        "category": "over_specificity",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "n-001",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "CONTRADICTS",
+        "correct": true
+      },
+      {
+        "id": "n-002",
+        "category": "negation",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "n-003",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "n-004",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "n-005",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "n-006",
+        "category": "negation",
+        "expected": "CONTRADICTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "ws-001",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ws-002",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "ws-003",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "ws-004",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "ws-005",
+        "category": "wrong_subject",
+        "expected": "UNRELATED",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "wc-001",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "wc-002",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "wc-003",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "wc-004",
+        "category": "wrong_context",
+        "expected": "UNRELATED",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "wc-005",
+        "category": "wrong_context",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "a-001",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "a-002",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "PARTIAL",
+        "correct": true
+      },
+      {
+        "id": "a-003",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "a-004",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      },
+      {
+        "id": "a-005",
+        "category": "adversarial",
+        "expected": "CONTRADICTS",
+        "predicted": "PARTIAL",
+        "correct": false
+      },
+      {
+        "id": "a-006",
+        "category": "adversarial",
+        "expected": "PARTIAL",
+        "predicted": "CONTRADICTS",
+        "correct": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "pilot": "coliseo_v1_cpu",
+  "date": "2026-08-16",
+  "benchmark": "semantic_assessment_benchmark_v2.json",
+  "case_count": 55,
+  "execution": "CPU (num_gpu=0)",
+  "models": [
+    {"label": "granite-3b-q4", "name": "ibm/granite4.1:3b-q4_K_M", "params": "3.4B"},
+    {"label": "llama32-3b", "name": "llama3.2:3b", "params": "3B"},
+    {"label": "qwen3-4b-rag", "name": "qwen3-4b-rag:latest", "params": "4B"}
+  ],
+  "configs": [
+    {"label": "single", "roles": ["neutral"]},
+    {"label": "ensemble_2", "roles": ["entailment", "skeptical"]},
+    {"label": "ensemble_4", "roles": ["entailment", "skeptical", "contradiction", "neutral"]}
+  ],
+  "results": {
+    "granite-3b-q4": {
+      "single": {"accuracy": 0.618, "correct": 34, "protocol_validity": 1.0, "avg_latency_s": 3.5, "wall_time_s": 195},
+      "ensemble_2": {"accuracy": 0.673, "correct": 37, "protocol_validity": 1.0, "avg_latency_s": 4.7, "wall_time_s": 257},
+      "ensemble_4": {"accuracy": 0.764, "correct": 42, "protocol_validity": 1.0, "avg_latency_s": 6.4, "wall_time_s": 352}
+    },
+    "llama32-3b": {
+      "single": {"accuracy": 0.164, "correct": 9, "protocol_validity": 1.0, "avg_latency_s": 3.8, "wall_time_s": 207},
+      "ensemble_2": {"accuracy": 0.291, "correct": 16, "protocol_validity": 1.0, "avg_latency_s": 4.7, "wall_time_s": 260},
+      "ensemble_4": {"accuracy": 0.200, "correct": 11, "protocol_validity": 1.0, "avg_latency_s": 6.1, "wall_time_s": 336}
+    },
+    "qwen3-4b-rag": {
+      "single": {"accuracy": 0.782, "correct": 43, "protocol_validity": 1.0, "avg_latency_s": 4.2, "wall_time_s": 230},
+      "ensemble_2": {"accuracy": 0.836, "correct": 46, "protocol_validity": 1.0, "avg_latency_s": 5.6, "wall_time_s": 308},
+      "ensemble_4": {"accuracy": 0.818, "correct": 45, "protocol_validity": 1.0, "avg_latency_s": 8.4, "wall_time_s": 465}
+    }
+  },
+  "best": {"model": "qwen3-4b-rag", "config": "ensemble_2", "accuracy": 0.836},
+  "note": "JSON reconstruido desde output capturado. El script original crasheo por UnicodeEncodeError (caracter unicode en print de barras). Los datos de accuracy, latencia y wall time son exactos. Los per-case results no estan disponibles para esta corrida."
+}

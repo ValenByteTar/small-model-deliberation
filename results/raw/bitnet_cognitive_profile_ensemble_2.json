@@ -1,0 +1,770 @@
+{
+  "mode": "ensemble_2",
+  "workers": [
+    "entailment",
+    "skeptical"
+  ],
+  "model": "BitNet-b1.58-2B-4T",
+  "regime": "Minimal Cognitive Overhead (GBNF 1-token constraint, Few-Shot minimal, repeat_penalty=1.0)",
+  "benchmark": "semantic_assessment_v2.json",
+  "total_cases": 55,
+  "overall_accuracy": 0.2727,
+  "correct_count": 15,
+  "wall_time_s": 65.6,
+  "by_category": {
+    "direct_evidence": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "CONTRADICTS": 2,
+        "UNRELATED": 3,
+        "PARTIAL": 1
+      }
+    },
+    "paraphrase": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 6
+      }
+    },
+    "partial_support": {
+      "total": 6,
+      "correct": 1,
+      "accuracy": 0.1667,
+      "predictions": {
+        "CONTRADICTS": 4,
+        "PARTIAL": 1,
+        "UNRELATED": 1
+      }
+    },
+    "explicit_contradiction": {
+      "total": 5,
+      "correct": 4,
+      "accuracy": 0.8,
+      "predictions": {
+        "CONTRADICTS": 4,
+        "UNRELATED": 1
+      }
+    },
+    "implicit_contradiction": {
+      "total": 5,
+      "correct": 2,
+      "accuracy": 0.4,
+      "predictions": {
+        "CONTRADICTS": 2,
+        "UNRELATED": 3
+      }
+    },
+    "over_specificity": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 1,
+        "CONTRADICTS": 4
+      }
+    },
+    "negation": {
+      "total": 6,
+      "correct": 4,
+      "accuracy": 0.6667,
+      "predictions": {
+        "CONTRADICTS": 3,
+        "PARTIAL": 1,
+        "UNRELATED": 2
+      }
+    },
+    "wrong_subject": {
+      "total": 5,
+      "correct": 2,
+      "accuracy": 0.4,
+      "predictions": {
+        "CONTRADICTS": 3,
+        "UNRELATED": 2
+      }
+    },
+    "wrong_context": {
+      "total": 5,
+      "correct": 2,
+      "accuracy": 0.4,
+      "predictions": {
+        "UNRELATED": 2,
+        "CONTRADICTS": 3
+      }
+    },
+    "adversarial": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "UNRELATED": 4,
+        "CONTRADICTS": 2
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "d-001",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": false,
+      "latency_s": 5.37
+    },
+    {
+      "id": "d-002",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.18
+    },
+    {
+      "id": "d-003",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "PARTIAL",
+      "worker_predictions": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "correct": false,
+      "latency_s": 1.42
+    },
+    {
+      "id": "d-004",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.2
+    },
+    {
+      "id": "d-005",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.46
+    },
+    {
+      "id": "d-006",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.05
+    },
+    {
+      "id": "pp-001",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 0.97
+    },
+    {
+      "id": "pp-002",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.09
+    },
+    {
+      "id": "pp-003",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 0.9
+    },
+    {
+      "id": "pp-004",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.04
+    },
+    {
+      "id": "pp-005",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.11
+    },
+    {
+      "id": "pp-006",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.12
+    },
+    {
+      "id": "ps-001",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": false,
+      "latency_s": 1.07
+    },
+    {
+      "id": "ps-002",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.13
+    },
+    {
+      "id": "ps-003",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "PARTIAL",
+      "worker_predictions": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "correct": true,
+      "latency_s": 1.21
+    },
+    {
+      "id": "ps-004",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": false,
+      "latency_s": 1.31
+    },
+    {
+      "id": "ps-005",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.18
+    },
+    {
+      "id": "ps-006",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.03
+    },
+    {
+      "id": "ec-001",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": true,
+      "latency_s": 1.65
+    },
+    {
+      "id": "ec-002",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": true,
+      "latency_s": 1.61
+    },
+    {
+      "id": "ec-003",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": true,
+      "latency_s": 1.68
+    },
+    {
+      "id": "ec-004",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 0.93
+    },
+    {
+      "id": "ec-005",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": true,
+      "latency_s": 1.4
+    },
+    {
+      "id": "ic-001",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": true,
+      "latency_s": 1.23
+    },
+    {
+      "id": "ic-002",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 0.94
+    },
+    {
+      "id": "ic-003",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "UNRELATED"
+      ],
+      "correct": true,
+      "latency_s": 1.11
+    },
+    {
+      "id": "ic-004",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 0.86
+    },
+    {
+      "id": "ic-005",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.01
+    },
+    {
+      "id": "os-001",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 0.93
+    },
+    {
+      "id": "os-002",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": false,
+      "latency_s": 1.12
+    },
+    {
+      "id": "os-003",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": false,
+      "latency_s": 1.29
+    },
+    {
+      "id": "os-004",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.28
+    },
+    {
+      "id": "os-005",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.27
+    },
+    {
+      "id": "n-001",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "UNRELATED"
+      ],
+      "correct": true,
+      "latency_s": 1.05
+    },
+    {
+      "id": "n-002",
+      "category": "negation",
+      "expected": "PARTIAL",
+      "predicted": "PARTIAL",
+      "worker_predictions": [
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "correct": true,
+      "latency_s": 0.69
+    },
+    {
+      "id": "n-003",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 0.92
+    },
+    {
+      "id": "n-004",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": true,
+      "latency_s": 1.24
+    },
+    {
+      "id": "n-005",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.01
+    },
+    {
+      "id": "n-006",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "UNRELATED"
+      ],
+      "correct": true,
+      "latency_s": 1.16
+    },
+    {
+      "id": "ws-001",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": false,
+      "latency_s": 1.22
+    },
+    {
+      "id": "ws-002",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": false,
+      "latency_s": 1.27
+    },
+    {
+      "id": "ws-003",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.1
+    },
+    {
+      "id": "ws-004",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": true,
+      "latency_s": 0.92
+    },
+    {
+      "id": "ws-005",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": true,
+      "latency_s": 1.01
+    },
+    {
+      "id": "wc-001",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": true,
+      "latency_s": 0.88
+    },
+    {
+      "id": "wc-002",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "PARTIAL"
+      ],
+      "correct": false,
+      "latency_s": 1.02
+    },
+    {
+      "id": "wc-003",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": false,
+      "latency_s": 1.21
+    },
+    {
+      "id": "wc-004",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": true,
+      "latency_s": 0.91
+    },
+    {
+      "id": "wc-005",
+      "category": "wrong_context",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": false,
+      "latency_s": 1.21
+    },
+    {
+      "id": "a-001",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 0.79
+    },
+    {
+      "id": "a-002",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "CONTRADICTS"
+      ],
+      "correct": false,
+      "latency_s": 1.08
+    },
+    {
+      "id": "a-003",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 0.85
+    },
+    {
+      "id": "a-004",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 0.89
+    },
+    {
+      "id": "a-005",
+      "category": "adversarial",
+      "expected": "CONTRADICTS",
+      "predicted": "UNRELATED",
+      "worker_predictions": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 0.96
+    },
+    {
+      "id": "a-006",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "worker_predictions": [
+        "CONTRADICTS",
+        "UNRELATED"
+      ],
+      "correct": false,
+      "latency_s": 1.1
+    }
+  ]
+}

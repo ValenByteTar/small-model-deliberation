@@ -2,7 +2,7 @@
 id: EXP-014
 title: "Deliberative Micro-Coliseum: debate entre workers vs ensemble paralelo"
 date: 2026-08-16
-status: in-progress
+status: completed
 category: experiment
 components: [semantic_ensemble, ollama_provider, semantic_adapter]
 tags: [deliberation, debate, judge, ensemble, semantic-evaluation, benchmark-v2, gpu, microcoliseum]
@@ -112,21 +112,34 @@ semantic_assessment_benchmark_v2.json — mismo que EXP-012/013.
 | Correction rate | 70.6% (12/17 wrong) |
 | Damage rate | 15.8% (6/38 correct) |
 
-### Qwen3 4B-RAG (parcial)
+### Qwen3 4B-RAG (completo)
 
 | Modo | Initial | Final | Delta | Corrections | Damage | Net |
 |------|---------|-------|-------|-------------|--------|-----|
 | independent | 76.4% (42/55) | 76.4% (42/55) | 0.0% | 0 | 0 | 0 |
-| debate-on-disagreement | en curso | en curso | - | - | - | - |
-| debate-all | pendiente | pendiente | - | - | - | - |
+| debate-on-disagreement | 76.4% (42/55) | 76.4% (42/55) | 0.0% | 5 | 5 | 0 |
+| debate-all | 76.4% (42/55) | 74.6% (41/55) | -1.8% | 4 | 5 | -1 |
 
-### Llama 3.2 3B (pendiente)
+Qwen3 4B-RAG no se beneficia del debate. El modelo tiene suficiente
+capacidad inicial (76.4%) y el debate introduce ruido (net 0 o -1).
+
+### Llama 3.2 3B (pendiente - protocolo corregido)
+
+Los resultados previos de Llama3.2 en EXP-014 estaban contaminados
+por el protocolo (POST-001: num_predict=10 + think mode + parser
+leniento). Se re-corre con protocolo corregido en EXP-016.
 
 | Modo | Initial | Final | Delta |
 |------|---------|-------|-------|
-| independent | pendiente | pendiente | - |
-| debate-on-disagreement | pendiente | pendiente | - |
-| debate-all | pendiente | pendiente | - |
+| independent | pendiente (EXP-016) | pendiente | - |
+| debate-on-disagreement | pendiente (EXP-016) | pendiente | - |
+| debate-all | pendiente (EXP-016) | pendiente | - |
+
+### Modelos adicionales (EXP-016)
+
+4 modelos adicionales fueron evaluados en EXP-016: Gemma3 4B,
+Nemotron 3 4B, Ministral 3B, Qwen3.5 4B. Ver EXP-016 para resultados
+completos.
 
 ## Observaciones
 

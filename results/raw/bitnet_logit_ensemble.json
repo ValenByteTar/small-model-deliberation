@@ -1,0 +1,1639 @@
+{
+  "model": "BitNet-b1.58-2B-4T",
+  "regime": "Logit Ensemble (fs0 + nli4 + bin_cascading, logsumexp aggregation)",
+  "benchmark": "semantic_assessment_v2.json",
+  "total_cases": 55,
+  "overall_accuracy": 0.3818,
+  "correct_count": 21,
+  "wall_time_s": 121.3,
+  "by_category": {
+    "direct_evidence": {
+      "total": 6,
+      "correct": 6,
+      "accuracy": 1.0,
+      "predictions": {
+        "SUPPORTS": 6
+      }
+    },
+    "paraphrase": {
+      "total": 6,
+      "correct": 5,
+      "accuracy": 0.8333,
+      "predictions": {
+        "SUPPORTS": 5,
+        "CONTRADICTS": 1
+      }
+    },
+    "partial_support": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "SUPPORTS": 6
+      }
+    },
+    "explicit_contradiction": {
+      "total": 5,
+      "correct": 3,
+      "accuracy": 0.6,
+      "predictions": {
+        "CONTRADICTS": 3,
+        "SUPPORTS": 2
+      }
+    },
+    "implicit_contradiction": {
+      "total": 5,
+      "correct": 2,
+      "accuracy": 0.4,
+      "predictions": {
+        "SUPPORTS": 3,
+        "CONTRADICTS": 2
+      }
+    },
+    "over_specificity": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "SUPPORTS": 5
+      }
+    },
+    "negation": {
+      "total": 6,
+      "correct": 4,
+      "accuracy": 0.6667,
+      "predictions": {
+        "SUPPORTS": 1,
+        "CONTRADICTS": 5
+      }
+    },
+    "wrong_subject": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "SUPPORTS": 5
+      }
+    },
+    "wrong_context": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "predictions": {
+        "CONTRADICTS": 2,
+        "SUPPORTS": 3
+      }
+    },
+    "adversarial": {
+      "total": 6,
+      "correct": 1,
+      "accuracy": 0.1667,
+      "predictions": {
+        "CONTRADICTS": 3,
+        "SUPPORTS": 3
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "d-001",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "SUPPORTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -2.3494429893403423,
+        "SUPPORTS": -0.25876560121116277,
+        "UNRELATED": -3.133618815671631
+      },
+      "regime_greedys": {
+        "fs0": "CONTRADICTS",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.25876560121116277,
+          "CONTRADICTS": -2.3494429893403423,
+          "UNRELATED": -4.886470317840576
+        },
+        "bin": {
+          "UNRELATED": -3.3239069807714543
+        }
+      }
+    },
+    {
+      "id": "d-002",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "SUPPORTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.4319827292051897,
+        "SUPPORTS": -0.6163736652666781,
+        "UNRELATED": -2.707260543544749
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.6163736652666781,
+          "CONTRADICTS": -1.4319827292051897,
+          "UNRELATED": -4.323984146118164
+        },
+        "bin": {
+          "UNRELATED": -2.9285909361657785
+        }
+      }
+    },
+    {
+      "id": "d-003",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "SUPPORTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.1605830948429292,
+        "SUPPORTS": -0.8095651326405603,
+        "UNRELATED": -1.9880062013623168
+      },
+      "regime_greedys": {
+        "fs0": "PARTIAL",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -1.1605830948429292,
+          "SUPPORTS": -0.8095651326405603,
+          "UNRELATED": -4.225017070770264
+        },
+        "bin": {
+          "UNRELATED": -2.1009254331895413
+        }
+      }
+    },
+    {
+      "id": "d-004",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "SUPPORTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -2.017445712325378,
+        "SUPPORTS": -0.32643699760513717,
+        "UNRELATED": -2.8661652264354367
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.32643699760513717,
+          "CONTRADICTS": -2.017445712325378,
+          "UNRELATED": -4.804833889007568
+        },
+        "bin": {
+          "UNRELATED": -3.0215279353817808
+        }
+      }
+    },
+    {
+      "id": "d-005",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "SUPPORTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.435930791047705,
+        "SUPPORTS": -0.4892414961654066,
+        "UNRELATED": -2.4183021564934735
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.4892414961654066,
+          "CONTRADICTS": -1.435930791047705,
+          "UNRELATED": -4.949890613555908
+        },
+        "bin": {
+          "UNRELATED": -2.5011758355344558
+        }
+      }
+    },
+    {
+      "id": "d-006",
+      "category": "direct_evidence",
+      "expected": "SUPPORTS",
+      "predicted": "SUPPORTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.3853236420295278,
+        "SUPPORTS": -0.5729786832126205,
+        "UNRELATED": -2.6389728981862186
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.5729786832126205,
+          "CONTRADICTS": -1.3853236420295278,
+          "UNRELATED": -4.117288195138112
+        },
+        "bin": {
+          "UNRELATED": -2.8977714947808426
+        }
+      }
+    },
+    {
+      "id": "pp-001",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "SUPPORTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.0710248230848276,
+        "SUPPORTS": -0.8021610530646411,
+        "UNRELATED": -2.238302725475569
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.8021610530646411,
+          "CONTRADICTS": -1.0710248230848276,
+          "UNRELATED": -3.754863817934708
+        },
+        "bin": {
+          "UNRELATED": -2.4860788217306284
+        }
+      }
+    },
+    {
+      "id": "pp-002",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "CONTRADICTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.900937277983543,
+        "SUPPORTS": -0.9292062027966694,
+        "UNRELATED": -2.0555401478932795
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.900937277983543,
+          "SUPPORTS": -0.9292062027966694,
+          "UNRELATED": -3.9853643557489526
+        },
+        "bin": {
+          "UNRELATED": -2.2123971559381825
+        }
+      }
+    },
+    {
+      "id": "pp-003",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "SUPPORTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.212933450729696,
+        "SUPPORTS": -0.62242055388073,
+        "UNRELATED": -2.162417383990829
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.62242055388073,
+          "CONTRADICTS": -1.212933450729696,
+          "UNRELATED": -4.159841141002177
+        },
+        "bin": {
+          "UNRELATED": -2.308234670719631
+        }
+      }
+    },
+    {
+      "id": "pp-004",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "SUPPORTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.6759430890081832,
+        "SUPPORTS": -0.4212522671141964,
+        "UNRELATED": -2.890321087126998
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.4212522671141964,
+          "CONTRADICTS": -1.6759430890081832,
+          "UNRELATED": -4.9366559982299805
+        },
+        "bin": {
+          "UNRELATED": -3.028672757676684
+        }
+      }
+    },
+    {
+      "id": "pp-005",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "SUPPORTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.0941724367556251,
+        "SUPPORTS": -0.8189901502024008,
+        "UNRELATED": -2.0495511614229343
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.8189901502024008,
+          "CONTRADICTS": -1.0941724367556251,
+          "UNRELATED": -3.273158348480124
+        },
+        "bin": {
+          "UNRELATED": -2.3979279659483317
+        }
+      }
+    },
+    {
+      "id": "pp-006",
+      "category": "paraphrase",
+      "expected": "SUPPORTS",
+      "predicted": "SUPPORTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.2718727334262856,
+        "SUPPORTS": -0.685651178639109,
+        "UNRELATED": -2.430219898422164
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.685651178639109,
+          "CONTRADICTS": -1.2718727334262856,
+          "UNRELATED": -4.329416275024414
+        },
+        "bin": {
+          "UNRELATED": -2.5923728529840524
+        }
+      }
+    },
+    {
+      "id": "ps-001",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.1098457745356631,
+        "SUPPORTS": -1.0081093409384607,
+        "UNRELATED": -2.4231835339156094
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -1.1098457745356631,
+          "SUPPORTS": -1.0081093409384607,
+          "UNRELATED": -3.6389644145965576
+        },
+        "bin": {
+          "UNRELATED": -2.7748402468577513
+        }
+      }
+    },
+    {
+      "id": "ps-002",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.5791438994911549,
+        "SUPPORTS": -0.45877826834780167,
+        "UNRELATED": -2.9390719822215927
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.45877826834780167,
+          "CONTRADICTS": -1.5791438994911549,
+          "UNRELATED": -4.785890579223633
+        },
+        "bin": {
+          "UNRELATED": -3.110736366162381
+        }
+      }
+    },
+    {
+      "id": "ps-003",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.2721135274456343,
+        "SUPPORTS": -0.7204392173294781,
+        "UNRELATED": -2.122338149068051
+      },
+      "regime_greedys": {
+        "fs0": "PARTIAL",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.7204392173294781,
+          "CONTRADICTS": -1.2721135274456343,
+          "UNRELATED": -3.5027026029763757
+        },
+        "bin": {
+          "UNRELATED": -2.4120046972619136
+        }
+      }
+    },
+    {
+      "id": "ps-004",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.508711850753991,
+        "SUPPORTS": -0.4696195392401832,
+        "UNRELATED": -2.2750985038799945
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.4696195392401832,
+          "CONTRADICTS": -1.508711850753991,
+          "UNRELATED": -4.661807060241699
+        },
+        "bin": {
+          "UNRELATED": -2.3715342690905126
+        }
+      }
+    },
+    {
+      "id": "ps-005",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.3560302837039167,
+        "SUPPORTS": -0.5980307792444656,
+        "UNRELATED": -2.4677805086957845
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.5980307792444656,
+          "CONTRADICTS": -1.3560302837039167,
+          "UNRELATED": -3.7480166443927736
+        },
+        "bin": {
+          "UNRELATED": -2.793471388714427
+        }
+      }
+    },
+    {
+      "id": "ps-006",
+      "category": "partial_support",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.9612645636410235,
+        "SUPPORTS": -0.361108384597088,
+        "UNRELATED": -2.6731752134160325
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.361108384597088,
+          "CONTRADICTS": -1.9612645636410235,
+          "UNRELATED": -4.953148365020752
+        },
+        "bin": {
+          "UNRELATED": -2.7810800218425307
+        }
+      }
+    },
+    {
+      "id": "ec-001",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.8268720988532634,
+        "SUPPORTS": -0.9714686553904441,
+        "UNRELATED": -1.142052853456084
+      },
+      "regime_greedys": {
+        "fs0": "CONTRADICTS",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.8268720988532634,
+          "SUPPORTS": -0.9714686553904441,
+          "UNRELATED": -3.58793803298706
+        },
+        "bin": {
+          "UNRELATED": -1.2326883175260157
+        }
+      }
+    },
+    {
+      "id": "ec-002",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -2.381562331872271,
+        "SUPPORTS": -0.25630860458469074,
+        "UNRELATED": -2.8959233839502603
+      },
+      "regime_greedys": {
+        "fs0": "CONTRADICTS",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.25630860458469074,
+          "CONTRADICTS": -2.381562331872271,
+          "UNRELATED": -4.829226970672607
+        },
+        "bin": {
+          "UNRELATED": -3.0521906955983775
+        }
+      }
+    },
+    {
+      "id": "ec-003",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.4810907819896493,
+        "SUPPORTS": -0.5387120717914546,
+        "UNRELATED": -1.8614058679569645
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.5387120717914546,
+          "CONTRADICTS": -1.4810907819896493,
+          "UNRELATED": -3.9306770985478043
+        },
+        "bin": {
+          "UNRELATED": -1.9963986428058857
+        }
+      }
+    },
+    {
+      "id": "ec-004",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.8324657943677257,
+        "SUPPORTS": -0.9739879158393778,
+        "UNRELATED": -2.2053540284024704
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.8324657943677257,
+          "SUPPORTS": -0.9739879158393778,
+          "UNRELATED": -3.7251241638228043
+        },
+        "bin": {
+          "UNRELATED": -2.4522296800190913
+        }
+      }
+    },
+    {
+      "id": "ec-005",
+      "category": "explicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.7283925871297144,
+        "SUPPORTS": -1.1841785487984962,
+        "UNRELATED": -2.046540939874956
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.7283925871297144,
+          "SUPPORTS": -1.1841785487984962,
+          "UNRELATED": -3.4380714961506196
+        },
+        "bin": {
+          "UNRELATED": -2.3324836890993867
+        }
+      }
+    },
+    {
+      "id": "ic-001",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.1737575841307195,
+        "SUPPORTS": -0.6778621406383547,
+        "UNRELATED": -2.4203764302605086
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.6778621406383547,
+          "CONTRADICTS": -1.1737575841307195,
+          "UNRELATED": -3.904865083508774
+        },
+        "bin": {
+          "UNRELATED": -2.677358851848655
+        }
+      }
+    },
+    {
+      "id": "ic-002",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.6509810105796507,
+        "SUPPORTS": -1.2115750387306456,
+        "UNRELATED": -1.888870284644731
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.6509810105796507,
+          "SUPPORTS": -1.2115750387306456,
+          "UNRELATED": -3.611820003624665
+        },
+        "bin": {
+          "UNRELATED": -2.0855407743627437
+        }
+      }
+    },
+    {
+      "id": "ic-003",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.0226287419596125,
+        "SUPPORTS": -0.8605386994401286,
+        "UNRELATED": -2.1449045624051615
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -1.0226287419596125,
+          "SUPPORTS": -0.8605386994401286,
+          "UNRELATED": -3.5008767284781404
+        },
+        "bin": {
+          "UNRELATED": -2.4429018525197552
+        }
+      }
+    },
+    {
+      "id": "ic-004",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.6690106286257578,
+        "SUPPORTS": -1.3305844682905987,
+        "UNRELATED": -1.6594519576365196
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.6690106286257578,
+          "SUPPORTS": -1.3305844682905987,
+          "UNRELATED": -3.4394608203558152
+        },
+        "bin": {
+          "UNRELATED": -1.8441402962694562
+        }
+      }
+    },
+    {
+      "id": "ic-005",
+      "category": "implicit_contradiction",
+      "expected": "CONTRADICTS",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.4063783071760434,
+        "SUPPORTS": -0.534241987496983,
+        "UNRELATED": -2.3392676330977276
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.534241987496983,
+          "CONTRADICTS": -1.4063783071760434,
+          "UNRELATED": -4.818511962890625
+        },
+        "bin": {
+          "UNRELATED": -2.426795359848342
+        }
+      }
+    },
+    {
+      "id": "os-001",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.2536275447396565,
+        "SUPPORTS": -0.5935627814080516,
+        "UNRELATED": -2.371309324905339
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.5935627814080516,
+          "CONTRADICTS": -1.2536275447396565,
+          "UNRELATED": -4.308737754821777
+        },
+        "bin": {
+          "UNRELATED": -2.526880645169506
+        }
+      }
+    },
+    {
+      "id": "os-002",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.2840274969758942,
+        "SUPPORTS": -0.586418637467824,
+        "UNRELATED": -2.781867204168276
+      },
+      "regime_greedys": {
+        "fs0": "CONTRADICTS",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.586418637467824,
+          "CONTRADICTS": -1.2840274969758942,
+          "UNRELATED": -4.4968342781066895
+        },
+        "bin": {
+          "UNRELATED": -2.9802811268786993
+        }
+      }
+    },
+    {
+      "id": "os-003",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.6460297849897292,
+        "SUPPORTS": -0.45254550681173683,
+        "UNRELATED": -2.8114913529274177
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.45254550681173683,
+          "CONTRADICTS": -1.6460297849897292,
+          "UNRELATED": -3.6340038488999915
+        },
+        "bin": {
+          "UNRELATED": -3.3901078222008305
+        }
+      }
+    },
+    {
+      "id": "os-004",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.8235850650402325,
+        "SUPPORTS": -0.35450689718124095,
+        "UNRELATED": -2.8971312837056638
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.35450689718124095,
+          "CONTRADICTS": -1.8235850650402325,
+          "UNRELATED": -4.714261054992676
+        },
+        "bin": {
+          "UNRELATED": -3.0744551138903073
+        }
+      }
+    },
+    {
+      "id": "os-005",
+      "category": "over_specificity",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.5003928477918729,
+        "SUPPORTS": -0.4781288904686646,
+        "UNRELATED": -2.5407896918665824
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.4781288904686646,
+          "CONTRADICTS": -1.5003928477918729,
+          "UNRELATED": -4.5772013664245605
+        },
+        "bin": {
+          "UNRELATED": -2.6806221912242063
+        }
+      }
+    },
+    {
+      "id": "n-001",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.9792903894785873,
+        "SUPPORTS": -0.830448133892724,
+        "UNRELATED": -2.4730984259639577
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.9792903894785873,
+          "SUPPORTS": -0.830448133892724,
+          "UNRELATED": -3.654151796444177
+        },
+        "bin": {
+          "UNRELATED": -2.8397591056284783
+        }
+      }
+    },
+    {
+      "id": "n-002",
+      "category": "negation",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.8108859087210396,
+        "SUPPORTS": -1.0644830848656601,
+        "UNRELATED": -2.397180572063696
+      },
+      "regime_greedys": {
+        "fs0": "PARTIAL",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.8108859087210396,
+          "SUPPORTS": -1.0644830848656601,
+          "UNRELATED": -3.384116601537161
+        },
+        "bin": {
+          "UNRELATED": -2.863537956147706
+        }
+      }
+    },
+    {
+      "id": "n-003",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.8863762466113663,
+        "SUPPORTS": -1.0195855102480391,
+        "UNRELATED": -1.8861241396938728
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.8863762466113663,
+          "SUPPORTS": -1.0195855102480391,
+          "UNRELATED": -3.7446564927440655
+        },
+        "bin": {
+          "UNRELATED": -2.055609952923379
+        }
+      }
+    },
+    {
+      "id": "n-004",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.7176087497025359,
+        "SUPPORTS": -1.187172152440454,
+        "UNRELATED": -1.5615231821705229
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.7176087497025359,
+          "SUPPORTS": -1.187172152440454,
+          "UNRELATED": -3.4829040214120814
+        },
+        "bin": {
+          "UNRELATED": -1.7198212218040163
+        }
+      }
+    },
+    {
+      "id": "n-005",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.8871089597912301,
+        "SUPPORTS": -0.9938154948625613,
+        "UNRELATED": -1.8909495497379267
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.8871089597912301,
+          "SUPPORTS": -0.9938154948625613,
+          "UNRELATED": -3.5945573499694436
+        },
+        "bin": {
+          "UNRELATED": -2.0918738201001474
+        }
+      }
+    },
+    {
+      "id": "n-006",
+      "category": "negation",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.8819097563671575,
+        "SUPPORTS": -0.9779956267233653,
+        "UNRELATED": -2.0541357958720323
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.8819097563671575,
+          "SUPPORTS": -0.9779956267233653,
+          "UNRELATED": -3.5809414355424445
+        },
+        "bin": {
+          "UNRELATED": -2.2990502045784673
+        }
+      }
+    },
+    {
+      "id": "ws-001",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.153707874098881,
+        "SUPPORTS": -0.8025198154673436,
+        "UNRELATED": -2.4359739440746933
+      },
+      "regime_greedys": {
+        "fs0": "CONTRADICTS",
+        "nli4": "CONTRADICTS",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -1.153707874098881,
+          "SUPPORTS": -0.8025198154673436,
+          "UNRELATED": -3.9312808513641357
+        },
+        "bin": {
+          "UNRELATED": -2.68980842012937
+        }
+      }
+    },
+    {
+      "id": "ws-002",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.065349798608406,
+        "SUPPORTS": -0.7807954496059787,
+        "UNRELATED": -2.2748364379017953
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.7807954496059787,
+          "CONTRADICTS": -1.065349798608406,
+          "UNRELATED": -3.638876579671317
+        },
+        "bin": {
+          "UNRELATED": -2.570048016626207
+        }
+      }
+    },
+    {
+      "id": "ws-003",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.285035444513765,
+        "SUPPORTS": -0.6460778562399696,
+        "UNRELATED": -2.6314400416600794
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.6460778562399696,
+          "CONTRADICTS": -1.285035444513765,
+          "UNRELATED": -3.8776559073844554
+        },
+        "bin": {
+          "UNRELATED": -2.970543168800001
+        }
+      }
+    },
+    {
+      "id": "ws-004",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.1221562698972014,
+        "SUPPORTS": -0.7169585693964715,
+        "UNRELATED": -2.286674779736054
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.7169585693964715,
+          "CONTRADICTS": -1.1221562698972014,
+          "UNRELATED": -3.85444353589157
+        },
+        "bin": {
+          "UNRELATED": -2.520512687556317
+        }
+      }
+    },
+    {
+      "id": "ws-005",
+      "category": "wrong_subject",
+      "expected": "UNRELATED",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.1281176328663367,
+        "SUPPORTS": -0.8445444271483318,
+        "UNRELATED": -2.361346338486208
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.8445444271483318,
+          "CONTRADICTS": -1.1281176328663367,
+          "UNRELATED": -3.4259191333972865
+        },
+        "bin": {
+          "UNRELATED": -2.7842757980452433
+        }
+      }
+    },
+    {
+      "id": "wc-001",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "predicted": "CONTRADICTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.9123205816584135,
+        "SUPPORTS": -0.9698220121362555,
+        "UNRELATED": -1.8123369646743586
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.9123205816584135,
+          "SUPPORTS": -0.9698220121362555,
+          "UNRELATED": -3.437793430402576
+        },
+        "bin": {
+          "UNRELATED": -2.0315156518161297
+        }
+      }
+    },
+    {
+      "id": "wc-002",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.0452095090178704,
+        "SUPPORTS": -0.7831313938964176,
+        "UNRELATED": -1.8979015710913238
+      },
+      "regime_greedys": {
+        "fs0": "PARTIAL",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -1.0452095090178704,
+          "SUPPORTS": -0.7831313938964176,
+          "UNRELATED": -3.682861197645546
+        },
+        "bin": {
+          "UNRELATED": -2.0815886626225857
+        }
+      }
+    },
+    {
+      "id": "wc-003",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.1218966920375748,
+        "SUPPORTS": -0.7200317188681116,
+        "UNRELATED": -2.3329556498950184
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.7200317188681116,
+          "CONTRADICTS": -1.1218966920375748,
+          "UNRELATED": -3.820246610960022
+        },
+        "bin": {
+          "UNRELATED": -2.589118418004582
+        }
+      }
+    },
+    {
+      "id": "wc-004",
+      "category": "wrong_context",
+      "expected": "UNRELATED",
+      "predicted": "CONTRADICTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.7676019939223286,
+        "SUPPORTS": -1.1140888670259004,
+        "UNRELATED": -1.902675541290067
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.7676019939223286,
+          "SUPPORTS": -1.1140888670259004,
+          "UNRELATED": -3.529727586058624
+        },
+        "bin": {
+          "UNRELATED": -2.1214636139051772
+        }
+      }
+    },
+    {
+      "id": "wc-005",
+      "category": "wrong_context",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.4528162554082091,
+        "SUPPORTS": -0.4726911121029822,
+        "UNRELATED": -2.2006497034738395
+      },
+      "regime_greedys": {
+        "fs0": "PARTIAL",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.4726911121029822,
+          "CONTRADICTS": -1.4528162554082091,
+          "UNRELATED": -4.042284582096463
+        },
+        "bin": {
+          "UNRELATED": -2.3732878850706123
+        }
+      }
+    },
+    {
+      "id": "a-001",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.9383238771745344,
+        "SUPPORTS": -1.1041608537497989,
+        "UNRELATED": -2.426620115390223
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.9383238771745344,
+          "SUPPORTS": -1.1041608537497989,
+          "UNRELATED": -3.821833610534668
+        },
+        "bin": {
+          "UNRELATED": -2.7113467339881847
+        }
+      }
+    },
+    {
+      "id": "a-002",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.412245258233878,
+        "SUPPORTS": -0.5195481660084567,
+        "UNRELATED": -2.55748150998343
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.5195481660084567,
+          "CONTRADICTS": -1.412245258233878,
+          "UNRELATED": -4.809385776519775
+        },
+        "bin": {
+          "UNRELATED": -2.6686351146985343
+        }
+      }
+    },
+    {
+      "id": "a-003",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.399179587492055,
+        "SUPPORTS": -0.5991699483442654,
+        "UNRELATED": -2.113014320369923
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.5991699483442654,
+          "CONTRADICTS": -1.399179587492055,
+          "UNRELATED": -3.7108378864379845
+        },
+        "bin": {
+          "UNRELATED": -2.339082658396502
+        }
+      }
+    },
+    {
+      "id": "a-004",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "CONTRADICTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.8628736360909786,
+        "SUPPORTS": -1.0233118319022605,
+        "UNRELATED": -1.807232137162026
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.8628736360909786,
+          "SUPPORTS": -1.0233118319022605,
+          "UNRELATED": -3.3991246773544854
+        },
+        "bin": {
+          "UNRELATED": -2.034810557095247
+        }
+      }
+    },
+    {
+      "id": "a-005",
+      "category": "adversarial",
+      "expected": "CONTRADICTS",
+      "predicted": "CONTRADICTS",
+      "correct": true,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -0.8915172925253558,
+        "SUPPORTS": -0.9358031318931481,
+        "UNRELATED": -2.210665739323671
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "CONTRADICTS",
+        "bin": "PARTIAL"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "CONTRADICTS": -0.8915172925253558,
+          "SUPPORTS": -0.9358031318931481,
+          "UNRELATED": -3.654144977331245
+        },
+        "bin": {
+          "UNRELATED": -2.4799904937614508
+        }
+      }
+    },
+    {
+      "id": "a-006",
+      "category": "adversarial",
+      "expected": "PARTIAL",
+      "predicted": "SUPPORTS",
+      "correct": false,
+      "ensemble_logprobs": {
+        "CONTRADICTS": -1.6044696793478335,
+        "SUPPORTS": -0.4043938435457288,
+        "UNRELATED": -2.7039573035487874
+      },
+      "regime_greedys": {
+        "fs0": "UNRELATED",
+        "nli4": "UNRELATED",
+        "bin": "CONTRADICTS"
+      },
+      "regime_logprobs": {
+        "fs0": {},
+        "nli4": {
+          "SUPPORTS": -0.4043938435457288,
+          "CONTRADICTS": -1.6044696793478335,
+          "UNRELATED": -4.657299518585205
+        },
+        "bin": {
+          "UNRELATED": -2.8568746581558737
+        }
+      }
+    }
+  ]
+}

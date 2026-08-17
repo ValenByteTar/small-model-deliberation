@@ -1,0 +1,5227 @@
+{
+  "pilot": "coliseo_v2_ministral_structured",
+  "date": "2026-08-16T06:42:58",
+  "model": "TechyShishy/ministral-3:3b-reasoning-2512-q4_K_M",
+  "execution": "GPU (num_gpu=99), think=false, structured-json",
+  "benchmark": "semantic_assessment_v2.json",
+  "case_count": 55,
+  "configs": {
+    "single": {
+      "roles": [
+        "neutral"
+      ],
+      "metrics": {
+        "n": 55,
+        "accuracy": 0.5818,
+        "correct": 32,
+        "protocol_validity": 1.0,
+        "by_category": {
+          "adversarial": {
+            "total": 6,
+            "correct": 1,
+            "accuracy": 0.1667
+          },
+          "direct_evidence": {
+            "total": 6,
+            "correct": 6,
+            "accuracy": 1.0
+          },
+          "explicit_contradiction": {
+            "total": 5,
+            "correct": 4,
+            "accuracy": 0.8
+          },
+          "implicit_contradiction": {
+            "total": 5,
+            "correct": 3,
+            "accuracy": 0.6
+          },
+          "negation": {
+            "total": 6,
+            "correct": 5,
+            "accuracy": 0.8333
+          },
+          "over_specificity": {
+            "total": 5,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "paraphrase": {
+            "total": 6,
+            "correct": 6,
+            "accuracy": 1.0
+          },
+          "partial_support": {
+            "total": 6,
+            "correct": 1,
+            "accuracy": 0.1667
+          },
+          "wrong_context": {
+            "total": 5,
+            "correct": 3,
+            "accuracy": 0.6
+          },
+          "wrong_subject": {
+            "total": 5,
+            "correct": 3,
+            "accuracy": 0.6
+          }
+        }
+      },
+      "per_case": [
+        {
+          "id": "d-001",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 7.51,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 7.51,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-002",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.61,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.6,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-003",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.66,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.66,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-004",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.81,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.81,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-005",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.83,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.83,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-006",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.85,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.85,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-001",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.77,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.77,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-002",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.03,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.03,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-003",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.81,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.81,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-004",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.78,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.78,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-005",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.79,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.79,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-006",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.8,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.8,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-001",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.79,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.79,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-002",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.77,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.77,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-003",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.82,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.82,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-004",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.79,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.79,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-005",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "PARTIAL",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.77,
+          "votes": {
+            "PARTIAL": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"PARTIAL\" }",
+              "latency_s": 2.77,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            }
+          ]
+        },
+        {
+          "id": "ps-006",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.8,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.8,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ec-001",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.8,
+          "votes": {
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\"relation\": \"CONTRADICTS\"}",
+              "latency_s": 2.8,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ec-002",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "PARTIAL",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.8,
+          "votes": {
+            "PARTIAL": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 2.8,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            }
+          ]
+        },
+        {
+          "id": "ec-003",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.89,
+          "votes": {
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 2.89,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ec-004",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.85,
+          "votes": {
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.85,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ec-005",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.81,
+          "votes": {
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.81,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ic-001",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "PARTIAL",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.81,
+          "votes": {
+            "PARTIAL": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 2.81,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            }
+          ]
+        },
+        {
+          "id": "ic-002",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.88,
+          "votes": {
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.88,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ic-003",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "UNRELATED",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.78,
+          "votes": {
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.78,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ic-004",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.8,
+          "votes": {
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.8,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ic-005",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.84,
+          "votes": {
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 2.83,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "os-001",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.78,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.78,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "os-002",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.77,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.77,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "os-003",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.81,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.81,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "os-004",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.8,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.8,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "os-005",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.81,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.81,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "n-001",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "UNRELATED",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.77,
+          "votes": {
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.77,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "n-002",
+          "category": "negation",
+          "expected": "PARTIAL",
+          "produced": "PARTIAL",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.78,
+          "votes": {
+            "PARTIAL": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 2.78,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            }
+          ]
+        },
+        {
+          "id": "n-003",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.85,
+          "votes": {
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.85,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "n-004",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.79,
+          "votes": {
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.79,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "n-005",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.79,
+          "votes": {
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.79,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "n-006",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.81,
+          "votes": {
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.81,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ws-001",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.79,
+          "votes": {
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.79,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ws-002",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.61,
+          "votes": {
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.61,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ws-003",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.69,
+          "votes": {
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.69,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ws-004",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.73,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.73,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ws-005",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.76,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.76,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "wc-001",
+          "category": "wrong_context",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.8,
+          "votes": {
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.8,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "wc-002",
+          "category": "wrong_context",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.76,
+          "votes": {
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.76,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "wc-003",
+          "category": "wrong_context",
+          "expected": "UNRELATED",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.81,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.81,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "wc-004",
+          "category": "wrong_context",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.81,
+          "votes": {
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.81,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "wc-005",
+          "category": "wrong_context",
+          "expected": "PARTIAL",
+          "produced": "UNRELATED",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.81,
+          "votes": {
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 2.81,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "a-001",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.8,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.8,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "a-002",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.79,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.79,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "a-003",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.8,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.8,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "a-004",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.82,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.82,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "a-005",
+          "category": "adversarial",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.84,
+          "votes": {
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.84,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "a-006",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.78,
+          "votes": {
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.78,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        }
+      ]
+    },
+    "ensemble_2": {
+      "roles": [
+        "entailment",
+        "skeptical"
+      ],
+      "metrics": {
+        "n": 55,
+        "accuracy": 0.6,
+        "correct": 33,
+        "protocol_validity": 1.0,
+        "by_category": {
+          "adversarial": {
+            "total": 6,
+            "correct": 1,
+            "accuracy": 0.1667
+          },
+          "direct_evidence": {
+            "total": 6,
+            "correct": 6,
+            "accuracy": 1.0
+          },
+          "explicit_contradiction": {
+            "total": 5,
+            "correct": 4,
+            "accuracy": 0.8
+          },
+          "implicit_contradiction": {
+            "total": 5,
+            "correct": 4,
+            "accuracy": 0.8
+          },
+          "negation": {
+            "total": 6,
+            "correct": 4,
+            "accuracy": 0.6667
+          },
+          "over_specificity": {
+            "total": 5,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "paraphrase": {
+            "total": 6,
+            "correct": 6,
+            "accuracy": 1.0
+          },
+          "partial_support": {
+            "total": 6,
+            "correct": 1,
+            "accuracy": 0.1667
+          },
+          "wrong_context": {
+            "total": 5,
+            "correct": 4,
+            "accuracy": 0.8
+          },
+          "wrong_subject": {
+            "total": 5,
+            "correct": 3,
+            "accuracy": 0.6
+          }
+        }
+      },
+      "per_case": [
+        {
+          "id": "d-001",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.17,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.13,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.17,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-002",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.97,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.97,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.9,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-003",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.94,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.94,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.94,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-004",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.97,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.97,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.97,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-005",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.03,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.03,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.98,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-006",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.02,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.02,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.94,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-001",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.95,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.95,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.93,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-002",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.97,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.97,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.95,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-003",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.03,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.02,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.0,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-004",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.01,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.0,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.98,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-005",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.06,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.06,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.97,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-006",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.96,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.96,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.94,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-001",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.01,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.01,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.91,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-002",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.97,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.97,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.97,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-003",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.04,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.99,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.04,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-004",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.06,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.06,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.99,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-005",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "PARTIAL",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.92,
+          "votes": {
+            "PARTIAL": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 2.92,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"PARTIAL\" }",
+              "latency_s": 2.9,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            }
+          ]
+        },
+        {
+          "id": "ps-006",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.0,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.0,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.97,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ec-001",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.9,
+          "votes": {
+            "CONTRADICTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\"relation\": \"CONTRADICTS\"}",
+              "latency_s": 2.9,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\"relation\": \"CONTRADICTS\"}",
+              "latency_s": 2.88,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ec-002",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "PARTIAL",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.04,
+          "votes": {
+            "PARTIAL": 1,
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 2.95,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.04,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ec-003",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.08,
+          "votes": {
+            "CONTRADICTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.08,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.99,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ec-004",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.09,
+          "votes": {
+            "CONTRADICTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.09,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.01,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ec-005",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.88,
+          "votes": {
+            "CONTRADICTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 2.88,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.86,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ic-001",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.02,
+          "votes": {
+            "CONTRADICTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.02,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.0,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ic-002",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.07,
+          "votes": {
+            "CONTRADICTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.06,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.97,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ic-003",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "UNRELATED",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.99,
+          "votes": {
+            "UNRELATED": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.98,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.96,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ic-004",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.05,
+          "votes": {
+            "CONTRADICTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.05,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.95,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ic-005",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.07,
+          "votes": {
+            "CONTRADICTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.03,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.07,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "os-001",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.02,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.02,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.99,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "os-002",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.98,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.98,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.96,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "os-003",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.02,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.02,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.0,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "os-004",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.96,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.96,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.96,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "os-005",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.01,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.01,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.92,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "n-001",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "UNRELATED",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.0,
+          "votes": {
+            "UNRELATED": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.0,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.97,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "n-002",
+          "category": "negation",
+          "expected": "PARTIAL",
+          "produced": "PARTIAL",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.94,
+          "votes": {
+            "PARTIAL": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 2.94,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"PARTIAL\" }",
+              "latency_s": 2.88,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            }
+          ]
+        },
+        {
+          "id": "n-003",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.08,
+          "votes": {
+            "CONTRADICTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.08,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.0,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "n-004",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.99,
+          "votes": {
+            "CONTRADICTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 2.99,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 2.99,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "n-005",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.03,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.03,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.93,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "n-006",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.1,
+          "votes": {
+            "CONTRADICTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.1,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.01,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ws-001",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.11,
+          "votes": {
+            "UNRELATED": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.11,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.02,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ws-002",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.08,
+          "votes": {
+            "UNRELATED": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.08,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.0,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ws-003",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.92,
+          "votes": {
+            "UNRELATED": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 2.92,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.89,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ws-004",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.99,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.99,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.9,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ws-005",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.02,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.02,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.0,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "wc-001",
+          "category": "wrong_context",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 2.98,
+          "votes": {
+            "UNRELATED": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 2.98,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.89,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "wc-002",
+          "category": "wrong_context",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.08,
+          "votes": {
+            "UNRELATED": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.08,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.99,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "wc-003",
+          "category": "wrong_context",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.07,
+          "votes": {
+            "UNRELATED": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.07,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.04,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "wc-004",
+          "category": "wrong_context",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.01,
+          "votes": {
+            "UNRELATED": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.01,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.92,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "wc-005",
+          "category": "wrong_context",
+          "expected": "PARTIAL",
+          "produced": "UNRELATED",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.08,
+          "votes": {
+            "UNRELATED": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.08,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.99,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "a-001",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.96,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.96,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.88,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "a-002",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.95,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.95,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.92,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "a-003",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 2.96,
+          "votes": {
+            "SUPPORTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 2.96,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.96,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "a-004",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.01,
+          "votes": {
+            "SUPPORTS": 1,
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.0,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 2.92,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "a-005",
+          "category": "adversarial",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.15,
+          "votes": {
+            "CONTRADICTS": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.15,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.06,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "a-006",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.01,
+          "votes": {
+            "SUPPORTS": 1,
+            "PARTIAL": 1
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.01,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"PARTIAL\" }",
+              "latency_s": 2.9,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            }
+          ]
+        }
+      ]
+    },
+    "ensemble_4": {
+      "roles": [
+        "entailment",
+        "skeptical",
+        "contradiction",
+        "neutral"
+      ],
+      "metrics": {
+        "n": 55,
+        "accuracy": 0.6,
+        "correct": 33,
+        "protocol_validity": 1.0,
+        "by_category": {
+          "adversarial": {
+            "total": 6,
+            "correct": 1,
+            "accuracy": 0.1667
+          },
+          "direct_evidence": {
+            "total": 6,
+            "correct": 6,
+            "accuracy": 1.0
+          },
+          "explicit_contradiction": {
+            "total": 5,
+            "correct": 4,
+            "accuracy": 0.8
+          },
+          "implicit_contradiction": {
+            "total": 5,
+            "correct": 4,
+            "accuracy": 0.8
+          },
+          "negation": {
+            "total": 6,
+            "correct": 4,
+            "accuracy": 0.6667
+          },
+          "over_specificity": {
+            "total": 5,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "paraphrase": {
+            "total": 6,
+            "correct": 6,
+            "accuracy": 1.0
+          },
+          "partial_support": {
+            "total": 6,
+            "correct": 1,
+            "accuracy": 0.1667
+          },
+          "wrong_context": {
+            "total": 5,
+            "correct": 4,
+            "accuracy": 0.8
+          },
+          "wrong_subject": {
+            "total": 5,
+            "correct": 3,
+            "accuracy": 0.6
+          }
+        }
+      },
+      "per_case": [
+        {
+          "id": "d-001",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.45,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.39,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.37,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.43,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.45,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-002",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.49,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.49,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.46,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.41,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.43,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-003",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.38,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.38,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.36,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.31,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.33,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-004",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.38,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.38,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.38,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.33,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.35,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-005",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.18,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.18,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.18,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.13,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.15,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "d-006",
+          "category": "direct_evidence",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.35,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.32,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.22,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.35,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.19,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-001",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.35,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.35,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.18,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.23,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.26,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-002",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.34,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.34,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.32,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.27,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.29,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-003",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.17,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.17,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.06,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.14,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.04,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-004",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.26,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.26,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.23,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.21,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.08,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-005",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.29,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.29,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.22,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.16,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.19,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "pp-006",
+          "category": "paraphrase",
+          "expected": "SUPPORTS",
+          "produced": "SUPPORTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.25,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.25,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.1,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.19,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.22,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-001",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.07,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.07,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.0,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.94,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 2.97,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-002",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.16,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.15,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.03,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.15,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.0,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-003",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.18,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.18,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.15,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.11,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.13,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-004",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.29,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.29,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.13,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.23,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.26,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ps-005",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "PARTIAL",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.35,
+          "votes": {
+            "PARTIAL": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 3.35,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"PARTIAL\" }",
+              "latency_s": 3.24,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 3.32,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"PARTIAL\" }",
+              "latency_s": 3.21,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            }
+          ]
+        },
+        {
+          "id": "ps-006",
+          "category": "partial_support",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.25,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.21,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.07,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.16,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.25,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ec-001",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.15,
+          "votes": {
+            "CONTRADICTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\"relation\": \"CONTRADICTS\"}",
+              "latency_s": 3.15,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\"relation\": \"CONTRADICTS\"}",
+              "latency_s": 3.12,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\"relation\": \"CONTRADICTS\"}",
+              "latency_s": 3.07,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\"relation\": \"CONTRADICTS\"}",
+              "latency_s": 3.1,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ec-002",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "PARTIAL",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.44,
+          "votes": {
+            "PARTIAL": 2,
+            "UNRELATED": 1,
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 3.2,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.34,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.43,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 3.24,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            }
+          ]
+        },
+        {
+          "id": "ec-003",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.32,
+          "votes": {
+            "CONTRADICTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.32,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.21,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.27,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.29,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ec-004",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.56,
+          "votes": {
+            "CONTRADICTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.56,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.39,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.45,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.35,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ec-005",
+          "category": "explicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.22,
+          "votes": {
+            "CONTRADICTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.22,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.18,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.22,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.15,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ic-001",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.6,
+          "votes": {
+            "CONTRADICTS": 2,
+            "PARTIAL": 2
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.6,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"PARTIAL\" }",
+              "latency_s": 3.26,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.57,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 3.33,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            }
+          ]
+        },
+        {
+          "id": "ic-002",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.31,
+          "votes": {
+            "CONTRADICTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.31,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.17,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.28,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.14,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ic-003",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "UNRELATED",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.35,
+          "votes": {
+            "UNRELATED": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.35,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.27,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.22,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.24,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ic-004",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.45,
+          "votes": {
+            "CONTRADICTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.45,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.33,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.42,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.3,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ic-005",
+          "category": "implicit_contradiction",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.49,
+          "votes": {
+            "CONTRADICTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.44,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.27,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.37,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.49,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "os-001",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.36,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.36,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.24,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.33,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.21,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "os-002",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.25,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.25,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.11,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.21,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.09,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "os-003",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.51,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.51,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.37,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.48,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.34,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "os-004",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.43,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.43,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.4,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.34,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.37,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "os-005",
+          "category": "over_specificity",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.56,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.56,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.54,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.48,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.52,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "n-001",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "UNRELATED",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.41,
+          "votes": {
+            "UNRELATED": 3,
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.29,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.15,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.4,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.26,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "n-002",
+          "category": "negation",
+          "expected": "PARTIAL",
+          "produced": "PARTIAL",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.47,
+          "votes": {
+            "PARTIAL": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 3.47,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"PARTIAL\" }",
+              "latency_s": 3.31,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 3.42,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"PARTIAL\"\n}",
+              "latency_s": 3.44,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            }
+          ]
+        },
+        {
+          "id": "n-003",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.6,
+          "votes": {
+            "CONTRADICTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.6,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.45,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.57,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.41,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "n-004",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.43,
+          "votes": {
+            "CONTRADICTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.43,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.43,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.36,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.39,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "n-005",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.56,
+          "votes": {
+            "SUPPORTS": 3,
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.52,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.35,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.44,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.56,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "n-006",
+          "category": "negation",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.49,
+          "votes": {
+            "CONTRADICTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.49,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.36,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.47,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.33,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "ws-001",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.41,
+          "votes": {
+            "UNRELATED": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.41,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.32,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.27,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.29,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ws-002",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.44,
+          "votes": {
+            "UNRELATED": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.44,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.41,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.39,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.24,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ws-003",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.32,
+          "votes": {
+            "UNRELATED": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.32,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.19,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.29,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.17,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "ws-004",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.4,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.39,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.27,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.37,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.24,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "ws-005",
+          "category": "wrong_subject",
+          "expected": "UNRELATED",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.43,
+          "votes": {
+            "SUPPORTS": 3,
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.43,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.3,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.4,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.28,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "wc-001",
+          "category": "wrong_context",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.45,
+          "votes": {
+            "UNRELATED": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.45,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.31,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.42,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.28,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "wc-002",
+          "category": "wrong_context",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.52,
+          "votes": {
+            "UNRELATED": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.51,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.39,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.48,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.36,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "wc-003",
+          "category": "wrong_context",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.44,
+          "votes": {
+            "UNRELATED": 3,
+            "SUPPORTS": 1
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.44,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.31,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.41,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.29,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "wc-004",
+          "category": "wrong_context",
+          "expected": "UNRELATED",
+          "produced": "UNRELATED",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.29,
+          "votes": {
+            "UNRELATED": 3,
+            "CONTRADICTS": 1
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.19,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.16,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.29,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.13,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "wc-005",
+          "category": "wrong_context",
+          "expected": "PARTIAL",
+          "produced": "UNRELATED",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.45,
+          "votes": {
+            "UNRELATED": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.44,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.3,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"UNRELATED\"\n}",
+              "latency_s": 3.41,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.27,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            }
+          ]
+        },
+        {
+          "id": "a-001",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.47,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.47,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.33,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.44,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.3,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "a-002",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.5,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.5,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.35,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.44,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.47,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "a-003",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.44,
+          "votes": {
+            "SUPPORTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.44,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.34,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.44,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.31,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "a-004",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.49,
+          "votes": {
+            "SUPPORTS": 3,
+            "UNRELATED": 1
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.49,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"UNRELATED\" }",
+              "latency_s": 3.39,
+              "protocol_valid": true,
+              "relation": "UNRELATED"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.34,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.36,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        },
+        {
+          "id": "a-005",
+          "category": "adversarial",
+          "expected": "CONTRADICTS",
+          "produced": "CONTRADICTS",
+          "correct": true,
+          "protocol_valid": true,
+          "latency_s": 3.41,
+          "votes": {
+            "CONTRADICTS": 4
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.37,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.24,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"CONTRADICTS\"\n}",
+              "latency_s": 3.41,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"CONTRADICTS\" }",
+              "latency_s": 3.18,
+              "protocol_valid": true,
+              "relation": "CONTRADICTS"
+            }
+          ]
+        },
+        {
+          "id": "a-006",
+          "category": "adversarial",
+          "expected": "PARTIAL",
+          "produced": "SUPPORTS",
+          "correct": false,
+          "protocol_valid": true,
+          "latency_s": 3.56,
+          "votes": {
+            "SUPPORTS": 3,
+            "PARTIAL": 1
+          },
+          "workers": [
+            {
+              "role": "entailment",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.56,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "skeptical",
+              "raw_response": "{ \"relation\": \"PARTIAL\" }",
+              "latency_s": 3.26,
+              "protocol_valid": true,
+              "relation": "PARTIAL"
+            },
+            {
+              "role": "contradiction",
+              "raw_response": "{\n  \"relation\": \"SUPPORTS\"\n}",
+              "latency_s": 3.53,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            },
+            {
+              "role": "neutral",
+              "raw_response": "{ \"relation\": \"SUPPORTS\" }",
+              "latency_s": 3.43,
+              "protocol_valid": true,
+              "relation": "SUPPORTS"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

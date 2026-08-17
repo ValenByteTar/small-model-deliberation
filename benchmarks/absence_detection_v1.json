@@ -1,0 +1,35 @@
+{
+  "benchmark_id": "absence_detection_v1",
+  "version": "1.0",
+  "description": "Falsation probe: can BitNet use absence of evidence as a negative condition for compositional inference? Three conditions, minimal vocabulary, no relevance confounders. Measures TRUE/FALSE greedy + logprobs + margin.",
+  "evaluation_contract": "absence-detection-v1",
+  "ground_truth_source": "human_designed",
+  "case_count": 18,
+  "conditions": [
+    "implicit_absence",
+    "explicit_negation",
+    "total_absence"
+  ],
+  "cases": [
+    {"id": "ia-001", "condition": "implicit_absence", "claim": "The system supports encryption at rest, encryption in transit, and access logging.", "evidence": "The system supports encryption at rest and encryption in transit.", "expected": "FALSE", "diagnostic_reason": "Evidence lists A+B. Claim asserts A+B+C. C (access logging) is absent. Expected: FALSE (absence of C)."},
+    {"id": "ia-002", "condition": "implicit_absence", "claim": "The protocol provides authentication, authorization, and auditing.", "evidence": "The protocol provides authentication and authorization.", "expected": "FALSE", "diagnostic_reason": "Auditing absent from evidence. Claim asserts it. Expected: FALSE."},
+    {"id": "ia-003", "condition": "implicit_absence", "claim": "The tool performs scanning, analysis, and remediation.", "evidence": "The tool performs scanning and analysis.", "expected": "FALSE", "diagnostic_reason": "Remediation absent. Expected: FALSE."},
+    {"id": "ia-004", "condition": "implicit_absence", "claim": "The framework covers endpoints, networks, and cloud infrastructure.", "evidence": "The framework covers endpoints and networks.", "expected": "FALSE", "diagnostic_reason": "Cloud infrastructure absent. Expected: FALSE."},
+    {"id": "ia-005", "condition": "implicit_absence", "claim": "The policy applies to employees, contractors, and vendors.", "evidence": "The policy applies to employees and contractors.", "expected": "FALSE", "diagnostic_reason": "Vendors absent. Expected: FALSE."},
+    {"id": "ia-006", "condition": "implicit_absence", "claim": "The system encrypts data at rest, in transit, and during processing.", "evidence": "The system encrypts data at rest and in transit.", "expected": "FALSE", "diagnostic_reason": "During processing absent. Expected: FALSE."},
+
+    {"id": "en-001", "condition": "explicit_negation", "claim": "The system supports encryption at rest, encryption in transit, and does not support access logging.", "evidence": "The system supports encryption at rest and encryption in transit.", "expected": "TRUE", "diagnostic_reason": "Claim asserts A+B+NOT-C. Evidence confirms A+B and is silent on C. The NOT-C part is consistent with absence. Expected: TRUE (the claim is consistent with evidence)."},
+    {"id": "en-002", "condition": "explicit_negation", "claim": "The protocol provides authentication, authorization, and does not provide auditing.", "evidence": "The protocol provides authentication and authorization.", "expected": "TRUE", "diagnostic_reason": "Claim asserts A+B+NOT-C. Evidence confirms A+B, silent on C. Expected: TRUE."},
+    {"id": "en-003", "condition": "explicit_negation", "claim": "The tool performs scanning, analysis, and does not perform remediation.", "evidence": "The tool performs scanning and analysis.", "expected": "TRUE", "diagnostic_reason": "Claim asserts A+B+NOT-C. Expected: TRUE."},
+    {"id": "en-004", "condition": "explicit_negation", "claim": "The framework covers endpoints, networks, and does not cover cloud infrastructure.", "evidence": "The framework covers endpoints and networks.", "expected": "TRUE", "diagnostic_reason": "Expected: TRUE."},
+    {"id": "en-005", "condition": "explicit_negation", "claim": "The policy applies to employees, contractors, and does not apply to vendors.", "evidence": "The policy applies to employees and contractors.", "expected": "TRUE", "diagnostic_reason": "Expected: TRUE."},
+    {"id": "en-006", "condition": "explicit_negation", "claim": "The system encrypts data at rest, in transit, and does not encrypt data during processing.", "evidence": "The system encrypts data at rest and in transit.", "expected": "TRUE", "diagnostic_reason": "Expected: TRUE."},
+
+    {"id": "ta-001", "condition": "total_absence", "claim": "The system supports access logging.", "evidence": "The system supports encryption at rest and encryption in transit.", "expected": "FALSE", "diagnostic_reason": "Claim is only about C. Evidence is only about A+B. C is completely absent. Expected: FALSE."},
+    {"id": "ta-002", "condition": "total_absence", "claim": "The protocol provides auditing.", "evidence": "The protocol provides authentication and authorization.", "expected": "FALSE", "diagnostic_reason": "Auditing completely absent. Expected: FALSE."},
+    {"id": "ta-003", "condition": "total_absence", "claim": "The tool performs remediation.", "evidence": "The tool performs scanning and analysis.", "expected": "FALSE", "diagnostic_reason": "Remediation completely absent. Expected: FALSE."},
+    {"id": "ta-004", "condition": "total_absence", "claim": "The framework covers cloud infrastructure.", "evidence": "The framework covers endpoints and networks.", "expected": "FALSE", "diagnostic_reason": "Cloud infrastructure absent. Expected: FALSE."},
+    {"id": "ta-005", "condition": "total_absence", "claim": "The policy applies to vendors.", "evidence": "The policy applies to employees and contractors.", "expected": "FALSE", "diagnostic_reason": "Vendors absent. Expected: FALSE."},
+    {"id": "ta-006", "condition": "total_absence", "claim": "The system encrypts data during processing.", "evidence": "The system encrypts data at rest and in transit.", "expected": "FALSE", "diagnostic_reason": "During processing absent. Expected: FALSE."}
+  ]
+}

@@ -1,0 +1,6221 @@
+{
+  "experiment": "EXP-022 BitNet Microcoliseum Specialized",
+  "timestamp": "2026-08-17T05:19:27",
+  "mode": "debate-on-disagreement",
+  "wall_time_s": 279.7,
+  "worker_specs": [
+    {
+      "id": "A",
+      "role": "entailment",
+      "port": 8101,
+      "description": "NLI 3a greedy: acierta SUPPORTS (TRUE para todo)",
+      "weight": 1.0
+    },
+    {
+      "id": "B",
+      "role": "skeptical",
+      "port": 8102,
+      "description": "NLI Cascading: unico que emite PARTIAL",
+      "weight": 1.0
+    },
+    {
+      "id": "C",
+      "role": "contradiction",
+      "port": 8103,
+      "description": "NLI 3a argmax: 16/16 CONTRADICTS (FALSE token fuerte)",
+      "weight": 1.0
+    },
+    {
+      "id": "D",
+      "role": "context",
+      "port": 8104,
+      "description": "Relevance gate: 100% irrelevantes claros",
+      "weight": 1.5
+    }
+  ],
+  "metrics": {
+    "n": 55,
+    "mode": "debate-on-disagreement",
+    "initial_accuracy": 0.2364,
+    "final_accuracy": 0.2909,
+    "accuracy_delta": 0.0545,
+    "initial_correct": 13,
+    "final_correct": 16,
+    "corrections": 7,
+    "damage": 4,
+    "net": 3,
+    "stability_rate": 0.5091,
+    "by_category": {
+      "adversarial": {
+        "total": 6,
+        "initial_accuracy": 0.0,
+        "final_accuracy": 0.1667
+      },
+      "direct_evidence": {
+        "total": 6,
+        "initial_accuracy": 0.0,
+        "final_accuracy": 0.0
+      },
+      "explicit_contradiction": {
+        "total": 5,
+        "initial_accuracy": 0.2,
+        "final_accuracy": 0.6
+      },
+      "implicit_contradiction": {
+        "total": 5,
+        "initial_accuracy": 0.0,
+        "final_accuracy": 0.4
+      },
+      "negation": {
+        "total": 6,
+        "initial_accuracy": 0.1667,
+        "final_accuracy": 0.3333
+      },
+      "over_specificity": {
+        "total": 5,
+        "initial_accuracy": 0.2,
+        "final_accuracy": 0.0
+      },
+      "paraphrase": {
+        "total": 6,
+        "initial_accuracy": 0.0,
+        "final_accuracy": 0.0
+      },
+      "partial_support": {
+        "total": 6,
+        "initial_accuracy": 0.1667,
+        "final_accuracy": 0.0
+      },
+      "wrong_context": {
+        "total": 5,
+        "initial_accuracy": 0.8,
+        "final_accuracy": 0.6
+      },
+      "wrong_subject": {
+        "total": 5,
+        "initial_accuracy": 1.0,
+        "final_accuracy": 1.0
+      }
+    },
+    "worker_accuracy": {
+      "A": {
+        "correct": 12,
+        "total": 55,
+        "accuracy": 0.2182
+      },
+      "B": {
+        "correct": 12,
+        "total": 55,
+        "accuracy": 0.2182
+      },
+      "C": {
+        "correct": 18,
+        "total": 55,
+        "accuracy": 0.3273
+      },
+      "D": {
+        "correct": 16,
+        "total": 55,
+        "accuracy": 0.2909
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "d-001",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.8569914192539697,
+            "SUPPORTS": -1.534367581641518
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.051219579523479,
+            "SUPPORTS": -2.667192624816894
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.26414945031531356,
+            "SUPPORTS": -2.472966197938358
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "SUPPORTS",
+          "logprobs": {
+            "SUPPORTS": -0.5853432418104535,
+            "UNRELATED": -1.0221393687504694
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "PARTIAL",
+      "ensemble_confidence": 0.3919,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.121,
+          "SUPPORTS": -7.553,
+          "PARTIAL": -1.051,
+          "UNRELATED": -1.533
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.3758604816056482,
+            "CONTRADICTS": -2.3669007838901344
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.9549196628091152
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.1305591862617973,
+            "SUPPORTS": -3.055364492837498
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.0924798263713096,
+            "UNRELATED": -0.1376596903397847
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.7774,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 14.8
+    },
+    {
+      "case_id": "d-002",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.0778128802322153,
+            "SUPPORTS": -1.9849719809876003
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.2856698104035313,
+            "SUPPORTS": -2.9901282787323
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.40457812434650775,
+            "SUPPORTS": -2.4015107612529203
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "SUPPORTS",
+          "logprobs": {
+            "SUPPORTS": -0.6548607976455301,
+            "UNRELATED": -0.8638967021765461
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "PARTIAL",
+      "ensemble_confidence": 0.3556,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.482,
+          "SUPPORTS": -8.359,
+          "PARTIAL": -1.286,
+          "UNRELATED": -1.296
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.6841800187305552,
+            "CONTRADICTS": -1.8377976707503012
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.3179577336718524
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.18645542808166948,
+            "SUPPORTS": -2.7996518130889543
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.8877463822775917,
+            "UNRELATED": -0.13414365711310217
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.7506,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.85
+    },
+    {
+      "case_id": "d-003",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.0082837630009702,
+            "SUPPORTS": -1.6022620293653933
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.9421857129694968,
+            "SUPPORTS": -3.210536983026631
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.26378682585816127,
+            "SUPPORTS": -2.2079031020800866
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "SUPPORTS",
+          "logprobs": {
+            "SUPPORTS": -0.6228601715402602,
+            "UNRELATED": -0.9032539810077022
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "PARTIAL",
+      "ensemble_confidence": 0.4199,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.272,
+          "SUPPORTS": -7.955,
+          "PARTIAL": -0.942,
+          "UNRELATED": -1.355
+        }
+      },
+      "disagreement": false,
+      "debate_results": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.6594,
+      "judge_reason": "Worker C CONTRADICTS argmax (phase 1); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 2.38
+    },
+    {
+      "case_id": "d-004",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.0098024683276088,
+            "SUPPORTS": -1.7847407684595926
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.2099288551539273,
+            "SUPPORTS": -2.558956903929807
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.37983352518088076,
+            "SUPPORTS": -2.533509960556867
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "SUPPORTS",
+          "logprobs": {
+            "SUPPORTS": -0.6708862436046013,
+            "UNRELATED": -0.8664833394532389
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "PARTIAL",
+      "ensemble_confidence": 0.3635,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.39,
+          "SUPPORTS": -7.884,
+          "PARTIAL": -1.21,
+          "UNRELATED": -1.3
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.46113787773328196,
+            "CONTRADICTS": -2.095118799787483
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.0473117771559313,
+            "SUPPORTS": -3.677816244193564
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.13669510264452311,
+            "SUPPORTS": -2.7913890864036532
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.065542005071191,
+            "UNRELATED": -0.11934277776548105
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.7361,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.91
+    },
+    {
+      "case_id": "d-005",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.3514550410538837,
+            "SUPPORTS": -1.4830321446793646
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.945327308053613,
+            "SUPPORTS": -2.117950067836258
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.4696905532788521,
+            "SUPPORTS": -1.804689346685702
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "SUPPORTS",
+          "logprobs": {
+            "SUPPORTS": -0.47499445581746313,
+            "UNRELATED": -1.1188586224320385
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "PARTIAL",
+      "ensemble_confidence": 0.5256,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.821,
+          "SUPPORTS": -6.118,
+          "PARTIAL": -0.945,
+          "UNRELATED": -1.678
+        }
+      },
+      "disagreement": false,
+      "debate_results": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.5551,
+      "judge_reason": "Worker C CONTRADICTS argmax (phase 1); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 2.33
+    },
+    {
+      "case_id": "d-006",
+      "category": "direct_evidence",
+      "ground_truth": "SUPPORTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.6296417290523133,
+            "SUPPORTS": -1.8387100959881661
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.1515607817238787,
+            "SUPPORTS": -2.4750012151111886
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.1262130585838538,
+            "SUPPORTS": -3.479816089537336
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.4769037873425614,
+            "UNRELATED": -0.3267883967652924
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.438,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.756,
+          "SUPPORTS": -10.009,
+          "PARTIAL": -1.152,
+          "UNRELATED": -0.49
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.4855074178614427,
+            "CONTRADICTS": -2.048271145480271
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.104560241122914
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.0795758682735106,
+            "SUPPORTS": -3.4292321938750376
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.710296069259187,
+            "UNRELATED": -0.16918287015131211
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.19
+    },
+    {
+      "case_id": "pp-001",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.947224044271717,
+            "SUPPORTS": -2.2184570908056926
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.1781352701815928,
+            "SUPPORTS": -2.5669200795768337
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.27234715386907293,
+            "SUPPORTS": -3.508965168516616
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.3710348833532002,
+            "UNRELATED": -0.37021098960720455
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4875,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.22,
+          "SUPPORTS": -10.351,
+          "PARTIAL": -1.178,
+          "UNRELATED": -0.555
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.9579597228822887,
+            "CONTRADICTS": -1.9904196199629887
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.9487565300121574,
+            "SUPPORTS": -4.301090371015389
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.19692389313614722,
+            "SUPPORTS": -3.1094532314959222
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.1408212566693767,
+            "UNRELATED": -0.11709577898946794
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.79
+    },
+    {
+      "case_id": "pp-002",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.4950034329777273,
+            "SUPPORTS": -2.233755972536046
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.670016732418398,
+            "SUPPORTS": -2.7507373575674836
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.11143219931469395,
+            "SUPPORTS": -3.747666624947157
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.291065075048777,
+            "UNRELATED": -0.4121058153163252
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "CONTRADICTS",
+      "ensemble_confidence": 0.3417,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.606,
+          "SUPPORTS": -10.669,
+          "PARTIAL": -0.67,
+          "UNRELATED": -0.618
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.7937963118106223,
+            "CONTRADICTS": -1.3707109997643556
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.018392443482024
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.07846309764074844,
+            "SUPPORTS": -3.6451660361701825
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.044898546064786,
+            "UNRELATED": -0.12592879056061643
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.8263,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.23
+    },
+    {
+      "case_id": "pp-003",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.018372833968861,
+            "SUPPORTS": -1.6368555521747339
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.6414151950858875,
+            "SUPPORTS": -2.409577977499684
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.1699920008083613,
+            "SUPPORTS": -2.993280574222094
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.0091138531654846,
+            "UNRELATED": -0.5289107316721232
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "PARTIAL",
+      "ensemble_confidence": 0.4102,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.188,
+          "SUPPORTS": -8.553,
+          "PARTIAL": -0.641,
+          "UNRELATED": -0.793
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5112797682786846,
+            "CONTRADICTS": -2.0296768264897014
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.8217810350336805
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.11657851291678234,
+            "SUPPORTS": -3.137602510536276
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.8598247853784935,
+            "UNRELATED": -0.12200265832821483
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.6702,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.88
+    },
+    {
+      "case_id": "pp-004",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.6965294873071262,
+            "SUPPORTS": -1.4321716141509417
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.9589495434968301,
+            "SUPPORTS": -2.00613282156808
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.09165793552280188,
+            "SUPPORTS": -3.6046026576956907
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.316893181639187,
+            "UNRELATED": -0.38561567017293136
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4009,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.788,
+          "SUPPORTS": -9.018,
+          "PARTIAL": -0.959,
+          "UNRELATED": -0.578
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5397125682773083,
+            "CONTRADICTS": -1.8856255595077378
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.9731668498662338
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.0905759907556023,
+            "SUPPORTS": -3.2333704559917313
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.25169096638661,
+            "UNRELATED": -0.10482053308700423
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.7572,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.15
+    },
+    {
+      "case_id": "pp-005",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.6177802916314323,
+            "SUPPORTS": -2.210829674251962
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.3769899324956367
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.11851761920600556,
+            "SUPPORTS": -3.8644696494882647
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.9059087876463763,
+            "UNRELATED": -0.2316370747738173
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4914,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.736,
+          "SUPPORTS": -8.934,
+          "PARTIAL": -1.377,
+          "UNRELATED": -0.347
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.6508863201694053,
+            "CONTRADICTS": -2.073316929604365
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.051490497679833
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.08892355902926641,
+            "SUPPORTS": -3.7444425930601684
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.3103918088673328,
+            "UNRELATED": -0.11562858732336098
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.98
+    },
+    {
+      "case_id": "pp-006",
+      "category": "paraphrase",
+      "ground_truth": "SUPPORTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.768121253281688,
+            "SUPPORTS": -1.9024609298932886
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.2311396701244077,
+            "SUPPORTS": -4.265792369842529
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.1653787923071195,
+            "SUPPORTS": -3.582488635398059
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.7692799840202023,
+            "UNRELATED": -0.24801703707235173
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.5015,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.934,
+          "SUPPORTS": -12.405,
+          "PARTIAL": -1.231,
+          "UNRELATED": -0.372
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5437507175073975,
+            "CONTRADICTS": -2.1319879670701725
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.8964960520072411
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.12177035339634612,
+            "SUPPORTS": -3.0279806696879845
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.315050529006445,
+            "UNRELATED": -0.11762108676142399
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.03
+    },
+    {
+      "case_id": "ps-001",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.2421831912228558,
+            "SUPPORTS": -1.6170782517765079
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.7757899698450134,
+            "SUPPORTS": -2.8539223670959473
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.20402655215160614,
+            "SUPPORTS": -2.7783412495754667
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.4537786471679195,
+            "UNRELATED": -0.33518344479176615
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.465,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.446,
+          "SUPPORTS": -9.43,
+          "PARTIAL": -0.776,
+          "UNRELATED": -0.503
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.4526201074027677,
+            "CONTRADICTS": -2.675213683670776
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.4422199951280676,
+            "SUPPORTS": -4.826755523681641
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.15755072287246064,
+            "SUPPORTS": -2.6091184629030533
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.669622421991627,
+            "UNRELATED": -0.14778470690553047
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.5069,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.08
+    },
+    {
+      "case_id": "ps-002",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.9058615106186668,
+            "SUPPORTS": -1.1873292822710924
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.614313264493378,
+            "SUPPORTS": -2.741666428706745
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.14043548400105044,
+            "SUPPORTS": -2.7321344179942173
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.4268933451896482,
+            "UNRELATED": -0.33434292285125633
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4043,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.046,
+          "SUPPORTS": -8.801,
+          "PARTIAL": -0.614,
+          "UNRELATED": -0.502
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.4903334273424039,
+            "CONTRADICTS": -1.9555055520586206
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.2901098232819836
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.1381947084694677,
+            "SUPPORTS": -2.6609212242872484
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.42492349445448,
+            "UNRELATED": -0.08795439230416568
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.91
+    },
+    {
+      "case_id": "ps-003",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.219801012201303,
+            "SUPPORTS": -1.2743569010135332
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.816531120470842,
+            "SUPPORTS": -2.684730293161511
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.3566081904766893,
+            "SUPPORTS": -1.7668446585272926
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -0.8874796979075346,
+            "UNRELATED": -0.6407278326990742
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "PARTIAL",
+      "ensemble_confidence": 0.4283,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.576,
+          "SUPPORTS": -7.057,
+          "PARTIAL": -0.817,
+          "UNRELATED": -0.961
+        }
+      },
+      "disagreement": false,
+      "debate_results": [],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.5286,
+      "judge_reason": "Worker C CONTRADICTS argmax (phase 1); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": true,
+      "final_correct": false,
+      "latency_s": 2.31
+    },
+    {
+      "case_id": "ps-004",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.9848200068159787,
+            "SUPPORTS": -1.1344123012640284
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.8763616620391533,
+            "SUPPORTS": -2.0509178939304515
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.15785610552760154,
+            "SUPPORTS": -2.7567910809623783
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.544851413051306,
+            "UNRELATED": -0.28909826119247606
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4684,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.143,
+          "SUPPORTS": -8.259,
+          "PARTIAL": -0.876,
+          "UNRELATED": -0.434
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.38550291924038804,
+            "CONTRADICTS": -1.9888797270136487
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.1964134373919677,
+            "SUPPORTS": -5.177908420562744
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.15812075335013775,
+            "SUPPORTS": -2.603326449438624
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.1539019711175587,
+            "UNRELATED": -0.10479282617967767
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.6428,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.72
+    },
+    {
+      "case_id": "ps-005",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.9515763090048384,
+            "SUPPORTS": -1.485549629748217
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.4775213515084527,
+            "SUPPORTS": -2.892963776089584
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.13609750595321513,
+            "SUPPORTS": -3.1989044705781753
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.864632121424159,
+            "UNRELATED": -0.21817520048806424
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4296,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.088,
+          "SUPPORTS": -10.374,
+          "PARTIAL": -0.478,
+          "UNRELATED": -0.327
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.44717113661920915,
+            "CONTRADICTS": -2.1384593986775564
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.7186352621168128
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.09925276894341806,
+            "SUPPORTS": -3.0435176755995292
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.5405232666574276,
+            "UNRELATED": -0.08575581475275434
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.05
+    },
+    {
+      "case_id": "ps-006",
+      "category": "partial_support",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.1630307371411914,
+            "SUPPORTS": -1.3292310515778127
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.1825775141473134,
+            "SUPPORTS": -2.4696214585044
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.2115275194760342,
+            "SUPPORTS": -2.70839740019802
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.31491960195891,
+            "UNRELATED": -0.38937640165888304
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4991,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.375,
+          "SUPPORTS": -8.48,
+          "PARTIAL": -1.183,
+          "UNRELATED": -0.584
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.34029034931262736,
+            "CONTRADICTS": -2.6885508383648764
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.793108886601443
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.1767894416127086,
+            "SUPPORTS": -2.7477823159446864
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.99189113101448,
+            "UNRELATED": -0.13742935506187998
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.5393,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.38
+    },
+    {
+      "case_id": "ec-001",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.5815506303203943,
+            "SUPPORTS": -1.6236760442841116
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.5355448855592161,
+            "SUPPORTS": -2.43382882081665
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.22418695291788676,
+            "SUPPORTS": -2.1804625763790755
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "SUPPORTS",
+          "logprobs": {
+            "SUPPORTS": -0.43926343621350306,
+            "UNRELATED": -1.2044380804523787
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "PARTIAL",
+      "ensemble_confidence": 0.4889,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.806,
+          "SUPPORTS": -6.897,
+          "PARTIAL": -0.536,
+          "UNRELATED": -1.807
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.4357174657253141,
+            "CONTRADICTS": -1.8588203331066817
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.0111223767915987
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.07592798240177995,
+            "SUPPORTS": -3.2869822917078837
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.8146162874344673,
+            "UNRELATED": -0.11584534026888446
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.8501,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": true,
+      "latency_s": 6.76
+    },
+    {
+      "case_id": "ec-002",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.8431688972955441,
+            "SUPPORTS": -1.6299066713485342
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.1370303952067176,
+            "SUPPORTS": -3.1781105995178223
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.27104162899133877,
+            "SUPPORTS": -2.557746462357844
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "SUPPORTS",
+          "logprobs": {
+            "SUPPORTS": -0.6475896155494985,
+            "UNRELATED": -0.9476131186587804
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "CONTRADICTS",
+      "ensemble_confidence": 0.3685,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.114,
+          "SUPPORTS": -8.337,
+          "PARTIAL": -1.137,
+          "UNRELATED": -1.421
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.4166124504490829,
+            "CONTRADICTS": -2.1170651500318396
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.019213550860151,
+            "SUPPORTS": -4.594743728637695
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.14664423888918032,
+            "SUPPORTS": -2.993683048899494
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.1712464684412374,
+            "UNRELATED": -0.14071095645586223
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.7942,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": true,
+      "final_correct": true,
+      "latency_s": 6.34
+    },
+    {
+      "case_id": "ec-003",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.9294985573970347,
+            "SUPPORTS": -2.162276864271884
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.1315229274232426,
+            "SUPPORTS": -3.4274373054504395
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.2928326651128961,
+            "SUPPORTS": -2.725413241572749
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -0.8780599547757421,
+            "UNRELATED": -0.6419143268929834
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.3822,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.222,
+          "SUPPORTS": -9.632,
+          "PARTIAL": -1.132,
+          "UNRELATED": -0.963
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.6022742090215675,
+            "CONTRADICTS": -1.9096320105064137
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.296421577000153
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.11580809591923846,
+            "SUPPORTS": -3.1373467860994935
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.801826844692403,
+            "UNRELATED": -0.13554128064637788
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.7446,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": true,
+      "latency_s": 5.79
+    },
+    {
+      "case_id": "ec-004",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.7955819931472864,
+            "SUPPORTS": -1.5027795997114672
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.9244326430353269,
+            "SUPPORTS": -2.2166222196326837
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.16766387184049714,
+            "SUPPORTS": -3.1913905452237996
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.3851560370848772,
+            "UNRELATED": -0.3573222453850788
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4291,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.963,
+          "SUPPORTS": -8.989,
+          "PARTIAL": -0.924,
+          "UNRELATED": -0.536
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.46325537225105895,
+            "CONTRADICTS": -2.0679417296059315
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.179852856363814
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.11842300490553093,
+            "SUPPORTS": -3.0191058892215947
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.689241869854566,
+            "UNRELATED": -0.15930234309655636
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.63
+    },
+    {
+      "case_id": "ec-005",
+      "category": "explicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.6722748616362791,
+            "SUPPORTS": -2.0687906283689044
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.023103763836202,
+            "SUPPORTS": -2.7770844125905434
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.14819929827205447,
+            "SUPPORTS": -3.337880254786118
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.6333877135434833,
+            "UNRELATED": -0.30264181199774287
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4426,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.82,
+          "SUPPORTS": -10.634,
+          "PARTIAL": -1.023,
+          "UNRELATED": -0.454
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.6153779156555342,
+            "CONTRADICTS": -1.7300169500725264
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.1252941237510035
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.11131977308299268,
+            "SUPPORTS": -3.0907632562223504
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.877064363349663,
+            "UNRELATED": -0.15189963876929422
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.49
+    },
+    {
+      "case_id": "ic-001",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.9259746700498932,
+            "SUPPORTS": -1.658262195621868
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.9348933540406817,
+            "SUPPORTS": -2.35589917567835
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.1502583281212212,
+            "SUPPORTS": -3.5765824675139846
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.2596905023155305,
+            "UNRELATED": -0.4080878211407663
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.425,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.076,
+          "SUPPORTS": -9.48,
+          "PARTIAL": -0.935,
+          "UNRELATED": -0.612
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5076120281101046,
+            "CONTRADICTS": -2.3330865687499545
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.0438232457852967
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.1284180891644554,
+            "SUPPORTS": -3.327266236401795
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.841271131608702,
+            "UNRELATED": -0.14100623883271793
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.6585,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": true,
+      "latency_s": 5.57
+    },
+    {
+      "case_id": "ic-002",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.7873969507501407,
+            "SUPPORTS": -2.07625484459043
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.6532853788763419,
+            "SUPPORTS": -2.743613854485069
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.2230133922918407,
+            "SUPPORTS": -3.1698039414187416
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.611652307229973,
+            "UNRELATED": -0.2905955133263921
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4224,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.01,
+          "SUPPORTS": -10.407,
+          "PARTIAL": -0.653,
+          "UNRELATED": -0.436
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.44843107087288214,
+            "CONTRADICTS": -2.264453642603026
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.055224182603303
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.14234944850562525,
+            "SUPPORTS": -2.8334143645520173
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.9602315279434013,
+            "UNRELATED": -0.12069207531432816
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.07
+    },
+    {
+      "case_id": "ic-003",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.7685173727267703,
+            "SUPPORTS": -1.513274462858391
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.0861922404243554,
+            "SUPPORTS": -1.654818833277502
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.17213536974401755,
+            "SUPPORTS": -2.7932770248194365
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.232907014738608,
+            "UNRELATED": -0.4079663046020781
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4268,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.941,
+          "SUPPORTS": -7.811,
+          "PARTIAL": -1.086,
+          "UNRELATED": -0.612
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5040815004284342,
+            "CONTRADICTS": -1.8167911834741652
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.9593209373303375,
+            "SUPPORTS": -4.666790008544922
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.1299234867664193,
+            "SUPPORTS": -2.7905191631885176
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.2757908178255377,
+            "UNRELATED": -0.09264698624353379
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.7395,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": true,
+      "latency_s": 4.51
+    },
+    {
+      "case_id": "ic-004",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.8547546052570633,
+            "SUPPORTS": -1.8188219201246354
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.046867726941857,
+            "SUPPORTS": -3.6048495769500732
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.18757560439657173,
+            "SUPPORTS": -3.224841433964472
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.7458372115205956,
+            "UNRELATED": -0.24288512551579924
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4968,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.042,
+          "SUPPORTS": -11.267,
+          "PARTIAL": -1.047,
+          "UNRELATED": -0.364
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.7694332882280236,
+            "CONTRADICTS": -2.091695503325627
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.2153638889730654
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.170676955778167,
+            "SUPPORTS": -2.8080527919847267
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.8126063023862535,
+            "UNRELATED": -0.14307472784040268
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.86
+    },
+    {
+      "case_id": "ic-005",
+      "category": "implicit_contradiction",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.9306129632920104,
+            "SUPPORTS": -2.1848290731518816
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.9377926079881957,
+            "SUPPORTS": -2.7210649336675887
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.2253697210832114,
+            "SUPPORTS": -3.9094355236335274
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.4622367649077983,
+            "UNRELATED": -0.34377329478176244
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4581,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.156,
+          "SUPPORTS": -11.009,
+          "PARTIAL": -0.938,
+          "UNRELATED": -0.516
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.6982138184518416,
+            "CONTRADICTS": -2.171891001435132
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.0529787091650125
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.13729453192481278,
+            "SUPPORTS": -3.396951063083977
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.099123492957621,
+            "UNRELATED": -0.11648680703441683
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.53
+    },
+    {
+      "case_id": "os-001",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.0265488379909538,
+            "SUPPORTS": -1.7157867105815423
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.5862064166197191,
+            "SUPPORTS": -2.7565833819035475
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.2997001612683371,
+            "SUPPORTS": -2.9206797613555726
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.1661727353615063,
+            "UNRELATED": -0.42836038382390185
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "PARTIAL",
+      "ensemble_confidence": 0.4128,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.326,
+          "SUPPORTS": -9.142,
+          "PARTIAL": -0.586,
+          "UNRELATED": -0.643
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.9573027280735441,
+            "CONTRADICTS": -2.282784639589849
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.9053632883626528,
+            "SUPPORTS": -3.9293236646079057
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.24438885994418336,
+            "SUPPORTS": -2.4102075798570626
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.767693783959517,
+            "UNRELATED": -0.1398927083521981
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.5706,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": true,
+      "final_correct": false,
+      "latency_s": 4.93
+    },
+    {
+      "case_id": "os-002",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.1891223676894127,
+            "SUPPORTS": -1.5143418833683702
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.0782245181800545,
+            "SUPPORTS": -2.4611413590827755
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.2508662994020615,
+            "SUPPORTS": -2.5825088554088977
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.3546041317107482,
+            "UNRELATED": -0.3569680301629117
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.5035,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.44,
+          "SUPPORTS": -8.59,
+          "PARTIAL": -1.078,
+          "UNRELATED": -0.535
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5047288734750698,
+            "CONTRADICTS": -2.867115192588665
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.163875744799114
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.1775940360736441,
+            "SUPPORTS": -2.5746318183511403
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.6631205435232306,
+            "UNRELATED": -0.14968740695391788
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.4964,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.56
+    },
+    {
+      "case_id": "os-003",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.9285935720535564,
+            "SUPPORTS": -1.336926830452761
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.699766285249586,
+            "SUPPORTS": -2.936883060236448
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.18015120516046085,
+            "SUPPORTS": -2.7134673225329653
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.2271273707116368,
+            "UNRELATED": -0.4144502074987506
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.3938,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.109,
+          "SUPPORTS": -8.828,
+          "PARTIAL": -0.7,
+          "UNRELATED": -0.622
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5021742605455246,
+            "CONTRADICTS": -2.1825480099489427
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.1414798039926173
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.15210825694117525,
+            "SUPPORTS": -2.6346722274547707
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.9892408243055915,
+            "UNRELATED": -0.1264151047153536
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.6551,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.9
+    },
+    {
+      "case_id": "os-004",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.0062352290881056,
+            "SUPPORTS": -1.527411612840674
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.6699468865442054,
+            "SUPPORTS": -3.245392084121704
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.3312154204915365,
+            "SUPPORTS": -2.241398143686035
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.1795448777799058,
+            "UNRELATED": -0.44550706291603426
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.3983,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.337,
+          "SUPPORTS": -8.784,
+          "PARTIAL": -0.67,
+          "UNRELATED": -0.668
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.4027110210290812,
+            "CONTRADICTS": -2.172390427863964
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.759739148849272
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.14992715725907246,
+            "SUPPORTS": -2.5886312771768685
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.159525233840956,
+            "UNRELATED": -0.10347782556691398
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.5933,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.64
+    },
+    {
+      "case_id": "os-005",
+      "category": "over_specificity",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.0169249107598959,
+            "SUPPORTS": -1.6964693906648014
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.33446416430181,
+            "SUPPORTS": -2.505219103145852
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.21524244481745236,
+            "SUPPORTS": -3.0785632284864963
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.770736368367754,
+            "UNRELATED": -0.23431056005404008
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.5591,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.232,
+          "SUPPORTS": -9.936,
+          "PARTIAL": -1.334,
+          "UNRELATED": -0.351
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5485458928429257,
+            "CONTRADICTS": -2.3153503617555797
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.2353913357701365
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.18024756597424574,
+            "SUPPORTS": -2.75593001756879
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.968100647198366,
+            "UNRELATED": -0.13678964008160893
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.23
+    },
+    {
+      "case_id": "n-001",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.6726196136514491,
+            "SUPPORTS": -1.4877233693254974
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.5461613048484157,
+            "SUPPORTS": -3.1492103272366205
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.17909231500606698,
+            "SUPPORTS": -2.7961293840634607
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.1220834740705976,
+            "UNRELATED": -0.4557994737669669
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "PARTIAL",
+      "ensemble_confidence": 0.3834,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.852,
+          "SUPPORTS": -9.116,
+          "PARTIAL": -0.546,
+          "UNRELATED": -0.684
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5707405781202387,
+            "CONTRADICTS": -2.397653403430253
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.7985322057391198
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.10155019387939002,
+            "SUPPORTS": -3.2942552690071
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.4183915903736044,
+            "UNRELATED": -0.17898507924053295
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.6875,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": true,
+      "latency_s": 4.49
+    },
+    {
+      "case_id": "n-002",
+      "category": "negation",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.681307051827222,
+            "SUPPORTS": -1.6432066301648025
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.49907799917599965,
+            "SUPPORTS": -2.7530145536034856
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.13019910482958896,
+            "SUPPORTS": -3.1273200223452777
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -0.8799829397632319,
+            "UNRELATED": -0.6121519593451942
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "PARTIAL",
+      "ensemble_confidence": 0.4185,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.812,
+          "SUPPORTS": -8.844,
+          "PARTIAL": -0.499,
+          "UNRELATED": -0.918
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5541494061616863,
+            "CONTRADICTS": -1.892747998226679
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.8697278581191008
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.10142525547018622,
+            "SUPPORTS": -3.1887844473331324
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.4352025851425396,
+            "UNRELATED": -0.17283543347556937
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.7721,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": true,
+      "final_correct": false,
+      "latency_s": 3.68
+    },
+    {
+      "case_id": "n-003",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.7565512031809277,
+            "SUPPORTS": -2.038366964060744
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.0953921783167455,
+            "SUPPORTS": -2.424205589177353
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.13713747377685415,
+            "SUPPORTS": -3.5803419189012535
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.4283812002129324,
+            "UNRELATED": -0.3491835175204405
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4434,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.894,
+          "SUPPORTS": -10.185,
+          "PARTIAL": -1.095,
+          "UNRELATED": -0.524
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.854428208808716,
+            "CONTRADICTS": -1.5159623261127528
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.9217230732684487
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.1088757097505163,
+            "SUPPORTS": -3.256639330371235
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.0883746121873425,
+            "UNRELATED": -0.11952048850313163
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.45
+    },
+    {
+      "case_id": "n-004",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.6739203160659061,
+            "SUPPORTS": -1.6037522563721773
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.9566656922377353,
+            "SUPPORTS": -2.472286884428024
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.10505442387051755,
+            "SUPPORTS": -3.3397159184426277
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.746380361119195,
+            "UNRELATED": -0.24043307770239847
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4526,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.779,
+          "SUPPORTS": -10.035,
+          "PARTIAL": -0.957,
+          "UNRELATED": -0.361
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5510917610941837,
+            "CONTRADICTS": -1.6136087240966461
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.127891620834045,
+            "SUPPORTS": -5.155020236968994
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.10188396868106242,
+            "SUPPORTS": -3.2334834737284206
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.900125963872223,
+            "UNRELATED": -0.12952890145225168
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.91
+    },
+    {
+      "case_id": "n-005",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.8053417264136598,
+            "SUPPORTS": -1.9827047909878326
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.9363543288963676,
+            "SUPPORTS": -3.199230670928955
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.2173976776843215,
+            "SUPPORTS": -3.1978220176965437
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.7502755257187947,
+            "UNRELATED": -0.24726285916583507
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4787,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.023,
+          "SUPPORTS": -11.005,
+          "PARTIAL": -0.936,
+          "UNRELATED": -0.371
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.6459595192870135,
+            "CONTRADICTS": -1.7816238937809872
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.9212993641280547
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.09180213802217108,
+            "SUPPORTS": -3.507514357597746
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.1561012282253134,
+            "UNRELATED": -0.11262267853207694
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.94
+    },
+    {
+      "case_id": "n-006",
+      "category": "negation",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.8977940433888996,
+            "SUPPORTS": -1.8675604079560486
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.5196453390728042,
+            "SUPPORTS": -2.969394403313091
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.1680638058956595,
+            "SUPPORTS": -3.4133146499970763
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.4450655762512896,
+            "UNRELATED": -0.3343238682451688
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.392,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.066,
+          "SUPPORTS": -10.418,
+          "PARTIAL": -0.52,
+          "UNRELATED": -0.501
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.6243261227764973,
+            "CONTRADICTS": -1.8134687564049585
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.070445815426516
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.10800902920642708,
+            "SUPPORTS": -3.3525843501017016
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.0560510776299705,
+            "UNRELATED": -0.1109424754525799
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.6762,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": true,
+      "latency_s": 5.07
+    },
+    {
+      "case_id": "ws-001",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.0916452305731543,
+            "SUPPORTS": -1.4769697649848013
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.5066884106386804,
+            "SUPPORTS": -3.1121763313820683
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.3365262327712246,
+            "SUPPORTS": -2.5978204995137104
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.582411757162991,
+            "UNRELATED": -0.2761186215575413
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4397,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.428,
+          "SUPPORTS": -9.561,
+          "PARTIAL": -0.507,
+          "UNRELATED": -0.414
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.8692824842023159,
+            "CONTRADICTS": -2.595784504851959
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.8769553081549706,
+            "SUPPORTS": -4.651949882507324
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.2025183011846442,
+            "SUPPORTS": -2.7321136433369873
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.4743689219880043,
+            "UNRELATED": -0.16421503837377147
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": true,
+      "final_correct": true,
+      "latency_s": 4.56
+    },
+    {
+      "case_id": "ws-002",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.8882807583186478,
+            "SUPPORTS": -1.4382716013047845
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.7695273356347059,
+            "SUPPORTS": -3.636915922164917
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.18222449144108221,
+            "SUPPORTS": -2.741366940711895
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.5322808652762832,
+            "UNRELATED": -0.2900570784201201
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4453,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.071,
+          "SUPPORTS": -10.115,
+          "PARTIAL": -0.77,
+          "UNRELATED": -0.435
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5634383784320761,
+            "CONTRADICTS": -1.9115829872783565
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.7724231595334392
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.15794657579800675,
+            "SUPPORTS": -2.7395681466273576
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.6964454411437955,
+            "UNRELATED": -0.15271969502422944
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": true,
+      "final_correct": true,
+      "latency_s": 5.33
+    },
+    {
+      "case_id": "ws-003",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.8768843650267557,
+            "SUPPORTS": -1.8845972340243002
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.096327869603073,
+            "SUPPORTS": -3.221355676651001
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.16112637192493828,
+            "SUPPORTS": -3.3962167839736255
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.6475324385487333,
+            "UNRELATED": -0.2854088121771515
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4864,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.038,
+          "SUPPORTS": -10.973,
+          "PARTIAL": -1.096,
+          "UNRELATED": -0.428
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.600202627322129,
+            "CONTRADICTS": -2.1099012230688667
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.0275185537312166
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.125632100741919,
+            "SUPPORTS": -3.174875093385157
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.9247713406551403,
+            "UNRELATED": -0.1352844491489819
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": true,
+      "final_correct": true,
+      "latency_s": 5.15
+    },
+    {
+      "case_id": "ws-004",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.8978398884105536,
+            "SUPPORTS": -1.474035157167893
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.6812511925050413,
+            "SUPPORTS": -2.9653426639772857
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.20519231268553806,
+            "SUPPORTS": -2.945230874152247
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.6246599940068127,
+            "UNRELATED": -0.274000326254781
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4417,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.103,
+          "SUPPORTS": -9.822,
+          "PARTIAL": -0.681,
+          "UNRELATED": -0.411
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5665401498350394,
+            "CONTRADICTS": -1.8654889424042698
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.9937688207421413,
+            "SUPPORTS": -5.1515913009643555
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.1609646476023351,
+            "SUPPORTS": -2.6375884519939707
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.531397603063123,
+            "UNRELATED": -0.08185856855439261
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": true,
+      "final_correct": true,
+      "latency_s": 4.98
+    },
+    {
+      "case_id": "ws-005",
+      "category": "wrong_subject",
+      "ground_truth": "UNRELATED",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -1.040375555098887,
+            "SUPPORTS": -1.759324003413422
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.9601812080382238,
+            "SUPPORTS": -3.32157650640505
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.24717077244157631,
+            "SUPPORTS": -3.026258541754475
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.7616758453047106,
+            "UNRELATED": -0.2418544532117075
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.5136,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.288,
+          "SUPPORTS": -10.75,
+          "PARTIAL": -0.96,
+          "UNRELATED": -0.363
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.4359794929961053,
+            "CONTRADICTS": -2.810647322771346
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.8926146933003067
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.14053104041894182,
+            "SUPPORTS": -2.9459003783863915
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.4282432399362746,
+            "UNRELATED": -0.08615825035260702
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": true,
+      "final_correct": true,
+      "latency_s": 4.88
+    },
+    {
+      "case_id": "wc-001",
+      "category": "wrong_context",
+      "ground_truth": "UNRELATED",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.9905554009284001,
+            "SUPPORTS": -2.140752824193203
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.6573749250078599,
+            "SUPPORTS": -2.975740638167392
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.2959526467865471,
+            "SUPPORTS": -3.0359291781045528
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.6612097321592512,
+            "UNRELATED": -0.25548099985724226
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4618,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.287,
+          "SUPPORTS": -10.644,
+          "PARTIAL": -0.657,
+          "UNRELATED": -0.383
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -1.083030355234237,
+            "CONTRADICTS": -1.9040040800676934
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.7171332194522115,
+            "SUPPORTS": -4.136717856181232
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.1852298168103902,
+            "SUPPORTS": -2.8044899609114253
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.7068948393761563,
+            "UNRELATED": -0.1440215252057715
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": true,
+      "final_correct": true,
+      "latency_s": 4.97
+    },
+    {
+      "case_id": "wc-002",
+      "category": "wrong_context",
+      "ground_truth": "UNRELATED",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.9229376154506893,
+            "SUPPORTS": -1.1609258611238764
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.6939216339776744,
+            "SUPPORTS": -2.4418322060102344
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.16308579382575594,
+            "SUPPORTS": -2.7607238571320765
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.5361585141069234,
+            "UNRELATED": -0.2944882344576619
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4343,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.086,
+          "SUPPORTS": -8.668,
+          "PARTIAL": -0.694,
+          "UNRELATED": -0.442
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.440406566379405,
+            "CONTRADICTS": -1.8587098636668502
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.12502882406655,
+            "SUPPORTS": -5.001579284667969
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.13425703471921868,
+            "SUPPORTS": -2.692143510073923
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.1206319555187605,
+            "UNRELATED": -0.10683962160832769
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.6647,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": true,
+      "final_correct": false,
+      "latency_s": 4.75
+    },
+    {
+      "case_id": "wc-003",
+      "category": "wrong_context",
+      "ground_truth": "UNRELATED",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.7100392975788459,
+            "SUPPORTS": -1.6789551566493253
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.8010836044321465,
+            "SUPPORTS": -2.323343237194821
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.1308256621980437,
+            "SUPPORTS": -3.330689022224216
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.5541982982963733,
+            "UNRELATED": -0.3027715816237966
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4191,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.841,
+          "SUPPORTS": -9.664,
+          "PARTIAL": -0.801,
+          "UNRELATED": -0.454
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5276262970355776,
+            "CONTRADICTS": -1.6156710870745528
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.1885034027999204
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.13946672910721558,
+            "SUPPORTS": -2.744386832171851
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.2363973697639237,
+            "UNRELATED": -0.10090425071602707
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": true,
+      "final_correct": true,
+      "latency_s": 5.2
+    },
+    {
+      "case_id": "wc-004",
+      "category": "wrong_context",
+      "ground_truth": "UNRELATED",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.7685183611532557,
+            "SUPPORTS": -1.9371755420548986
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.7006259761400377,
+            "SUPPORTS": -2.826327976054953
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.1817823952362606,
+            "SUPPORTS": -3.3537062371049373
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -2.0265064074911137,
+            "UNRELATED": -0.1823316002832489
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4628,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.95,
+          "SUPPORTS": -11.157,
+          "PARTIAL": -0.701,
+          "UNRELATED": -0.273
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.6618700273248422,
+            "CONTRADICTS": -1.8222489156640616
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.9438830562096874
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.1322155185851691,
+            "SUPPORTS": -3.005618624949614
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.1903112799283737,
+            "UNRELATED": -0.11262050846348307
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": true,
+      "final_correct": true,
+      "latency_s": 5.09
+    },
+    {
+      "case_id": "wc-005",
+      "category": "wrong_context",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.9707458563537418,
+            "SUPPORTS": -1.4349943273678316
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.7089459875005358,
+            "SUPPORTS": -2.7634944215691375
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.22882318415133085,
+            "SUPPORTS": -2.899234342772164
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.3009729055301282,
+            "UNRELATED": -0.38053027152564056
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4159,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.2,
+          "SUPPORTS": -9.049,
+          "PARTIAL": -0.709,
+          "UNRELATED": -0.571
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5473567860213155,
+            "CONTRADICTS": -1.8158315482473828
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.7535382959007098,
+            "SUPPORTS": -4.037709217612786
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.1724890013846745,
+            "SUPPORTS": -2.5543842407512867
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.8933490641960664,
+            "UNRELATED": -0.1366428321246512
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.6551,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.72
+    },
+    {
+      "case_id": "a-001",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.7705548650682679,
+            "SUPPORTS": -1.6503508313917425
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.6355532719487302,
+            "SUPPORTS": -2.863984169572263
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.16183671772476194,
+            "SUPPORTS": -2.683446176206963
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.611830049107947,
+            "UNRELATED": -0.27751428174314335
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4167,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.932,
+          "SUPPORTS": -9.616,
+          "PARTIAL": -0.636,
+          "UNRELATED": -0.416
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.5885994025035869,
+            "CONTRADICTS": -2.2233641934382526
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.227063627563813,
+            "SUPPORTS": -4.828426837921143
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.11108987266295611,
+            "SUPPORTS": -2.972328663788632
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -2.7715457402141572,
+            "UNRELATED": -0.14549940767180455
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.33
+    },
+    {
+      "case_id": "a-002",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.9015627268632274,
+            "SUPPORTS": -1.1661213968729063
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.224731903914491,
+            "SUPPORTS": -1.99589385454559
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.13435256090002012,
+            "SUPPORTS": -2.932213018423477
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.1802635338223222,
+            "UNRELATED": -0.4426455439060586
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4423,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.036,
+          "SUPPORTS": -7.865,
+          "PARTIAL": -1.225,
+          "UNRELATED": -0.664
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.3231079073461066,
+            "CONTRADICTS": -2.1610647926222093
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.2478923677631646
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.11759351967895404,
+            "SUPPORTS": -2.719890278127365
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.0588069760456267,
+            "UNRELATED": -0.12176763985438699
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.7099,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.91
+    },
+    {
+      "case_id": "a-003",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.8125247293403288,
+            "SUPPORTS": -1.4811111696331474
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.6720285952226698,
+            "SUPPORTS": -2.9841313226925803
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.1778908844759748,
+            "SUPPORTS": -2.8926031764783735
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.7289322978094006,
+            "UNRELATED": -0.2435262020786863
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4403,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.99,
+          "SUPPORTS": -9.951,
+          "PARTIAL": -0.672,
+          "UNRELATED": -0.365
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.6162114176800101,
+            "CONTRADICTS": -1.8388828426805206
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.9004725150105222
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.14057543034443454,
+            "SUPPORTS": -2.8316623232573317
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.0201918730526387,
+            "UNRELATED": -0.11650093044177678
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.87
+    },
+    {
+      "case_id": "a-004",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.7125107095760285,
+            "SUPPORTS": -1.7036581609418335
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -1.3471794486008382,
+            "SUPPORTS": -2.959617853164673
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.17028982099462953,
+            "SUPPORTS": -2.992562083130011
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "UNRELATED",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.6748392120646578,
+            "UNRELATED": -0.2601462779826693
+          },
+          "raw": "NO"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.5012,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.883,
+          "SUPPORTS": -10.168,
+          "PARTIAL": -1.347,
+          "UNRELATED": -0.39
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.4189699165277735,
+            "CONTRADICTS": -2.1171537791153487
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.352568076943635
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.14276945258443774,
+            "SUPPORTS": -2.7671557421928057
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "UNRELATED",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.044419768366028,
+            "UNRELATED": -0.10711761053175542
+          },
+          "changed": false,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "UNRELATED",
+      "final_confidence": 0.95,
+      "judge_reason": "Worker D confirmo irrelevante en Phase 1 y debate. Override.",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 4.64
+    },
+    {
+      "case_id": "a-005",
+      "category": "adversarial",
+      "ground_truth": "CONTRADICTS",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.6770960626538314,
+            "SUPPORTS": -2.0705137847184085
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.7676479947905751,
+            "SUPPORTS": -2.64505241961418
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.14516526559550746,
+            "SUPPORTS": -3.620614372347942
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.4849700870001077,
+            "UNRELATED": -0.31670070481945
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4077,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -0.822,
+          "SUPPORTS": -10.564,
+          "PARTIAL": -0.768,
+          "UNRELATED": -0.475
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.6816399801845391,
+            "CONTRADICTS": -1.615791187424604
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -2.3276804732827965
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.11772178350882256,
+            "SUPPORTS": -3.120901687923169
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.2884335499647444,
+            "UNRELATED": -0.10419969794979517
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.7576,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": true,
+      "latency_s": 4.97
+    },
+    {
+      "case_id": "a-006",
+      "category": "adversarial",
+      "ground_truth": "PARTIAL",
+      "worker_results": [
+        {
+          "worker_id": "A",
+          "role": "entailment",
+          "greedy": "SUPPORTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.9441843886107895,
+            "SUPPORTS": -1.6392042962322866
+          },
+          "raw": "TRUE"
+        },
+        {
+          "worker_id": "B",
+          "role": "skeptical",
+          "greedy": "SUPPORTS",
+          "argmax": "PARTIAL",
+          "logprobs": {
+            "PARTIAL": -0.7624722531609885,
+            "SUPPORTS": -2.864025592803955
+          },
+          "raw": "TRUE -> FULL"
+        },
+        {
+          "worker_id": "C",
+          "role": "contradiction",
+          "greedy": "CONTRADICTS",
+          "argmax": "CONTRADICTS",
+          "logprobs": {
+            "CONTRADICTS": -0.15771231315066359,
+            "SUPPORTS": -3.5954216990634684
+          },
+          "raw": "FALSE"
+        },
+        {
+          "worker_id": "D",
+          "role": "context",
+          "greedy": "SUPPORTS",
+          "argmax": "UNRELATED",
+          "logprobs": {
+            "SUPPORTS": -1.314627444286604,
+            "UNRELATED": -0.3727094034653963
+          },
+          "raw": "YES"
+        }
+      ],
+      "ensemble_relation": "UNRELATED",
+      "ensemble_confidence": 0.4172,
+      "ensemble_meta": {
+        "combined_logprobs": {
+          "CONTRADICTS": -1.102,
+          "SUPPORTS": -10.071,
+          "PARTIAL": -0.762,
+          "UNRELATED": -0.559
+        }
+      },
+      "disagreement": true,
+      "debate_results": [
+        {
+          "worker": "A",
+          "initial": "SUPPORTS",
+          "debate_greedy": "SUPPORTS",
+          "debate_logprobs": {
+            "SUPPORTS": -0.47753840439275774,
+            "CONTRADICTS": -2.4415762623174677
+          },
+          "changed": false,
+          "raw": "TRUE"
+        },
+        {
+          "worker": "B",
+          "initial": "SUPPORTS",
+          "debate_greedy": "PARTIAL",
+          "debate_logprobs": {
+            "PARTIAL": -1.8137676404809122
+          },
+          "changed": true,
+          "raw": "PARTIAL"
+        },
+        {
+          "worker": "C",
+          "initial": "CONTRADICTS",
+          "debate_greedy": "CONTRADICTS",
+          "debate_logprobs": {
+            "CONTRADICTS": -0.1712614727621249,
+            "SUPPORTS": -2.8747347152148466
+          },
+          "changed": false,
+          "raw": "FALSE"
+        },
+        {
+          "worker": "D",
+          "initial": "SUPPORTS",
+          "debate_greedy": "UNRELATED",
+          "debate_logprobs": {
+            "SUPPORTS": -3.100977111233011,
+            "UNRELATED": -0.10640089444815948
+          },
+          "changed": true,
+          "raw": "NO"
+        }
+      ],
+      "final_relation": "CONTRADICTS",
+      "final_confidence": 0.6047,
+      "judge_reason": "Debate logprobs integrados (peso 0.5); Worker C CONTRADICTS argmax (confirmado en debate); Worker A SUPPORTS greedy (12/12 en EXP-018)",
+      "initial_correct": false,
+      "final_correct": false,
+      "latency_s": 5.07
+    }
+  ]
+}

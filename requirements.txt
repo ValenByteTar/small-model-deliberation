@@ -1,0 +1,23 @@
+# small-model-deliberation — dependencies
+#
+# This repo depends on the hybrid_rag package, which provides the kernel
+# components (SemanticEnsemble, SemanticWorker, ModelProvider contracts, etc.)
+# used by the runners.
+#
+# hybrid_rag is not included in this repo. It lives in a separate project
+# (AgenticRAG) and must be installed as an editable package:
+#
+#   cd /path/to/AgenticRAG
+#   pip install -e .
+#
+# The remaining dependencies are standard Python packages.
+
+requests>=2.28
+pytest>=7.0
+
+# Transitive dependencies of hybrid_rag (listed for convenience):
+# numpy
+# pyyaml
+# rank-bm25
+# rich
+# tqdm

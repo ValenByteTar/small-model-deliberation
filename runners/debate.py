@@ -57,7 +57,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
-ROOT = Path(__file__).resolve().parent.parent.parent
+ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 import requests
@@ -65,10 +65,112 @@ import requests
 from hybrid_rag.kernel.state import SEMANTIC_RELATIONS
 from hybrid_rag.providers.ollama_provider import OllamaModelProvider
 
-BENCHMARK = ROOT / "tests" / "eval" / "canonical" / "semantic_assessment_benchmark_v2.json"
-OUTPUT_DIR = ROOT / "tests" / "eval" / "canonical" / "reports"
+BENCHMARK = ROOT / "benchmarks" / "semantic_assessment_v2.json"
+OUTPUT_DIR = ROOT / "results" / "raw"
 
 VALID_RELATIONS = sorted(SEMANTIC_RELATIONS)  # ["CONTRADICTS", "PARTIAL", "SUPPORTS", "UNRELATED"]
+
+RELATION_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "relation": {"type": "string", "enum": VALID_RELATIONS},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    },
+    "required": ["relation", "confidence"],
+    "additionalProperties": False,
+}
+ASSESSMENT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "worker": {"type": "string"},
+        "relation": {"type": "string", "enum": VALID_RELATIONS},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    },
+    "required": ["worker", "relation", "confidence"],
+    "additionalProperties": False,
+}
+CHALLENGE_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "worker": {"type": "string"},
+        "current_relation": {"type": "string", "enum": VALID_RELATIONS},
+        "change_decision": {"type": "string", "enum": ["KEEP", "CHANGE"]},
+        "proposed_relation": {"type": "string", "enum": VALID_RELATIONS},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    },
+    "required": ["worker", "current_relation", "change_decision", "proposed_relation", "confidence"],
+    "additionalProperties": False,
+}
+
+
+class StructuredOllamaProvider(OllamaModelProvider):
+    """Ollama provider with strict JSON output and disabled reasoning."""
+
+    def generate_structured(self, prompt: str, schema: dict, *, timeout: float) -> str:
+        options = {"num_gpu": self.num_gpu, **self.default_options}
+        response = requests.post(
+            f"{self.base_url}/api/generate",
+            json={
+                "model": self.model,
+                "prompt": prompt,
+                "stream": False,
+                "think": False,
+                "format": schema,
+                "options": options,
+                "keep_alive": "10m",
+            },
+            timeout=timeout,
+        )
+        response.raise_for_status()
+        return (response.json().get("response") or "").strip()
+
+
+class LlamaServerProvider:
+    """Provider para llama-server (bitnet.cpp).
+
+    llama-server usa OpenAI-compatible API en /completion.
+    No soporta format=json_schema ni think=false; los prompts ya
+    incluyen instrucciones JSON explicitas y el parser _extract_json
+    maneja la recuperacion.
+    """
+
+    name = "llama-server"
+
+    def __init__(
+        self,
+        model: str = "",
+        base_url: str = "http://127.0.0.1:8081",
+        num_gpu: int = 0,
+        default_options: Optional[Dict[str, Any]] = None,
+    ) -> None:
+        self.model = model
+        self.base_url = base_url.rstrip("/")
+        self.num_gpu = num_gpu
+        self.default_options = default_options or {}
+
+    def is_available(self) -> bool:
+        try:
+            r = requests.get(f"{self.base_url}/health", timeout=5)
+            return r.status_code == 200
+        except Exception:
+            return False
+
+    def generate_structured(self, prompt: str, schema: dict, *, timeout: float) -> str:
+        opts = self.default_options
+        response = requests.post(
+            f"{self.base_url}/completion",
+            json={
+                "prompt": prompt,
+                "stream": False,
+                "temperature": opts.get("temperature", 0.0),
+                "max_tokens": opts.get("num_predict", 128),
+                "repeat_penalty": 1.1,
+                "json_schema": schema,
+            },
+            timeout=timeout,
+        )
+        response.raise_for_status()
+        return (response.json().get("content") or "").strip()
 
 
 # ==================== Worker Prompts ====================
@@ -451,6 +553,9 @@ def run_case(
     mode: str,
     num_predict: int,
     timeout: float,
+    base_url: str = "http://localhost:11434",
+    backend: str = "ollama",
+    num_ctx: int = 0,
 ) -> CaseResult:
     """Ejecuta un caso a traves de las 4 fases."""
     claim = case["claim"]
@@ -461,19 +566,31 @@ def run_case(
         ground_truth=case["expected"],
     )
 
-    provider = OllamaModelProvider(
-        model=model_name,
-        base_url="http://localhost:11434",
-        num_gpu=num_gpu,
-        default_options={"num_predict": num_predict, "temperature": 0.0, "num_thread": 4},
-    )
+    default_opts: Dict[str, Any] = {"num_predict": num_predict, "temperature": 0.0, "num_thread": 4}
+    if num_ctx > 0:
+        default_opts["num_ctx"] = num_ctx
+
+    if backend == "llama-server":
+        provider = LlamaServerProvider(
+            model=model_name,
+            base_url=base_url,
+            num_gpu=num_gpu,
+            default_options={"num_predict": num_predict, "temperature": 0.0},
+        )
+    else:
+        provider = StructuredOllamaProvider(
+            model=model_name,
+            base_url=base_url,
+            num_gpu=num_gpu,
+            default_options=default_opts,
+        )
 
     # ==================== Phase 1: Independent Assessment ====================
     t0 = time.time()
     assessments = []
     for spec in WORKER_SPECS:
         prompt = _build_independent_prompt(spec, claim, evidence)
-        raw = provider.generate(prompt, options={"num_predict": num_predict, "temperature": 0.0}, timeout=timeout)
+        raw = provider.generate_structured(prompt, ASSESSMENT_SCHEMA, timeout=timeout)
         parsed = _parse_assessment(raw, spec["id"])
         assessments.append(parsed)
     result.phase1_latency_s = round(time.time() - t0, 2)
@@ -515,7 +632,7 @@ def run_case(
             own = assessments[i]
             others = [a for j, a in enumerate(assessments) if j != i]
             prompt = _build_challenge_prompt(spec, claim, evidence, own, others)
-            raw = provider.generate(prompt, options={"num_predict": num_predict * 3, "temperature": 0.0}, timeout=timeout)
+            raw = provider.generate_structured(prompt, CHALLENGE_SCHEMA, timeout=timeout)
             challenge = _parse_challenge(raw, spec["id"], own["relation"])
             challenge_responses.append(challenge)
         result.phase3_latency_s = round(time.time() - t0, 2)
@@ -525,7 +642,7 @@ def run_case(
         # ==================== Phase 4: Final Judge ====================
         t0 = time.time()
         judge_prompt = _build_judge_prompt(claim, evidence, assessments, challenge_responses)
-        raw = provider.generate(judge_prompt, options={"num_predict": num_predict * 3, "temperature": 0.0}, timeout=timeout)
+        raw = provider.generate_structured(judge_prompt, RELATION_SCHEMA, timeout=timeout)
         judge_result = _parse_judge(raw)
         result.phase4_latency_s = round(time.time() - t0, 2)
         result.final_relation = judge_result["relation"]
@@ -785,11 +902,11 @@ def generate_markdown_report(
 # ==================== Cleanup ====================
 
 
-def unload_model(model_name: str) -> None:
+def unload_model(model_name: str, base_url: str = "http://localhost:11434") -> None:
     """Descarga el modelo de Ollama para liberar RAM."""
     try:
         requests.post(
-            "http://localhost:11434/api/generate",
+            f"{base_url}/api/generate",
             json={"model": model_name, "keep_alive": 0},
             timeout=10,
         )
@@ -809,9 +926,26 @@ def main() -> int:
     parser.add_argument("--num-predict", type=int, default=60, help="Max tokens per response")
     parser.add_argument("--timeout", type=float, default=120.0, help="Timeout per LLM call (s)")
     parser.add_argument("--label", default="", help="Label for output files")
+    parser.add_argument("--port", type=int, default=11434,
+                        help="Ollama instance port (default: 11434). "
+                             "Use a dedicated instance to avoid model thrashing.")
+    parser.add_argument("--backend", default="ollama", choices=["ollama", "llama-server"],
+                        help="Backend: ollama (default) or llama-server (BitNet).")
+    parser.add_argument("--base-url", default="",
+                        help="Base URL override (e.g. http://127.0.0.1:8081 for llama-server). "
+                             "If empty, derives from --port for ollama.")
+    parser.add_argument("--num-ctx", type=int, default=0,
+                        help="Context size override (0 = model default). "
+                             "Required for models with large default ctx (e.g. Qwen3 base = 40960).")
     args = parser.parse_args()
 
     num_gpu = 99 if args.gpu else 0
+    if args.base_url:
+        base_url = args.base_url
+    elif args.backend == "llama-server":
+        base_url = f"http://127.0.0.1:{args.port}"
+    else:
+        base_url = f"http://localhost:{args.port}"
     label = args.label or args.model.replace("/", "_").replace(":", "_")
     timestamp = time.strftime("%Y-%m-%dT%H:%M:%S")
 
@@ -820,8 +954,12 @@ def main() -> int:
     print("=" * 70, flush=True)
     print(f"Model: {args.model}", flush=True)
     print(f"Mode: {args.mode}", flush=True)
+    print(f"Backend: {args.backend}", flush=True)
     print(f"GPU: {args.gpu} (num_gpu={num_gpu})", flush=True)
     print(f"num_predict: {args.num_predict}", flush=True)
+    if args.num_ctx > 0:
+        print(f"num_ctx: {args.num_ctx} (override)", flush=True)
+    print(f"Endpoint: {base_url}", flush=True)
     print(flush=True)
 
     # Load benchmark
@@ -832,12 +970,15 @@ def main() -> int:
     print(f"Cases: {n}", flush=True)
     print(flush=True)
 
-    # Verify model
-    provider = OllamaModelProvider(model=args.model, num_gpu=num_gpu, default_options={"num_predict": args.num_predict, "temperature": 0.0})
-    if not provider.is_available():
-        print(f"ERROR: model {args.model} not available", flush=True)
+    # Verify model availability
+    if args.backend == "llama-server":
+        check_provider = LlamaServerProvider(model=args.model, base_url=base_url, num_gpu=num_gpu)
+    else:
+        check_provider = OllamaModelProvider(model=args.model, base_url=base_url, num_gpu=num_gpu, default_options={"num_predict": args.num_predict, "temperature": 0.0})
+    if not check_provider.is_available():
+        print(f"ERROR: {args.backend} not available at {base_url}", flush=True)
         return 1
-    print(f"Model OK: {args.model}", flush=True)
+    print(f"Model OK: {args.model} ({base_url})", flush=True)
     print(flush=True)
 
     # Run cases
@@ -855,6 +996,9 @@ def main() -> int:
                 mode=args.mode,
                 num_predict=args.num_predict,
                 timeout=args.timeout,
+                base_url=base_url,
+                backend=args.backend,
+                num_ctx=args.num_ctx,
             )
         except Exception as e:
             print(f"ERROR: {e}", flush=True)
@@ -915,6 +1059,8 @@ def main() -> int:
         "num_predict": args.num_predict,
         "temperature": 0.0,
         "num_thread": 4,
+        "backend": args.backend,
+        "num_ctx": args.num_ctx,
         "timestamp": timestamp,
         "wall_time_s": round(wall_time, 1),
     }
@@ -930,11 +1076,13 @@ def main() -> int:
         "timestamp": timestamp,
         "model": args.model,
         "mode": args.mode,
+        "backend": args.backend,
         "gpu": args.gpu,
         "num_gpu": num_gpu,
         "num_predict": args.num_predict,
         "temperature": 0.0,
         "num_thread": 4,
+        "num_ctx": args.num_ctx,
         "benchmark": "semantic_assessment_benchmark_v2.json",
         "case_count": n,
         "wall_time_s": round(wall_time, 1),
@@ -978,7 +1126,7 @@ def main() -> int:
     # Cleanup
     print(flush=True)
     print("Unloading model from Ollama...", flush=True)
-    unload_model(args.model)
+    unload_model(args.model, base_url=base_url)
 
     return 0
 

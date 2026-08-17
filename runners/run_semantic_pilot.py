@@ -36,6 +36,7 @@ Uso:
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -189,7 +190,7 @@ def main() -> int:
     provider = BitNetModelProvider(
         model_path="models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf",
         server_path="build/bin/Release/llama-server.exe",
-        bitnet_root="C:/Users/Valen/Desktop/Proyectos/BitNet",
+        bitnet_root=os.environ.get("BITNET_ROOT", os.path.expanduser("~/BitNet")),
         port=8081,
         threads=8,
         ctx_size=2048,

@@ -3,15 +3,23 @@ id: EXP-013
 title: "Coliseo v1 GPU: 3 modelos vs Benchmark v2 (GPU vs CPU)"
 date: 2026-08-16
 status: completed
+status_note: "RESULTADOS DE LLAMA3.2 CONTAMINADOS — ver POST-001. Granite y Qwen3 no afectados."
 category: experiment
 components: [semantic_ensemble, ollama_provider, semantic_adapter]
-tags: [granite, llama, qwen, semantic-evaluation, benchmark-v2, gpu, ensemble, coliseo, cpu-vs-gpu]
-related: [PM-003, ADR-0031, EXP-012, RES-007]
+tags: [granite, llama, qwen, semantic-evaluation, benchmark-v2, gpu, ensemble, coliseo, cpu-vs-gpu, protocol-contamination]
+related: [PM-003, ADR-0031, EXP-012, RES-007, POST-001]
 supersedes: null
 superseded_by: null
 ---
 
 # EXP-013 - Coliseo v1 GPU: CPU vs GPU
+
+> **ADVERTENCIA (POST-001):** Los resultados de Llama3.2 en este
+> experimento heredan la contaminacion de EXP-012 (`num_predict=10` +
+> parser leniento). El 16.4% reportado para Llama3.2 en GPU es igualmente
+> un artefacto. Los resultados de Granite y Qwen3 (CPU vs GPU) no estan
+> afectados y la conclusion principal (GPU = speed, no quality) se
+> mantiene.
 
 ## Hipotesis
 
@@ -118,6 +126,9 @@ semantic_assessment_benchmark_v2.json — identico a EXP-012.
 
 - **Llama 3.2 3B es identico en ambos hardware** (16.4% single). La
   GPU no puede compensar la falta de capacidad base del modelo.
+  **CORRECCION (POST-001):** El 16.4% era un artefacto del protocolo
+  en ambos hardware, no una limitacion del modelo. La GPU no puede
+  compensar un truncamiento causado por `num_predict=10`.
 
 ## Interpretacion
 

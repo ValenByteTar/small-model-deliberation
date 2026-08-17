@@ -13,7 +13,7 @@ Uso:
     provider = BitNetModelProvider(
         model_path="models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf",
         server_path="build/bin/Release/llama-server.exe",
-        bitnet_root="C:/Users/.../BitNet",
+        bitnet_root="~/BitNet",  # or set BITNET_ROOT env var
     )
     provider.ensure_running()  # inicia el servidor si no está activo
     response = provider.generate("Prompt here")
